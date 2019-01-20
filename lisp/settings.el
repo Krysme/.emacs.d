@@ -4,6 +4,8 @@
 ;;; get rid of the ring bell
 (setq ring-bell-function 'ignore)
 
+;; highlight current line
+(global-hl-line-mode +1)
 
 
 (global-prettify-symbols-mode 1)
@@ -22,6 +24,7 @@
 (after-load 'smooth-scrolling
   (smooth-scrolling-mode 1))
 
+(display-time-mode t)
 
 (unless (package-installed-p 'spacemacs-theme)
   (package-install 'spacemacs-theme))
@@ -29,6 +32,7 @@
 (setq tab-always-indent 'complete)
 (add-to-list 'completion-styles 'initials t)
 
+(add-to-list 'default-frame-alist '(font . "Inconsolata-20"))
 
 
 

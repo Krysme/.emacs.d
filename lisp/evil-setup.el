@@ -1,3 +1,10 @@
+(defun indent-buffer ()
+  "indent current buffer"
+  (interactive)
+  (save-excursion
+    (indent-region (point-min) (point-max) nil)))
+
+
 
 
 (setq evil-want-C-i-jump t)

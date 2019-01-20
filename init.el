@@ -15,6 +15,7 @@
 (require 'settings)
 (require 'paredit-setup)
 (require 'racket-setup)
+(require 'exwm-setup)
 
 
 

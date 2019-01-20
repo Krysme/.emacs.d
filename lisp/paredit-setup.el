@@ -25,6 +25,10 @@
   (add-hook 'racket-mode-hook 'paredit-mode)
   (add-hook 'racket-repl-mode-hook 'paredit-mode))
 
+(ensure-package 'rainbow-delimiters)
+
+(after-load 'rainbow-delimiters
+  (add-hook 'paredit-mode-hook 'rainbow-delimiters-mode))
 
 (provide 'paredit-setup)
 
