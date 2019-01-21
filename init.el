@@ -8,6 +8,7 @@
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (defalias 'after-load 'with-eval-after-load)
 
+
 (require 'package-setup)
 
 (require 'evil-setup)
@@ -16,7 +17,7 @@
 (require 'paredit-setup)
 (require 'racket-setup)
 (require 'exwm-setup)
-(require 'which-key)
+(require 'which-key-setup)
 
 
 
