@@ -32,6 +32,10 @@
   (define-key evil-normal-state-map (kbd "SPC i") 'indent-buffer)
   (define-key evil-normal-state-map (kbd "SPC h") 'help-command)
 
+  (define-key evil-normal-state-map (kbd "SPC c") 'helm-M-x)
+  (define-key evil-normal-state-map (kbd "SPC f") 'helm-find-files)
+  (define-key evil-normal-state-map (kbd "SPC b") 'helm-buffers-list)
+
   ;; multi window operations
   (define-key evil-normal-state-map (kbd "SPC w v") 'evil-window-vsplit)
   (define-key evil-normal-state-map (kbd "SPC w s") 'evil-window-split)
