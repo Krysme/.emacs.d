@@ -1,43 +1,35 @@
 
-(defun start-a-shell ()
+(defun terminal-open ()
   "startup a shell prompt"
   (interactive)
-  (async-shell-command "urxvt"))
+  (start-process "urxvt" nil "urxvt"))
 
 
 (defun chrome ()
   (interactive)
-  (async-shell-command "chromium --no-sandbox"))
+  (start-process "chromium" nil "chromium"  "--no-sandbox"))
 
 (defun firefox ()
   (interactive)
   (async-shell-command "firefox"))
 
 
-
-
-
-
 (ensure-package 'exwm)
 (ensure-package 'exwm-x)
 
 
-(provide 'exwm)
-
-;;(use-package exwm-config)
-;; (use-package exwm-x)
-(after-load 'exwm
-  (exwm-init))
-
-(after-load 'exwm-config
-  (exwm-config-default))
 
 (after-load 'exwm
   (shell-command "xrdb ~/.Xresources"))
 
+
+(after-load 'exwm
+  (global-set-key [f12] 'exwm-init))
+
 (after-load 'exwm
   (define-key exwm-mode-map (kbd "C-x b") 'helm-buffers-list)
-  (global-set-key [f4] 'start-a-shell)
+  (define-key exwm-mode-map [f4] 'terminal-open)
+  (global-set-key [f4] 'terminal-open)
   (global-set-key [f8] 'chrome))
 
 
@@ -46,5 +38,24 @@
   (add-hook 'exwm-update-title-hook
 	    (lambda ()
 	      (exwm-workspace-rename-buffer exwm-title))))
+
+
+(defun reboot ()
+  (interactive)
+  (desktop-save-in-desktop-dir)
+  (add-hook 'kill-emacs-hook (lambda () (async-shell-command "reboot")))
+  (save-buffers-kill-emacs))
+
+(defun poweroff ()
+  (interactive)
+  (desktop-save-in-desktop-dir)
+  (add-hook 'kill-emacs-hook (lambda () (async-shell-command "poweroff")))
+  (save-buffers-kill-emacs))
+
+(defun logout ()
+  (interactive)
+  (desktop-save-in-desktop-dir)
+  (setq kill-emacs-hook nil)
+  (save-buffers-kill-emacs))
 
 (provide 'exwm-setup)

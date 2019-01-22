@@ -7,14 +7,13 @@
 ;; highlight current line
 (global-hl-line-mode +1)
 
-
 (global-prettify-symbols-mode 1)
 
 
 (menu-bar-mode -1)
 (tool-bar-mode -1)
+(scroll-bar-mode -1)
 
-(desktop-save-mode 1)
 
 (setq make-backup-files nil)
 (setq auto-save-default nil)
@@ -33,7 +32,6 @@
 (add-to-list 'completion-styles 'initials t)
 
 (add-to-list 'default-frame-alist '(font . "Inconsolata-20"))
-
 
 
 
