@@ -9,6 +9,7 @@
 
 (global-prettify-symbols-mode 1)
 
+(ensure-package 'cmake-ide)
 
 (menu-bar-mode -1)
 (tool-bar-mode -1)
@@ -35,6 +36,6 @@
 
 
 
-(global-display-line-numbers-mode t)
+;;(global-display-line-numbers-mode 1)
 
 (provide 'settings)

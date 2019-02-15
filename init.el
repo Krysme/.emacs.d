@@ -17,6 +17,7 @@
 (require 'exwm-setup)
 (require 'which-key-setup)
 (require 'desktop-setup) 
+(require 'lsp-setup)
 
 
 
