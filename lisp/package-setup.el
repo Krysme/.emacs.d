@@ -18,5 +18,6 @@
   (require package))
 
 
+(ensure-package 'dash)
 
 (provide 'package-setup)
