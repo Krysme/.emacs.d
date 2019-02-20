@@ -20,6 +20,8 @@
 (after-load 'rust-mode
   (add-hook 'rust-mode-hook 'smartparens-mode))
 
+(after-load 'rust-mode
+  (add-hook 'rust-mode-hook 'linum-mode))
 
 
 (ensure-package 'smartparens)
