@@ -7,9 +7,17 @@
 (ensure-package 'lsp-ui)
 (ensure-package 'yasnippet)
 
+
 (after-load 'lsp-mode
   (after-load 'rust-mode
     (add-hook 'rust-mode-hook 'lsp)))
+
+
+(after-load 'lsp-mode
+  (add-hook 'c++-mode-hook 'lsp))
+
+
+(add-hook 'c++-mode-hook 'smartparens-mode)
 
 (after-load 'lsp-mode
   (setq lsp-prefer-flymake nil))
@@ -22,8 +30,8 @@
 (after-load 'rust-mode
   (add-hook 'rust-mode-hook 'smartparens-mode))
 
-(after-load 'rust-mode
-  (add-hook 'rust-mode-hook 'linum-mode))
+(after-load 'lsp-mode
+  (add-hook 'lsp-mode-hook 'linum-mode))
 
 (after-load 'company-mode
   (define-key company-active-map [tab] 'company-complete-selection)

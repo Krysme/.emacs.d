@@ -23,4 +23,4 @@
 	      (exwm-workspace-rename-buffer exwm-title))))
 
 
-(provide 'exwm-setup)
+(provide 'program-util)
