@@ -14,7 +14,7 @@
 (require 'settings)
 (require 'paredit-setup)
 (require 'racket-setup)
-(require 'exwm-setup)
+(require 'program-util)
 (require 'which-key-setup)
 (require 'desktop-setup) 
 (require 'lsp-setup)
