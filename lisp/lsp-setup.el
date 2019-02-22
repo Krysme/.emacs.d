@@ -25,6 +25,10 @@
 (after-load 'rust-mode
   (add-hook 'rust-mode-hook 'linum-mode))
 
+(after-load 'company-mode
+  (define-key company-active-map [tab] 'company-complete-selection)
+  (define-key company-active-map (kbd "C-n") 'company-select-next-or-abort)
+  (define-key company-active-map (kbd "C-p") 'company-select-previous-or-abort))
 
 (ensure-package 'smartparens)
 

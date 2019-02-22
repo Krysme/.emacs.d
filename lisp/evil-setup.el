@@ -13,7 +13,7 @@
 (ensure-package 'evil)
 
 (after-load 'evil
-  (evil-mode t))
+  (evil-mode))
 
 (after-load 'evil
   (setq evil-insert-state-cursor nil)
