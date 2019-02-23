@@ -12,6 +12,11 @@
   (interactive)
   (async-shell-command "firefox"))
 
+(defun htop ()
+  "start htop"
+  (interactive)
+  (start-process "simple terminal" nil "st" "-e" "htop"))
+
 
 (global-set-key [f4] 'terminal-open)
 (global-set-key [f8] 'chrome)
