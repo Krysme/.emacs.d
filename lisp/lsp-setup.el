@@ -4,6 +4,7 @@
 
 (ensure-package 'lsp-mode)
 (ensure-package 'company-lsp)
+(ensure-package 'company)
 (ensure-package 'lsp-ui)
 (ensure-package 'yasnippet)
 
@@ -16,8 +17,11 @@
 (after-load 'lsp-mode
   (add-hook 'c++-mode-hook 'lsp))
 
+(after-load 'lsp-mode
+  (add-hook 'c-mode-hook 'lsp))
 
 (add-hook 'c++-mode-hook 'smartparens-mode)
+(add-hook 'c-mode-hook 'smartparens-mode)
 
 (after-load 'lsp-mode
   (setq lsp-prefer-flymake nil))
@@ -30,13 +34,15 @@
 (after-load 'rust-mode
   (add-hook 'rust-mode-hook 'smartparens-mode))
 
+(after-load 'rust-mode
+  (rust-enable-format-on-save))
+
+(add-hook 'conf-toml-mode-hook 'smartparens-mode)
+
+
+
 (after-load 'lsp-mode
   (add-hook 'lsp-mode-hook 'linum-mode))
-
-(after-load 'company-mode
-  (define-key company-active-map [tab] 'company-complete-selection)
-  (define-key company-active-map (kbd "C-n") 'company-select-next-or-abort)
-  (define-key company-active-map (kbd "C-p") 'company-select-previous-or-abort))
 
 (ensure-package 'smartparens)
 
@@ -47,6 +53,10 @@
      (define-key sp-pair-overlay-keymap (kbd "C-g") nil))))
 
 
+(after-load 'company
+  (define-key company-active-map [tab] 'company-complete-selection)
+  (define-key company-active-map (kbd "C-n") 'company-select-next)
+  (define-key company-active-map (kbd "C-p") 'company-select-previous))
 
 
 
