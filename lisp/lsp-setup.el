@@ -7,12 +7,17 @@
 (ensure-package 'company)
 (ensure-package 'lsp-ui)
 (ensure-package 'yasnippet)
+(ensure-package 'ccls)
 
 
 (after-load 'lsp-mode
   (after-load 'rust-mode
     (add-hook 'rust-mode-hook 'lsp)))
 
+(setq-default c-basic-offset 8
+	      tab-width 8
+	      indent-tabs-mode t
+	      c-default-style "bsd")
 
 (after-load 'lsp-mode
   (add-hook 'c++-mode-hook 'lsp))
@@ -58,6 +63,8 @@
   (define-key company-active-map (kbd "C-n") 'company-select-next)
   (define-key company-active-map (kbd "C-p") 'company-select-previous))
 
+;; (after-load 'yasnippet
+;;   (define-key yas-minor-mode-map [tab] (lambda () (interactive) (if 'company-active-map ))))
 
 
 (provide 'lsp-setup)

@@ -19,8 +19,7 @@
 (after-load 'evil
   (define-key evil-normal-state-map (kbd "q") nil)
   (define-key evil-normal-state-map (kbd "s") nil)
-  (define-key evil-normal-state-map (kbd "C-f") nil)
-  (define-key evil-insert-state-map (kbd "C-f") nil))
+  (define-key evil-normal-state-map (kbd "C-f") nil))
 
 ;; space keys
 (after-load 'evil
