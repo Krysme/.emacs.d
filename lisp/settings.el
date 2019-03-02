@@ -28,11 +28,14 @@
   (package-install 'spacemacs-theme))
 
 (setq tab-always-indent 'complete)
-(add-to-list 'completion-styles 'initials t)
 
-(add-to-list 'default-frame-alist '(font . "Inconsolata-20"))
+;(add-to-list 'completion-styles 'initials t)
+
+
+(add-to-list 'default-frame-alist '(font . "Inconsolata-14"))
 
 (load-theme 'spacemacs-dark t)
 
+(modify-syntax-entry ?_ "w")
 
 (provide 'settings)

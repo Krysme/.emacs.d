@@ -18,6 +18,7 @@
 (require 'which-key-setup)
 (require 'desktop-setup) 
 (require 'lsp-setup)
+(require 'company-setup)
 
 
 
@@ -28,7 +29,7 @@
 		(load-file (concat (file-name-as-directory dir) f)))))
     (mapc load (directory-files dir nil "\\.el$"))))
 
-(load-directory (expand-file-name "keys" (expand-file-name "lisp" user-emacs-directory)))
+(load-directory (expand-file-name "keys" user-emacs-directory))
 
 
 

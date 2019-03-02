@@ -4,7 +4,6 @@
 
 (ensure-package 'lsp-mode)
 (ensure-package 'company-lsp)
-(ensure-package 'company)
 (ensure-package 'lsp-ui)
 (ensure-package 'yasnippet)
 (ensure-package 'ccls)
@@ -21,6 +20,9 @@
 
 (after-load 'lsp-mode
   (add-hook 'c++-mode-hook 'lsp))
+
+(after-load 'company
+  (add-hook 'emacs-lisp-mode-hook 'company-mode))
 
 (after-load 'lsp-mode
   (add-hook 'c-mode-hook 'lsp))
@@ -58,13 +60,13 @@
      (define-key sp-pair-overlay-keymap (kbd "C-g") nil))))
 
 
-(after-load 'company
-  (define-key company-active-map [tab] 'company-complete-selection)
-  (define-key company-active-map (kbd "C-n") 'company-select-next)
-  (define-key company-active-map (kbd "C-p") 'company-select-previous))
 
-;; (after-load 'yasnippet
-;;   (define-key yas-minor-mode-map [tab] (lambda () (interactive) (if 'company-active-map ))))
+ (after-load 'yasnippet
+   (define-key yas-minor-mode-map [tab] nil)
+   (define-key yas-keymap [tab] nil)
+   (define-key yas-keymap (kbd "TAB") nil)
+   (define-key yas-keymap (kbd "C-l") 'yas-next-field))
+
 
 
 (provide 'lsp-setup)

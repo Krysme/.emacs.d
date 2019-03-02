@@ -2,4 +2,6 @@
 !.gitignore
 !init.el
 !/lisp
+!/keys
 !/lisp/**
+!/keys/**
