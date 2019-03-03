@@ -29,13 +29,11 @@
 
 (setq tab-always-indent 'complete)
 
-;(add-to-list 'completion-styles 'initials t)
-
-
+(add-hook 'after-change-major-mode-hook (lambda () (modify-syntax-entry ?_ "w")))
+;; sfdws_sdfassf
 (add-to-list 'default-frame-alist '(font . "Inconsolata-14"))
 
 (load-theme 'spacemacs-dark t)
 
-(modify-syntax-entry ?_ "w")
 
 (provide 'settings)
