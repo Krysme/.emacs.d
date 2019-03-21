@@ -47,6 +47,13 @@
 (add-hook 'conf-toml-mode-hook 'smartparens-mode)
 
 
+ (after-load 'evil
+   (after-load 'lsp-ui
+      (add-hook 'lsp-ui-doc-mode-hook
+      	      (lambda () (interactive)
+      		(advice-add 'evil-force-normal-state :around (lambda (orig-fun &rest args)
+							       (lsp-ui-doc-hide)))))))
+
 
 (after-load 'lsp-mode
   (add-hook 'lsp-mode-hook 'linum-mode))
@@ -61,11 +68,11 @@
 
 
 
- (after-load 'yasnippet
-   (define-key yas-minor-mode-map [tab] nil)
-   (define-key yas-keymap [tab] nil)
-   (define-key yas-keymap (kbd "TAB") nil)
-   (define-key yas-keymap (kbd "C-l") 'yas-next-field))
+(after-load 'yasnippet
+  (define-key yas-minor-mode-map [tab] nil)
+  (define-key yas-keymap [tab] nil)
+  (define-key yas-keymap (kbd "TAB") nil)
+  (define-key yas-keymap (kbd "C-l") 'yas-next-field))
 
 
 

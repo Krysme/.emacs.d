@@ -21,6 +21,7 @@
 (require 'company-setup)
 
 
+(require 'idris-setup)
 
 
 

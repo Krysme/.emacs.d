@@ -18,8 +18,8 @@
   (start-process "simple terminal" nil "st" "-e" "htop"))
 
 
-(global-set-key [f4] 'terminal-open)
-(global-set-key [f8] 'chrome)
+(global-set-key (kbd "C-4") 'terminal-open)
+(global-set-key (kbd "C-8") 'firefox)
 
 ;; update title hook
 (after-load 'exwm

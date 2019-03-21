@@ -6,6 +6,7 @@
 
 ;; highlight current line
 (global-hl-line-mode +1)
+(global-linum-mode t)
 
 (global-prettify-symbols-mode 1)
 
@@ -31,7 +32,7 @@
 
 (add-hook 'after-change-major-mode-hook (lambda () (modify-syntax-entry ?_ "w")))
 ;; sfdws_sdfassf
-(add-to-list 'default-frame-alist '(font . "Inconsolata-14"))
+(add-to-list 'default-frame-alist '(font . "Source Code Pro-15"))
 
 (load-theme 'spacemacs-dark t)
 

@@ -3,6 +3,12 @@
   (evil-define-motion evil-move-5-lines-down () (evil-next-visual-line 5))
   (evil-define-motion evil-move-5-lines-up () (evil-previous-visual-line 5)))
 
+(after-load 'evil
+  (after-load 'smartparens
+    (define-key evil-visual-state-map (kbd "(") 'sp-wrap-round)))
+
+
+
 ;; normal mode navigation
 (after-load 'evil
   (define-key evil-normal-state-map (kbd "C-j") (lambda () (interactive) (evil-next-line 5)))
@@ -12,19 +18,18 @@
   (define-key evil-normal-state-map (kbd "C-l") 'evil-end-of-line)
   (define-key evil-normal-state-map (kbd "C-h") 'evil-first-non-blank)
   (define-key evil-normal-state-map (kbd "C-e") (lambda () (interactive) (evil-scroll-line-down 5)))
-  (define-key evil-normal-state-map (kbd "C-y") (lambda () (interactive) (evil-scroll-line-up 5)))
-  (define-key evil-normal-state-map (kbd "C-4") 'evil-switch-to-windows-last-buffer))
+  (define-key evil-normal-state-map (kbd "C-y") (lambda () (interactive) (evil-scroll-line-up 5))))
 
 ;; nullified keys
 (after-load 'evil
   (define-key evil-normal-state-map (kbd "q") nil)
   (define-key evil-normal-state-map (kbd "s") nil)
-  (define-key evil-normal-state-map (kbd "C-f") nil))
+  (define-key evil-normal-state-map (kbd "C-f") nil)
+  (define-key evil-normal-state-map (kbd "C-4") nil))
 
 ;; space keys
 (after-load 'evil
   (define-key evil-normal-state-map (kbd "C-s") 'save-buffer)
-  (define-key evil-insert-state-map (kbd "C-s") 'save-buffer)
   (define-key evil-normal-state-map (kbd "SPC w o") 'delete-other-windows)
   (define-key evil-normal-state-map (kbd "SPC w q") 'kill-emacs)
   (define-key evil-normal-state-map (kbd "SPC k") 'kill-this-buffer)
