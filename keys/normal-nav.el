@@ -20,6 +20,10 @@
   (define-key evil-normal-state-map (kbd "C-e") (lambda () (interactive) (evil-scroll-line-down 5)))
   (define-key evil-normal-state-map (kbd "C-y") (lambda () (interactive) (evil-scroll-line-up 5))))
 
+
+(after-load 'google-translate
+  (define-key evil-normal-state-map (kbd "SPC t") 'google-translate-at-point))
+
 ;; nullified keys
 (after-load 'evil
   (define-key evil-normal-state-map (kbd "q") nil)
@@ -39,6 +43,12 @@
   (define-key evil-normal-state-map (kbd "SPC c") 'helm-M-x)
   (define-key evil-normal-state-map (kbd "SPC f") 'helm-find-files)
   (define-key evil-normal-state-map (kbd "SPC b") 'helm-buffers-list)
+
+
+
+  (define-key evil-normal-state-map (kbd "C-n") 'evil-next-line)
+  (define-key evil-normal-state-map (kbd "C-p") 'evil-previous-line)
+
 
   ;; multi window operations
   (define-key evil-normal-state-map (kbd "SPC w v") 'evil-window-vsplit)

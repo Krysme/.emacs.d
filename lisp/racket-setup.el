@@ -1,10 +1,11 @@
+;; -*- lexical-binding: t -*-
 
 (ensure-package 'racket-mode)
 
 (after-load 'racket-mode
 (add-hook 'racket-mode-hook
 	  (lambda ()
-	    (define-key racket-mode-map (kbd "C-c C-k") 'racket-run))))
+	    (define-key racket-mode-map (kbd "C-c C-l") 'racket-run))))
 
 (add-hook 'racket-mode-hook #'racket-unicode-input-method-enable)
 

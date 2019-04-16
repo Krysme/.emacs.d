@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t -*-
 
 (ensure-package 'helm)
 

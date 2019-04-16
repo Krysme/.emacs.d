@@ -8,6 +8,7 @@
 (defalias 'after-load 'with-eval-after-load)
 
 (require 'package-setup)
+(require 'exwm-setup)
 
 (require 'evil-setup)
 (require 'helm-setup)
@@ -19,6 +20,8 @@
 (require 'desktop-setup) 
 (require 'lsp-setup)
 (require 'company-setup)
+(require 'google-translate-setup)
+;;(require 'emacs-emms-setup)
 
 
 (require 'idris-setup)

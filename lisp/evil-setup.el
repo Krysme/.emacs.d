@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t -*-
 (defun indent-buffer ()
   "indent current buffer"
   (interactive)

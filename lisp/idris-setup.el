@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t -*-
 
 (ensure-package 'idris-mode)
 
