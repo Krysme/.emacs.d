@@ -21,6 +21,7 @@
 (require 'lsp-setup)
 (require 'company-setup)
 (require 'google-translate-setup)
+(require 'emacs-emms-setup)
 ;;(require 'emacs-emms-setup)
 
 

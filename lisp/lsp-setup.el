@@ -1,7 +1,4 @@
 
-(ensure-package 'rust-mode)
-(ensure-package 'flycheck)
-
 (ensure-package 'lsp-mode)
 (ensure-package 'company-lsp)
 (ensure-package 'lsp-ui)
@@ -9,12 +6,18 @@
 (ensure-package 'ccls)
 
 
+(ensure-package 'rust-mode)
+(ensure-package 'flycheck)
+(ensure-package 'flycheck-rust)
+(ensure-package 'cargo)
+
+
 (after-load 'lsp-mode
   (after-load 'rust-mode
     (add-hook 'rust-mode-hook 'lsp)))
 
-(setq-default c-basic-offset 8
-	      tab-width 8
+(setq-default c-basic-offset 4
+	      tab-width 4
 	      indent-tabs-mode t
 	      c-default-style "bsd")
 
@@ -71,8 +74,9 @@
 (after-load 'yasnippet
   (define-key yas-minor-mode-map [tab] nil)
   (define-key yas-keymap [tab] nil)
-  (define-key yas-keymap (kbd "TAB") nil)
-  (define-key yas-keymap (kbd "C-l") 'yas-next-field))
+  ;;(define-key yas-keymap (kbd "TAB") nil)
+  ;; (define-key yas-keymap (kbd "C-l") 'yas-next-field)
+  )
 
 
 

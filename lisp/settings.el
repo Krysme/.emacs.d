@@ -6,7 +6,8 @@
 
 ;; highlight current line
 (global-hl-line-mode +1)
-(global-linum-mode t)
+;;(global-linum-mode t)
+(add-hook 'prog-mode-hook 'linum-mode)
 
 (global-prettify-symbols-mode 1)
 
@@ -34,7 +35,7 @@
 ;; sfdws_sdfassf
 (add-to-list 'default-frame-alist '(font . "Source Code Pro-15"))
 
-(load-theme 'spacemacs-dark t)
+(load-theme 'solarized-dark t)
 
 
 (provide 'settings)
