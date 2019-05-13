@@ -35,7 +35,7 @@
 ;; sfdws_sdfassf
 (add-to-list 'default-frame-alist '(font . "Source Code Pro-15"))
 
-(load-theme 'solarized-dark t)
+(load-theme 'spacemacs-dark t)
 
 
 (provide 'settings)
