@@ -6,4 +6,3 @@
 
 
 
-(provide 'exwm-setup)

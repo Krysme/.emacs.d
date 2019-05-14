@@ -38,4 +38,3 @@
 (load-theme 'spacemacs-dark t)
 
 
-(provide 'settings)

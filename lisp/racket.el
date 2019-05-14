@@ -22,4 +22,3 @@
 	    (define-key racket-repl-mode-map (kbd "C-w") nil)))
 
 
-(provide 'racket-setup)

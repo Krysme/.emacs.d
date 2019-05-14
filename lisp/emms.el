@@ -8,4 +8,3 @@
   (define-key emms-playlist-mode-map (kbd "SPC") 'emms-pause)
   (define-key emms-playlist-mode-map (kbd "P") 'emms-pause))
 
-(provide 'emacs-emms-setup)

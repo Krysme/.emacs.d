@@ -22,6 +22,5 @@
   (setq evil-normal-state-cursor nil)
   (setq evil-move-cursor-back t))
 
-(provide 'evil-setup)
 
 

@@ -30,5 +30,4 @@
 (after-load 'rainbow-delimiters
   (add-hook 'paredit-mode-hook 'rainbow-delimiters-mode))
 
-(provide 'paredit-setup)
 

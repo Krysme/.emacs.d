@@ -40,4 +40,3 @@
 	      (exwm-workspace-rename-buffer exwm-title))))
 
 
-(provide 'program-util)
