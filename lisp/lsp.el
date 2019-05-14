@@ -5,10 +5,12 @@
 (ensure-package 'yasnippet)
 (ensure-package 'ccls)
 
+(after-load 'lsp-mode
+  (setq lsp-enable-snippet nil))
 
 (ensure-package 'rust-mode)
 (ensure-package 'flycheck)
-(ensure-package 'flycheck-rust)
+(Ensure-package 'flycheck-rust)
 (ensure-package 'cargo)
 
 
@@ -17,15 +19,13 @@
     (add-hook 'rust-mode-hook 'lsp)))
 
 (setq-default c-basic-offset 4
-	      tab-width 4
-	      indent-tabs-mode t
-	      c-default-style "bsd")
+			  tab-width 4
+			  indent-tabs-mode t
+			  c-default-style "bsd")
 
 (after-load 'lsp-mode
   (add-hook 'c++-mode-hook 'lsp))
 
-(after-load 'company
-  (add-hook 'emacs-lisp-mode-hook 'company-mode))
 
 (after-load 'lsp-mode
   (add-hook 'c-mode-hook 'lsp))
@@ -34,7 +34,8 @@
 (add-hook 'c-mode-hook 'smartparens-mode)
 
 (after-load 'lsp-mode
-  (setq lsp-prefer-flymake nil))
+  (setq lsp-prefer-flymake nil)
+  )
 
 
 (after-load 'lsp-mode
@@ -50,16 +51,20 @@
 (add-hook 'conf-toml-mode-hook 'smartparens-mode)
 
 
- (after-load 'evil
-   (after-load 'lsp-ui
-      (add-hook 'lsp-ui-doc-mode-hook
+(after-load 'evil
+  (after-load 'lsp-ui
+	(add-hook 'lsp-ui-doc-mode-hook
       	      (lambda () (interactive)
-      		(advice-add 'evil-force-normal-state :around (lambda (orig-fun &rest args)
-							       (lsp-ui-doc-hide)))))))
+				(advice-add 'evil-force-normal-state :around (lambda (orig-fun &rest args)
+															   (lsp-ui-doc-hide)))))))
 
 
 (after-load 'lsp-mode
   (add-hook 'lsp-mode-hook 'linum-mode))
+
+
+(after-load 'lsp-mode
+  (add-hook 'lsp-mode-hook 'company-mode))
 
 (ensure-package 'smartparens)
 
@@ -73,10 +78,7 @@
 
 (after-load 'yasnippet
   (define-key yas-minor-mode-map [tab] nil)
-  (define-key yas-keymap [tab] nil)
-  ;;(define-key yas-keymap (kbd "TAB") nil)
-  ;; (define-key yas-keymap (kbd "C-l") 'yas-next-field)
-  )
+  (define-key yas-keymap [tab] nil))
 
 
 

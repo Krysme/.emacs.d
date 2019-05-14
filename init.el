@@ -1,39 +1,17 @@
 ;; -*- lexical-binding: t -*-
 
-(setq debug-on-error t)
-
-(add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
-
-(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (defalias 'after-load 'with-eval-after-load)
-
-(require 'package-setup)
-(require 'exwm-setup)
-
-(require 'evil-setup)
-(require 'helm-setup)
-(require 'settings)
-(require 'paredit-setup)
-(require 'racket-setup)
-(require 'program-util)
-(require 'which-key-setup)
-(require 'desktop-setup) 
-(require 'lsp-setup)
-(require 'company-setup)
-(require 'google-translate-setup)
-(require 'emacs-emms-setup)
-;;(require 'emacs-emms-setup)
-
-
-(require 'idris-setup)
-
-
+(setq debug-on-error t)
 
 (defun load-directory (dir)
   (let ((load (lambda (f)
 		(load-file (concat (file-name-as-directory dir) f)))))
     (mapc load (directory-files dir nil "\\.el$"))))
 
+(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+
+(load-file (expand-file-name "package.el" user-emacs-directory)) 
+(load-directory (expand-file-name "lisp" user-emacs-directory))
 (load-directory (expand-file-name "keys" user-emacs-directory))
 
 

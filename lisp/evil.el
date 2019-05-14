@@ -12,6 +12,7 @@
 (setq evil-want-C-u-scroll t)
 
 (ensure-package 'evil)
+(ensure-package 'evil-collection)
 
 (after-load 'evil
   (evil-mode))

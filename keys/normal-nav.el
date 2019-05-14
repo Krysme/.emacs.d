@@ -21,9 +21,6 @@
   (define-key evil-normal-state-map (kbd "C-y") (lambda () (interactive) (evil-scroll-line-up 5))))
 
 
-(after-load 'google-translate
-  (define-key evil-normal-state-map (kbd "SPC t") 'google-translate-at-point))
-
 ;; nullified keys
 (after-load 'evil
   (define-key evil-normal-state-map (kbd "q") nil)
