@@ -13,8 +13,6 @@
 (after-load 'evil
   (define-key evil-normal-state-map (kbd "C-j") (lambda () (interactive) (evil-next-line 5)))
   (define-key evil-normal-state-map (kbd "C-k") (lambda () (interactive) (evil-previous-line 5)))
-  (define-key evil-visual-state-map (kbd "C-j") 'evil-move-5-lines-down)
-  (define-key evil-visual-state-map (kbd "C-k") 'evil-move-5-lines-up)
   (define-key evil-normal-state-map (kbd "C-l") 'evil-end-of-line)
   (define-key evil-normal-state-map (kbd "C-h") 'evil-first-non-blank)
   (define-key evil-normal-state-map (kbd "C-e") (lambda () (interactive) (evil-scroll-line-down 5)))
@@ -34,7 +32,7 @@
   (define-key evil-normal-state-map (kbd "SPC w o") 'delete-other-windows)
   (define-key evil-normal-state-map (kbd "SPC w q") 'kill-emacs)
   (define-key evil-normal-state-map (kbd "SPC k") 'kill-this-buffer)
-  (define-key evil-normal-state-map (kbd "SPC i") 'indent-buffer)
+  (define-key evil-normal-state-map (kbd "SPC l") 'indent-buffer)
   (define-key evil-normal-state-map (kbd "SPC h") 'help-command)
 
   (define-key evil-normal-state-map (kbd "SPC c") 'helm-M-x)
