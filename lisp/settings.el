@@ -43,3 +43,5 @@
 (recentf-mode t)
 (setq recentf-max-menu-items 1000)
 
+
+(add-hook 'emacs-lisp-mode-hook 'show-paren-mode)
