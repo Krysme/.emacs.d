@@ -22,3 +22,6 @@
 	    (define-key racket-repl-mode-map (kbd "C-w") nil)))
 
 
+(after-load 'racket-mode
+  (add-hook 'racket-mode-hook 'paredit-mode)
+  (add-hook 'racket-repl-mode-hook 'paredit-mode))
