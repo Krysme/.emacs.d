@@ -10,13 +10,16 @@
 
 
 ;; normal mode navigation
+
 (after-load 'evil
-  (define-key evil-normal-state-map (kbd "C-j") (lambda () (interactive) (evil-next-line 5)))
-  (define-key evil-normal-state-map (kbd "C-k") (lambda () (interactive) (evil-previous-line 5)))
-  (define-key evil-normal-state-map (kbd "C-l") 'evil-end-of-line)
-  (define-key evil-normal-state-map (kbd "C-h") 'evil-first-non-blank)
-  (define-key evil-normal-state-map (kbd "C-e") (lambda () (interactive) (evil-scroll-line-down 5)))
-  (define-key evil-normal-state-map (kbd "C-y") (lambda () (interactive) (evil-scroll-line-up 5))))
+  (after-load 'swiper-helm
+	(define-key evil-normal-state-map (kbd "C-j") (lambda () (interactive) (evil-next-line 5)))
+	(define-key evil-normal-state-map (kbd "C-k") (lambda () (interactive) (evil-previous-line 5)))
+	(define-key evil-normal-state-map (kbd "C-l") 'evil-end-of-line)
+	(define-key evil-normal-state-map (kbd "C-h") 'evil-first-non-blank)
+	(define-key evil-normal-state-map (kbd "C-e") (lambda () (interactive) (evil-scroll-line-down 5)))
+	(define-key evil-normal-state-map (kbd "/") 'swiper-helm)
+	(define-key evil-normal-state-map (kbd "C-y") (lambda () (interactive) (evil-scroll-line-up 5)))))
 
 
 ;; nullified keys
@@ -36,8 +39,8 @@
   (define-key evil-normal-state-map (kbd "SPC h") 'help-command)
 
   (define-key evil-normal-state-map (kbd "SPC c") 'helm-M-x)
-  (define-key evil-normal-state-map (kbd "SPC f f") 'helm-find-files)
-  (define-key evil-normal-state-map (kbd "SPC f r") 'helm-recentf)
+  (define-key evil-normal-state-map (kbd "SPC f") 'helm-find-files)
+  (define-key evil-normal-state-map (kbd "SPC r") 'helm-recentf)
   (define-key evil-normal-state-map (kbd "SPC b") 'helm-buffers-list)
 
 
