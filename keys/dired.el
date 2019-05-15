@@ -18,5 +18,4 @@
 
 	[tab] 'dired-find-file
 	" k" 'quit-window
-	(kbd "C-l") 'dired-up-directory
-	))
+	(kbd "C-l") 'dired-up-directory))
