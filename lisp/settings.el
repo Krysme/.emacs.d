@@ -40,4 +40,6 @@
 
 (load-theme 'poet t)
 
+(recentf-mode t)
+(setq recentf-max-menu-items 1000)
 

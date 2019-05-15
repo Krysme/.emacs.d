@@ -36,7 +36,8 @@
   (define-key evil-normal-state-map (kbd "SPC h") 'help-command)
 
   (define-key evil-normal-state-map (kbd "SPC c") 'helm-M-x)
-  (define-key evil-normal-state-map (kbd "SPC f") 'helm-find-files)
+  (define-key evil-normal-state-map (kbd "SPC f f") 'helm-find-files)
+  (define-key evil-normal-state-map (kbd "SPC f r") 'helm-recentf)
   (define-key evil-normal-state-map (kbd "SPC b") 'helm-buffers-list)
 
 
