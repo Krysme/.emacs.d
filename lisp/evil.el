@@ -20,7 +20,7 @@
   (evil-mode))
 
 (after-load 'evil
-  (setq evil-insert-state-cursor ')
+  (setq evil-insert-state-cursor 'bar)
   (setq evil-normal-state-cursor nil)
   (setq evil-move-cursor-back t))
 
