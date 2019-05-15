@@ -1,6 +1,7 @@
 ;; -*- lexical-binding: t -*-
 
 (ensure-package 'helm)
+(ensure-package 'swiper-helm)
 
 (after-load 'helm
   (helm-mode))
