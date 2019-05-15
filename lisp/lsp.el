@@ -10,7 +10,7 @@
 
 (ensure-package 'rust-mode)
 (ensure-package 'flycheck)
-(Ensure-package 'flycheck-rust)
+(ensure-package 'flycheck-rust)
 (ensure-package 'cargo)
 
 
