@@ -10,9 +10,11 @@
 
 (setq evil-want-C-i-jump t)
 (setq evil-want-C-u-scroll t)
+(setq evil-want-keybinding nil)
 
 (ensure-package 'evil)
 (ensure-package 'evil-collection)
+(evil-collection-init)
 
 (after-load 'evil
   (evil-mode))

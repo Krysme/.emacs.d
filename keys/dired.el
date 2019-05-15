@@ -5,5 +5,18 @@
 
 ;; key redefinition
 (after-load 'dired
-  (define-key dired-mode-map (kbd "C-l") 'dired-up-directory)
-  (define-key dired-mode-map (kbd "TAB") 'dired-find-file))
+  (global-set-key (kbd "C-x d") nil))
+
+;; dired entry
+(after-load 'evil
+  (evil-global-set-key 'normal " xd" 'dired))
+
+(after-load 'evil-collection
+  (evil-collection-define-key 'normal 'dired-mode-map
+	" " nil
+	"k" nil
+
+	[tab] 'dired-find-file
+	" k" 'quit-window
+	(kbd "C-l") 'dired-up-directory
+	))

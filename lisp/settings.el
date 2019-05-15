@@ -6,8 +6,7 @@
 
 ;; highlight current line
 (global-hl-line-mode +1)
-;;(global-linum-mode t)
-(add-hook 'prog-mode-hook 'linum-mode)
+(global-display-line-numbers-mode)
 
 (global-prettify-symbols-mode 1)
 
@@ -29,12 +28,16 @@
 (unless (package-installed-p 'spacemacs-theme)
   (package-install 'spacemacs-theme))
 
+
 (setq tab-always-indent 'complete)
 
 (add-hook 'after-change-major-mode-hook (lambda () (modify-syntax-entry ?_ "w")))
 ;; sfdws_sdfassf
 (add-to-list 'default-frame-alist '(font . "Source Code Pro-15"))
 
-(load-theme 'spacemacs-dark t)
+(unless (package-installed-p 'spacemacs-theme)
+  (package-install 'poet-theme))
+
+(load-theme 'poet t)
 
 
