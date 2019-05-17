@@ -1,4 +1,11 @@
 
+
+
+(defface lsp-ui-sideline-code-action
+  '((t :foreground "red"))
+  "Face used to highlight code action text."
+  :group 'lsp-ui-sideline)
+
 (ensure-package 'lsp-mode)
 (ensure-package 'company-lsp)
 (ensure-package 'lsp-ui)
