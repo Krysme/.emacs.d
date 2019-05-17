@@ -18,7 +18,7 @@
 	(define-key evil-normal-state-map (kbd "C-l") 'evil-end-of-line)
 	(define-key evil-normal-state-map (kbd "C-h") 'evil-first-non-blank)
 	(define-key evil-normal-state-map (kbd "C-e") (lambda () (interactive) (evil-scroll-line-down 5)))
-	(define-key evil-normal-state-map (kbd "/") 'swiper-helm)
+	(define-key evil-normal-state-map (kbd "SPC /") 'swiper-helm)
 	(define-key evil-normal-state-map (kbd "C-y") (lambda () (interactive) (evil-scroll-line-up 5)))))
 
 
