@@ -9,13 +9,13 @@
 
 ;; dired entry
 (after-load 'evil
-  (evil-global-set-key 'normal " xd" 'dired))
+  (evil-global-set-key 'normal " d" 'dired-jump))
 
 (after-load 'evil-collection
   (evil-collection-define-key 'normal 'dired-mode-map
 	" " nil
 	"k" nil
-
-	[tab] 'dired-find-file
-	" k" 'quit-window
+    (kbd "<return>") 'dired-find-alternate-file
+	[tab] 'dired-find-alternate-file
+	" k" 'kill-this-buffer
 	(kbd "C-l") 'dired-up-directory))
