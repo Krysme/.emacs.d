@@ -1,5 +1,7 @@
 (ensure-package 'paredit)
 (ensure-package 'rainbow-delimiters)
+(ensure-package 'popwin)
+(popwin-mode t)
 
 (add-hook 'emacs-lisp-mode-hook 'show-paren-mode)
 
