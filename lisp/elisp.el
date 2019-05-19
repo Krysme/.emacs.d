@@ -4,6 +4,7 @@
 (popwin-mode t)
 
 (add-hook 'emacs-lisp-mode-hook 'show-paren-mode)
+(add-hook 'emacs-lisp-mode-hook 'company-mode)
 
 (defun lisp-comment-sexp ()
   "comment out the sexp at point."
