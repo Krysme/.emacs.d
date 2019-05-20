@@ -1,5 +1,6 @@
 
 
+(ensure-package 'ccls)
 
 
 (after-load 'lsp-mode
