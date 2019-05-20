@@ -8,6 +8,8 @@
     (define-key evil-visual-state-map (kbd "(") 'sp-wrap-round)))
 
 
+(after-load 'evil
+  (define-key evil-normal-state-map (kbd ":") 'helm-M-x))
 
 ;; normal mode navigation
 
