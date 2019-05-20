@@ -18,3 +18,5 @@
 (after-load 'rust-mode
   (after-load 'smartparens
 	(sp-local-pair 'rust-mode "'" nil :actions nil)))
+
+(add-hook 'conf-toml-mode-hook 'smartparens-mode)
