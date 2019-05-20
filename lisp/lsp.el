@@ -26,9 +26,7 @@
 
 
 (after-load 'lsp-mode
-  (setq lsp-prefer-flymake nil)
-  )
-
+  (setq lsp-prefer-flymake nil))
 
 (after-load 'lsp-mode
   (add-hook 'lsp-mode-hook (lambda () (flycheck-mode t)))
