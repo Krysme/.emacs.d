@@ -15,7 +15,7 @@
   (evil-collection-define-key 'normal 'dired-mode-map
 	" " nil
 	"k" nil
-    (kbd "<return>") 'dired-find-alternate-file
-	[tab] 'dired-find-alternate-file
+    (kbd "<return>") 'dired-find-file
+	[tab] 'dired-find-file
 	" k" 'kill-this-buffer
 	(kbd "C-l") 'dired-up-directory))
