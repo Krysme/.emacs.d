@@ -15,7 +15,7 @@
 (ensure-package 'smartparens)
 
 (after-load 'lsp-mode
-  (setq lsp-enable-snippet nil))
+  (setq lsp-enable-snippet t))
 
 (ensure-package 'flycheck)
 
