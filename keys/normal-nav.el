@@ -9,7 +9,8 @@
 
 
 (after-load 'evil
-  (define-key evil-normal-state-map (kbd ":") 'helm-M-x))
+  (define-key evil-normal-state-map (kbd ":") 'helm-M-x)
+  (define-key evil-normal-state-map (kbd "C-4") (lambda () (interactive) (ansi-term "/bin/bash"))))
 
 ;; normal mode navigation
 
