@@ -32,7 +32,6 @@
 (setq tab-always-indent 'complete)
 
 (add-hook 'after-change-major-mode-hook (lambda () (modify-syntax-entry ?_ "w")))
-;; sfdws_sdfassf
 (add-to-list 'default-frame-alist '(font . "Source Code Pro-15"))
 
 (unless (package-installed-p 'spacemacs-theme)
