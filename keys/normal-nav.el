@@ -9,7 +9,7 @@
 
 
 (after-load 'evil
-  (define-key evil-normal-state-map (kbd ":") 'helm-M-x)
+  (define-key evil-normal-state-map (kbd ":") 'helm-M-x))
 
 ;; normal mode navigation
 
