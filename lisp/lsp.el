@@ -1,6 +1,3 @@
-
-
-
 (defface lsp-ui-sideline-code-action
   '((t :foreground "red"))
   "Face used to highlight code action text."
@@ -10,7 +7,6 @@
 (ensure-package 'company-lsp)
 (ensure-package 'lsp-ui)
 (ensure-package 'yasnippet)
-(ensure-package 'ccls)
 
 (ensure-package 'smartparens)
 
@@ -18,11 +14,6 @@
   (setq lsp-enable-snippet t))
 
 (ensure-package 'flycheck)
-
-(setq-default c-basic-offset 4
-			  tab-width 4
-			  indent-tabs-mode t
-			  c-default-style "bsd")
 
 
 (after-load 'lsp-mode
