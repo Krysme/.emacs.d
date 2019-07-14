@@ -38,7 +38,6 @@
   (define-key evil-normal-state-map (kbd "SPC w o") 'delete-other-windows)
   (define-key evil-normal-state-map (kbd "SPC w q") 'kill-emacs)
   (define-key evil-normal-state-map (kbd "SPC k") 'kill-this-buffer)
-  (define-key evil-normal-state-map (kbd "SPC l") 'indent-buffer)
   (define-key evil-normal-state-map (kbd "SPC h") 'help-command)
 
   (define-key evil-normal-state-map (kbd "SPC c") 'helm-M-x)

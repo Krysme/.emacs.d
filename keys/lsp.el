@@ -4,6 +4,7 @@
   (add-hook
    'lsp-mode-hook
    (lambda () (interactive)
+	 (define-key lsp-mode-map (kbd "C-c C-f") 'lsp-format-buffer)
 	 (define-key evil-normal-state-map (kbd "SPC a") 'lsp-ui-sideline-apply-code-actions)
 	 (define-key evil-normal-state-map (kbd "SPC o") 'lsp-rename)
 	 (define-key evil-normal-state-map (kbd "SPC i") (lambda () (interactive)
