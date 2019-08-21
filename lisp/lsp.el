@@ -6,7 +6,6 @@
 (ensure-package 'lsp-mode)
 (ensure-package 'company-lsp)
 (ensure-package 'lsp-ui)
-(ensure-package 'yasnippet)
 
 (ensure-package 'smartparens)
 
