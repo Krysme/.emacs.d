@@ -6,4 +6,4 @@
 (global-set-key (kbd "C-x k") 'kill-this-buffer)
 (global-set-key (kbd "C-x C-c") 'kill-emacs)
 (global-set-key (kbd "M-c") nil)
-(global-set-key (kbd "C-4") (lambda () (interactive) (ansi-term "/bin/bash")))
+(global-set-key (kbd "C-4") (lambda () (interactive) (term "/bin/zsh")))
