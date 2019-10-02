@@ -3,26 +3,26 @@
 
 (defun load-directory (dir)
   (let ((load (lambda (f)
-		(load-file (concat (file-name-as-directory dir) f)))))
-    (mapc load (directory-files dir nil "\\.el$"))))
+				(load-file (concat (file-name-as-directory dir) f)))))
+	(mapc load (directory-files dir nil "\\.el$"))))
 
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 
 (require 'package)
 
 (setq package-archives
-      '(("melpa-stable" . "http://mirrors.163.com/elpa/melpa-stable/")
-	("melpa" . "http://mirrors.163.com/elpa/melpa/")
-	("gnu" . "http://mirrors.163.com/elpa/gnu/")))
+	  '(("melpa-stable" . "http://mirrors.163.com/elpa/melpa-stable/")
+		("melpa" . "http://mirrors.163.com/elpa/melpa/")
+		("gnu" . "http://mirrors.163.com/elpa/gnu/")))
 
 (package-initialize)
 
 (defun ensure-package (package)
   "ensure that PACKAGE is installed"
   (unless (package-installed-p package)
-    (unless package-archive-contents
-      (package-refresh-contents))
-    (package-install package))
+	(unless package-archive-contents
+	  (package-refresh-contents))
+	(package-install package))
   (require package))
 
 
