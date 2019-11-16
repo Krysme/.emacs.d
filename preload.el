@@ -1,5 +1,6 @@
 (defalias 'after-load 'with-eval-after-load)
 (setq debug-on-error t)
+(setq package-check-signature nil)
 
 (defun load-directory (dir)
   (let ((load (lambda (f)
