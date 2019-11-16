@@ -41,7 +41,7 @@
 (unless (package-installed-p 'poet-theme)
   (package-install 'poet-theme))
 
-(load-theme 'poet t)
+(load-theme 'spacemacs-dark t)
 
 (recentf-mode t)
 (setq recentf-max-menu-items 1000)
