@@ -12,3 +12,7 @@
   (define-key evil-visual-state-map (kbd "SPC g") 'google-search)
   (define-key evil-motion-state-map (kbd "SPC g") 'google-search)
   )
+
+(after-load 'smartparens
+  (add-hook 'smartparens-mode-hook (lambda) ()
+			(define-key evil-visual-state-map (kbd "{") 'sp-wrap-curly)))
