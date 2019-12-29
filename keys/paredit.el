@@ -16,4 +16,6 @@
 	(kbd "SPC s h") 'paredit-forward-slurp-sexp
 	(kbd "SPC s l") 'paredit-forward-barf-sexp
 	(kbd "SPC s r") 'paredit-raise-sexp
-	))
+	(kbd "C") (lambda () (interactive) (progn (paredit-kill) (evil-insert 1))))
+  (evil-collection-define-key 'insert 'paredit-mode-map
+	(kbd "C-w") 'paredit-backward-kill-word))
