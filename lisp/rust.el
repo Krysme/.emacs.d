@@ -10,7 +10,9 @@
 
 (after-load 'rust-mode
   (add-hook 'rust-mode-hook 'smartparens-mode)
-  (add-hook 'rust-mode-hook 'show-paren-mode))
+  (add-hook 'rust-mode-hook 'show-paren-mode)
+  (add-hook 'rust-mode-hook (lambda ()
+							  (setq tab-width 8))))
 
 (after-load 'rust-mode
   (rust-enable-format-on-save))
