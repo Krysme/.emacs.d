@@ -1,0 +1,2 @@
+
+(ensure-package 'vterm)
