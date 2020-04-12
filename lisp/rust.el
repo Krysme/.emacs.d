@@ -4,6 +4,8 @@
 (ensure-package 'cargo)
 
 
+(setq lsp-rust-server 'rls)
+
 (after-load 'lsp-mode
   (after-load 'rust-mode
     (add-hook 'rust-mode-hook 'lsp)))
