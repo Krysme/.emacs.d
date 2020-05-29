@@ -4,7 +4,7 @@
 (ensure-package 'cargo)
 
 
-(setq lsp-rust-server 'rls)
+(setq lsp-rust-server 'rust-analyzer)
 
 (after-load 'lsp-mode
   (after-load 'rust-mode
