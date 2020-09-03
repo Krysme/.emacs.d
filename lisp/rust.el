@@ -2,6 +2,7 @@
 (ensure-package 'rust-mode)
 (ensure-package 'flycheck-rust)
 (ensure-package 'cargo)
+(ensure-package 'ob-rust)
 
 
 (setq lsp-rust-server 'rust-analyzer)
