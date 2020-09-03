@@ -9,6 +9,9 @@
 (after-load 'lsp-mode
   (add-hook 'c++-mode-hook 'lsp))
 
+(after-load 'yasnippet-snippets
+	(add-hook 'c++-mode-hook 'yas-minor-mode-on))
+
 (add-hook 'c++-mode-hook 'smartparens-mode)
 (add-hook 'c-mode-hook 'smartparens-mode)
 
