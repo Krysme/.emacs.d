@@ -5,3 +5,5 @@
 (org-babel-do-load-languages
  'org-babel-load-languages '((C . t)
 							 (rust . t)))
+
+(setq org-hide-emphasis-markers t)
