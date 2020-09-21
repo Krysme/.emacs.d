@@ -11,10 +11,8 @@
 
 (require 'package)
 
-(setq package-archives
-	  '(("melpa-stable" . "http://mirrors.163.com/elpa/melpa-stable/")
-		("melpa" . "http://mirrors.163.com/elpa/melpa/")
-		("gnu" . "http://mirrors.163.com/elpa/gnu/")))
+(setq package-archives '(("gnu"   . "http://elpa.emacs-china.org/gnu/")
+                           ("melpa" . "http://elpa.emacs-china.org/melpa/")))
 
 (package-initialize)
 
