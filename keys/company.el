@@ -4,10 +4,15 @@
 
 
 (defun lisp-select-only-one-or-select-current()
+  "How tab should behave when completing code"
   (interactive)
   (unless  (> company-candidates-length 1)
-	(call-interactively 'company-select-next))
-  (call-interactively 'company-complete-selection))
+	  (call-interactively 'company-select-next)
+	  (call-interactively 'company-complete-selection))
+  (if company-selection
+	  (call-interactively 'company-complete-selection)
+	(call-interactively 'company-select-next)))
+
 
 (after-load 'company
   (define-key company-active-map [tab] 'lisp-select-only-one-or-select-current)

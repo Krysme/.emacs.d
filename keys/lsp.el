@@ -7,7 +7,7 @@
 	 (define-key lsp-mode-map (kbd "C-c C-f") 'lsp-format-buffer)
 	 (define-key lsp-mode-map (kbd "C-C C-c") 'lsp-ui-sideline-apply-code-actions)
 	 (define-key lsp-mode-map (kbd "C-C r") 'lsp-find-references)
-	 (define-key evil-normal-state-map (kbd "g d") 'lsp-find-definition)
+	 (define-key evil-normal-state-map (kbd "g d") 'xref-find-definitions)
 	 (define-key evil-normal-state-map (kbd "SPC o") 'lsp-rename)
 	 (define-key evil-normal-state-map (kbd "SPC i") (lambda () (interactive)
 													   (if krys-ui-doc-show
