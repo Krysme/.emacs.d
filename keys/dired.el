@@ -17,5 +17,6 @@
 	"k" nil
     (kbd "<return>") 'dired-find-file
 	[tab] 'dired-find-file
+	(kbd "TAB") 'dired-find-file
 	" k" 'kill-this-buffer
 	(kbd "C-l") 'dired-up-directory))
