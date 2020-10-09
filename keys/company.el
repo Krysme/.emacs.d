@@ -16,6 +16,7 @@
 
 (after-load 'company
   (define-key company-active-map [tab] 'lisp-select-only-one-or-select-current)
+  (define-key company-active-map (kbd "TAB") 'lisp-select-only-one-or-select-current)
   (define-key company-active-map (kbd "C-n") 'company-select-next)
   (define-key company-active-map (kbd "C-p") 'company-select-previous)
   (define-key company-active-map (kbd "M-p") nil)
