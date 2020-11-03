@@ -1,0 +1,1 @@
+(ensure-package 'helpful)
