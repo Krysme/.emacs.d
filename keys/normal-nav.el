@@ -44,7 +44,8 @@
   (define-key evil-normal-state-map (kbd "SPC f") 'helm-find-files)
   (define-key evil-normal-state-map (kbd "SPC r") 'helm-recentf)
   (define-key evil-normal-state-map (kbd "SPC b") 'helm-buffers-list)
-
+  
+  (define-key evil-normal-state-map (kbd "SPC SPC r") 'ripgrep-regexp)
 
 
   (define-key evil-normal-state-map (kbd "C-n") 'evil-next-line)
