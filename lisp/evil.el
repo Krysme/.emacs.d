@@ -26,3 +26,10 @@
 
 
 
+(after-load 'evil
+  (setq evil-goto-definition-functions
+		'(evil-goto-definition-xref
+		  evil-goto-definition-imenu
+		  evil-goto-definition-semantic
+		  evil-goto-definition-search)))
+
