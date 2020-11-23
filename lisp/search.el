@@ -6,3 +6,6 @@
  (concat "https://www.google.com/search?q="
 		 (buffer-substring-no-properties (region-beginning) (region-end)))))
 
+
+
+(ensure-package 'ripgrep)

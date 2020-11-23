@@ -10,6 +10,7 @@
 (setq lsp-rust-analyzer-display-chaining-hints t)
 (setq lsp-rust-analyzer-cargo-watch-command "clippy")
 (setq lsp-rust-all-features t)
+(setq lsp-rust-analyzer-cargo-load-out-dirs-from-check t)
 
 (after-load 'lsp-mode
   (after-load 'rust-mode

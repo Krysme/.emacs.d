@@ -15,4 +15,6 @@
 
 (after-load 'smartparens
   (add-hook 'smartparens-mode-hook (lambda) ()
-			(define-key evil-visual-state-map (kbd "{") 'sp-wrap-curly)))
+			(progn
+			  (define-key evil-visual-state-map (kbd "{") 'sp-wrap-curly)
+			  (define-key evil-visual-state-map (kbd "[") 'sp-wrap-square))))
