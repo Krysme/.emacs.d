@@ -14,12 +14,16 @@
 
 (ensure-package 'evil)
 (ensure-package 'evil-collection)
+(ensure-package 'undo-tree)
 (evil-collection-init)
+
+(after-load 'undo-tree (global-undo-tree-mode))
 
 (after-load 'evil
   (evil-mode))
 
 (after-load 'evil
+  (evil-set-undo-system 'undo-tree)
   (setq evil-insert-state-cursor 'bar)
   (setq evil-normal-state-cursor nil)
   (setq evil-move-cursor-back t))
