@@ -9,7 +9,8 @@
 (setq lsp-rust-analyzer-server-display-inlay-hints nil)
 (setq lsp-rust-analyzer-display-chaining-hints t)
 (setq lsp-rust-analyzer-cargo-watch-command "clippy")
-(setq lsp-rust-all-features t)
+(setq lsp-rust-all-features nil)
+(setq lsp-rust-features ["gpu"])
 (setq lsp-rust-analyzer-cargo-load-out-dirs-from-check t)
 
 (after-load 'lsp-mode
