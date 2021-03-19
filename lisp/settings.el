@@ -26,8 +26,8 @@
 
 (display-time-mode t)
 
-(unless (package-installed-p 'spacemacs-theme)
-  (package-install 'spacemacs-theme))
+;; (unless (package-installed-p 'spacemacs-theme)
+;;   (package-install 'spacemacs-theme))
 
 
 (setq tab-always-indent 'complete)
