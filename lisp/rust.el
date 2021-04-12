@@ -12,6 +12,8 @@
 (setq lsp-rust-analyzer-cargo-load-out-dirs-from-check t)
 (setq lsp-rust-features [])
 
+(setq lsp-response-timeout 100)
+
 
 (after-load 'lsp-mode
   (after-load 'rust-mode
