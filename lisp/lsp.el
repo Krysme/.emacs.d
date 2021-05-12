@@ -20,8 +20,8 @@
 
 (after-load 'lsp-mode
   (add-hook 'lsp-mode-hook (lambda () (flycheck-mode t)))
-  (add-hook 'lsp-mode-hook 'yas-minor-mode))
-
+  (add-hook 'lsp-mode-hook 'yas-minor-mode)
+  (add-hook 'lsp-mode-hook (lambda () (setq lsp-ui-doc-enable nil))))
 
 (after-load 'lsp-mode
   (add-hook 'lsp-mode-hook 'company-mode))
