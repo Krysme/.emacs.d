@@ -4,7 +4,7 @@
   :group 'lsp-ui-sideline)
 
 (ensure-package 'lsp-mode)
-(ensure-package 'company-lsp)
+;; (ensure-package 'company-lsp)
 (ensure-package 'lsp-ui)
 
 (ensure-package 'smartparens)
