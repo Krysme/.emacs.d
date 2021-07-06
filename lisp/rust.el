@@ -26,6 +26,9 @@
   (add-hook 'rust-mode-hook (lambda ()
 							  (setq tab-width 4))))
 
+(after-load 'cargo
+  (setq cargo-process--command-run "run --release")
+  (setq cargo-process--command-clippy "clippy"))
 (after-load 'rust-mode
   (rust-enable-format-on-save))
 
