@@ -15,4 +15,9 @@
       (eval-print-last-sexp)))
   (load bootstrap-file nil 'nomessage))
 
+;; use package integration
+(straight-use-package 'use-package)
+(use-package el-patch
+  :straight t)
+
 (provide 'preload)

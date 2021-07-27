@@ -37,6 +37,9 @@
 (fset 'yes-or-no-p 'y-or-n-p)
 
 
+(use-package helpful
+  :ensure t
+  :straight t)
 
 
 (provide 'settings)

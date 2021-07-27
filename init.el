@@ -5,7 +5,13 @@
 (require 'init-selectrum)
 (require 'init-elisp)
 (require 'init-vterm)
+(require 'init-rust)
+(require 'init-lsp)
+(require 'init-company)
+(require 'init-which-key)
+(require 'init-yasnippet)
 (require 'settings)
+
 
 
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
