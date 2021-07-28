@@ -19,14 +19,22 @@
 (add-hook 'rust-mode-hook (lambda ()
 			    (setq tab-width 4)))
 
+
+
+
 (after-load 'smartparens
-  (sp-local-pair 'rust-mode "'" nil :actions nil))
+  (sp-local-pair 'rust-mode "'" nil :actions nil)
+  (sp-local-pair 'rust-mode "<" ">"))
+  
+
+(add-hook 'rust-mode-hook
+	  (lambda () 
+	    (define-key rust-mode-map (kbd "C-c C-b") 'cargo-process-build)
+	    (define-key rust-mode-map (kbd "C-c C-r") 'cargo-process-run)))
 
 
-
-(after-load 'cargo
-  (setq cargo-process--command-run "run --release")
-  (setq cargo-process--command-clippy "clippy"))
+(setq cargo-process--command-run "run --release")
+(setq cargo-process--command-clippy "clippy")
 
 (after-load 'rust-mode
   (rust-enable-format-on-save))
