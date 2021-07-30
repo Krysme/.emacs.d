@@ -24,6 +24,9 @@
 (after-load 'evil
   (evil-global-set-key 'normal " d" 'dired-jump))
 
+
+(fset 'evil-visual-update-x-selection 'ignore)
+
 (after-load 'evil-collection
   (evil-collection-define-key 'normal 'dired-mode-map
     " " nil
@@ -51,6 +54,11 @@
 (define-key key-translation-map (kbd "<ESC>") (kbd "C-g"))
 
 ;; Normal mode
+(define-key evil-normal-state-map (kbd "SPC h f") #'helpful-callable)
+(define-key evil-normal-state-map (kbd "SPC h v") #'helpful-variable)
+(define-key evil-normal-state-map (kbd "SPC h k") #'helpful-key)
+
+
 (define-key evil-normal-state-map (kbd "C-s") 'save-buffer)
 (define-key evil-normal-state-map (kbd "SPC k") 'kill-this-buffer)
 (define-key evil-normal-state-map (kbd "C-h") 'evil-first-non-blank)
@@ -101,15 +109,15 @@
 
 (evil-define-motion evil-wrap-region-round () (utils-wrap-region "(" ")"))
 (define-key evil-visual-state-map (kbd "(") 'evil-wrap-region-round)
-(evil-define-motion evil-wrap-region-round () (utils-wrap-region "[" "]"))
-(define-key evil-visual-state-map (kbd "[") 'evil-wrap-region-round)
-(evil-define-motion evil-wrap-region-round () (utils-wrap-region "<" ">"))
-(define-key evil-visual-state-map (kbd "<") 'evil-wrap-region-round)
+(evil-define-motion evil-wrap-region-square () (utils-wrap-region "[" "]"))
+(define-key evil-visual-state-map (kbd "[") 'evil-wrap-region-square)
+(evil-define-motion evil-wrap-region-lt () (utils-wrap-region "<" ">"))
+(define-key evil-visual-state-map (kbd "<") 'evil-wrap-region-lt)
 
-(evil-define-motion evil-wrap-region-round () (utils-wrap-region "\"" "\""))
-(define-key evil-visual-state-map (kbd "\"" ) 'evil-wrap-region-round)
+(evil-define-motion evil-wrap-region-double-quote () (utils-wrap-region "\"" "\""))
+(define-key evil-visual-state-map (kbd "\"" ) 'evil-wrap-region-double-quote)
 
-(evil-define-motion evil-wrap-region-round () (utils-wrap-region "'" "'"))
-(define-key evil-visual-state-map (kbd "'" ) 'evil-wrap-region-round)
+(evil-define-motion evil-wrap-region-single-quote () (utils-wrap-region "'" "'"))
+(define-key evil-visual-state-map (kbd "'" ) 'evil-wrap-region-single-quote)
 
 (provide 'init-evil)
