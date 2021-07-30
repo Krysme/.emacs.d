@@ -10,7 +10,6 @@
 
 (straight-use-package 'consult)
 
-
 (use-package marginalia
   :straight t
   :ensure t
@@ -53,7 +52,22 @@
 
 
 
+(defun consult-line-reverse (&rest r)
+  "This is a reversed version of `consult-line'"
+  (advice-add 'consult--line-candidates :filter-return #'utils-reverse-cdr)
+  (apply 'consult-line r)
+  (advice-remove 'consult--line-candidates #'utils-reverse-cdr))
+
+
 (after-load 'evil
   (define-key evil-normal-state-map (kbd "SPC r") 'consult-recent-file))
+
+
+(after-load 'evil
+  (define-key evil-normal-state-map (kbd "#") (lambda () (interactive) (consult-line (word-at-point))))
+  (define-key evil-normal-state-map (kbd "*") (lambda () (interactive) (consult-line-reverse (word-at-point)))))
+
+
+
 
 (provide 'init-selectrum)

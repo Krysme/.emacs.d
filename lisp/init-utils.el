@@ -9,6 +9,13 @@
     (insert open)))
 
 
+(defun utils-reverse-cdr (l)
+  "reverse the list L starting from the second element"
+  (let* ((first (car l))
+	 (rest (cdr l))
+	 (rev-rest (reverse rest)))
+    (cons first rev-rest)))
+
 
 
 (provide 'init-utils)
