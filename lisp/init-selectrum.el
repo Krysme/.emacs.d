@@ -51,13 +51,18 @@
   (embark-collect-mode . consult-preview-at-point-mode))
 
 
-
-(defun consult-line-reverse (&rest r)
+(defun consult-line-reverse (&optional initial start)
   "This is a reversed version of `consult-line'"
-  (advice-add 'consult--line-candidates :filter-return #'utils-reverse-cdr)
-  (apply 'consult-line r)
-  (advice-remove 'consult--line-candidates #'utils-reverse-cdr))
-
+  (interactive (list nil (not (not current-prefix-arg))))
+  (let ((curr-line (line-number-at-pos (point) consult-line-numbers-widen))
+        (top (not (eq start consult-line-start-from-top))))
+    (consult--line
+     (or (consult--with-increased-gc
+	  (utils-reverse-cdr (consult--line-candidates top curr-line)))
+         (user-error "No lines"))
+     :curr-line (and (not top) curr-line)
+     :prompt (if top "Go to line from top: " "Go to line: ")
+     :initial initial)))
 
 (after-load 'evil
   (define-key evil-normal-state-map (kbd "SPC r") 'consult-recent-file))
@@ -68,6 +73,21 @@
   (define-key evil-normal-state-map (kbd "*") (lambda () (interactive) (consult-line-reverse (word-at-point)))))
 
 
+(defun selectrum-previous-candidate-cycle (&optional arg)
+  "Move selection ARG candidates up, cycle at the beginning."
+  (interactive "p")
+  (if (=  selectrum--current-candidate-index 0)
+      (selectrum-next-candidate 9999)
+    (selectrum-previous-candidate)))
 
+(defun selectrum-next-candidate-cycle (&optional arg)
+  "Move selection ARG candidates up, cycle at the beginning."
+  (interactive "p")
+  (if (= selectrum--current-candidate-index (- (length selectrum--refined-candidates) 1))
+      (selectrum-previous-candidate 9999)
+    (selectrum-next-candidate)))
+
+(define-key selectrum-minibuffer-map (kbd "C-p") 'selectrum-previous-candidate-cycle)
+(define-key selectrum-minibuffer-map (kbd "C-n") 'selectrum-next-candidate-cycle)
 
 (provide 'init-selectrum)
