@@ -16,8 +16,7 @@
 
 (add-hook 'rust-mode-hook 'smartparens-mode)
 (add-hook 'rust-mode-hook 'show-paren-mode)
-(add-hook 'rust-mode-hook (lambda ()
-			    (setq tab-width 4)))
+(add-hook 'rust-mode-hook (lambda () (setq tab-width 4)))
 
 
 
@@ -30,7 +29,12 @@
 (add-hook 'rust-mode-hook
 	  (lambda () 
 	    (define-key rust-mode-map (kbd "C-c C-b") 'cargo-process-build)
-	    (define-key rust-mode-map (kbd "C-c C-r") 'cargo-process-run)))
+	    (define-key rust-mode-map (kbd "C-c C-r") 'cargo-process-run)
+
+	    (define-key evil-visual-state-map (kbd "(") 'sp-wrap-round)
+	    (define-key evil-visual-state-map (kbd ")") 'sp-wrap-square)
+	    (define-key evil-visual-state-map (kbd "{") 'sp-wrap-curly)
+	    (define-key evil-visual-state-map (kbd "<") (lambda () (interactive) (sp-wrap-with-pair "<")))))
 
 
 (setq cargo-process--command-run "run --release")

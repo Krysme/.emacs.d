@@ -69,25 +69,37 @@
 
 
 (after-load 'evil
+  (define-key evil-normal-state-map (kbd "/") (lambda () (interactive) (consult-line)))
   (define-key evil-normal-state-map (kbd "#") (lambda () (interactive) (consult-line (word-at-point))))
   (define-key evil-normal-state-map (kbd "*") (lambda () (interactive) (consult-line-reverse (word-at-point)))))
+
 
 
 (defun selectrum-previous-candidate-cycle (&optional arg)
   "Move selection ARG candidates up, cycle at the beginning."
   (interactive "p")
   (if (=  selectrum--current-candidate-index 0)
-      (selectrum-next-candidate 9999)
+      (selectrum-next-candidate 99999)
     (selectrum-previous-candidate)))
 
 (defun selectrum-next-candidate-cycle (&optional arg)
   "Move selection ARG candidates up, cycle at the beginning."
   (interactive "p")
   (if (= selectrum--current-candidate-index (- (length selectrum--refined-candidates) 1))
-      (selectrum-previous-candidate 9999)
+      (selectrum-previous-candidate 99999)
     (selectrum-next-candidate)))
 
 (define-key selectrum-minibuffer-map (kbd "C-p") 'selectrum-previous-candidate-cycle)
 (define-key selectrum-minibuffer-map (kbd "C-n") 'selectrum-next-candidate-cycle)
+
+
+(defun selectrum-up-directory ()
+  "go up one directory"
+  (interactive)
+  (let ((directory (minibuffer-contents-no-properties)))
+    (delete-minibuffer-contents)
+    (insert (string-trim-right (if (string= directory "~/") (expand-file-name "~/") directory) "[^/]+/?"))))
+
+(define-key minibuffer-local-map (kbd "C-l") #'selectrum-up-directory)
 
 (provide 'init-selectrum)

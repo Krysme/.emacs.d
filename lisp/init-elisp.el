@@ -29,3 +29,7 @@
        (define-key evil-normal-state-map (kbd "SPC s ;") 'lisp-comment-sexp)
        (define-key evil-normal-state-map (kbd "SPC s h") 'paredit-backward-barf-sexp)
        (define-key evil-normal-state-map (kbd "SPC s s") 'paredit-split-sexp)))))
+
+(after-load 'smartparens
+  (sp-local-pair 'elisp-mode "'" nil :actions nil))
+

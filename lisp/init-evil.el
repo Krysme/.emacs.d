@@ -107,17 +107,5 @@
 (define-key evil-motion-state-map (kbd "C-y") (lambda () (interactive) (evil-scroll-line-up 5)))
 (define-key evil-motion-state-map (kbd "SPC") nil)
 
-(evil-define-motion evil-wrap-region-round () (utils-wrap-region "(" ")"))
-(define-key evil-visual-state-map (kbd "(") 'evil-wrap-region-round)
-(evil-define-motion evil-wrap-region-square () (utils-wrap-region "[" "]"))
-(define-key evil-visual-state-map (kbd "[") 'evil-wrap-region-square)
-(evil-define-motion evil-wrap-region-lt () (utils-wrap-region "<" ">"))
-(define-key evil-visual-state-map (kbd "<") 'evil-wrap-region-lt)
-
-(evil-define-motion evil-wrap-region-double-quote () (utils-wrap-region "\"" "\""))
-(define-key evil-visual-state-map (kbd "\"" ) 'evil-wrap-region-double-quote)
-
-(evil-define-motion evil-wrap-region-single-quote () (utils-wrap-region "'" "'"))
-(define-key evil-visual-state-map (kbd "'" ) 'evil-wrap-region-single-quote)
 
 (provide 'init-evil)
