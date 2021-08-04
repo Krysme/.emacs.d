@@ -100,7 +100,6 @@
 (defun consult-recent-file-no-action ()
   "Find recent file using `completing-read'."
   (interactive)
-  ;;(require 'consult)
   (find-file
    (consult--read
     (or (mapcar #'abbreviate-file-name recentf-list)
