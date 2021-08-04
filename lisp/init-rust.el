@@ -1,4 +1,4 @@
-
+;; -*- lexical-binding: t -*-
 (straight-use-package 'rust-mode)
 (straight-use-package 'cargo)
 

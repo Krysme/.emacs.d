@@ -1,4 +1,4 @@
-
+;; -*- lexical-binding: t -*-
 (straight-use-package 'selectrum)
 
 (selectrum-mode +1)
@@ -8,7 +8,9 @@
 (selectrum-prescient-mode +1)
 (prescient-persist-mode +1)
 
-(straight-use-package 'consult)
+(use-package consult
+  :straight t
+  :ensure t)
 
 (use-package marginalia
   :straight t
@@ -64,21 +66,24 @@
      :prompt (if top "Go to line from top: " "Go to line: ")
      :initial initial)))
 
-(after-load 'evil
-  (define-key evil-normal-state-map (kbd "SPC r") 'consult-recent-file))
-
 
 (after-load 'evil
   (define-key evil-normal-state-map (kbd "/") (lambda () (interactive) (consult-line)))
   (define-key evil-normal-state-map (kbd "#") (lambda () (interactive) (consult-line (word-at-point))))
-  (define-key evil-normal-state-map (kbd "*") (lambda () (interactive) (consult-line-reverse (word-at-point)))))
+  (define-key evil-normal-state-map (kbd "*") (lambda () (interactive) (consult-line-reverse (word-at-point))))
+  (define-key evil-normal-state-map (kbd "SPC r") 'consult-recent-file-no-action))
 
+(setq selectrum-top-index -1)
+(advice-add 'consult-line :after (lambda (&rest _) (setq selectrum-top-index -1)))
+(advice-add 'consult-line :before (lambda (&rest _) (setq selectrum-top-index 0)))
 
+;; (advice--interactive-form)
 
+;; ugly hack for cycling
 (defun selectrum-previous-candidate-cycle (&optional arg)
   "Move selection ARG candidates up, cycle at the beginning."
   (interactive "p")
-  (if (=  selectrum--current-candidate-index 0)
+  (if (=  selectrum--current-candidate-index selectrum-top-index)
       (selectrum-next-candidate 99999)
     (selectrum-previous-candidate)))
 
@@ -92,6 +97,21 @@
 (define-key selectrum-minibuffer-map (kbd "C-p") 'selectrum-previous-candidate-cycle)
 (define-key selectrum-minibuffer-map (kbd "C-n") 'selectrum-next-candidate-cycle)
 
+(defun consult-recent-file-no-action ()
+  "Find recent file using `completing-read'."
+  (interactive)
+  ;;(require 'consult)
+  (find-file
+   (consult--read
+    (or (mapcar #'abbreviate-file-name recentf-list)
+        (user-error "No recent files, `recentf-mode' is %s"
+                    (if recentf-mode "on" "off")))
+    :prompt "Find recent file: "
+    :sort nil
+    :require-match t
+    :category 'file
+    :state nil
+    :history 'file-name-history)))
 
 (defun selectrum-up-directory ()
   "go up one directory"

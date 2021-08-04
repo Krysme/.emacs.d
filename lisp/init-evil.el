@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t -*-
 (setq evil-want-C-i-jump t)
 (setq evil-want-C-u-scroll t)
 (setq evil-want-keybinding nil)
