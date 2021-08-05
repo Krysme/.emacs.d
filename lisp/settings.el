@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t -*-
 (setq inhibit-startup-message t)
 
 (setq ring-bell-function 'ignore)

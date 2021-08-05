@@ -7,6 +7,7 @@
 (require 'init-evil)
 (require 'init-selectrum)
 (require 'init-elisp)
+(require 'init-paredit)
 (require 'init-vterm)
 (require 'init-rust)
 (require 'init-lsp)

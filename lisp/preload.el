@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t -*-
 (defalias 'after-load 'with-eval-after-load)
 
 

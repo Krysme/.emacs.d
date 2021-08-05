@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t -*-
 (defface lsp-ui-sideline-code-action
   '((t :foreground "red"))
   "Face used to highlight code action text."

@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t -*-
 (defun utils-wrap-region (open close)
   "wrap region with OPEN and CLOSE"
   (interactive)
