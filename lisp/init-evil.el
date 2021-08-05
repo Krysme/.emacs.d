@@ -58,10 +58,19 @@
 (define-key evil-normal-state-map (kbd "SPC h f") #'helpful-callable)
 (define-key evil-normal-state-map (kbd "SPC h v") #'helpful-variable)
 (define-key evil-normal-state-map (kbd "SPC h k") #'helpful-key)
+(define-key evil-normal-state-map (kbd "SPC h o") #'helpful-symbol)
 
+
+(define-key evil-normal-state-map (kbd "SPC k") 'kill-this-buffer)
+(define-key evil-normal-state-map (kbd "SPC x") #'execute-extended-command)
+(define-key evil-normal-state-map (kbd "SPC b") #'switch-to-buffer)
+
+(define-key evil-normal-state-map (kbd "SPC , r")
+  (lambda (&optional d p)
+    (interactive "DSearch Directory:\nP")
+    (consult-ripgrep d p)))
 
 (define-key evil-normal-state-map (kbd "C-s") 'save-buffer)
-(define-key evil-normal-state-map (kbd "SPC k") 'kill-this-buffer)
 (define-key evil-normal-state-map (kbd "C-h") 'evil-first-non-blank)
 (define-key evil-normal-state-map (kbd "C-l") 'evil-end-of-line)
 (define-key evil-normal-state-map (kbd "C-j") (lambda () (interactive) (evil-next-line 5)))
