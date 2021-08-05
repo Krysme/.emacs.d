@@ -21,4 +21,8 @@
 (use-package el-patch
   :straight t)
 
+(setq gc-original-threashold gc-cons-threshold)
+(setq gc-cons-threshold (* 1024 1024 1024))
+
+(add-hook 'after-init-hook (lambda () (setq gc-cons-threshold gc-original-threashold)))
 (provide 'preload)
