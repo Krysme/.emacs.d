@@ -20,7 +20,7 @@
      (lambda ()
        (define-key evil-normal-state-map (kbd "SPC s w") 'transpose-sexps)
        (define-key evil-normal-state-map (kbd "SPC s l") 'paredit-forward-slurp-sexp)
-       (define-key evil-normal-state-map (kbd "SPC b l") 'paredit-forward-barf-sexp)
+       (define-key evil-normal-state-map (kbd "SPC a l") 'paredit-forward-barf-sexp)
        (define-key evil-normal-state-map (kbd "SPC s f") 'paredit-forward-barf-sexp)
        (define-key evil-normal-state-map (kbd "SPC s r") 'paredit-raise-sexp)
        (define-key evil-normal-state-map (kbd "SPC s ;") 'lisp-comment-sexp)
