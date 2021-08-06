@@ -1,0 +1,7 @@
+
+**/**
+!.gitignore
+!init.el
+!/lisp
+!/lisp/**
+!/straight/build-cache.el

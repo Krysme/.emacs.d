@@ -9,6 +9,7 @@
 (require 'init-elisp)
 (require 'init-paredit)
 (require 'init-vterm)
+(require 'init-c-cpp)
 (require 'init-rust)
 (require 'init-lsp)
 (require 'init-magit)
