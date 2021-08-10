@@ -18,8 +18,8 @@
     (add-hook
      'paredit-mode-hook
      (lambda ()
-       (define-key evil-insert-state-map (kbd "C-w") 'paredit-backward-kill-word)
-       (define-key evil-normal-state-map (kbd "C") (lambda () (interactive) (call-interactively 'paredit-kill) (call-interactively 'evil-insert)))
+       ;; (define-key evil-insert-state-map (kbd "C-w") 'paredit-backward-kill-word)
+       ;; (define-key evil-normal-state-map (kbd "C") (lambda () (interactive) (call-interactively 'paredit-kill) (call-interactively 'evil-insert)))
        (define-key evil-normal-state-map (kbd "SPC s w") 'transpose-sexps)
        (define-key evil-normal-state-map (kbd "SPC s l") 'paredit-forward-slurp-sexp)
        (define-key evil-normal-state-map (kbd "SPC a l") 'paredit-forward-barf-sexp)
