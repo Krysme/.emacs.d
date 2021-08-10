@@ -6,6 +6,8 @@
 (straight-use-package 'selectrum-prescient)
 
 (selectrum-prescient-mode +1)
+(setq selectrum-fix-vertical-window-height t)
+
 (prescient-persist-mode +1)
 
 (use-package consult
