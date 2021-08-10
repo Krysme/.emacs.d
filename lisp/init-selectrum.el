@@ -52,7 +52,6 @@
   :hook
   (embark-collect-mode . consult-preview-at-point-mode))
 
-
 (defun consult-line-reverse (&optional initial start)
   "This is a reversed version of `consult-line'"
   (interactive (list nil (not (not current-prefix-arg))))
@@ -76,17 +75,14 @@
   (define-key evil-normal-state-map (kbd "*") (lambda () (interactive) (consult-line-reverse (word-at-point))))
   (define-key evil-normal-state-map (kbd "SPC r") 'consult-recent-file-no-action))
 
-(setq selectrum-top-index -1)
-(advice-add 'consult-line :after (lambda (&rest _) (setq selectrum-top-index -1)))
-(advice-add 'consult-line :before (lambda (&rest _) (setq selectrum-top-index 0)))
-
 ;; (advice--interactive-form)
 
 ;; ugly hack for cycling
 (defun selectrum-previous-candidate-cycle (&optional arg)
   "Move selection ARG candidates up, cycle at the beginning."
   (interactive "p")
-  (if (=  selectrum--current-candidate-index selectrum-top-index)
+  (if (= selectrum--current-candidate-index
+	  (if (string-match-p "consult-line" (format "%s" selectrum--last-command)) 0 -1))
       (selectrum-next-candidate 99999)
     (selectrum-previous-candidate)))
 
@@ -94,9 +90,21 @@
   "Move selection ARG candidates up, cycle at the beginning."
   (interactive "p")
   (if (= selectrum--current-candidate-index (- (length selectrum--refined-candidates) 1))
-      (selectrum-previous-candidate 99999)
+      (progn 
+	(selectrum-previous-candidate 99999)
+	(when (string-match-p "consult-line" (format "%s" selectrum--last-command))
+	  (selectrum-next-candidate)))
     (selectrum-next-candidate)))
 
+(defun selectrum-super-tab ()
+  "if the minibuffer contents stay the same after tab, then select it"
+  (interactive)
+  (let ((content (minibuffer-contents-no-properties)))
+    (selectrum-insert-current-candidate)
+    (when (string-equal content (minibuffer-contents-no-properties))
+	(selectrum-select-current-candidate))))
+
+(define-key selectrum-minibuffer-map (kbd "TAB") 'selectrum-super-tab)
 (define-key selectrum-minibuffer-map (kbd "C-p") 'selectrum-previous-candidate-cycle)
 (define-key selectrum-minibuffer-map (kbd "C-n") 'selectrum-next-candidate-cycle)
 
@@ -121,6 +129,7 @@
   (let ((directory (minibuffer-contents-no-properties)))
     (delete-minibuffer-contents)
     (insert (string-trim-right (if (string= directory "~/") (expand-file-name "~/") directory) "[^/]+/?"))))
+
 
 (define-key minibuffer-local-map (kbd "C-l") #'selectrum-up-directory)
 
