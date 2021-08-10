@@ -17,16 +17,18 @@
   (after-load 'evil
     (add-hook
      'paredit-mode-hook
-     (lambda ()
-       ;; (define-key evil-insert-state-map (kbd "C-w") 'paredit-backward-kill-word)
-       ;; (define-key evil-normal-state-map (kbd "C") (lambda () (interactive) (call-interactively 'paredit-kill) (call-interactively 'evil-insert)))
-       (define-key evil-normal-state-map (kbd "SPC s w") 'transpose-sexps)
-       (define-key evil-normal-state-map (kbd "SPC s l") 'paredit-forward-slurp-sexp)
-       (define-key evil-normal-state-map (kbd "SPC a l") 'paredit-forward-barf-sexp)
-       (define-key evil-normal-state-map (kbd "SPC s f") 'paredit-forward-barf-sexp)
-       (define-key evil-normal-state-map (kbd "SPC s r") 'paredit-raise-sexp)
-       (define-key evil-normal-state-map (kbd "SPC s ;") 'lisp-comment-sexp)
-       (define-key evil-normal-state-map (kbd "SPC s h") 'paredit-backward-barf-sexp)
-       (define-key evil-normal-state-map (kbd "SPC s s") 'paredit-split-sexp)))))
+     )))
+
+
+
+(defun paredit-custom-leader-keys()
+  (define-key evil-normal-state-map (kbd "<leader>sw") 'transpose-sexps)
+  (define-key evil-normal-state-map (kbd "<leader>sl") 'paredit-forward-slurp-sexp)
+  (define-key evil-normal-state-map (kbd "<leader>al") 'paredit-forward-barf-sexp)
+  (define-key evil-normal-state-map (kbd "<leader>sf") 'paredit-forward-barf-sexp)
+  (define-key evil-normal-state-map (kbd "<leader>sr") 'paredit-raise-sexp)
+  (define-key evil-normal-state-map (kbd "<leader>s;") 'lisp-comment-sexp)
+  (define-key evil-normal-state-map (kbd "<leader>sh") 'paredit-backward-barf-sexp)
+  (define-key evil-normal-state-map (kbd "<leader>ss") 'paredit-split-sexp))
 
 (provide 'init-paredit)
