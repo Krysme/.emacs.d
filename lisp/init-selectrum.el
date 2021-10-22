@@ -68,8 +68,16 @@
      :initial initial)))
 
 
+(setq prescient-literal-commands '(find-file execute-extended-command))
 
-(setq prescient-filter-method '(literal fuzzy))
+
+(setq prescient-filter-method (lambda ()
+				(if 
+				    (seq-find (lambda (x) (eq current-minibuffer-command x)) prescient-literal-commands)
+				    'fuzzy
+				  'literal)))
+
+(setq prescient-filter-method '(fuzzy))
 
 (after-load 'evil
   (define-key evil-normal-state-map (kbd "/") (lambda () (interactive) (consult-line)))
