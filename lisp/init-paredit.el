@@ -13,12 +13,6 @@
     (mark-sexp)
     (paredit-comment-dwim)))
 
-(after-load 'paredit
-  (after-load 'evil
-    (add-hook
-     'paredit-mode-hook
-     )))
-
 
 
 (defun paredit-custom-leader-keys()
