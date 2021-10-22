@@ -73,7 +73,8 @@
 
 (setq prescient-filter-method (lambda ()
 				(if 
-				    (seq-find (lambda (x) (eq current-minibuffer-command x)) prescient-literal-commands)
+				    (seq-find
+				     (lambda (x) (eq current-minibuffer-command x)) prescient-literal-commands)
 				    'fuzzy
 				  'literal)))
 
@@ -84,8 +85,6 @@
   (define-key evil-normal-state-map (kbd "#") (lambda () (interactive) (consult-line (word-at-point))))
   (define-key evil-normal-state-map (kbd "*") (lambda () (interactive) (consult-line-reverse (word-at-point))))
   (define-key evil-normal-state-map (kbd "<leader>r") 'consult-recent-file-no-action))
-
-;; (advice--interactive-form)
 
 ;; ugly hack for cycling
 (defun selectrum-previous-candidate-cycle (&optional arg)
