@@ -1,6 +1,7 @@
 ;; -*- lexical-binding: t -*-
 (straight-use-package 'rust-mode)
 (straight-use-package 'cargo)
+(straight-use-package 'toml-mode)
 
 (setq lsp-rust-server 'rust-analyzer)
 (setq lsp-rust-analyzer-server-display-inlay-hints nil)
@@ -20,10 +21,21 @@
 
 
 
+(add-hook 'toml-mode-hook 'smartparens-mode)
+
+(add-hook 'toml-mode-hook (lambda ()
+			    (define-key evil-visual-state-map (kbd "(") 'sp-wrap-round)
+			    (define-key evil-visual-state-map (kbd ")") 'sp-wrap-square)
+			    (define-key evil-visual-state-map (kbd "{") 'sp-wrap-curly)
+			    (define-key evil-visual-state-map (kbd "\"") (lambda () (interactive) (sp-wrap-with-pair "\"")))))
+
 
 (after-load 'smartparens
   (sp-local-pair 'rust-mode "'" nil :actions nil)
-  (sp-local-pair 'rust-mode "<" ">"))
+  (sp-local-pair 'rust-mode "<" ">")
+  (sp-local-pair 'toml-mode "\"" "\"")
+  (sp-local-pair 'rust-mode "\"" "\"")
+  )
   
 
 (add-hook 'rust-mode-hook
