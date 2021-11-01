@@ -78,8 +78,6 @@
 				    'fuzzy
 				  'literal)))
 
-(setq prescient-filter-method '(fuzzy))
-
 (after-load 'evil
   (define-key evil-normal-state-map (kbd "/") (lambda () (interactive) (consult-line)))
   (define-key evil-normal-state-map (kbd "#") (lambda () (interactive) (consult-line (word-at-point))))
