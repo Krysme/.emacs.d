@@ -27,8 +27,8 @@
    (define-key lsp-mode-map (kbd "C-C C-c") 'lsp-ui-sideline-apply-code-actions)
    (define-key lsp-mode-map (kbd "C-C r") 'lsp-find-references)
    (after-load 'evil 
-     (define-key evil-normal-state-map (kbd "<leader>o") 'lsp-rename)
-     (define-key evil-normal-state-map (kbd "<leader>i") (lambda () (interactive)
+     (define-key evil-normal-state-map (kbd "SPC o") 'lsp-rename)
+     (define-key evil-normal-state-map (kbd "SPC i") (lambda () (interactive)
 						       (if krys-ui-doc-show
 							   (progn
 							     (lsp-ui-doc-enable nil)

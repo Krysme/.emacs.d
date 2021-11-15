@@ -2,6 +2,6 @@
 (straight-use-package 'evil-magit)
 
 (after-load 'evil 
-  (define-key evil-normal-state-map (kbd "<leader>mg") 'magit))
+  (define-key evil-normal-state-map (kbd "SPC mg") 'magit))
 
 (provide 'init-magit)

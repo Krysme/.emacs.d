@@ -19,7 +19,8 @@
 
 ;; key redefinition
 (after-load 'dired
-  (global-set-key (kbd "C-x d") nil))
+  (global-set-key (kbd "C-x d") nil)
+  )
 
 ;; dired entry
 (after-load 'evil
@@ -52,22 +53,21 @@
 
 ;; keys
 
-(evil-set-leader 'normal (kbd "SPC"))
 
 (define-key key-translation-map (kbd "<ESC>") (kbd "C-g"))
 
 ;; Normal mode
-(define-key evil-normal-state-map (kbd "<leader>hf") #'helpful-callable)
-(define-key evil-normal-state-map (kbd "<leader>hv") #'helpful-variable)
-(define-key evil-normal-state-map (kbd "<leader>hk") #'helpful-key)
-(define-key evil-normal-state-map (kbd "<leader>ho") #'helpful-symbol)
+(define-key evil-normal-state-map (kbd "SPC hf") #'helpful-callable)
+(define-key evil-normal-state-map (kbd "SPC hv") #'helpful-variable)
+(define-key evil-normal-state-map (kbd "SPC hk") #'helpful-key)
+(define-key evil-normal-state-map (kbd "SPC ho") #'helpful-symbol)
 
 
-(define-key evil-normal-state-map (kbd "<leader>k") 'kill-this-buffer)
-(define-key evil-normal-state-map (kbd "<leader>x") #'execute-extended-command)
-(define-key evil-normal-state-map (kbd "<leader>b") #'switch-to-buffer)
+(define-key evil-normal-state-map (kbd "SPC k") 'kill-this-buffer)
+(define-key evil-normal-state-map (kbd "SPC x") #'execute-extended-command)
+(define-key evil-normal-state-map (kbd "SPC b") #'switch-to-buffer)
 
-(define-key evil-normal-state-map (kbd "<leader>,r")
+(define-key evil-normal-state-map (kbd "SPC ,r")
   (lambda (&optional d p)
     (interactive "DSearch Directory:\nP")
     (consult-ripgrep d p)))
@@ -79,20 +79,20 @@
 (define-key evil-normal-state-map (kbd "C-k") (lambda () (interactive) (evil-previous-line 5)))
 (define-key evil-normal-state-map (kbd "C-e") (lambda () (interactive) (evil-scroll-line-down 5)))
 (define-key evil-normal-state-map (kbd "C-y") (lambda () (interactive) (evil-scroll-line-up 5)))
-(define-key evil-normal-state-map (kbd "<leader>k") 'kill-this-buffer)
+(define-key evil-normal-state-map (kbd "SPC k") 'kill-this-buffer)
 
-(define-key evil-normal-state-map (kbd "<leader>wo") 'delete-other-windows)
-(define-key evil-normal-state-map (kbd "<leader>wq") 'kill-emacs)
-(define-key evil-normal-state-map (kbd "<leader>wv") 'evil-window-vsplit)
-(define-key evil-normal-state-map (kbd "<leader>ws") 'evil-window-split)
-(define-key evil-normal-state-map (kbd "<leader>wj") 'evil-window-down)
-(define-key evil-normal-state-map (kbd "<leader>wk") 'evil-window-up)
-(define-key evil-normal-state-map (kbd "<leader>wh") 'evil-window-left)
-(define-key evil-normal-state-map (kbd "<leader>wl") 'evil-window-right)
+(define-key evil-normal-state-map (kbd "SPC wo") 'delete-other-windows)
+(define-key evil-normal-state-map (kbd "SPC wq") 'kill-emacs)
+(define-key evil-normal-state-map (kbd "SPC wv") 'evil-window-vsplit)
+(define-key evil-normal-state-map (kbd "SPC ws") 'evil-window-split)
+(define-key evil-normal-state-map (kbd "SPC wj") 'evil-window-down)
+(define-key evil-normal-state-map (kbd "SPC wk") 'evil-window-up)
+(define-key evil-normal-state-map (kbd "SPC wh") 'evil-window-left)
+(define-key evil-normal-state-map (kbd "SPC wl") 'evil-window-right)
 
 ;; File
 
-(define-key evil-normal-state-map (kbd "<leader>f") 'find-file)
+(define-key evil-normal-state-map (kbd "SPC f") 'find-file)
 
 
 

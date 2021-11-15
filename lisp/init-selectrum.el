@@ -79,10 +79,10 @@
 				  'literal)))
 
 (after-load 'evil
-  (define-key evil-normal-state-map (kbd "<leader>/") (lambda () (interactive) (consult-line)))
-  (define-key evil-normal-state-map (kbd "<leader>#") (lambda () (interactive) (consult-line (word-at-point))))
-  (define-key evil-normal-state-map (kbd "<leader>*") (lambda () (interactive) (consult-line-reverse (word-at-point))))
-  (define-key evil-normal-state-map (kbd "<leader>r") 'consult-recent-file-no-action))
+  (define-key evil-normal-state-map (kbd "SPC /") (lambda () (interactive) (consult-line)))
+  (define-key evil-normal-state-map (kbd "SPC #") (lambda () (interactive) (consult-line (word-at-point))))
+  (define-key evil-normal-state-map (kbd "SPC *") (lambda () (interactive) (consult-line-reverse (word-at-point))))
+  (define-key evil-normal-state-map (kbd "SPC r") 'consult-recent-file-no-action))
 
 ;; ugly hack for cycling
 (defun selectrum-previous-candidate-cycle (&optional arg)
