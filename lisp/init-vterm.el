@@ -5,7 +5,7 @@
 (add-hook 'vterm-mode-hook (lambda () (evil-emacs-state)))
 
 
-(global-set-key (kbd "C-4") 'vterm-other-window)
+(global-set-key (kbd (if (display-graphic-p)  "C-4" "C-\\")) 'vterm-other-window)
 
 (provide 'init-vterm)
 
