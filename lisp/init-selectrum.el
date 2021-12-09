@@ -74,7 +74,7 @@
 (setq prescient-filter-method (lambda ()
 				(if 
 				    (seq-find
-				     (lambda (x) (eq current-minibuffer-command x)) prescient-literal-commands)
+				     (lambda (x) (eq (if (>=  emacs-major-version 28)  'current-minibuffer-command 'this-command) x)) prescient-literal-commands)
 				    'fuzzy
 				  'literal)))
 
