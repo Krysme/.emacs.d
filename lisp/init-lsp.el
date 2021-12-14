@@ -17,6 +17,8 @@
   (add-hook 'lsp-mode-hook 'yas-minor-mode))
 
 (setq krys-ui-doc-show t)
+(setq lsp-ui-doc-show-with-cursor t)
+(setq lsp-ui-doc-position 'at-point)
 (setq lsp-ui-sideline-show-code-actions t)
 
 ;; keys

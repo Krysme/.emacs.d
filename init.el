@@ -17,7 +17,9 @@
 (require 'init-utils)
 (require 'init-which-key)
 (require 'init-yasnippet)
+(require 'init-treemacs)
 (require 'settings)
+
 
 
 
