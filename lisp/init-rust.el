@@ -34,8 +34,7 @@
   (sp-local-pair 'rust-mode "'" nil :actions nil)
   (sp-local-pair 'rust-mode "<" ">")
   (sp-local-pair 'toml-mode "\"" "\"")
-  (sp-local-pair 'rust-mode "\"" "\"")
-  )
+  (sp-local-pair 'rust-mode "\"" "\""))
   
 
 (add-hook 'rust-mode-hook
