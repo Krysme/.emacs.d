@@ -15,11 +15,7 @@
   :ensure t
   :straight t
   :init
-  ;; Configure a custom style dispatcher (see the Consult wiki)
-  ;; (setq orderless-style-dispatchers '(+orderless-dispatch)
-  ;;       orderless-component-separator #'orderless-escapable-split-on-space)
   (setq completion-styles '(orderless)
-	completion-category-defaults nil
 	completion-category-overrides '((file (styles partial-completion)))))
 
 (use-package consult
@@ -75,6 +71,17 @@
     (insert (string-trim-right (if (string= directory "~/") (expand-file-name "~/") directory) "[^/]+/?"))))
 
 
-(define-key minibuffer-local-map (kbd "C-l") #'vertico-up-directory)
+(define-key vertico-map (kbd "C-l") 'vertico-up-directory)
+(define-key vertico-map (kbd "TAB") 'vertico-super-tab)
+
+
+(defun vertico-super-tab ()
+  "if the minibuffer contents stay the same after tab, then select it"
+  (interactive)
+  (let ((content (minibuffer-contents-no-properties)))
+    (vertico-insert)
+    (when (string-equal content (minibuffer-contents-no-properties))
+	(vertico-exit))))
+
 
 (provide 'init-vertico)
