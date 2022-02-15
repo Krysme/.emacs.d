@@ -5,7 +5,8 @@
 (require 'preload)
 
 (require 'init-evil)
-(require 'init-selectrum)
+;(require 'init-selectrum)
+(require 'init-vertico)
 (require 'init-elisp)
 (require 'init-paredit)
 (require 'init-vterm)
