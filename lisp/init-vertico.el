@@ -11,10 +11,6 @@
 		      :init
 		      (savehist-mode))
 
-
-
-
-
 (use-package orderless
   :ensure t
   :straight t
@@ -78,7 +74,6 @@
 (define-key vertico-map (kbd "C-l") 'vertico-up-directory)
 (define-key vertico-map (kbd "TAB") 'vertico-super-tab)
 
-
 (defun vertico-super-tab ()
   "if the minibuffer contents stay the same after tab, then select it"
   (interactive)
@@ -86,6 +81,5 @@
     (vertico-insert)
     (when (string-equal content (minibuffer-contents-no-properties))
 	(vertico-exit))))
-
 
 (provide 'init-vertico)
