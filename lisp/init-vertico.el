@@ -1,4 +1,12 @@
-(straight-use-package 'vertico)
+(use-package vertico
+  :straight t
+  :ensure t
+  :init
+  (vertico-mode) 
+  (setq vertico-count 10)
+  (setq vertico-resize nil)
+  (setq vertico-cycle t))
+
 (straight-use-package 'savehist
 		      :init
 		      (savehist-mode))
@@ -6,10 +14,6 @@
 
 
 
-(vertico-mode)
-(setq vertico-count 10)
-(setq vertico-resize t)
-(setq vertico-cycle t)
 
 (use-package orderless
   :ensure t
