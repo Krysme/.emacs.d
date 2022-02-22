@@ -71,7 +71,24 @@
     (insert (string-trim-right (if (string= directory "~/") (expand-file-name "~/") directory) "[^/]+/?"))))
 
 
+
+(setq sudo-prefix "/sudo::")
+
+(defun vertico-sudo ()
+  "enable sudo functionality"
+  (interactive)
+  (let* ((buffer-content (minibuffer-contents-no-properties))
+	 (is-sudo (string-prefix-p sudo-prefix buffer-content))
+	 (changed-dir (if is-sudo
+			  (substring buffer-content (length sudo-prefix))
+			(concat sudo-prefix (expand-file-name buffer-content)))))
+    (delete-minibuffer-contents)
+    (insert changed-dir)))
+
+
+
 (define-key vertico-map (kbd "C-l") 'vertico-up-directory)
+(define-key vertico-map (kbd "C-s") 'vertico-sudo)
 (define-key vertico-map (kbd "TAB") 'vertico-super-tab)
 
 (defun vertico-super-tab ()
