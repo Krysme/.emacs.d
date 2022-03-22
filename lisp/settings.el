@@ -48,7 +48,11 @@
   :config
   (dashboard-setup-startup-hook))
 
+(use-package json-mode
+  :ensure t
+  :straight t)
 
+(add-hook 'json-mode-hook 'smartparens-mode)
 
 (global-set-key (kbd "C-w") 'backward-kill-word)
 
