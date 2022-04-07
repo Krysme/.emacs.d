@@ -19,6 +19,7 @@
 (require 'init-yasnippet)
 (require 'init-treemacs)
 (require 'settings)
+(require 'init-python)
 
 
 

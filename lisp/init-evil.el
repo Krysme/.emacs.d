@@ -42,9 +42,9 @@
 
 ;; keys
 
-;; (add-hook 'view-mode-hook 
-;; 	  (lambda () 
-;; 	    (interactive) 
+;; (add-hook 'view-mode-hook
+;; 	  (lambda ()
+;; 	    (interactive)
 ;; 	    (define-key view-mode-map (kbd "SPC") nil)))
 
 (define-key key-translation-map (kbd "<ESC>") 
