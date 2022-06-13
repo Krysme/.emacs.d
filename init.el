@@ -18,7 +18,9 @@
 (require 'init-which-key)
 (require 'init-yasnippet)
 (require 'init-treemacs)
+(require 'init-adoc)
 (require 'settings)
+
 (require 'init-python)
 
 
