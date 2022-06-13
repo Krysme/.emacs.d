@@ -30,6 +30,7 @@
    (define-key lsp-mode-map (kbd "C-C r") 'lsp-find-references)
    (after-load 'evil 
      (define-key evil-normal-state-map (kbd "SPC o") 'lsp-rename)
+     (define-key evil-visual-state-map (kbd "v") 'lsp-extend-selection)
      (define-key evil-normal-state-map (kbd "SPC i") (lambda () (interactive)
 						       (if krys-ui-doc-show
 							   (progn
