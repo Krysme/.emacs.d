@@ -14,7 +14,7 @@
 
 (setq lsp-response-timeout 100)
 
-(add-hook 'rust-mode-hook 'lsp)
+(add-hook 'rust-mode-hook 'lsp-deferred)
 
 (add-hook 'rust-mode-hook 'smartparens-mode)
 (add-hook 'rust-mode-hook 'show-paren-mode)
