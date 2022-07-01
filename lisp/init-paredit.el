@@ -29,8 +29,7 @@
   (define-key evil-normal-state-map (kbd "SPC sh") 'paredit-backward-barf-sexp) 
   (define-key evil-normal-state-map (kbd "SPC ss") 'paredit-split-sexp) 
   (define-key evil-normal-state-map (kbd "D") 'paredit-kill) 
-  (define-key evil-normal-state-map (kbd "C") 'paredit-kill-and-insert)
-  (define-key evil-insert-state-map (kbd "C-w") 'paredit-backward-kill-word))
+  (define-key evil-normal-state-map (kbd "C") 'paredit-kill-and-insert))
 
 
 (provide 'init-paredit)
