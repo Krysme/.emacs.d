@@ -2,6 +2,7 @@
 (defalias 'after-load 'with-eval-after-load
   )
 
+(setq native-comp-async-report-warnings-errors nil)
 
 ;; bootstrap straight.el
 (defvar bootstrap-version)
