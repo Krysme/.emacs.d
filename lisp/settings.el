@@ -22,12 +22,14 @@
 
 (display-time-mode t)
 
+(after-load 'doom-themes
+  (load-theme 'doom-solarized-light t))
+
 ;; theme
 (straight-use-package 'spacemacs-theme)
-(load-theme 'spacemacs-dark t)
 
 ;; font
-(add-to-list 'default-frame-alist '(font . "JetBrainsMono Medium-12"))
+(add-to-list 'default-frame-alist '(font . "JetBrainsMono Medium-14"))
 
 (recentf-mode t)
 
@@ -37,6 +39,9 @@
 
 (fset 'yes-or-no-p 'y-or-n-p)
 
+(use-package doom-themes
+  :ensure t
+  :straight t)
 
 (use-package helpful
   :ensure t
