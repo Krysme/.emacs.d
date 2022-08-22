@@ -24,4 +24,12 @@
 (add-hook 'c-mode-hook 'yas-minor-mode-on))
 
 
+(define-key c-mode-map (kbd "C-c C-b") 'compile-qt)
+(define-key c++-mode-map (kbd "C-c C-b") 'compile-qt)
+
+(defun compile-qt ()
+(interactive)
+(compile (concat "cd \"" (lsp-workspace-root ) "\"" " && " "qmake-qt5" " && " "make -j13")))
+
 (provide 'init-c-cpp)
+(setq c-default-style "linux" c-basic-offset 4)

@@ -25,6 +25,7 @@
 (add-hook
  'lsp-mode-hook
  (lambda () (interactive)
+   (add-hook 'before-save-hook 'lsp-format-buffer)
    (define-key lsp-mode-map (kbd "C-c C-f") 'lsp-format-buffer)
    (define-key lsp-mode-map (kbd "C-C C-c") 'lsp-ui-sideline-apply-code-actions)
    (define-key lsp-mode-map (kbd "C-C r") 'lsp-find-references)

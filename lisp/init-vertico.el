@@ -22,11 +22,6 @@
   :straight t
   :ensure t)
 
-(after-load 'evil
-  (define-key evil-normal-state-map (kbd "SPC /") (lambda () (interactive) (consult-line)))
-  (define-key evil-normal-state-map (kbd "SPC #") (lambda () (interactive) (consult-line (word-at-point))))
-  (define-key evil-normal-state-map (kbd "SPC *") (lambda () (interactive) (consult-line-reverse (word-at-point))))
-  (define-key evil-normal-state-map (kbd "SPC r") 'consult-recent-file-no-action))
 
 (defun consult-line-reverse (&optional initial start)
   "This is a reversed version of `consult-line'"
