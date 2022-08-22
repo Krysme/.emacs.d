@@ -3,7 +3,7 @@
 
 "29.0.50"
 
-#s(hash-table size 97 test equal rehash-size 1.5 rehash-threshold 0.8125 data ("org-elpa" ("2022-08-19 16:51:34" nil (:local-repo nil :package "org-elpa" :type git)) "melpa" ("2022-08-19 16:51:34" nil (:type git :host github :repo "melpa/melpa" :build nil :package "melpa" :local-repo "melpa")) "gnu-elpa-mirror" ("2022-08-19 16:51:34" nil (:type git :host github :repo "emacs-straight/gnu-elpa-mirror" :build nil :package "gnu-elpa-mirror" :local-repo "gnu-elpa-mirror")) "el-get" ("2022-08-19 16:51:34" nil (:type git :host github :repo "dimitri/el-get" :build nil :files ("*.el" ("recipes" "recipes/el-get.rcp") "methods" "el-get-pkg.el") :flavor melpa :package "el-get" :local-repo "el-get")) "emacsmirror-mirror" ("2022-08-19 16:51:35" nil (:type git :host github :repo "emacs-straight/emacsmirror-mirror" :build nil :package "emacsmirror-mirror" :local-repo "emacsmirror-mirror")) "straight" ("2022-08-19 16:47:10" ("emacs") (:type git :host github :repo "radian-software/straight.el" :files ("straight*.el") :branch "master" :package "straight" :local-repo "straight.el")) "use-package" ("2022-08-19 16:47:10" ("emacs" "bind-key") (:type git :flavor melpa :files (:defaults (:exclude "bind-key.el" "bind-chord.el" "use-package-chords.el" "use-package-ensure-system-package.el") "use-package-pkg.el") :host github :repo "jwiegley/use-package" :package "use-package" :local-repo "use-package")) "bind-key" ("2022-08-19 16:47:10" nil (:flavor melpa :files ("bind-key.el" "bind-key-pkg.el") :package "bind-key" :local-repo "use-package" :type git :repo "jwiegley/use-package" :host github)) "el-patch" ("2022-08-19 16:47:10" ("emacs") (:type git :flavor melpa :host github :repo "radian-software/el-patch" :package "el-patch" :local-repo "el-patch")) "evil" ("2022-08-19 16:47:10" ("emacs" "goto-chg" "cl-lib") (:type git :flavor melpa :files (:defaults "doc/build/texinfo/evil.texi" (:exclude "evil-test-helpers.el") "evil-pkg.el") :host github :repo "emacs-evil/evil" :package "evil" :local-repo "evil")) "goto-chg" ("2022-08-19 16:47:10" ("emacs") (:type git :flavor melpa :host github :repo "emacs-evil/goto-chg" :package "goto-chg" :local-repo "goto-chg")) "evil-collection" ("2022-08-19 16:47:10" ("emacs" "evil" "annalist") (:type git :flavor melpa :files (:defaults "modes" "evil-collection-pkg.el") :host github :repo "emacs-evil/evil-collection" :package "evil-collection" :local-repo "evil-collection")) "annalist" ("2022-08-19 16:47:10" ("emacs" "cl-lib") (:type git :flavor melpa :host github :repo "noctuid/annalist.el" :package "annalist" :local-repo "annalist.el")) "undo-fu" ("2022-08-19 16:47:10" ("emacs") (:type git :flavor melpa :repo "https://codeberg.org/ideasman42/emacs-undo-fu.git" :package "undo-fu" :local-repo "emacs-undo-fu")) "vertico" ("2022-08-19 16:47:10" ("emacs") (:type git :host github :repo "emacs-straight/vertico" :files ("*" (:exclude ".git")) :package "vertico" :local-repo "vertico")) "orderless" ("2022-08-19 16:47:10" ("emacs") (:type git :flavor melpa :host github :repo "oantolin/orderless" :package "orderless" :local-repo "orderless")) "consult" ("2022-08-19 16:47:10" ("emacs" "compat") (:type git :flavor melpa :host github :repo "minad/consult" :package "consult" :local-repo "consult")) "compat" ("2022-08-19 16:47:10" ("emacs" "nadvice") (:type git :host github :repo "emacs-straight/compat" :files ("*" (:exclude ".git")) :package "compat" :local-repo "compat")) "marginalia" ("2022-08-19 16:47:10" ("emacs") (:type git :flavor melpa :host github :repo "minad/marginalia" :package "marginalia" :local-repo "marginalia")) "elisp-format" ("2022-08-19 16:47:10" nil (:type git :flavor melpa :host github :repo "Yuki-Inoue/elisp-format" :package "elisp-format" :local-repo "elisp-format")) "vterm" ("2022-08-19 16:47:10" ("emacs") (:type git :flavor melpa :files ("*" (:exclude ".dir-locals.el" ".gitignore" ".clang-format" ".travis.yml") "vterm-pkg.el") :host github :repo "akermu/emacs-libvterm" :package "vterm" :local-repo "emacs-libvterm")) "magit" ("2022-08-19 16:47:10" ("emacs" "compat" "dash" "git-commit" "magit-section" "transient" "with-editor") (:type git :flavor melpa :files ("lisp/magit" "lisp/magit*.el" "lisp/git-rebase.el" "docs/magit.texi" "docs/AUTHORS.md" "LICENSE" "Documentation/magit.texi" "Documentation/AUTHORS.md" (:exclude "lisp/magit-libgit.el" "lisp/magit-libgit-pkg.el" "lisp/magit-section.el" "lisp/magit-section-pkg.el") "magit-pkg.el") :host github :repo "magit/magit" :package "magit" :local-repo "magit")) "dash" ("2022-08-19 16:47:10" ("emacs") (:type git :flavor melpa :files ("dash.el" "dash.texi" "dash-pkg.el") :host github :repo "magnars/dash.el" :package "dash" :local-repo "dash.el")) "git-commit" ("2022-08-19 16:47:10" ("emacs" "compat" "transient" "with-editor") (:flavor melpa :files ("lisp/git-commit.el" "lisp/git-commit-pkg.el" "git-commit-pkg.el") :package "git-commit" :local-repo "magit" :type git :repo "magit/magit" :host github)) "transient" ("2022-08-19 16:47:10" ("emacs" "compat") (:type git :flavor melpa :host github :repo "magit/transient" :package "transient" :local-repo "transient")) "with-editor" ("2022-08-19 16:47:10" ("emacs" "compat") (:type git :flavor melpa :host github :repo "magit/with-editor" :package "with-editor" :local-repo "with-editor")) "magit-section" ("2022-08-19 16:47:10" ("emacs" "compat" "dash") (:flavor melpa :files ("lisp/magit-section.el" "lisp/magit-section-pkg.el" "docs/magit-section.texi" "Documentation/magit-section.texi" "magit-section-pkg.el") :package "magit-section" :local-repo "magit" :type git :repo "magit/magit" :host github)) "evil-magit" ("2022-08-19 16:47:10" ("evil" "magit") (:type git :host github :repo "emacs-evil/evil-magit" :files (:defaults) :package "evil-magit" :local-repo "evil-magit")) "paredit" ("2022-08-19 16:47:10" nil (:type git :flavor melpa :repo "https://mumble.net/~campbell/git/paredit.git" :package "paredit" :local-repo "paredit")) "rainbow-delimiters" ("2022-08-19 16:47:10" nil (:type git :flavor melpa :host github :repo "Fanael/rainbow-delimiters" :package "rainbow-delimiters" :local-repo "rainbow-delimiters")) "lsp-mode" ("2022-08-19 16:47:10" ("emacs" "dash" "f" "ht" "spinner" "markdown-mode" "lv") (:type git :flavor melpa :files (:defaults "clients/*.el" "lsp-mode-pkg.el") :host github :repo "emacs-lsp/lsp-mode" :package "lsp-mode" :local-repo "lsp-mode")) "f" ("2022-08-19 16:47:10" ("emacs" "s" "dash") (:type git :flavor melpa :host github :repo "rejeep/f.el" :package "f" :local-repo "f.el")) "s" ("2022-08-19 16:47:10" nil (:type git :flavor melpa :host github :repo "magnars/s.el" :package "s" :local-repo "s.el")) "ht" ("2022-08-19 16:47:10" ("dash") (:type git :flavor melpa :host github :repo "Wilfred/ht.el" :package "ht" :local-repo "ht.el")) "spinner" ("2022-08-19 16:47:10" ("emacs") (:type git :host github :repo "emacs-straight/spinner" :files ("*" (:exclude ".git")) :package "spinner" :local-repo "spinner")) "markdown-mode" ("2022-08-19 16:47:10" ("emacs") (:type git :flavor melpa :host github :repo "jrblevin/markdown-mode" :package "markdown-mode" :local-repo "markdown-mode")) "lv" ("2022-08-19 16:47:10" nil (:type git :flavor melpa :files ("lv.el" "lv-pkg.el") :host github :repo "abo-abo/hydra" :package "lv" :local-repo "hydra")) "lsp-ui" ("2022-08-19 16:47:10" ("emacs" "dash" "lsp-mode" "markdown-mode") (:type git :flavor melpa :files (:defaults "lsp-ui-doc.html" "resources" "lsp-ui-pkg.el") :host github :repo "emacs-lsp/lsp-ui" :package "lsp-ui" :local-repo "lsp-ui")) "smartparens" ("2022-08-19 16:47:10" ("dash" "cl-lib") (:type git :flavor melpa :host github :repo "Fuco1/smartparens" :package "smartparens" :local-repo "smartparens")) "flycheck" ("2022-08-19 16:47:10" ("dash" "pkg-info" "let-alist" "seq" "emacs") (:type git :flavor melpa :host github :repo "flycheck/flycheck" :package "flycheck" :local-repo "flycheck")) "pkg-info" ("2022-08-19 16:47:10" ("epl") (:type git :flavor melpa :host github :repo "emacsorphanage/pkg-info" :package "pkg-info" :local-repo "pkg-info")) "epl" ("2022-08-19 16:47:10" ("cl-lib") (:type git :flavor melpa :host github :repo "cask/epl" :package "epl" :local-repo "epl")) "let-alist" ("2022-08-19 16:47:10" ("emacs") (:type git :host github :repo "emacs-straight/let-alist" :files ("*" (:exclude ".git")) :package "let-alist" :local-repo "let-alist")) "company-mode" ("2022-08-19 16:47:10" nil (:type git :host github :repo "company-mode/company-mode" :files (:defaults) :package "company-mode" :local-repo "company-mode")) "which-key" ("2022-08-19 16:47:10" ("emacs") (:type git :flavor melpa :host github :repo "justbur/emacs-which-key" :package "which-key" :local-repo "emacs-which-key")) "yasnippet" ("2022-08-19 16:47:10" ("cl-lib") (:type git :flavor melpa :files ("yasnippet.el" "snippets" "yasnippet-pkg.el") :host github :repo "joaotavora/yasnippet" :package "yasnippet" :local-repo "yasnippet")) "yasnippet-snippets" ("2022-08-19 16:47:10" ("yasnippet") (:type git :flavor melpa :files ("*.el" "snippets" ".nosearch" "yasnippet-snippets-pkg.el") :host github :repo "AndreaCrotti/yasnippet-snippets" :package "yasnippet-snippets" :local-repo "yasnippet-snippets")) "treemacs" ("2022-08-19 16:47:10" ("emacs" "cl-lib" "dash" "s" "ace-window" "pfuture" "hydra" "ht" "cfrs") (:type git :flavor melpa :files (:defaults "Changelog.org" "icons" "src/elisp/treemacs*.el" "src/scripts/treemacs*.py" (:exclude "src/extra/*") "treemacs-pkg.el") :host github :repo "Alexander-Miller/treemacs" :package "treemacs" :local-repo "treemacs")) "ace-window" ("2022-08-19 16:47:10" ("avy") (:type git :flavor melpa :host github :repo "abo-abo/ace-window" :package "ace-window" :local-repo "ace-window")) "avy" ("2022-08-19 16:47:10" ("emacs" "cl-lib") (:type git :flavor melpa :host github :repo "abo-abo/avy" :package "avy" :local-repo "avy")) "pfuture" ("2022-08-19 16:47:10" ("emacs") (:type git :flavor melpa :host github :repo "Alexander-Miller/pfuture" :package "pfuture" :local-repo "pfuture")) "hydra" ("2022-08-19 16:47:10" ("cl-lib" "lv") (:flavor melpa :files (:defaults (:exclude "lv.el") "hydra-pkg.el") :package "hydra" :local-repo "hydra" :type git :repo "abo-abo/hydra" :host github)) "cfrs" ("2022-08-19 16:47:10" ("emacs" "dash" "s" "posframe") (:type git :flavor melpa :host github :repo "Alexander-Miller/cfrs" :package "cfrs" :local-repo "cfrs")) "posframe" ("2022-08-19 16:47:10" ("emacs") (:type git :flavor melpa :host github :repo "tumashu/posframe" :package "posframe" :local-repo "posframe")) "treemacs-evil" ("2022-08-19 16:47:10" ("emacs" "evil" "treemacs") (:flavor melpa :files ("src/extra/treemacs-evil.el" "treemacs-evil-pkg.el") :package "treemacs-evil" :local-repo "treemacs" :type git :repo "Alexander-Miller/treemacs" :host github)) "lsp-treemacs" ("2022-08-19 16:47:10" ("emacs" "dash" "f" "ht" "treemacs" "lsp-mode") (:type git :flavor melpa :files (:defaults "icons" "lsp-treemacs-pkg.el") :host github :repo "emacs-lsp/lsp-treemacs" :package "lsp-treemacs" :local-repo "lsp-treemacs")) "adoc-mode" ("2022-08-19 16:47:10" ("emacs" "markup-faces") (:type git :flavor melpa :host github :repo "emacsorphanage/adoc-mode" :package "adoc-mode" :local-repo "adoc-mode")) "markup-faces" ("2022-08-19 16:47:10" nil (:type git :flavor melpa :host github :repo "sensorflo/markup-faces" :package "markup-faces" :local-repo "markup-faces")) "smooth-scrolling" ("2022-08-19 16:47:10" nil (:type git :flavor melpa :host github :repo "aspiers/smooth-scrolling" :package "smooth-scrolling" :local-repo "smooth-scrolling")) "spacemacs-theme" ("2022-08-19 16:47:10" nil (:type git :flavor melpa :host github :repo "nashamri/spacemacs-theme" :package "spacemacs-theme" :local-repo "spacemacs-theme")) "helpful" ("2022-08-19 16:47:10" ("emacs" "dash" "s" "f" "elisp-refs") (:type git :flavor melpa :host github :repo "Wilfred/helpful" :package "helpful" :local-repo "helpful")) "elisp-refs" ("2022-08-19 16:47:10" ("dash" "s") (:type git :flavor melpa :files (:defaults (:exclude "elisp-refs-bench.el") "elisp-refs-pkg.el") :host github :repo "Wilfred/elisp-refs" :package "elisp-refs" :local-repo "elisp-refs")) "dashboard" ("2022-08-19 16:47:10" ("emacs") (:type git :flavor melpa :files (:defaults "banners" "dashboard-pkg.el") :host github :repo "emacs-dashboard/emacs-dashboard" :package "dashboard" :local-repo "emacs-dashboard")) "json-mode" ("2022-08-19 16:47:10" ("json-snatcher" "emacs") (:type git :flavor melpa :host github :repo "joshwnj/json-mode" :package "json-mode" :local-repo "json-mode")) "json-snatcher" ("2022-08-19 16:47:10" ("emacs") (:type git :flavor melpa :host github :repo "Sterlingg/json-snatcher" :package "json-snatcher" :local-repo "json-snatcher")) "rust-mode" ("2022-08-19 16:47:10" ("emacs") (:type git :flavor melpa :host github :repo "rust-lang/rust-mode" :package "rust-mode" :local-repo "rust-mode")) "cargo" ("2022-08-19 16:47:10" ("emacs" "markdown-mode") (:type git :flavor melpa :host github :repo "kwrooijen/cargo.el" :package "cargo" :local-repo "cargo.el")) "toml-mode" ("2022-08-19 16:47:10" ("emacs" "cl-lib") (:type git :flavor melpa :host github :repo "dryman/toml-mode.el" :package "toml-mode" :local-repo "toml-mode.el")) "ccls" ("2022-08-19 16:47:10" ("emacs" "lsp-mode" "dash") (:type git :flavor melpa :host github :repo "emacs-lsp/emacs-ccls" :package "ccls" :local-repo "emacs-ccls")) "go-mode" ("2022-08-19 16:47:10" ("emacs") (:type git :flavor melpa :files ("go-mode.el" "go-mode-pkg.el") :host github :repo "dominikh/go-mode.el" :package "go-mode" :local-repo "go-mode.el")) "python-mode" ("2022-08-19 16:47:10" ("emacs") (:type git :flavor melpa :files ("python-mode.el" ("completion" "completion/pycomplete.*") "python-mode-pkg.el") :host gitlab :repo "python-mode-devs/python-mode" :package "python-mode" :local-repo "python-mode")) "pyvenv" ("2022-08-19 16:47:10" nil (:type git :flavor melpa :host github :repo "jorgenschaefer/pyvenv" :package "pyvenv" :local-repo "pyvenv")) "dap-mode" ("2022-08-19 16:47:10" ("emacs" "dash" "lsp-mode" "bui" "f" "s" "lsp-treemacs" "posframe" "ht" "lsp-docker") (:type git :flavor melpa :files (:defaults "icons" "dap-mode-pkg.el") :host github :repo "emacs-lsp/dap-mode" :package "dap-mode" :local-repo "dap-mode")) "bui" ("2022-08-19 16:47:10" ("emacs" "dash") (:type git :flavor melpa :host github :repo "alezost/bui.el" :package "bui" :local-repo "bui.el")) "lsp-docker" ("2022-08-19 16:47:10" ("emacs" "dash" "lsp-mode" "f" "yaml" "ht") (:type git :flavor melpa :host github :repo "emacs-lsp/lsp-docker" :package "lsp-docker" :local-repo "lsp-docker")) "yaml" ("2022-08-19 16:47:10" ("emacs") (:type git :flavor melpa :host github :repo "zkry/yaml.el" :package "yaml" :local-repo "yaml.el")) "nongnu-elpa" ("2022-08-19 16:51:34" nil (:type git :repo "https://git.savannah.gnu.org/git/emacs/nongnu.git" :local-repo "nongnu-elpa" :build nil :package "nongnu-elpa")) "doom-themes" ("2022-08-19 16:47:10" ("emacs" "cl-lib") (:type git :flavor melpa :files (:defaults "themes/*.el" "themes/*/*.el" "extensions/*.el" "doom-themes-pkg.el") :host github :repo "doomemacs/themes" :package "doom-themes" :local-repo "themes")) "cmake-mode" ("2022-08-19 15:51:07" ("emacs") (:type git :flavor melpa :files ("Auxiliary/*.el" "cmake-mode-pkg.el") :repo "https://gitlab.kitware.com/cmake/cmake.git" :package "cmake-mode" :local-repo "cmake")) "all-the-icons" ("2022-08-19 16:47:10" ("emacs") (:type git :flavor melpa :files (:defaults "data" "all-the-icons-pkg.el") :host github :repo "domtronn/all-the-icons.el" :package "all-the-icons" :local-repo "all-the-icons.el"))))
+#s(hash-table size 97 test equal rehash-size 1.5 rehash-threshold 0.8125 data ("org-elpa" ("2022-08-22 17:29:52" nil (:local-repo nil :package "org-elpa" :type git)) "melpa" ("2022-08-22 17:29:53" nil (:type git :host github :repo "melpa/melpa" :build nil :package "melpa" :local-repo "melpa")) "gnu-elpa-mirror" ("2022-08-22 17:29:53" nil (:type git :host github :repo "emacs-straight/gnu-elpa-mirror" :build nil :package "gnu-elpa-mirror" :local-repo "gnu-elpa-mirror")) "el-get" ("2022-08-22 17:29:53" nil (:type git :host github :repo "dimitri/el-get" :build nil :files ("*.el" ("recipes" "recipes/el-get.rcp") "methods" "el-get-pkg.el") :flavor melpa :package "el-get" :local-repo "el-get")) "emacsmirror-mirror" ("2022-08-22 17:29:53" nil (:type git :host github :repo "emacs-straight/emacsmirror-mirror" :build nil :package "emacsmirror-mirror" :local-repo "emacsmirror-mirror")) "straight" ("2022-08-22 17:29:53" ("emacs") (:type git :host github :repo "radian-software/straight.el" :files ("straight*.el") :branch "master" :package "straight" :local-repo "straight.el")) "use-package" ("2022-08-22 17:29:53" ("emacs" "bind-key") (:type git :flavor melpa :files (:defaults (:exclude "bind-key.el" "bind-chord.el" "use-package-chords.el" "use-package-ensure-system-package.el") "use-package-pkg.el") :host github :repo "jwiegley/use-package" :package "use-package" :local-repo "use-package")) "bind-key" ("2022-08-22 17:29:53" nil (:flavor melpa :files ("bind-key.el" "bind-key-pkg.el") :package "bind-key" :local-repo "use-package" :type git :repo "jwiegley/use-package" :host github)) "el-patch" ("2022-08-22 17:29:53" ("emacs") (:type git :flavor melpa :host github :repo "radian-software/el-patch" :package "el-patch" :local-repo "el-patch")) "evil" ("2022-08-22 17:29:53" ("emacs" "goto-chg" "cl-lib") (:type git :flavor melpa :files (:defaults "doc/build/texinfo/evil.texi" (:exclude "evil-test-helpers.el") "evil-pkg.el") :host github :repo "emacs-evil/evil" :package "evil" :local-repo "evil")) "goto-chg" ("2022-08-22 17:29:53" ("emacs") (:type git :flavor melpa :host github :repo "emacs-evil/goto-chg" :package "goto-chg" :local-repo "goto-chg")) "evil-collection" ("2022-08-22 17:29:53" ("emacs" "evil" "annalist") (:type git :flavor melpa :files (:defaults "modes" "evil-collection-pkg.el") :host github :repo "emacs-evil/evil-collection" :package "evil-collection" :local-repo "evil-collection")) "annalist" ("2022-08-22 17:29:53" ("emacs" "cl-lib") (:type git :flavor melpa :host github :repo "noctuid/annalist.el" :package "annalist" :local-repo "annalist.el")) "undo-fu" ("2022-08-22 17:29:53" ("emacs") (:type git :flavor melpa :repo "https://codeberg.org/ideasman42/emacs-undo-fu.git" :package "undo-fu" :local-repo "emacs-undo-fu")) "vertico" ("2022-08-22 17:29:53" ("emacs") (:type git :host github :repo "emacs-straight/vertico" :files ("*" (:exclude ".git")) :package "vertico" :local-repo "vertico")) "orderless" ("2022-08-22 17:29:53" ("emacs") (:type git :flavor melpa :host github :repo "oantolin/orderless" :package "orderless" :local-repo "orderless")) "consult" ("2022-08-22 17:29:53" ("emacs" "compat") (:type git :flavor melpa :host github :repo "minad/consult" :package "consult" :local-repo "consult")) "compat" ("2022-08-22 17:29:53" ("emacs" "nadvice") (:type git :host github :repo "emacs-straight/compat" :files ("*" (:exclude ".git")) :package "compat" :local-repo "compat")) "marginalia" ("2022-08-22 17:29:53" ("emacs") (:type git :flavor melpa :host github :repo "minad/marginalia" :package "marginalia" :local-repo "marginalia")) "elisp-format" ("2022-08-22 17:29:53" nil (:type git :flavor melpa :host github :repo "Yuki-Inoue/elisp-format" :package "elisp-format" :local-repo "elisp-format")) "vterm" ("2022-08-22 17:29:53" ("emacs") (:type git :flavor melpa :files ("*" (:exclude ".dir-locals.el" ".gitignore" ".clang-format" ".travis.yml") "vterm-pkg.el") :host github :repo "akermu/emacs-libvterm" :package "vterm" :local-repo "emacs-libvterm")) "magit" ("2022-08-22 17:29:53" ("emacs" "compat" "dash" "git-commit" "magit-section" "transient" "with-editor") (:type git :flavor melpa :files ("lisp/magit" "lisp/magit*.el" "lisp/git-rebase.el" "docs/magit.texi" "docs/AUTHORS.md" "LICENSE" "Documentation/magit.texi" "Documentation/AUTHORS.md" (:exclude "lisp/magit-libgit.el" "lisp/magit-libgit-pkg.el" "lisp/magit-section.el" "lisp/magit-section-pkg.el") "magit-pkg.el") :host github :repo "magit/magit" :package "magit" :local-repo "magit")) "dash" ("2022-08-22 17:29:53" ("emacs") (:type git :flavor melpa :files ("dash.el" "dash.texi" "dash-pkg.el") :host github :repo "magnars/dash.el" :package "dash" :local-repo "dash.el")) "git-commit" ("2022-08-22 17:29:53" ("emacs" "compat" "transient" "with-editor") (:flavor melpa :files ("lisp/git-commit.el" "lisp/git-commit-pkg.el" "git-commit-pkg.el") :package "git-commit" :local-repo "magit" :type git :repo "magit/magit" :host github)) "transient" ("2022-08-22 17:29:53" ("emacs" "compat") (:type git :flavor melpa :host github :repo "magit/transient" :package "transient" :local-repo "transient")) "with-editor" ("2022-08-22 17:29:53" ("emacs" "compat") (:type git :flavor melpa :host github :repo "magit/with-editor" :package "with-editor" :local-repo "with-editor")) "magit-section" ("2022-08-22 17:29:53" ("emacs" "compat" "dash") (:flavor melpa :files ("lisp/magit-section.el" "lisp/magit-section-pkg.el" "docs/magit-section.texi" "Documentation/magit-section.texi" "magit-section-pkg.el") :package "magit-section" :local-repo "magit" :type git :repo "magit/magit" :host github)) "evil-magit" ("2022-08-22 17:29:53" ("evil" "magit") (:type git :host github :repo "emacs-evil/evil-magit" :files (:defaults) :package "evil-magit" :local-repo "evil-magit")) "paredit" ("2022-08-22 17:29:53" nil (:type git :flavor melpa :repo "https://mumble.net/~campbell/git/paredit.git" :package "paredit" :local-repo "paredit")) "rainbow-delimiters" ("2022-08-22 17:29:53" nil (:type git :flavor melpa :host github :repo "Fanael/rainbow-delimiters" :package "rainbow-delimiters" :local-repo "rainbow-delimiters")) "lsp-mode" ("2022-08-22 17:29:53" ("emacs" "dash" "f" "ht" "spinner" "markdown-mode" "lv") (:type git :flavor melpa :files (:defaults "clients/*.el" "lsp-mode-pkg.el") :host github :repo "emacs-lsp/lsp-mode" :package "lsp-mode" :local-repo "lsp-mode")) "f" ("2022-08-22 17:29:53" ("emacs" "s" "dash") (:type git :flavor melpa :host github :repo "rejeep/f.el" :package "f" :local-repo "f.el")) "s" ("2022-08-22 17:29:53" nil (:type git :flavor melpa :host github :repo "magnars/s.el" :package "s" :local-repo "s.el")) "ht" ("2022-08-22 17:29:53" ("dash") (:type git :flavor melpa :host github :repo "Wilfred/ht.el" :package "ht" :local-repo "ht.el")) "spinner" ("2022-08-22 17:29:53" ("emacs") (:type git :host github :repo "emacs-straight/spinner" :files ("*" (:exclude ".git")) :package "spinner" :local-repo "spinner")) "markdown-mode" ("2022-08-22 17:29:53" ("emacs") (:type git :flavor melpa :host github :repo "jrblevin/markdown-mode" :package "markdown-mode" :local-repo "markdown-mode")) "lv" ("2022-08-22 17:29:53" nil (:type git :flavor melpa :files ("lv.el" "lv-pkg.el") :host github :repo "abo-abo/hydra" :package "lv" :local-repo "hydra")) "lsp-ui" ("2022-08-22 17:29:53" ("emacs" "dash" "lsp-mode" "markdown-mode") (:type git :flavor melpa :files (:defaults "lsp-ui-doc.html" "resources" "lsp-ui-pkg.el") :host github :repo "emacs-lsp/lsp-ui" :package "lsp-ui" :local-repo "lsp-ui")) "smartparens" ("2022-08-22 17:29:53" ("dash" "cl-lib") (:type git :flavor melpa :host github :repo "Fuco1/smartparens" :package "smartparens" :local-repo "smartparens")) "flycheck" ("2022-08-22 17:29:53" ("dash" "pkg-info" "let-alist" "seq" "emacs") (:type git :flavor melpa :host github :repo "flycheck/flycheck" :package "flycheck" :local-repo "flycheck")) "pkg-info" ("2022-08-22 17:29:53" ("epl") (:type git :flavor melpa :host github :repo "emacsorphanage/pkg-info" :package "pkg-info" :local-repo "pkg-info")) "epl" ("2022-08-22 17:29:53" ("cl-lib") (:type git :flavor melpa :host github :repo "cask/epl" :package "epl" :local-repo "epl")) "let-alist" ("2022-08-22 17:29:53" ("emacs") (:type git :host github :repo "emacs-straight/let-alist" :files ("*" (:exclude ".git")) :package "let-alist" :local-repo "let-alist")) "company-mode" ("2022-08-22 17:29:53" nil (:type git :host github :repo "company-mode/company-mode" :files (:defaults) :package "company-mode" :local-repo "company-mode")) "which-key" ("2022-08-22 17:29:53" ("emacs") (:type git :flavor melpa :host github :repo "justbur/emacs-which-key" :package "which-key" :local-repo "emacs-which-key")) "yasnippet" ("2022-08-22 17:29:53" ("cl-lib") (:type git :flavor melpa :files ("yasnippet.el" "snippets" "yasnippet-pkg.el") :host github :repo "joaotavora/yasnippet" :package "yasnippet" :local-repo "yasnippet")) "yasnippet-snippets" ("2022-08-22 17:29:53" ("yasnippet") (:type git :flavor melpa :files ("*.el" "snippets" ".nosearch" "yasnippet-snippets-pkg.el") :host github :repo "AndreaCrotti/yasnippet-snippets" :package "yasnippet-snippets" :local-repo "yasnippet-snippets")) "treemacs" ("2022-08-22 17:29:53" ("emacs" "cl-lib" "dash" "s" "ace-window" "pfuture" "hydra" "ht" "cfrs") (:type git :flavor melpa :files (:defaults "Changelog.org" "icons" "src/elisp/treemacs*.el" "src/scripts/treemacs*.py" (:exclude "src/extra/*") "treemacs-pkg.el") :host github :repo "Alexander-Miller/treemacs" :package "treemacs" :local-repo "treemacs")) "ace-window" ("2022-08-22 17:29:53" ("avy") (:type git :flavor melpa :host github :repo "abo-abo/ace-window" :package "ace-window" :local-repo "ace-window")) "avy" ("2022-08-22 17:29:53" ("emacs" "cl-lib") (:type git :flavor melpa :host github :repo "abo-abo/avy" :package "avy" :local-repo "avy")) "pfuture" ("2022-08-22 17:29:53" ("emacs") (:type git :flavor melpa :host github :repo "Alexander-Miller/pfuture" :package "pfuture" :local-repo "pfuture")) "hydra" ("2022-08-22 17:29:53" ("cl-lib" "lv") (:flavor melpa :files (:defaults (:exclude "lv.el") "hydra-pkg.el") :package "hydra" :local-repo "hydra" :type git :repo "abo-abo/hydra" :host github)) "cfrs" ("2022-08-22 17:29:53" ("emacs" "dash" "s" "posframe") (:type git :flavor melpa :host github :repo "Alexander-Miller/cfrs" :package "cfrs" :local-repo "cfrs")) "posframe" ("2022-08-22 17:29:53" ("emacs") (:type git :flavor melpa :host github :repo "tumashu/posframe" :package "posframe" :local-repo "posframe")) "treemacs-evil" ("2022-08-22 17:29:53" ("emacs" "evil" "treemacs") (:flavor melpa :files ("src/extra/treemacs-evil.el" "treemacs-evil-pkg.el") :package "treemacs-evil" :local-repo "treemacs" :type git :repo "Alexander-Miller/treemacs" :host github)) "lsp-treemacs" ("2022-08-22 17:29:53" ("emacs" "dash" "f" "ht" "treemacs" "lsp-mode") (:type git :flavor melpa :files (:defaults "icons" "lsp-treemacs-pkg.el") :host github :repo "emacs-lsp/lsp-treemacs" :package "lsp-treemacs" :local-repo "lsp-treemacs")) "adoc-mode" ("2022-08-22 17:29:53" ("emacs" "markup-faces") (:type git :flavor melpa :host github :repo "emacsorphanage/adoc-mode" :package "adoc-mode" :local-repo "adoc-mode")) "markup-faces" ("2022-08-22 17:29:53" nil (:type git :flavor melpa :host github :repo "sensorflo/markup-faces" :package "markup-faces" :local-repo "markup-faces")) "smooth-scrolling" ("2022-08-22 17:29:53" nil (:type git :flavor melpa :host github :repo "aspiers/smooth-scrolling" :package "smooth-scrolling" :local-repo "smooth-scrolling")) "spacemacs-theme" ("2022-08-22 17:29:53" nil (:type git :flavor melpa :host github :repo "nashamri/spacemacs-theme" :package "spacemacs-theme" :local-repo "spacemacs-theme")) "helpful" ("2022-08-22 17:29:53" ("emacs" "dash" "s" "f" "elisp-refs") (:type git :flavor melpa :host github :repo "Wilfred/helpful" :package "helpful" :local-repo "helpful")) "elisp-refs" ("2022-08-22 17:29:53" ("dash" "s") (:type git :flavor melpa :files (:defaults (:exclude "elisp-refs-bench.el") "elisp-refs-pkg.el") :host github :repo "Wilfred/elisp-refs" :package "elisp-refs" :local-repo "elisp-refs")) "dashboard" ("2022-08-22 17:29:53" ("emacs") (:type git :flavor melpa :files (:defaults "banners" "dashboard-pkg.el") :host github :repo "emacs-dashboard/emacs-dashboard" :package "dashboard" :local-repo "emacs-dashboard")) "json-mode" ("2022-08-22 17:29:53" ("json-snatcher" "emacs") (:type git :flavor melpa :host github :repo "joshwnj/json-mode" :package "json-mode" :local-repo "json-mode")) "json-snatcher" ("2022-08-22 17:29:53" ("emacs") (:type git :flavor melpa :host github :repo "Sterlingg/json-snatcher" :package "json-snatcher" :local-repo "json-snatcher")) "rust-mode" ("2022-08-22 17:29:53" ("emacs") (:type git :flavor melpa :host github :repo "rust-lang/rust-mode" :package "rust-mode" :local-repo "rust-mode")) "cargo" ("2022-08-22 17:29:53" ("emacs" "markdown-mode") (:type git :flavor melpa :host github :repo "kwrooijen/cargo.el" :package "cargo" :local-repo "cargo.el")) "toml-mode" ("2022-08-22 17:29:53" ("emacs" "cl-lib") (:type git :flavor melpa :host github :repo "dryman/toml-mode.el" :package "toml-mode" :local-repo "toml-mode.el")) "ccls" ("2022-08-22 17:29:53" ("emacs" "lsp-mode" "dash") (:type git :flavor melpa :host github :repo "emacs-lsp/emacs-ccls" :package "ccls" :local-repo "emacs-ccls")) "go-mode" ("2022-08-22 17:29:53" ("emacs") (:type git :flavor melpa :files ("go-mode.el" "go-mode-pkg.el") :host github :repo "dominikh/go-mode.el" :package "go-mode" :local-repo "go-mode.el")) "python-mode" ("2022-08-22 17:29:53" ("emacs") (:type git :flavor melpa :files ("python-mode.el" ("completion" "completion/pycomplete.*") "python-mode-pkg.el") :host gitlab :repo "python-mode-devs/python-mode" :package "python-mode" :local-repo "python-mode")) "pyvenv" ("2022-08-22 17:29:53" nil (:type git :flavor melpa :host github :repo "jorgenschaefer/pyvenv" :package "pyvenv" :local-repo "pyvenv")) "dap-mode" ("2022-08-22 17:29:53" ("emacs" "dash" "lsp-mode" "bui" "f" "s" "lsp-treemacs" "posframe" "ht" "lsp-docker") (:type git :flavor melpa :files (:defaults "icons" "dap-mode-pkg.el") :host github :repo "emacs-lsp/dap-mode" :package "dap-mode" :local-repo "dap-mode")) "bui" ("2022-08-22 17:29:53" ("emacs" "dash") (:type git :flavor melpa :host github :repo "alezost/bui.el" :package "bui" :local-repo "bui.el")) "lsp-docker" ("2022-08-22 17:29:53" ("emacs" "dash" "lsp-mode" "f" "yaml" "ht") (:type git :flavor melpa :host github :repo "emacs-lsp/lsp-docker" :package "lsp-docker" :local-repo "lsp-docker")) "yaml" ("2022-08-22 17:29:53" ("emacs") (:type git :flavor melpa :host github :repo "zkry/yaml.el" :package "yaml" :local-repo "yaml.el")) "nongnu-elpa" ("2022-08-22 17:29:53" nil (:type git :repo "https://git.savannah.gnu.org/git/emacs/nongnu.git" :local-repo "nongnu-elpa" :build nil :package "nongnu-elpa")) "doom-themes" ("2022-08-22 17:29:53" ("emacs" "cl-lib") (:type git :flavor melpa :files (:defaults "themes/*.el" "themes/*/*.el" "extensions/*.el" "doom-themes-pkg.el") :host github :repo "doomemacs/themes" :package "doom-themes" :local-repo "themes")) "cmake-mode" ("2022-08-19 15:51:07" ("emacs") (:type git :flavor melpa :files ("Auxiliary/*.el" "cmake-mode-pkg.el") :repo "https://gitlab.kitware.com/cmake/cmake.git" :package "cmake-mode" :local-repo "cmake")) "all-the-icons" ("2022-08-22 17:29:53" ("emacs") (:type git :flavor melpa :files (:defaults "data" "all-the-icons-pkg.el") :host github :repo "domtronn/all-the-icons.el" :package "all-the-icons" :local-repo "all-the-icons.el")) "unicode-fonts" ("2022-08-22 11:24:42" ("font-utils" "ucs-utils" "list-utils" "persistent-soft" "pcache") (:type git :flavor melpa :host github :repo "rolandwalker/unicode-fonts" :package "unicode-fonts" :local-repo "unicode-fonts")) "font-utils" ("2022-08-22 11:24:41" ("persistent-soft" "pcache") (:type git :flavor melpa :host github :repo "rolandwalker/font-utils" :package "font-utils" :local-repo "font-utils")) "persistent-soft" ("2022-08-22 11:24:40" ("pcache" "list-utils") (:type git :flavor melpa :host github :repo "rolandwalker/persistent-soft" :package "persistent-soft" :local-repo "persistent-soft")) "pcache" ("2022-08-22 11:24:39" ("emacs") (:type git :flavor melpa :host github :repo "sigma/pcache" :package "pcache" :local-repo "pcache")) "list-utils" ("2022-08-22 11:24:40" nil (:type git :flavor melpa :host github :repo "rolandwalker/list-utils" :package "list-utils" :local-repo "list-utils")) "ucs-utils" ("2022-08-22 11:24:42" ("persistent-soft" "pcache" "list-utils") (:type git :flavor melpa :host github :repo "rolandwalker/ucs-utils" :package "ucs-utils" :local-repo "ucs-utils")) "systemd-mode" ("2022-08-22 17:18:17" nil (:type git :host github :repo "holomorph/systemd-mode" :files (:defaults) :package "systemd-mode" :local-repo "systemd-mode"))))
 
 #s(hash-table size 97 test equal rehash-size 1.5 rehash-threshold 0.8125 data ("straight" ((straight-ert-print-hack straight straight-autoloads straight-x) (autoload 'straight-remove-unused-repos "straight" "Remove unused repositories from the repos and build directories.
 A repo is considered \"unused\" if it was not explicitly requested via
@@ -27,7 +27,10 @@ is used for the value of SOURCES. ACTION may be `copy' (copy
 recipe to the kill ring), `insert' (insert at point), or nil (no
 action, just return it).
 
-(fn &optional SOURCES ACTION)" t) (autoload 'straight-visit-package-website "straight" "Interactively select a recipe, and visit the package's website." t) (autoload 'straight-use-package "straight" "Register, clone, build, and activate a package and its dependencies.
+(fn &optional SOURCES ACTION)" t) (autoload 'straight-visit-package-website "straight" "Interactively select a recipe, and visit the package's website." t) (autoload 'straight-visit-package "straight" "Open PACKAGE's local repository directory.
+When BUILD is non-nil visit PACKAGE's build directory.
+
+(fn PACKAGE &optional BUILD)" t) (autoload 'straight-use-package "straight" "Register, clone, build, and activate a package and its dependencies.
 This is the main entry point to the functionality of straight.el.
 
 MELPA-STYLE-RECIPE is either a symbol naming a package, or a list
@@ -5287,10 +5290,683 @@ When PFX is non-nil, ignore the prompt and just install
 When Prefix ARG is non-nil, insert the propertized icon.
 When FAMILY is non-nil, limit the candidates to the icon set matching it.
 
-(fn &optional ARG FAMILY)" t) (register-definition-prefixes "all-the-icons" '("all-the-icons-")) (provide 'all-the-icons-autoloads))))
+(fn &optional ARG FAMILY)" t) (register-definition-prefixes "all-the-icons" '("all-the-icons-")) (provide 'all-the-icons-autoloads)) "pcache" ((pcache-autoloads pcache) (register-definition-prefixes "pcache" '("*pcache-repositor" "pcache-")) (provide 'pcache-autoloads)) "list-utils" ((list-utils list-utils-autoloads) (let ((loads (get 'list-utils 'custom-loads))) (if (member '"list-utils" loads) nil (put 'list-utils 'custom-loads (cons '"list-utils" loads)))) (require 'cl) (cl-defstruct tconc head tail) (autoload 'tconc-list "list-utils" "Efficiently append LIST to TC.
 
-#s(hash-table size 65 test eq rehash-size 1.5 rehash-threshold 0.8125 data (org-elpa #s(hash-table size 97 test equal rehash-size 1.5 rehash-threshold 0.8125 data (version 14 "melpa" nil "gnu-elpa-mirror" nil "nongnu-elpa" nil "el-get" nil "emacsmirror-mirror" nil "straight" nil "use-package" nil "bind-key" nil "el-patch" nil "evil" nil "goto-chg" nil "cl-lib" nil "evil-collection" nil "annalist" nil "undo-fu" nil "vertico" nil "savehist" nil "orderless" nil "consult" nil "compat" nil "marginalia" nil "elisp-format" nil "vterm" nil "magit" nil "dash" nil "git-commit" nil "transient" nil "with-editor" nil "magit-section" nil "evil-magit" nil "paredit" nil "rainbow-delimiters" nil "lsp-mode" nil "f" nil "s" nil "ht" nil "spinner" nil "markdown-mode" nil "lv" nil "lsp-ui" nil "smartparens" nil "flycheck" nil "pkg-info" nil "epl" nil "let-alist" nil "seq" nil "company-mode" nil "which-key" nil "yasnippet" nil "yasnippet-snippets" nil "treemacs" nil "ace-window" nil "avy" nil "pfuture" nil "hydra" nil "cfrs" nil "posframe" nil "treemacs-evil" nil "lsp-treemacs" nil "adoc-mode" nil "markup-faces" nil "smooth-scrolling" nil "spacemacs-theme" nil "helpful" nil "elisp-refs" nil "dashboard" nil "json-mode" nil "json-snatcher" nil "rust-mode" nil "cargo" nil "toml-mode" nil "ccls" nil "go-mode" nil "python-mode" nil "pyvenv" nil "dap-mode" nil "bui" nil "lsp-docker" nil "yaml" nil "doom-themes" nil "cmake-mode" nil "all-the-icons" nil)) melpa #s(hash-table size 97 test equal rehash-size 1.5 rehash-threshold 0.8125 data (version 2 "gnu-elpa-mirror" nil "nongnu-elpa" nil "el-get" (el-get :type git :flavor melpa :files ("*.el" ("recipes" "recipes/el-get.rcp") "methods" "el-get-pkg.el") :host github :repo "dimitri/el-get") "emacsmirror-mirror" nil "straight" nil "use-package" (use-package :type git :flavor melpa :files (:defaults (:exclude "bind-key.el" "bind-chord.el" "use-package-chords.el" "use-package-ensure-system-package.el") "use-package-pkg.el") :host github :repo "jwiegley/use-package") "bind-key" (bind-key :type git :flavor melpa :files ("bind-key.el" "bind-key-pkg.el") :host github :repo "jwiegley/use-package") "el-patch" (el-patch :type git :flavor melpa :host github :repo "radian-software/el-patch") "evil" (evil :type git :flavor melpa :files (:defaults "doc/build/texinfo/evil.texi" (:exclude "evil-test-helpers.el") "evil-pkg.el") :host github :repo "emacs-evil/evil") "goto-chg" (goto-chg :type git :flavor melpa :host github :repo "emacs-evil/goto-chg") "cl-lib" nil "evil-collection" (evil-collection :type git :flavor melpa :files (:defaults "modes" "evil-collection-pkg.el") :host github :repo "emacs-evil/evil-collection") "annalist" (annalist :type git :flavor melpa :host github :repo "noctuid/annalist.el") "undo-fu" (undo-fu :type git :flavor melpa :repo "https://codeberg.org/ideasman42/emacs-undo-fu.git") "vertico" nil "savehist" nil "orderless" (orderless :type git :flavor melpa :host github :repo "oantolin/orderless") "consult" (consult :type git :flavor melpa :host github :repo "minad/consult") "compat" nil "marginalia" (marginalia :type git :flavor melpa :host github :repo "minad/marginalia") "elisp-format" (elisp-format :type git :flavor melpa :host github :repo "Yuki-Inoue/elisp-format") "vterm" (vterm :type git :flavor melpa :files ("*" (:exclude ".dir-locals.el" ".gitignore" ".clang-format" ".travis.yml") "vterm-pkg.el") :host github :repo "akermu/emacs-libvterm") "magit" (magit :type git :flavor melpa :files ("lisp/magit" "lisp/magit*.el" "lisp/git-rebase.el" "docs/magit.texi" "docs/AUTHORS.md" "LICENSE" "Documentation/magit.texi" "Documentation/AUTHORS.md" (:exclude "lisp/magit-libgit.el" "lisp/magit-libgit-pkg.el" "lisp/magit-section.el" "lisp/magit-section-pkg.el") "magit-pkg.el") :host github :repo "magit/magit") "dash" (dash :type git :flavor melpa :files ("dash.el" "dash.texi" "dash-pkg.el") :host github :repo "magnars/dash.el") "git-commit" (git-commit :type git :flavor melpa :files ("lisp/git-commit.el" "lisp/git-commit-pkg.el" "git-commit-pkg.el") :host github :repo "magit/magit") "transient" (transient :type git :flavor melpa :host github :repo "magit/transient") "with-editor" (with-editor :type git :flavor melpa :host github :repo "magit/with-editor") "magit-section" (magit-section :type git :flavor melpa :files ("lisp/magit-section.el" "lisp/magit-section-pkg.el" "docs/magit-section.texi" "Documentation/magit-section.texi" "magit-section-pkg.el") :host github :repo "magit/magit") "evil-magit" nil "paredit" (paredit :type git :flavor melpa :repo "https://mumble.net/~campbell/git/paredit.git") "rainbow-delimiters" (rainbow-delimiters :type git :flavor melpa :host github :repo "Fanael/rainbow-delimiters") "lsp-mode" (lsp-mode :type git :flavor melpa :files (:defaults "clients/*.el" "lsp-mode-pkg.el") :host github :repo "emacs-lsp/lsp-mode") "f" (f :type git :flavor melpa :host github :repo "rejeep/f.el") "s" (s :type git :flavor melpa :host github :repo "magnars/s.el") "ht" (ht :type git :flavor melpa :host github :repo "Wilfred/ht.el") "spinner" nil "markdown-mode" (markdown-mode :type git :flavor melpa :host github :repo "jrblevin/markdown-mode") "lv" (lv :type git :flavor melpa :files ("lv.el" "lv-pkg.el") :host github :repo "abo-abo/hydra") "lsp-ui" (lsp-ui :type git :flavor melpa :files (:defaults "lsp-ui-doc.html" "resources" "lsp-ui-pkg.el") :host github :repo "emacs-lsp/lsp-ui") "smartparens" (smartparens :type git :flavor melpa :host github :repo "Fuco1/smartparens") "flycheck" (flycheck :type git :flavor melpa :host github :repo "flycheck/flycheck") "pkg-info" (pkg-info :type git :flavor melpa :host github :repo "emacsorphanage/pkg-info") "epl" (epl :type git :flavor melpa :host github :repo "cask/epl") "let-alist" nil "seq" nil "company-mode" nil "which-key" (which-key :type git :flavor melpa :host github :repo "justbur/emacs-which-key") "yasnippet" (yasnippet :type git :flavor melpa :files ("yasnippet.el" "snippets" "yasnippet-pkg.el") :host github :repo "joaotavora/yasnippet") "yasnippet-snippets" (yasnippet-snippets :type git :flavor melpa :files ("*.el" "snippets" ".nosearch" "yasnippet-snippets-pkg.el") :host github :repo "AndreaCrotti/yasnippet-snippets") "treemacs" (treemacs :type git :flavor melpa :files (:defaults "Changelog.org" "icons" "src/elisp/treemacs*.el" "src/scripts/treemacs*.py" (:exclude "src/extra/*") "treemacs-pkg.el") :host github :repo "Alexander-Miller/treemacs") "ace-window" (ace-window :type git :flavor melpa :host github :repo "abo-abo/ace-window") "avy" (avy :type git :flavor melpa :host github :repo "abo-abo/avy") "pfuture" (pfuture :type git :flavor melpa :host github :repo "Alexander-Miller/pfuture") "hydra" (hydra :type git :flavor melpa :files (:defaults (:exclude "lv.el") "hydra-pkg.el") :host github :repo "abo-abo/hydra") "cfrs" (cfrs :type git :flavor melpa :host github :repo "Alexander-Miller/cfrs") "posframe" (posframe :type git :flavor melpa :host github :repo "tumashu/posframe") "treemacs-evil" (treemacs-evil :type git :flavor melpa :files ("src/extra/treemacs-evil.el" "treemacs-evil-pkg.el") :host github :repo "Alexander-Miller/treemacs") "lsp-treemacs" (lsp-treemacs :type git :flavor melpa :files (:defaults "icons" "lsp-treemacs-pkg.el") :host github :repo "emacs-lsp/lsp-treemacs") "adoc-mode" (adoc-mode :type git :flavor melpa :host github :repo "emacsorphanage/adoc-mode") "markup-faces" (markup-faces :type git :flavor melpa :host github :repo "sensorflo/markup-faces") "smooth-scrolling" (smooth-scrolling :type git :flavor melpa :host github :repo "aspiers/smooth-scrolling") "spacemacs-theme" (spacemacs-theme :type git :flavor melpa :host github :repo "nashamri/spacemacs-theme") "doom-themes" (doom-themes :type git :flavor melpa :files (:defaults "themes/*.el" "themes/*/*.el" "extensions/*.el" "doom-themes-pkg.el") :host github :repo "doomemacs/themes") "helpful" (helpful :type git :flavor melpa :host github :repo "Wilfred/helpful") "elisp-refs" (elisp-refs :type git :flavor melpa :files (:defaults (:exclude "elisp-refs-bench.el") "elisp-refs-pkg.el") :host github :repo "Wilfred/elisp-refs") "dashboard" (dashboard :type git :flavor melpa :files (:defaults "banners" "dashboard-pkg.el") :host github :repo "emacs-dashboard/emacs-dashboard") "json-mode" (json-mode :type git :flavor melpa :host github :repo "joshwnj/json-mode") "json-snatcher" (json-snatcher :type git :flavor melpa :host github :repo "Sterlingg/json-snatcher") "rust-mode" (rust-mode :type git :flavor melpa :host github :repo "rust-lang/rust-mode") "cargo" (cargo :type git :flavor melpa :host github :repo "kwrooijen/cargo.el") "toml-mode" (toml-mode :type git :flavor melpa :host github :repo "dryman/toml-mode.el") "ccls" (ccls :type git :flavor melpa :host github :repo "emacs-lsp/emacs-ccls") "go-mode" (go-mode :type git :flavor melpa :files ("go-mode.el" "go-mode-pkg.el") :host github :repo "dominikh/go-mode.el") "python-mode" (python-mode :type git :flavor melpa :files ("python-mode.el" ("completion" "completion/pycomplete.*") "python-mode-pkg.el") :host gitlab :repo "python-mode-devs/python-mode") "pyvenv" (pyvenv :type git :flavor melpa :host github :repo "jorgenschaefer/pyvenv") "dap-mode" (dap-mode :type git :flavor melpa :files (:defaults "icons" "dap-mode-pkg.el") :host github :repo "emacs-lsp/dap-mode") "bui" (bui :type git :flavor melpa :host github :repo "alezost/bui.el") "lsp-docker" (lsp-docker :type git :flavor melpa :host github :repo "emacs-lsp/lsp-docker") "yaml" (yaml :type git :flavor melpa :host github :repo "zkry/yaml.el") "cmake-mode" (cmake-mode :type git :flavor melpa :files ("Auxiliary/*.el" "cmake-mode-pkg.el") :repo "https://gitlab.kitware.com/cmake/cmake.git") "all-the-icons" (all-the-icons :type git :flavor melpa :files (:defaults "data" "all-the-icons-pkg.el") :host github :repo "domtronn/all-the-icons.el"))) gnu-elpa-mirror #s(hash-table size 65 test equal rehash-size 1.5 rehash-threshold 0.8125 data (version 3 "nongnu-elpa" nil "emacsmirror-mirror" nil "straight" nil "cl-lib" nil "vertico" (vertico :type git :host github :repo "emacs-straight/vertico" :files ("*" (:exclude ".git"))) "savehist" nil "compat" (compat :type git :host github :repo "emacs-straight/compat" :files ("*" (:exclude ".git"))) "evil-magit" nil "spinner" (spinner :type git :host github :repo "emacs-straight/spinner" :files ("*" (:exclude ".git"))) "let-alist" (let-alist :type git :host github :repo "emacs-straight/let-alist" :files ("*" (:exclude ".git"))) "seq" nil "company-mode" nil)) el-get #s(hash-table size 65 test equal rehash-size 1.5 rehash-threshold 0.8125 data (version 2 "emacsmirror-mirror" nil "straight" nil "cl-lib" nil "savehist" nil "evil-magit" `(evil-magit :type git :host github :repo "emacs-evil/evil-magit" :files (:defaults)) "seq" nil "company-mode" `(company-mode :type git :host github :repo "company-mode/company-mode" :files (:defaults)))) emacsmirror-mirror #s(hash-table size 65 test equal rehash-size 1.5 rehash-threshold 0.8125 data (version 2 "straight" (straight :type git :host github :repo "emacsmirror/straight") "cl-lib" nil "savehist" nil "seq" nil)) nongnu-elpa #s(hash-table size 65 test equal rehash-size 1.5 rehash-threshold 0.8125 data (version 1 "emacsmirror-mirror" nil "straight" nil "cl-lib" nil "savehist" nil "evil-magit" nil "seq" nil "company-mode" nil))))
+TC is a data structure created by `make-tconc'.
 
-("yaml" "lsp-docker" "bui" "dap-mode" "pyvenv" "python-mode" "go-mode" "ccls" "toml-mode" "cargo" "rust-mode" "json-snatcher" "json-mode" "dashboard" "elisp-refs" "helpful" "doom-themes" "all-the-icons" "spacemacs-theme" "smooth-scrolling" "markup-faces" "adoc-mode" "lsp-treemacs" "treemacs-evil" "posframe" "cfrs" "hydra" "pfuture" "avy" "ace-window" "treemacs" "yasnippet-snippets" "yasnippet" "which-key" "company-mode" "seq" "let-alist" "epl" "pkg-info" "flycheck" "smartparens" "lsp-ui" "lv" "markdown-mode" "spinner" "ht" "s" "f" "lsp-mode" "rainbow-delimiters" "paredit" "evil-magit" "magit-section" "with-editor" "transient" "git-commit" "dash" "magit" "vterm" "elisp-format" "marginalia" "nadvice" "compat" "consult" "orderless" "savehist" "vertico" "undo-fu" "annalist" "evil-collection" "cl-lib" "goto-chg" "evil" "el-patch" "bind-key" "use-package" "emacs" "straight" "emacsmirror-mirror" "el-get" "nongnu-elpa" "gnu-elpa-mirror" "melpa" "org-elpa")
+(fn TC LIST)") (autoload 'tconc "list-utils" "Efficiently append ARGS to TC.
+
+TC is a data structure created by `make-tconc'
+
+Without ARGS, return the list held by TC.
+
+(fn TC &rest ARGS)") (autoload 'list-utils-cons-cell-p "list-utils" "Return non-nil if CELL holds a cons cell rather than a proper list.
+
+A proper list is defined as a series of cons cells in which the
+cdr slot of each cons holds a pointer to the next element of the
+list, and the cdr slot in the final cons holds nil.
+
+A plain cons cell, for the purpose of this function, is a single
+cons in which the cdr holds data rather than a pointer to the
+next cons cell, eg
+
+    '(1 . 2)
+
+In addition, a list which is not nil-terminated is not a proper
+list and will be recognized by this function as a cons cell.
+Such a list is printed using dot notation for the last two
+elements, eg
+
+    '(1 2 3 4 . 5)
+
+Such improper lists are produced by `list*'.
+
+(fn CELL)") (autoload 'list-utils-make-proper-copy "list-utils" "Copy a cons cell or improper LIST into a proper list.
+
+If optional TREE is non-nil, traverse LIST, making proper
+copies of any improper lists contained within.
+
+Optional RECUR-INTERNAL is for internal use only.
+
+Improper lists consist of proper lists consed to a final
+element, and are produced by `list*'.
+
+(fn LIST &optional TREE RECUR-INTERNAL)") (autoload 'list-utils-make-proper-inplace "list-utils" "Make a cons cell or improper LIST into a proper list.
+
+Improper lists consist of proper lists consed to a final
+element, and are produced by `list*'.
+
+If optional TREE is non-nil, traverse LIST, making any
+improper lists contained within into proper lists.
+
+Optional RECUR-INTERNAL is for internal use only.
+
+Modifies LIST and returns the modified value.
+
+(fn LIST &optional TREE RECUR-INTERNAL)") (autoload 'list-utils-make-improper-copy "list-utils" "Copy a proper LIST into an improper list.
+
+Improper lists consist of proper lists consed to a final
+element, and are produced by `list*'.
+
+If optional TREE is non-nil, traverse LIST, making proper
+copies of any improper lists contained within.
+
+Optional RECUR-INTERNAL is for internal use only.
+
+(fn LIST &optional TREE RECUR-INTERNAL)") (autoload 'list-utils-make-improper-inplace "list-utils" "Make proper LIST into an improper list.
+
+Improper lists consist of proper lists consed to a final
+element, and are produced by `list*'.
+
+If optional TREE is non-nil, traverse LIST, making any
+proper lists contained within into improper lists.
+
+Optional RECUR-INTERNAL is for internal use only.
+
+Modifies LIST and returns the modified value.
+
+(fn LIST &optional TREE RECUR-INTERNAL)") (autoload 'list-utils-linear-subseq "list-utils" "Return the linear elements from a partially cyclic LIST.
+
+If there is no cycle in LIST, return LIST.  If all elements of
+LIST are included in a cycle, return nil.
+
+As an optimization, CYCLE-LENGTH may be specified if the length
+of the cyclic portion is already known.  Otherwise it will be
+calculated from LIST.
+
+(fn LIST &optional CYCLE-LENGTH)") (autoload 'list-utils-cyclic-subseq "list-utils" "Return any cyclic elements from LIST as a circular list.
+
+The first element of the cyclic structure is not guaranteed to be
+first element of the return value unless FROM-START is non-nil.
+
+To linearize the return value, use `list-utils-make-linear-inplace'.
+
+If there is no cycle in LIST, return nil.
+
+(fn LIST &optional FROM-START)") (autoload 'list-utils-cyclic-length "list-utils" "Return the number of cyclic elements in LIST.
+
+If some portion of LIST is linear, only the cyclic
+elements will be counted.
+
+If LIST is completely linear, return 0.
+
+(fn LIST)") (autoload 'list-utils-cyclic-p "list-utils" "Return non-nil if LIST contains any cyclic structures.
+
+If optional PERFECT is set, only return non-nil if LIST is a
+perfect non-branching cycle in which the last element points
+to the first.
+
+(fn LIST &optional PERFECT)") (autoload 'list-utils-linear-p "list-utils" "Return non-nil if LIST is linear (no cyclic structure).
+
+(fn LIST)") (defalias 'list-utils-improper-p 'list-utils-cons-cell-p) (autoload 'list-utils-safe-length "list-utils" "Return the number of elements in LIST.
+
+LIST may be linear or cyclic.
+
+If LIST is not really a list, returns 0.
+
+If LIST is an improper list, return the number of proper list
+elements, like `safe-length'.
+
+(fn LIST)") (autoload 'list-utils-flat-length "list-utils" "Count simple elements from the beginning of LIST.
+
+Stop counting when a cons is reached.  nil is not a cons,
+and is considered to be a \"simple\" element.
+
+If the car of LIST is a cons, return 0.
+
+(fn LIST)") (autoload 'list-utils-make-linear-copy "list-utils" "Return a linearized copy of LIST, which may be cyclic.
+
+If optional TREE is non-nil, traverse LIST, substituting
+linearized copies of any cyclic lists contained within.
+
+(fn LIST &optional TREE)") (autoload 'list-utils-make-linear-inplace "list-utils" "Linearize LIST, which may be cyclic.
+
+Modifies LIST and returns the modified value.
+
+If optional TREE is non-nil, traverse LIST, linearizing any
+cyclic lists contained within.
+
+(fn LIST &optional TREE)") (autoload 'list-utils-safe-equal "list-utils" "Compare LIST-1 and LIST-2, which may be cyclic lists.
+
+LIST-1 and LIST-2 may also contain cyclic lists, which are
+each traversed and compared.  This function will not infloop
+when cyclic lists are encountered.
+
+Non-nil is returned only if the leaves of LIST-1 and LIST-2 are
+`equal' and the structure is identical.
+
+Optional TEST specifies a test, defaulting to `equal'.
+
+If LIST-1 and LIST-2 are not actually lists, they are still
+compared according to TEST.
+
+(fn LIST-1 LIST-2 &optional TEST)") (autoload 'list-utils-depth "list-utils" "Find the depth of LIST, which may contain other lists.
+
+If LIST is not a list or is an empty list, returns a depth
+of 0.
+
+If LIST is a cons cell or a list which does not contain other
+lists, returns a depth of 1.
+
+(fn LIST)") (autoload 'list-utils-flatten "list-utils" "Return a flattened copy of LIST, which may contain other lists.
+
+This function flattens cons cells as lists, and
+flattens circular list structures.
+
+(fn LIST)") (autoload 'list-utils-insert-before "list-utils" "Look in LIST for ELEMENT and insert NEW-ELEMENT before it.
+
+Optional TEST sets the test used for a matching element, and
+defaults to `equal'.
+
+LIST is modified and the new value is returned.
+
+(fn LIST ELEMENT NEW-ELEMENT &optional TEST)") (autoload 'list-utils-insert-after "list-utils" "Look in LIST for ELEMENT and insert NEW-ELEMENT after it.
+
+Optional TEST sets the test used for a matching element, and
+defaults to `equal'.
+
+LIST is modified and the new value is returned.
+
+(fn LIST ELEMENT NEW-ELEMENT &optional TEST)") (autoload 'list-utils-insert-before-pos "list-utils" "Look in LIST for position POS, and insert NEW-ELEMENT before.
+
+POS is zero-indexed.
+
+LIST is modified and the new value is returned.
+
+(fn LIST POS NEW-ELEMENT)") (autoload 'list-utils-insert-after-pos "list-utils" "Look in LIST for position POS, and insert NEW-ELEMENT after.
+
+LIST is modified and the new value is returned.
+
+(fn LIST POS NEW-ELEMENT)") (autoload 'list-utils-and "list-utils" "Return the elements of LIST1 which are present in LIST2.
+
+This is similar to `cl-intersection' (or `intersection') from
+the cl library, except that `list-utils-and' preserves order,
+does not uniquify the results, and exhibits more predictable
+performance for large lists.
+
+Order will follow LIST1.  Duplicates may be present in the result
+as in LIST1.
+
+TEST is an optional comparison function in the form of a
+hash-table-test.  The default is `equal'.  Other valid values
+include `eq' (built-in), `eql' (built-in), `list-utils-htt-='
+(numeric), `list-utils-htt-case-fold-equal' (case-insensitive).
+See `define-hash-table-test' to define your own tests.
+
+HINT is an optional micro-optimization, predicting the size of
+the list to be hashed (LIST2 unless FLIP is set).
+
+When optional FLIP is set, the sense of the comparison is
+reversed.  When FLIP is set, LIST2 will be the guide for the
+order of the result, and will determine whether duplicates may
+be returned.  Since this function preserves duplicates, setting
+FLIP can change the number of elements in the result.
+
+Performance: `list-utils-and' and friends use a general-purpose
+hashing approach.  `intersection' and friends use pure iteration.
+Iteration can be much faster in a few special cases, especially
+when the number of elements is small.  In other scenarios,
+iteration can be much slower.  Hashing has no worst-case
+performance scenario, although it uses much more memory.  For
+heavy-duty list operations, performance may be improved by
+`let'ing `gc-cons-threshold' to a high value around sections that
+make frequent use of this function.
+
+(fn LIST1 LIST2 &optional TEST HINT FLIP)") (autoload 'list-utils-not "list-utils" "Return the elements of LIST1 which are not present in LIST2.
+
+This is similar to `cl-set-difference' (or `set-difference') from
+the cl library, except that `list-utils-not' preserves order and
+exhibits more predictable performance for large lists.  Order will
+follow LIST1.  Duplicates may be present as in LIST1.
+
+TEST is an optional comparison function in the form of a
+hash-table-test.  The default is `equal'.  Other valid values
+include `eq' (built-in), `eql' (built-in), `list-utils-htt-='
+(numeric), `list-utils-htt-case-fold-equal' (case-insensitive).
+See `define-hash-table-test' to define your own tests.
+
+HINT is an optional micro-optimization, predicting the size of
+the list to be hashed (LIST2 unless FLIP is set).
+
+When optional FLIP is set, the sense of the comparison is
+reversed, returning elements of LIST2 which are not present in
+LIST1.  When FLIP is set, LIST2 will be the guide for the order
+of the result, and will determine whether duplicates may be
+returned.
+
+Performance: see notes under `list-utils-and'.
+
+(fn LIST1 LIST2 &optional TEST HINT FLIP)") (autoload 'list-utils-xor "list-utils" "Return elements which are only present in either LIST1 or LIST2.
+
+This is similar to `cl-set-exclusive-or' (or `set-exclusive-or')
+from the cl library, except that `list-utils-xor' preserves order,
+and exhibits more predictable performance for large lists.  Order
+will follow LIST1, then LIST2.  Duplicates may be present as in
+LIST1 or LIST2.
+
+TEST is an optional comparison function in the form of a
+hash-table-test.  The default is `equal'.  Other valid values
+include `eq' (built-in), `eql' (built-in), `list-utils-htt-='
+(numeric), `list-utils-htt-case-fold-equal' (case-insensitive).
+See `define-hash-table-test' to define your own tests.
+
+HINT is an optional micro-optimization, predicting the size of
+the list to be hashed (LIST2 unless FLIP is set).
+
+When optional FLIP is set, the sense of the comparison is
+reversed, causing order and duplicates to follow LIST2, then
+LIST1.
+
+Performance: see notes under `list-utils-and'.
+
+(fn LIST1 LIST2 &optional TEST HINT FLIP)") (autoload 'list-utils-uniq "list-utils" "Return a uniquified copy of LIST, preserving order.
+
+This is similar to `cl-remove-duplicates' (or `remove-duplicates')
+from the cl library, except that `list-utils-uniq' preserves order,
+and exhibits more predictable performance for large lists.  Order
+will follow LIST.
+
+TEST is an optional comparison function in the form of a
+hash-table-test.  The default is `equal'.  Other valid values
+include `eq' (built-in), `eql' (built-in), `list-utils-htt-='
+(numeric), `list-utils-htt-case-fold-equal' (case-insensitive).
+See `define-hash-table-test' to define your own tests.
+
+HINT is an optional micro-optimization, predicting the size of
+LIST.
+
+Performance: see notes under `list-utils-and'.
+
+(fn LIST &optional TEST HINT)") (autoload 'list-utils-dupes "list-utils" "Return only duplicated elements from LIST, preserving order.
+
+Duplicated elements may still exist in the result: this function
+removes singlets.
+
+TEST is an optional comparison function in the form of a
+hash-table-test.  The default is `equal'.  Other valid values
+include `eq' (built-in), `eql' (built-in), `list-utils-htt-='
+(numeric), `list-utils-htt-case-fold-equal' (case-insensitive).
+See `define-hash-table-test' to define your own tests.
+
+HINT is an optional micro-optimization, predicting the size of
+LIST.
+
+Performance: see notes under `list-utils-and'.
+
+(fn LIST &optional TEST HINT)") (autoload 'list-utils-singlets "list-utils" "Return only singlet elements from LIST, preserving order.
+
+Duplicated elements may not exist in the result.
+
+TEST is an optional comparison function in the form of a
+hash-table-test.  The default is `equal'.  Other valid values
+include `eq' (built-in), `eql' (built-in), `list-utils-htt-='
+(numeric), `list-utils-htt-case-fold-equal' (case-insensitive).
+See `define-hash-table-test' to define your own tests.
+
+HINT is an optional micro-optimization, predicting the size of
+LIST.
+
+Performance: see notes under `list-utils-and'.
+
+(fn LIST &optional TEST HINT)") (autoload 'list-utils-partition-dupes "list-utils" "Partition LIST into duplicates and singlets, preserving order.
+
+The return value is an alist with two keys: 'dupes and 'singlets.
+The two values of the alist are lists which, if combined, comprise
+a complete copy of the elements of LIST.
+
+Duplicated elements may still exist in the 'dupes partition.
+
+TEST is an optional comparison function in the form of a
+hash-table-test.  The default is `equal'.  Other valid values
+include `eq' (built-in), `eql' (built-in), `list-utils-htt-='
+(numeric), `list-utils-htt-case-fold-equal' (case-insensitive).
+See `define-hash-table-test' to define your own tests.
+
+HINT is an optional micro-optimization, predicting the size of
+LIST.
+
+Performance: see notes under `list-utils-and'.
+
+(fn LIST &optional TEST HINT)") (autoload 'list-utils-alist-or-flat-length "list-utils" "Count simple or cons-cell elements from the beginning of LIST.
+
+Stop counting when a proper list of non-zero length is reached.
+
+If the car of LIST is a list, return 0.
+
+(fn LIST)") (autoload 'list-utils-alist-flatten "list-utils" "Flatten LIST, which may contain other lists.  Do not flatten cons cells.
+
+It is not guaranteed that the result contains *only* cons cells.
+The result could contain other data types present in LIST.
+
+This function simply avoids flattening single conses or improper
+lists where the last two elements would be expressed as a dotted
+pair.
+
+(fn LIST)") (autoload 'list-utils-plist-reverse "list-utils" "Return reversed copy of property-list PLIST, maintaining pair associations.
+
+(fn PLIST)") (autoload 'list-utils-plist-del "list-utils" "Delete from PLIST the property PROP and its associated value.
+
+When PROP is not present in PLIST, there is no effect.
+
+The new plist is returned; use `(setq x (list-utils-plist-del x prop))'
+to be sure to use the new value.
+
+This functionality overlaps with the undocumented `cl-do-remf'.
+
+(fn PLIST PROP)") (register-definition-prefixes "list-utils" '("list-utils-htt-")) (provide 'list-utils-autoloads)) "persistent-soft" ((persistent-soft-autoloads persistent-soft) (let ((loads (get 'persistent-soft 'custom-loads))) (if (member '"persistent-soft" loads) nil (put 'persistent-soft 'custom-loads (cons '"persistent-soft" loads)))) (autoload 'persistent-soft-location-readable "persistent-soft" "Return non-nil if LOCATION is a readable persistent-soft data store.
+
+(fn LOCATION)") (autoload 'persistent-soft-location-destroy "persistent-soft" "Destroy LOCATION (a persistent-soft data store).
+
+Returns non-nil on confirmed success.
+
+(fn LOCATION)") (autoload 'persistent-soft-exists-p "persistent-soft" "Return t if SYMBOL exists in the LOCATION persistent data store.
+
+This is a noop unless LOCATION is a string and pcache is loaded.
+
+Returns nil on failure, without throwing an error.
+
+(fn SYMBOL LOCATION)") (autoload 'persistent-soft-fetch "persistent-soft" "Return the value for SYMBOL in the LOCATION persistent data store.
+
+This is a noop unless LOCATION is a string and pcache is loaded.
+
+Returns nil on failure, without throwing an error.
+
+(fn SYMBOL LOCATION)") (autoload 'persistent-soft-flush "persistent-soft" "Flush data for the LOCATION data store to disk.
+
+(fn LOCATION)") (autoload 'persistent-soft-store "persistent-soft" "Under SYMBOL, store VALUE in the LOCATION persistent data store.
+
+This is a noop unless LOCATION is a string and pcache is loaded.
+
+Optional EXPIRATION sets an expiry time in seconds.
+
+Returns a true value if storage was successful.  Returns nil
+on failure, without throwing an error.
+
+(fn SYMBOL VALUE LOCATION &optional EXPIRATION)") (register-definition-prefixes "persistent-soft" '("persistent-soft-")) (provide 'persistent-soft-autoloads)) "font-utils" ((font-utils font-utils-autoloads) (let ((loads (get 'font-utils 'custom-loads))) (if (member '"font-utils" loads) nil (put 'font-utils 'custom-loads (cons '"font-utils" loads)))) (autoload 'font-utils-client-hostname "font-utils" "Guess the client hostname, respecting $SSH_CONNECTION.") (autoload 'font-utils-name-from-xlfd "font-utils" "Return the font-family name from XLFD, a string.
+
+This function accounts for the fact that the XLFD
+delimiter, \"-\", is a legal character within fields.
+
+(fn XLFD)") (autoload 'font-utils-parse-name "font-utils" "Parse FONT-NAME which may contain fontconfig-style specifications.
+
+Returns two-element list.  The car is the font family name as a string.
+The cadr is the specifications as a normalized and sorted list.
+
+(fn FONT-NAME)") (autoload 'font-utils-normalize-name "font-utils" "Normalize FONT-NAME which may contain fontconfig-style specifications.
+
+(fn FONT-NAME)") (autoload 'font-utils-lenient-name-equal "font-utils" "Leniently match two strings, FONT-NAME-A and FONT-NAME-B.
+
+(fn FONT-NAME-A FONT-NAME-B)") (autoload 'font-utils-is-qualified-variant "font-utils" "Whether FONT-NAME-1 and FONT-NAME-2 are different variants of the same font.
+
+Qualifications are fontconfig-style specifications added to a
+font name, such as \":width=condensed\".
+
+To return t, the font families must be identical, and the
+qualifications must differ.  If FONT-NAME-1 and FONT-NAME-2 are
+identical, returns nil.
+
+(fn FONT-NAME-1 FONT-NAME-2)") (autoload 'font-utils-list-names "font-utils" "Return a list of all font names on the current system.") (autoload 'font-utils-read-name "font-utils" "Read a font name using `completing-read'.
+
+Underscores are removed from the return value.
+
+Uses `ido-completing-read' if optional IDO is set.
+
+(fn &optional IDO)") (autoload 'font-utils-exists-p "font-utils" "Test whether FONT-NAME (a string or font object) exists.
+
+FONT-NAME is a string, typically in Fontconfig font-name format.
+A font-spec, font-vector, or font-object are accepted, though
+the behavior for the latter two is not well defined.
+
+Returns a matching font vector.
+
+When POINT-SIZE is set, check for a specific font size.  Size may
+also be given at the end of a string FONT-NAME, eg \"Monaco-12\".
+
+When optional STRICT is given, FONT-NAME must will not be
+leniently modified before passing to `font-info'.
+
+Optional SCOPE is a list of font names, within which FONT-NAME
+must (leniently) match.
+
+(fn FONT-NAME &optional POINT-SIZE STRICT SCOPE)") (autoload 'font-utils-first-existing-font "font-utils" "Return the (normalized) first existing font name from FONT-NAMES.
+
+FONT-NAMES is a list, with each element typically in Fontconfig
+font-name format.
+
+The font existence-check is lazy; fonts after the first hit are
+not checked.
+
+If NO-NORMALIZE is given, the return value is exactly as the
+member of FONT-NAMES.  Otherwise, the family name is extracted
+from the XLFD returned by `font-info'.
+
+(fn FONT-NAMES &optional NO-NORMALIZE)") (register-definition-prefixes "font-utils" '("font-" "persistent-softest-")) (provide 'font-utils-autoloads)) "ucs-utils" ((ucs-utils-autoloads ucs-utils-6.0-delta ucs-utils) (let ((loads (get 'ucs-utils 'custom-loads))) (if (member '"ucs-utils" loads) nil (put 'ucs-utils 'custom-loads (cons '"ucs-utils" loads)))) (autoload 'ucs-utils-pretty-name "ucs-utils" "Return a prettified UCS name for CHAR.
+
+Based on `get-char-code-property'.  The result has been
+title-cased for readability, and will not match into the
+`ucs-utils-names' alist until it has been upcased.
+`ucs-utils-char' can be used on the title-cased name.
+
+Returns a hexified string if no name is found.  If NO-HEX is
+non-nil, then a nil value will be returned when no name is
+found.
+
+(fn CHAR &optional NO-HEX)") (autoload 'ucs-utils-all-prettified-names "ucs-utils" "All prettified UCS names, cached in list `ucs-utils-all-prettified-names'.
+
+When optional PROGRESS is given, show progress when generating
+cache.
+
+When optional REGENERATE is given, re-generate cache.
+
+(fn &optional PROGRESS REGENERATE)") (autoload 'ucs-utils-char "ucs-utils" "Return the character corresponding to NAME, a UCS name.
+
+NAME is matched leniently by `ucs-utils--lookup'.
+
+Returns FALLBACK if NAME does not exist or is not displayable
+according to TEST.  FALLBACK may be either a UCS name or
+character, or one of the special symbols described in the next
+paragraph.
+
+If FALLBACK is nil or 'drop, returns nil on failure.  If FALLBACK
+is 'error, throws an error on failure.
+
+TEST is an optional predicate which characters must pass.  A
+useful value is 'char-displayable-p, which is available as
+the abbreviation 'cdp, unless you have otherwise defined that
+symbol.
+
+When NAME is a character, it passes through unchanged, unless
+TEST is set, in which case it must pass TEST.
+
+(fn NAME &optional FALLBACK TEST)") (autoload 'ucs-utils-first-existing-char "ucs-utils" "Return the first existing character from SEQUENCE of character names.
+
+TEST is an optional predicate which characters must pass.  A
+useful value is 'char-displayable-p, which is available as
+the abbreviation 'cdp, unless you have otherwise defined that
+symbol.
+
+(fn SEQUENCE &optional TEST)") (autoload 'ucs-utils-vector "ucs-utils" "Return a vector corresponding to SEQUENCE of UCS names or characters.
+
+If SEQUENCE is a single string or character, it will be coerced
+to a list of length 1.  Each name in SEQUENCE is matched
+leniently by `ucs-utils--lookup'.
+
+FALLBACK should be a sequence of equal length to SEQUENCE, (or
+one of the special symbols described in the next paragraph).  For
+any element of SEQUENCE which does not exist or is not
+displayable according to TEST, that element degrades to the
+corresponding element of FALLBACK.
+
+When FALLBACK is nil, characters which do not exist or are
+undisplayable will be given as nils in the return value.  When
+FALLBACK is 'drop, such characters will be silently dropped from
+the return value.  When FALLBACK is 'error, such characters cause
+an error to be thrown.
+
+To allow fallbacks of arbitrary length, give FALLBACK as a vector-
+of-vectors, with outer length equal to the length of sequence.  The
+inner vectors may contain a sequence of characters, a literal
+string, or nil.  Eg
+
+   (ucs-utils-vector '(\"Middle Dot\" \"Ampersand\" \"Horizontal Ellipsis\")
+                     '[?.           [?a ?n ?d]  [\"...\"]              ])
+
+or
+
+   (ucs-utils-vector \"Horizontal Ellipsis\" '[[\"...\"]])
+
+TEST is an optional predicate which characters must pass.  A
+useful value is 'char-displayable-p, which is available as
+the abbreviation 'cdp, unless you have otherwise defined that
+symbol.
+
+If NO-FLATTEN is non-nil, then a vector-of-vectors may be returned
+if multi-character fallbacks were used as in the example above.
+
+(fn SEQUENCE &optional FALLBACK TEST NO-FLATTEN)") (autoload 'ucs-utils-string "ucs-utils" "Return a string corresponding to SEQUENCE of UCS names or characters.
+
+If SEQUENCE is a single string, it will be coerced to a list of
+length 1.  Each name in SEQUENCE is matched leniently by
+`ucs-utils--lookup'.
+
+FALLBACK should be a sequence of equal length to SEQUENCE, (or
+one of the special symbols described in the next paragraph).  For
+any element of SEQUENCE which does not exist or is not
+displayable according to TEST, that element degrades to the
+corresponding element of FALLBACK.
+
+When FALLBACK is nil or 'drop, characters which do not exist or
+are undisplayable will be silently dropped from the return value.
+When FALLBACK is 'error, such characters cause an error to be
+thrown.
+
+TEST is an optional predicate which characters must pass.  A
+useful value is 'char-displayable-p, which is available as
+the abbreviation 'cdp, unless you have otherwise defined that
+symbol.
+
+(fn SEQUENCE &optional FALLBACK TEST)") (autoload 'ucs-utils-intact-string "ucs-utils" "Return a string corresponding to SEQUENCE of UCS names or characters.
+
+This function differs from `ucs-utils-string' in that FALLBACK is
+a non-optional single string, to be used unless every member of
+SEQUENCE exists and passes TEST.  FALLBACK may not be nil, 'error,
+or 'drop as in `ucs-utils-string'.
+
+If SEQUENCE is a single string, it will be coerced to a list of
+length 1.  Each name in SEQUENCE is matched leniently by
+`ucs-utils--lookup'.
+
+TEST is an optional predicate which characters must pass.  A
+useful value is 'char-displayable-p, which is available as
+the abbreviation 'cdp, unless you have otherwise defined that
+symbol.
+
+(fn SEQUENCE FALLBACK &optional TEST)") (autoload 'ucs-utils-subst-char-in-region "ucs-utils" "From START to END, replace FROM-CHAR with TO-CHAR each time it occurs.
+
+If optional arg NO-UNDO is non-nil, don't record this change for
+undo and don't mark the buffer as really changed.
+
+Characters may be of differing byte-lengths.
+
+The character at the position END is not included, matching the
+behavior of `subst-char-in-region'.
+
+This function is slower than `subst-char-in-region'.
+
+(fn START END FROM-CHAR TO-CHAR &optional NO-UNDO)") (autoload 'ucs-utils-read-char-by-name "ucs-utils" "Read a character by its Unicode name or hex number string.
+
+A wrapper for `read-char-by-name', with the option to use
+`ido-completing-read'.
+
+PROMPT is displayed, and a string that represents a character by
+its name is read.
+
+When IDO is set, several seconds are required on the first
+run as all completion candidates are pre-generated.
+
+(fn PROMPT &optional IDO)") (autoload 'ucs-utils-eval "ucs-utils" "Display a string UCS name for the character at POS.
+
+POS defaults to the current point.
+
+If `transient-mark-mode' is enabled and there is an active
+region, return a list of strings UCS names, one for each
+character in the region.  If called from Lisp with an
+explicit POS, ignores the region.
+
+If called with universal prefix ARG, display the result
+in a separate buffer.  If called with two universal
+prefix ARGs, replace the current character or region with
+its UCS name translation.
+
+(fn &optional POS ARG)" t) (autoload 'ucs-utils-ucs-insert "ucs-utils" "Insert CHARACTER in COUNT copies, where CHARACTER is a Unicode code point.
+
+Works like `ucs-insert', with the following differences
+
+    * Uses `ido-completing-read' at the interactive prompt
+
+    * If `transient-mark-mode' is enabled, and the region contains
+      a valid UCS character name, that value is used as the
+      character name and the region is replaced.
+
+    * A UCS character name string may be passed for CHARACTER.
+
+INHERIT is as documented at `ucs-insert'.
+
+(fn CHARACTER &optional COUNT INHERIT)" t) (autoload 'ucs-utils-install-aliases "ucs-utils" "Install aliases outside the \"ucs-utils-\" namespace.
+
+The following aliases will be installed:
+
+    `ucs-char'                  for   `ucs-utils-char'
+    `ucs-first-existing-char'   for   `ucs-utils-first-existing-char'
+    `ucs-string'                for   `ucs-utils-string'
+    `ucs-intact-string'         for   `ucs-utils-intact-string'
+    `ucs-vector'                for   `ucs-utils-vector'
+    `ucs-pretty-name'           for   `ucs-utils-pretty-name'
+    `ucs-eval'                  for   `ucs-utils-eval'" t) (register-definition-prefixes "ucs-utils" '("character-name-history" "persistent-soft" "ucs-utils-")) (provide 'ucs-utils-autoloads)) "unicode-fonts" ((unicode-fonts-autoloads unicode-fonts) (let ((loads (get 'unicode-fonts 'custom-loads))) (if (member '"unicode-fonts" loads) nil (put 'unicode-fonts 'custom-loads (cons '"unicode-fonts" loads)))) (let ((loads (get 'unicode-fonts-tweaks 'custom-loads))) (if (member '"unicode-fonts" loads) nil (put 'unicode-fonts-tweaks 'custom-loads (cons '"unicode-fonts" loads)))) (let ((loads (get 'unicode-fonts-debug 'custom-loads))) (if (member '"unicode-fonts" loads) nil (put 'unicode-fonts-debug 'custom-loads (cons '"unicode-fonts" loads)))) (autoload 'unicode-fonts-first-existing-font "unicode-fonts" "Return the (normalized) first existing font name from FONT-NAMES.
+
+FONT-NAMES is a list, with each element typically in Fontconfig
+font-name format.
+
+The font existence-check is lazy; fonts after the first hit are
+not checked.
+
+(fn FONT-NAMES)") (autoload 'unicode-fonts-font-exists-p "unicode-fonts" "Run `font-utils-exists-p' with a limited scope.
+
+The scope is defined by `unicode-fonts-restrict-to-fonts'.
+
+FONT-NAME, POINT-SIZE, and STRICT are as documented at
+`font-utils-exists-p'.
+
+(fn FONT-NAME &optional POINT-SIZE STRICT)") (autoload 'unicode-fonts-read-block-name "unicode-fonts" "Read a Unicode block name using `completing-read'.
+
+Spaces are replaced with underscores in completion values, but
+are removed from the return value.
+
+Use `ido-completing-read' if IDO is set.
+
+(fn &optional IDO)") (autoload 'unicode-fonts-setup "unicode-fonts" "Set up Unicode fonts for FONTSET-NAMES.
+
+Optional FONTSET-NAMES must be a list of strings.  Fontset names
+which do not currently exist will be ignored.  The default value
+is `unicode-fonts-fontset-names'.
+
+Optional REGENERATE requests that the disk cache be invalidated
+and regenerated.
+
+(fn &optional FONTSET-NAMES REGENERATE)" t) (register-definition-prefixes "unicode-fonts" '("persistent-softest-" "unicode-")) (provide 'unicode-fonts-autoloads)) "systemd-mode" ((systemd-mode-autoloads systemd) (defconst systemd-autoload-regexp (rx (+? (any "a-zA-Z0-9-_.@\\")) "." (or "automount" "busname" "mount" "service" "slice" "socket" "swap" "target" "timer" "link" "netdev" "network") string-end) "Regexp for file buffers in which to autoload `systemd-mode'.") (defconst systemd-tempfn-autoload-regexp (rx ".#" (or (and (+? (any "a-zA-Z0-9-_.@\\")) "." (or "automount" "busname" "mount" "service" "slice" "socket" "swap" "target" "timer" "link" "netdev" "network")) "override.conf") (= 16 (char hex-digit)) string-end) "Regexp for temp file buffers in which to autoload `systemd-mode'.") (defconst systemd-dropin-autoload-regexp (rx "/systemd/" (+? anything) ".d/" (+? (not (any 47))) ".conf" string-end) "Regexp for dropin config file buffers in which to autoload `systemd-mode'.") (add-to-list 'auto-mode-alist '("\\.nspawn\\'" . systemd-mode)) (add-to-list 'auto-mode-alist `(,systemd-autoload-regexp . systemd-mode)) (add-to-list 'auto-mode-alist `(,systemd-tempfn-autoload-regexp . systemd-mode)) (add-to-list 'auto-mode-alist `(,systemd-dropin-autoload-regexp . systemd-mode)) (autoload 'systemd-mode "systemd" "Major mode for editing systemd unit files.
+See https://www.freedesktop.org/wiki/Software/systemd/ for more
+information about systemd.
+
+In addition to any hooks its parent mode might have run, this
+mode runs the hook `systemd-mode-hook' at mode initialization.
+
+Key bindings:
+\\{systemd-mode-map}
+
+(fn)" t) (register-definition-prefixes "systemd" '("define-systemd-matcher" "systemd-")) (provide 'systemd-mode-autoloads))))
+
+#s(hash-table size 65 test eq rehash-size 1.5 rehash-threshold 0.8125 data (org-elpa #s(hash-table size 97 test equal rehash-size 1.5 rehash-threshold 0.8125 data (version 14 "melpa" nil "gnu-elpa-mirror" nil "nongnu-elpa" nil "el-get" nil "emacsmirror-mirror" nil "straight" nil "use-package" nil "bind-key" nil "el-patch" nil "evil" nil "goto-chg" nil "cl-lib" nil "evil-collection" nil "annalist" nil "undo-fu" nil "vertico" nil "savehist" nil "orderless" nil "consult" nil "compat" nil "marginalia" nil "elisp-format" nil "vterm" nil "magit" nil "dash" nil "git-commit" nil "transient" nil "with-editor" nil "magit-section" nil "evil-magit" nil "paredit" nil "rainbow-delimiters" nil "lsp-mode" nil "f" nil "s" nil "ht" nil "spinner" nil "markdown-mode" nil "lv" nil "lsp-ui" nil "smartparens" nil "flycheck" nil "pkg-info" nil "epl" nil "let-alist" nil "seq" nil "company-mode" nil "which-key" nil "yasnippet" nil "yasnippet-snippets" nil "treemacs" nil "ace-window" nil "avy" nil "pfuture" nil "hydra" nil "cfrs" nil "posframe" nil "treemacs-evil" nil "lsp-treemacs" nil "adoc-mode" nil "markup-faces" nil "smooth-scrolling" nil "spacemacs-theme" nil "helpful" nil "elisp-refs" nil "dashboard" nil "json-mode" nil "json-snatcher" nil "rust-mode" nil "cargo" nil "toml-mode" nil "ccls" nil "go-mode" nil "python-mode" nil "pyvenv" nil "dap-mode" nil "bui" nil "lsp-docker" nil "yaml" nil "doom-themes" nil "cmake-mode" nil "all-the-icons" nil "unicode-fonts" nil "font-utils" nil "persistent-soft" nil "pcache" nil "list-utils" nil "ucs-utils" nil "systemd-mode" nil)) melpa #s(hash-table size 97 test equal rehash-size 1.5 rehash-threshold 0.8125 data (version 2 "gnu-elpa-mirror" nil "nongnu-elpa" nil "el-get" (el-get :type git :flavor melpa :files ("*.el" ("recipes" "recipes/el-get.rcp") "methods" "el-get-pkg.el") :host github :repo "dimitri/el-get") "emacsmirror-mirror" nil "straight" nil "use-package" (use-package :type git :flavor melpa :files (:defaults (:exclude "bind-key.el" "bind-chord.el" "use-package-chords.el" "use-package-ensure-system-package.el") "use-package-pkg.el") :host github :repo "jwiegley/use-package") "bind-key" (bind-key :type git :flavor melpa :files ("bind-key.el" "bind-key-pkg.el") :host github :repo "jwiegley/use-package") "el-patch" (el-patch :type git :flavor melpa :host github :repo "radian-software/el-patch") "evil" (evil :type git :flavor melpa :files (:defaults "doc/build/texinfo/evil.texi" (:exclude "evil-test-helpers.el") "evil-pkg.el") :host github :repo "emacs-evil/evil") "goto-chg" (goto-chg :type git :flavor melpa :host github :repo "emacs-evil/goto-chg") "cl-lib" nil "evil-collection" (evil-collection :type git :flavor melpa :files (:defaults "modes" "evil-collection-pkg.el") :host github :repo "emacs-evil/evil-collection") "annalist" (annalist :type git :flavor melpa :host github :repo "noctuid/annalist.el") "undo-fu" (undo-fu :type git :flavor melpa :repo "https://codeberg.org/ideasman42/emacs-undo-fu.git") "vertico" nil "savehist" nil "orderless" (orderless :type git :flavor melpa :host github :repo "oantolin/orderless") "consult" (consult :type git :flavor melpa :host github :repo "minad/consult") "compat" nil "marginalia" (marginalia :type git :flavor melpa :host github :repo "minad/marginalia") "elisp-format" (elisp-format :type git :flavor melpa :host github :repo "Yuki-Inoue/elisp-format") "vterm" (vterm :type git :flavor melpa :files ("*" (:exclude ".dir-locals.el" ".gitignore" ".clang-format" ".travis.yml") "vterm-pkg.el") :host github :repo "akermu/emacs-libvterm") "magit" (magit :type git :flavor melpa :files ("lisp/magit" "lisp/magit*.el" "lisp/git-rebase.el" "docs/magit.texi" "docs/AUTHORS.md" "LICENSE" "Documentation/magit.texi" "Documentation/AUTHORS.md" (:exclude "lisp/magit-libgit.el" "lisp/magit-libgit-pkg.el" "lisp/magit-section.el" "lisp/magit-section-pkg.el") "magit-pkg.el") :host github :repo "magit/magit") "dash" (dash :type git :flavor melpa :files ("dash.el" "dash.texi" "dash-pkg.el") :host github :repo "magnars/dash.el") "git-commit" (git-commit :type git :flavor melpa :files ("lisp/git-commit.el" "lisp/git-commit-pkg.el" "git-commit-pkg.el") :host github :repo "magit/magit") "transient" (transient :type git :flavor melpa :host github :repo "magit/transient") "with-editor" (with-editor :type git :flavor melpa :host github :repo "magit/with-editor") "magit-section" (magit-section :type git :flavor melpa :files ("lisp/magit-section.el" "lisp/magit-section-pkg.el" "docs/magit-section.texi" "Documentation/magit-section.texi" "magit-section-pkg.el") :host github :repo "magit/magit") "evil-magit" nil "paredit" (paredit :type git :flavor melpa :repo "https://mumble.net/~campbell/git/paredit.git") "rainbow-delimiters" (rainbow-delimiters :type git :flavor melpa :host github :repo "Fanael/rainbow-delimiters") "lsp-mode" (lsp-mode :type git :flavor melpa :files (:defaults "clients/*.el" "lsp-mode-pkg.el") :host github :repo "emacs-lsp/lsp-mode") "f" (f :type git :flavor melpa :host github :repo "rejeep/f.el") "s" (s :type git :flavor melpa :host github :repo "magnars/s.el") "ht" (ht :type git :flavor melpa :host github :repo "Wilfred/ht.el") "spinner" nil "markdown-mode" (markdown-mode :type git :flavor melpa :host github :repo "jrblevin/markdown-mode") "lv" (lv :type git :flavor melpa :files ("lv.el" "lv-pkg.el") :host github :repo "abo-abo/hydra") "lsp-ui" (lsp-ui :type git :flavor melpa :files (:defaults "lsp-ui-doc.html" "resources" "lsp-ui-pkg.el") :host github :repo "emacs-lsp/lsp-ui") "smartparens" (smartparens :type git :flavor melpa :host github :repo "Fuco1/smartparens") "flycheck" (flycheck :type git :flavor melpa :host github :repo "flycheck/flycheck") "pkg-info" (pkg-info :type git :flavor melpa :host github :repo "emacsorphanage/pkg-info") "epl" (epl :type git :flavor melpa :host github :repo "cask/epl") "let-alist" nil "seq" nil "company-mode" nil "which-key" (which-key :type git :flavor melpa :host github :repo "justbur/emacs-which-key") "yasnippet" (yasnippet :type git :flavor melpa :files ("yasnippet.el" "snippets" "yasnippet-pkg.el") :host github :repo "joaotavora/yasnippet") "yasnippet-snippets" (yasnippet-snippets :type git :flavor melpa :files ("*.el" "snippets" ".nosearch" "yasnippet-snippets-pkg.el") :host github :repo "AndreaCrotti/yasnippet-snippets") "treemacs" (treemacs :type git :flavor melpa :files (:defaults "Changelog.org" "icons" "src/elisp/treemacs*.el" "src/scripts/treemacs*.py" (:exclude "src/extra/*") "treemacs-pkg.el") :host github :repo "Alexander-Miller/treemacs") "ace-window" (ace-window :type git :flavor melpa :host github :repo "abo-abo/ace-window") "avy" (avy :type git :flavor melpa :host github :repo "abo-abo/avy") "pfuture" (pfuture :type git :flavor melpa :host github :repo "Alexander-Miller/pfuture") "hydra" (hydra :type git :flavor melpa :files (:defaults (:exclude "lv.el") "hydra-pkg.el") :host github :repo "abo-abo/hydra") "cfrs" (cfrs :type git :flavor melpa :host github :repo "Alexander-Miller/cfrs") "posframe" (posframe :type git :flavor melpa :host github :repo "tumashu/posframe") "treemacs-evil" (treemacs-evil :type git :flavor melpa :files ("src/extra/treemacs-evil.el" "treemacs-evil-pkg.el") :host github :repo "Alexander-Miller/treemacs") "lsp-treemacs" (lsp-treemacs :type git :flavor melpa :files (:defaults "icons" "lsp-treemacs-pkg.el") :host github :repo "emacs-lsp/lsp-treemacs") "adoc-mode" (adoc-mode :type git :flavor melpa :host github :repo "emacsorphanage/adoc-mode") "markup-faces" (markup-faces :type git :flavor melpa :host github :repo "sensorflo/markup-faces") "smooth-scrolling" (smooth-scrolling :type git :flavor melpa :host github :repo "aspiers/smooth-scrolling") "spacemacs-theme" (spacemacs-theme :type git :flavor melpa :host github :repo "nashamri/spacemacs-theme") "all-the-icons" (all-the-icons :type git :flavor melpa :files (:defaults "data" "all-the-icons-pkg.el") :host github :repo "domtronn/all-the-icons.el") "doom-themes" (doom-themes :type git :flavor melpa :files (:defaults "themes/*.el" "themes/*/*.el" "extensions/*.el" "doom-themes-pkg.el") :host github :repo "doomemacs/themes") "helpful" (helpful :type git :flavor melpa :host github :repo "Wilfred/helpful") "elisp-refs" (elisp-refs :type git :flavor melpa :files (:defaults (:exclude "elisp-refs-bench.el") "elisp-refs-pkg.el") :host github :repo "Wilfred/elisp-refs") "dashboard" (dashboard :type git :flavor melpa :files (:defaults "banners" "dashboard-pkg.el") :host github :repo "emacs-dashboard/emacs-dashboard") "json-mode" (json-mode :type git :flavor melpa :host github :repo "joshwnj/json-mode") "json-snatcher" (json-snatcher :type git :flavor melpa :host github :repo "Sterlingg/json-snatcher") "rust-mode" (rust-mode :type git :flavor melpa :host github :repo "rust-lang/rust-mode") "cargo" (cargo :type git :flavor melpa :host github :repo "kwrooijen/cargo.el") "toml-mode" (toml-mode :type git :flavor melpa :host github :repo "dryman/toml-mode.el") "ccls" (ccls :type git :flavor melpa :host github :repo "emacs-lsp/emacs-ccls") "go-mode" (go-mode :type git :flavor melpa :files ("go-mode.el" "go-mode-pkg.el") :host github :repo "dominikh/go-mode.el") "python-mode" (python-mode :type git :flavor melpa :files ("python-mode.el" ("completion" "completion/pycomplete.*") "python-mode-pkg.el") :host gitlab :repo "python-mode-devs/python-mode") "pyvenv" (pyvenv :type git :flavor melpa :host github :repo "jorgenschaefer/pyvenv") "dap-mode" (dap-mode :type git :flavor melpa :files (:defaults "icons" "dap-mode-pkg.el") :host github :repo "emacs-lsp/dap-mode") "bui" (bui :type git :flavor melpa :host github :repo "alezost/bui.el") "lsp-docker" (lsp-docker :type git :flavor melpa :host github :repo "emacs-lsp/lsp-docker") "yaml" (yaml :type git :flavor melpa :host github :repo "zkry/yaml.el") "unicode-fonts" (unicode-fonts :type git :flavor melpa :host github :repo "rolandwalker/unicode-fonts") "font-utils" (font-utils :type git :flavor melpa :host github :repo "rolandwalker/font-utils") "persistent-soft" (persistent-soft :type git :flavor melpa :host github :repo "rolandwalker/persistent-soft") "pcache" (pcache :type git :flavor melpa :host github :repo "sigma/pcache") "list-utils" (list-utils :type git :flavor melpa :host github :repo "rolandwalker/list-utils") "ucs-utils" (ucs-utils :type git :flavor melpa :host github :repo "rolandwalker/ucs-utils") "systemd-mode" nil)) gnu-elpa-mirror #s(hash-table size 65 test equal rehash-size 1.5 rehash-threshold 0.8125 data (version 3 "nongnu-elpa" nil "emacsmirror-mirror" nil "straight" nil "cl-lib" nil "vertico" (vertico :type git :host github :repo "emacs-straight/vertico" :files ("*" (:exclude ".git"))) "savehist" nil "compat" (compat :type git :host github :repo "emacs-straight/compat" :files ("*" (:exclude ".git"))) "evil-magit" nil "spinner" (spinner :type git :host github :repo "emacs-straight/spinner" :files ("*" (:exclude ".git"))) "let-alist" (let-alist :type git :host github :repo "emacs-straight/let-alist" :files ("*" (:exclude ".git"))) "seq" nil "company-mode" nil "systemd-mode" nil)) el-get #s(hash-table size 65 test equal rehash-size 1.5 rehash-threshold 0.8125 data (version 2 "emacsmirror-mirror" nil "straight" nil "cl-lib" nil "savehist" nil "evil-magit" `(evil-magit :type git :host github :repo "emacs-evil/evil-magit" :files (:defaults)) "seq" nil "company-mode" `(company-mode :type git :host github :repo "company-mode/company-mode" :files (:defaults)) "systemd-mode" `(systemd-mode :type git :host github :repo "holomorph/systemd-mode" :files (:defaults)))) emacsmirror-mirror #s(hash-table size 65 test equal rehash-size 1.5 rehash-threshold 0.8125 data (version 2 "straight" (straight :type git :host github :repo "emacsmirror/straight") "cl-lib" nil "savehist" nil "seq" nil)) nongnu-elpa #s(hash-table size 65 test equal rehash-size 1.5 rehash-threshold 0.8125 data (version 2 "emacsmirror-mirror" nil "straight" nil "cl-lib" nil "savehist" nil "evil-magit" nil "seq" nil "company-mode" nil "systemd-mode" nil))))
+
+("yaml" "lsp-docker" "bui" "dap-mode" "pyvenv" "python-mode" "go-mode" "ccls" "toml-mode" "cargo" "rust-mode" "json-snatcher" "json-mode" "dashboard" "elisp-refs" "helpful" "doom-themes" "all-the-icons" "spacemacs-theme" "smooth-scrolling" "markup-faces" "adoc-mode" "lsp-treemacs" "treemacs-evil" "posframe" "cfrs" "hydra" "pfuture" "avy" "ace-window" "treemacs" "yasnippet-snippets" "yasnippet" "which-key" "company-mode" "seq" "let-alist" "epl" "pkg-info" "flycheck" "smartparens" "lsp-ui" "lv" "markdown-mode" "spinner" "ht" "s" "f" "lsp-mode" "rainbow-delimiters" "paredit" "evil-magit" "magit-section" "with-editor" "transient" "git-commit" "magit" "vterm" "elisp-format" "marginalia" "nadvice" "compat" "consult" "orderless" "savehist" "vertico" "undo-fu" "annalist" "evil-collection" "dash" "cl-lib" "goto-chg" "evil" "el-patch" "bind-key" "use-package" "emacs" "straight" "emacsmirror-mirror" "el-get" "nongnu-elpa" "gnu-elpa-mirror" "melpa" "org-elpa")
 
 t
