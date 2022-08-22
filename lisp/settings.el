@@ -32,8 +32,8 @@
 
 (recentf-mode t)
 
-(add-hook 'after-change-major-mode-hook (lambda ()
-(modify-syntax-entry ?_ "w")))
+(add-hook 'after-change-major-mode-hook (lambda () 
+					  (modify-syntax-entry ?_ "w")))
 
 (setq recentf-max-menu-items 1000)
 
