@@ -21,6 +21,7 @@
 (require 'init-rust)
 (require 'init-c-cpp)
 (require 'init-go)
+(require 'init-racket)
 
 (require 'init-python)
 
