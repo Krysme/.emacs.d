@@ -59,6 +59,7 @@
 
 
 (setq cargo-process--command-run "run --release")
+(setq cargo-process--command-build "build --release")
 (setq cargo-process--command-clippy "clippy")
 
 (after-load 'rust-mode (rust-enable-format-on-save))
