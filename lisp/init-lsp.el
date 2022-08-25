@@ -1,4 +1,5 @@
 ;; -*- lexical-binding: t -*-
+
 (defface lsp-ui-sideline-code-action
   '((t :foreground "red"))
   "Face used to highlight code action text."
@@ -8,6 +9,8 @@
 (straight-use-package 'lsp-ui)
 (straight-use-package 'smartparens)
 (straight-use-package 'flycheck)
+
+(require 'dash)
 
 (after-load 'lsp-mode
   (add-hook 'lsp-mode-hook (lambda () (flycheck-mode t))))
@@ -24,7 +27,7 @@
 ;; keys
 (add-hook
  'lsp-mode-hook
- (lambda () (interactive)
+ (lambda () 
    (add-hook 'before-save-hook 'lsp-format-buffer)
    (define-key lsp-mode-map (kbd "C-c C-f") 'lsp-format-buffer)
    (define-key lsp-mode-map (kbd "C-C C-c") 'lsp-ui-sideline-apply-code-actions)
@@ -43,5 +46,24 @@
 							   (lsp-ui-doc-show)
 							   (setq krys-ui-doc-show t)))
 						       )))))
+
+(defun lsp-find-file ()
+  (interactive)
+  (--> (lsp-workspace-root)
+       (or it (user-error "Not an LSP project"))
+       (shell-command-to-string  (concat  "fd . --type f " "\"" it "\""))
+       (split-string it "[\r\n]+")
+       (seq-filter (lambda (x) (-> x string-blank-p not)) it)
+       (consult--read
+	it
+	:prompt "Find File in Project: "
+	:sort nil
+	:require-match t
+	:category 'file
+	:state nil
+	:history 'file-name-history)
+       (find-file it)))
+
+
 
 (provide 'init-lsp)
