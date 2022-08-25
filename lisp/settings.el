@@ -59,5 +59,7 @@
 (add-hook 'json-mode-hook 'smartparens-mode)
 
 (global-set-key (kbd "C-w") 'backward-kill-word)
+;; enable erase-buffer
+(put 'erase-buffer 'disabled nil)
 
 (provide 'settings)
