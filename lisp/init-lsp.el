@@ -11,7 +11,6 @@
 (straight-use-package 'flycheck)
 
 (require 'dash)
-
 (after-load 'lsp-mode
   (add-hook 'lsp-mode-hook (lambda () (flycheck-mode t))))
 
@@ -47,10 +46,13 @@
 							   (setq krys-ui-doc-show t)))
 						       )))))
 
-(defun lsp-find-file ()
+
+(defun find-file-in-project ()
   (interactive)
-  (--> (lsp-workspace-root)
-       (or it (user-error "Not an LSP project"))
+  (-->
+     (locate-dominating-file default-directory ".git")
+       (or it (user-error "Not in a project"))
+       (expand-file-name it)
        (shell-command-to-string  (concat  "fd . --type f " "\"" it "\""))
        (split-string it "[\r\n]+")
        (seq-filter (lambda (x) (-> x string-blank-p not)) it)

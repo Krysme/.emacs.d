@@ -87,8 +87,8 @@
 
 
 (defun setup-visual-keys ()
-  (evil-global-set-key 'visual (kbd "(") 'sp-wrap-round) 
-  (evil-global-set-key 'visual (kbd ")") 'sp-wrap-square) 
+  (evil-global-set-key 'visual (kbd "(") 'sp-wrap-round)
+  (evil-global-set-key 'visual (kbd ")") 'sp-wrap-square)
   (evil-global-set-key 'visual (kbd "{") 'sp-wrap-curly) 
   (evil-global-set-key 'visual (kbd "\"") (lambda () (interactive) (sp-wrap-with-pair "\""))))
 
@@ -139,6 +139,7 @@
   (lambda () 
     (interactive) 
     (evil-scroll-line-down 5)))
+
 (evil-global-set-key 'insert (kbd "C-y") 
   (lambda () 
     (interactive) 
