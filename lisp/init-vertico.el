@@ -11,12 +11,14 @@
 		      :init
 		      (savehist-mode))
 
+
 (use-package orderless
   :ensure t
   :straight t
   :init
-  (setq completion-styles '(orderless)
-	completion-category-overrides '((file (styles partial-completion)))))
+  (progn 
+    (setq completion-styles '(basic orderless))
+     (setq completion-category-overrides '((file (styles partial-completion))))))
 
 (use-package consult
   :straight t
