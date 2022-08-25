@@ -24,9 +24,6 @@
 ;; key redefinition
 (after-load 'dired (global-set-key (kbd "C-x d") nil))
 
-;; dired entry
-(after-load 'evil (evil-global-set-key 'normal " d" 'dired-jump))
-
 
 (fset 'evil-visual-update-x-selection 'ignore)
 
@@ -99,6 +96,7 @@
   (evil-global-set-key mode (kbd "K") nil)
   (evil-global-set-key mode (kbd "SPC") nil)
   (evil-global-set-key mode (kbd "SPC hf") #'helpful-callable)
+  (evil-global-set-key mode (kbd "SPC d") #'dired-jump)
   (evil-global-set-key mode (kbd "SPC hv") #'helpful-variable)
   (evil-global-set-key mode (kbd "SPC hk") #'helpful-key)
   (evil-global-set-key mode (kbd "SPC ho") #'helpful-symbol)
