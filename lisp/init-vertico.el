@@ -77,7 +77,7 @@
   (interactive)
   (let* ((buffer-content (minibuffer-contents-no-properties))
 	 (is-sudo (string-prefix-p sudo-prefix buffer-content))
-	 (changed-dir (if is-sudo
+	 (toggled-dir (if is-sudo
 			  (let* ((home-dir (expand-file-name "~"))
 				(sudo-removed (substring buffer-content (length sudo-prefix))))
 			    (if (string-prefix-p home-dir sudo-removed)
@@ -85,7 +85,7 @@
 			      sudo-removed))
 			(concat sudo-prefix (expand-file-name buffer-content)))))
     (delete-minibuffer-contents)
-    (insert changed-dir)))
+    (insert toggled-dir)))
 
 
 
