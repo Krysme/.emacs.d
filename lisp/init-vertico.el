@@ -65,6 +65,7 @@
   (interactive)
   (let ((directory (minibuffer-contents-no-properties)))
     (delete-minibuffer-contents)
+
     (insert (string-trim-right (if (string= directory "~/") (expand-file-name "~/") directory) "[^/]+/?"))))
 
 
@@ -77,7 +78,11 @@
   (let* ((buffer-content (minibuffer-contents-no-properties))
 	 (is-sudo (string-prefix-p sudo-prefix buffer-content))
 	 (changed-dir (if is-sudo
-			  (substring buffer-content (length sudo-prefix))
+			  (let* ((home-dir (expand-file-name "~"))
+				(sudo-removed (substring buffer-content (length sudo-prefix))))
+			    (if (string-prefix-p home-dir sudo-removed)
+				(concat "~" (substring sudo-removed (length home-dir)))
+			      sudo-removed))
 			(concat sudo-prefix (expand-file-name buffer-content)))))
     (delete-minibuffer-contents)
     (insert changed-dir)))
