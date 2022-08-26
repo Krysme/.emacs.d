@@ -4,9 +4,6 @@
 
 (add-hook 'emacs-lisp-mode-hook 'company-mode)
 
-(straight-use-package 'elisp-format)
-
-(define-key emacs-lisp-mode-map (kbd "C-c C-f") 'elisp-format-buffer)
 
 (add-hook 'paredit-mode-hook 'paredit-custom-leader-keys)
 
