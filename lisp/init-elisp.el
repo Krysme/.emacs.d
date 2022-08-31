@@ -19,8 +19,10 @@
   (call-interactively 'evil-visual-char)
   (call-interactively 'evil-jump-item))
 
-(add-hook 'emacs-lisp-mode-hook
-	  (evil-define-key 'insert emacs-lisp-mode-map (kbd "C-w") 'backward-kill-sexp)
-	  (evil-define-key 'visual emacs-lisp-mode-map (kbd "v") 'mark-outer-sexp))
+(defun emacs-lisp-sexp-key ()
+  (evil-define-key 'insert emacs-lisp-mode-map (kbd "C-w") 'backward-kill-sexp)
+  (evil-define-key 'visual emacs-lisp-mode-map (kbd "v") 'mark-outer-sexp))
+
+(add-hook 'emacs-lisp-mode-hook 'emacs-lisp-sexp-key)
 
 (provide 'init-elisp)
