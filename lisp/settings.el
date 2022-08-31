@@ -62,4 +62,18 @@
 ;; enable erase-buffer
 (put 'erase-buffer 'disabled nil)
 
+
+
+(use-package stream
+  :ensure t
+  :straight t)
+
+(defun seq-collect-list (sequence)
+  (seq-reduce (lambda (x y) (nconc x (list y))) sequence '()))
+
+
+
+
+
+
 (provide 'settings)
