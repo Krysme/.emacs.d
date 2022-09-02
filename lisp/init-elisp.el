@@ -23,6 +23,6 @@
   (evil-define-key 'insert emacs-lisp-mode-map (kbd "C-w") 'backward-kill-sexp)
   (evil-define-key 'visual emacs-lisp-mode-map (kbd "v") 'mark-outer-sexp))
 
-(add-hook 'emacs-lisp-mode-hook 'emacs-lisp-sexp-key)
+(add-hook 'emacs-startup-hook 'emacs-lisp-sexp-key)
 
 (provide 'init-elisp)
