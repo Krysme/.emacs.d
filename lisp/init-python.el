@@ -11,6 +11,12 @@
   :straight t 
   :config (pyvenv-mode 1))
 
+(use-package lsp-pyright
+  :straight t
+  :ensure t
+  :hook (python-mode . (lambda ()
+                          (require 'lsp-pyright)
+                          (lsp))))
 (use-package 
   dap-mode
   ;; Uncomment the config below if you want all UI panes to be hidden by default!
@@ -26,7 +32,7 @@
   ;; Bind `C-c l d` to `dap-hydra` for easy access
   )
 
-;; (add-hook 'python-mode-hook 'smartparens-mode)
+(add-hook 'python-mode-hook 'smartparens-mode)
 
 (setq lsp-pylsp-plugins-flake8-ignore '("E303"))
 
