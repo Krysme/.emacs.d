@@ -27,13 +27,10 @@
 
 (add-hook 'toml-mode-hook 
 	  (lambda () 
-	    (define-key evil-visual-state-map (kbd "(") 'sp-wrap-round) 
-	    (define-key evil-visual-state-map (kbd ")") 'sp-wrap-square) 
-	    (define-key evil-visual-state-map (kbd "{") 'sp-wrap-curly) 
-	    (define-key evil-visual-state-map (kbd "\"") 
-	      (lambda () 
-		(interactive) 
-		(sp-wrap-with-pair "\"")))))
+	    (evil-define-key 'visual toml-mode-map (kbd "(") 'sp-wrap-round)
+	    (evil-define-key 'visual toml-mode-map (kbd "[") 'sp-wrap-square)
+	    (evil-define-key 'visual toml-mode-map (kbd "{") 'sp-wrap-curly)
+	    (evil-define-key 'visual toml-mode-map (kbd "\"") (lambda () (interactive) (sp-wrap-with-pair "\"")))))
 
 
 (after-load 'smartparens (sp-local-pair 'rust-mode "'" nil 
@@ -43,17 +40,17 @@
 	    (sp-local-pair 'rust-mode "\"" "\""))
 
 
+  ;; (evil-define-key 'insert emacs-lisp-mode-map (kbd "C-w") 'backward-kill-sexp)
 (add-hook 'rust-mode-hook 
 	  (lambda () 
+
 	    (define-key rust-mode-map (kbd "C-c C-b") 'cargo-process-build) 
 	    (define-key rust-mode-map (kbd "C-c C-r") 'cargo-process-run)
-	    (define-key evil-visual-state-map (kbd "(") 'sp-wrap-round) 
-	    (define-key evil-visual-state-map (kbd ")") 'sp-wrap-square) 
-	    (define-key evil-visual-state-map (kbd "{") 'sp-wrap-curly) 
-	    (define-key evil-visual-state-map (kbd "<") 
-	      (lambda () 
-		(interactive) 
-		(sp-wrap-with-pair "<")))))
+
+	    (evil-define-key 'visual rust-mode-map (kbd "(") 'sp-wrap-round)
+	    (evil-define-key 'visual rust-mode-map (kbd "[") 'sp-wrap-square)
+	    (evil-define-key 'visual rust-mode-map (kbd "{") 'sp-wrap-curly)
+	    (evil-define-key 'visual rust-mode-map (kbd "<") (lambda () (interactive) (sp-wrap-with-pair "<")))))
 
 
 (setq cargo-process--command-run "run --release")
