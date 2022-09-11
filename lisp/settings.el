@@ -24,7 +24,6 @@
 (after-load 'doom-themes (load-theme 'doom-solarized-light t))
 
 ;; theme
-(straight-use-package 'spacemacs-theme)
 (straight-use-package 'all-the-icons)
 
 ;; font
