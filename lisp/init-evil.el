@@ -134,6 +134,8 @@
 (evil-global-set-key 'insert (kbd "C-k") 'previous-line)
 (evil-global-set-key 'insert (kbd "C-h") 'backward-char)
 (evil-global-set-key 'insert (kbd "C-s") 'save-buffer)
+(evil-global-set-key 'insert (kbd "C-n") nil)
+(evil-global-set-key 'insert (kbd "C-p") nil)
 
 (evil-global-set-key 'insert (kbd "C-e") 
   (lambda () 
