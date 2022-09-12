@@ -16,7 +16,13 @@
 	 (rev-rest (reverse rest)))
     (cons first rev-rest)))
 
-
+(defun consult-find-file-in-project ()
+  (interactive)
+  (-->
+   (locate-dominating-file default-directory ".git")
+   (or it (user-error "Not in a project"))
+   (expand-file-name it)
+   (consult-find it)))
 
 (defun find-file-in-project ()
   (interactive)
