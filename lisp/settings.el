@@ -3,6 +3,8 @@
 
 (setq ring-bell-function 'ignore)
 
+(setq find-file-visit-truename t)
+
 (global-hl-line-mode +1)
 
 (global-display-line-numbers-mode)
@@ -16,6 +18,9 @@
 (setq auto-save-default nil)
 (setq tab-always-indent 'complete)
 (straight-use-package 'smooth-scrolling)
+
+(straight-use-package 'all-the-icons
+		      :if (display-graphic-p))
 
 (after-load 'smooth-scrolling (smooth-scrolling-mode 1))
 

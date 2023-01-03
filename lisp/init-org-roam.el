@@ -1,0 +1,5 @@
+(setq org-roam-directory (file-truename "~/code/roam"))
+(straight-use-package 'org)
+(straight-use-package 'org-roam)
+(org-roam-db-autosync-mode)
+(provide 'init-org-roam)
