@@ -3,303 +3,9 @@
 
 "28.2"
 
-#s(hash-table size 97 test equal rehash-size 1.5 rehash-threshold 0.8125 data ("org-elpa" ("2023-01-12 16:07:00" nil (:local-repo nil :package "org-elpa" :type git)) "melpa" ("2023-01-12 16:07:00" nil (:type git :host github :repo "melpa/melpa" :build nil :package "melpa" :local-repo "melpa")) "gnu-elpa-mirror" ("2023-01-12 16:07:00" nil (:type git :host github :repo "emacs-straight/gnu-elpa-mirror" :build nil :package "gnu-elpa-mirror" :local-repo "gnu-elpa-mirror")) "nongnu-elpa" ("2023-01-12 16:07:00" nil (:type git :repo "https://git.savannah.gnu.org/git/emacs/nongnu.git" :local-repo "nongnu-elpa" :build nil :package "nongnu-elpa")) "el-get" ("2023-01-12 16:07:00" nil (:type git :host github :repo "dimitri/el-get" :build nil :files ("*.el" ("recipes" "recipes/el-get.rcp") "methods" "el-get-pkg.el") :flavor melpa :package "el-get" :local-repo "el-get")) "emacsmirror-mirror" ("2023-01-12 16:07:00" nil (:type git :host github :repo "emacs-straight/emacsmirror-mirror" :build nil :package "emacsmirror-mirror" :local-repo "emacsmirror-mirror")) "straight" ("2023-01-12 16:07:00" ("emacs") (:type git :host github :repo "radian-software/straight.el" :files ("straight*.el") :branch "master" :package "straight" :local-repo "straight.el")) "use-package" ("2023-01-12 16:07:00" ("emacs" "bind-key") (:type git :flavor melpa :files (:defaults (:exclude "bind-key.el" "bind-chord.el" "use-package-chords.el" "use-package-ensure-system-package.el") "use-package-pkg.el") :host github :repo "jwiegley/use-package" :package "use-package" :local-repo "use-package")) "bind-key" ("2023-01-12 16:07:00" ("emacs") (:flavor melpa :files ("bind-key.el" "bind-key-pkg.el") :package "bind-key" :local-repo "use-package" :type git :repo "jwiegley/use-package" :host github)) "el-patch" ("2023-01-12 16:07:00" ("emacs") (:type git :flavor melpa :host github :repo "radian-software/el-patch" :package "el-patch" :local-repo "el-patch")) "evil" ("2023-01-12 16:07:00" ("emacs" "goto-chg" "cl-lib") (:type git :flavor melpa :files (:defaults "doc/build/texinfo/evil.texi" (:exclude "evil-test-helpers.el") "evil-pkg.el") :host github :repo "emacs-evil/evil" :package "evil" :local-repo "evil")) "goto-chg" ("2023-01-12 16:07:00" ("emacs") (:type git :flavor melpa :host github :repo "emacs-evil/goto-chg" :package "goto-chg" :local-repo "goto-chg")) "dash" ("2023-01-12 16:07:00" ("emacs") (:type git :flavor melpa :files ("dash.el" "dash.texi" "dash-pkg.el") :host github :repo "magnars/dash.el" :package "dash" :local-repo "dash.el")) "evil-collection" ("2023-01-12 16:07:00" ("emacs" "evil" "annalist") (:type git :flavor melpa :files (:defaults "modes" "evil-collection-pkg.el") :host github :repo "emacs-evil/evil-collection" :package "evil-collection" :local-repo "evil-collection")) "annalist" ("2023-01-12 16:07:00" ("emacs" "cl-lib") (:type git :flavor melpa :host github :repo "noctuid/annalist.el" :package "annalist" :local-repo "annalist.el")) "undo-fu" ("2023-01-12 16:07:00" ("emacs") (:type git :flavor melpa :host codeberg :repo "ideasman42/emacs-undo-fu" :package "undo-fu" :local-repo "emacs-undo-fu")) "vertico" ("2023-01-12 16:07:00" ("emacs") (:type git :host github :repo "emacs-straight/vertico" :files ("*" (:exclude ".git")) :package "vertico" :local-repo "vertico")) "orderless" ("2023-01-12 16:07:00" ("emacs") (:type git :flavor melpa :host github :repo "oantolin/orderless" :package "orderless" :local-repo "orderless")) "consult" ("2023-01-12 16:07:00" ("emacs" "compat") (:type git :flavor melpa :host github :repo "minad/consult" :package "consult" :local-repo "consult")) "compat" ("2023-01-12 16:07:00" ("emacs" "nadvice") (:type git :host github :repo "emacs-straight/compat" :files ("*" (:exclude ".git")) :package "compat" :local-repo "compat")) "marginalia" ("2023-01-12 16:07:00" ("emacs") (:type git :flavor melpa :host github :repo "minad/marginalia" :package "marginalia" :local-repo "marginalia")) "embark" ("2023-01-12 16:07:00" ("emacs") (:type git :flavor melpa :files ("embark.el" "embark-org.el" "embark.texi" "embark-pkg.el") :host github :repo "oantolin/embark" :package "embark" :local-repo "embark")) "embark-consult" ("2023-01-12 16:07:00" ("emacs" "embark" "consult") (:flavor melpa :files ("embark-consult.el" "embark-consult-pkg.el") :package "embark-consult" :local-repo "embark" :type git :repo "oantolin/embark" :host github)) "vterm" ("2023-01-12 16:07:00" ("emacs") (:type git :flavor melpa :files ("CMakeLists.txt" "elisp.c" "elisp.h" "emacs-module.h" "etc" "utf8.c" "utf8.h" "vterm.el" "vterm-module.c" "vterm-module.h" "vterm-pkg.el") :host github :repo "akermu/emacs-libvterm" :package "vterm" :local-repo "emacs-libvterm")) "magit" ("2023-01-12 16:07:00" ("emacs" "compat" "dash" "git-commit" "magit-section" "transient" "with-editor") (:type git :flavor melpa :files ("lisp/magit" "lisp/magit*.el" "lisp/git-rebase.el" "docs/magit.texi" "docs/AUTHORS.md" "LICENSE" "Documentation/magit.texi" "Documentation/AUTHORS.md" (:exclude "lisp/magit-libgit.el" "lisp/magit-libgit-pkg.el" "lisp/magit-section.el" "lisp/magit-section-pkg.el") "magit-pkg.el") :host github :repo "magit/magit" :package "magit" :local-repo "magit")) "git-commit" ("2023-01-12 16:07:00" ("emacs" "compat" "transient" "with-editor") (:flavor melpa :files ("lisp/git-commit.el" "lisp/git-commit-pkg.el" "git-commit-pkg.el") :package "git-commit" :local-repo "magit" :type git :repo "magit/magit" :host github)) "transient" ("2023-01-12 16:07:00" ("emacs" "compat") (:type git :flavor melpa :host github :repo "magit/transient" :package "transient" :local-repo "transient")) "with-editor" ("2023-01-12 16:07:00" ("emacs" "compat") (:type git :flavor melpa :host github :repo "magit/with-editor" :package "with-editor" :local-repo "with-editor")) "magit-section" ("2023-01-12 16:07:00" ("emacs" "compat" "dash") (:flavor melpa :files ("lisp/magit-section.el" "lisp/magit-section-pkg.el" "docs/magit-section.texi" "Documentation/magit-section.texi" "magit-section-pkg.el") :package "magit-section" :local-repo "magit" :type git :repo "magit/magit" :host github)) "evil-magit" ("2023-01-12 16:07:00" ("evil" "magit") (:type git :host github :repo "emacs-evil/evil-magit" :files (:defaults) :package "evil-magit" :local-repo "evil-magit")) "paredit" ("2023-01-12 16:07:00" nil (:type git :flavor melpa :repo "https://mumble.net/~campbell/git/paredit.git" :package "paredit" :local-repo "paredit")) "rainbow-delimiters" ("2023-01-12 16:07:00" nil (:type git :flavor melpa :host github :repo "Fanael/rainbow-delimiters" :package "rainbow-delimiters" :local-repo "rainbow-delimiters")) "lsp-mode" ("2023-01-12 16:07:00" ("emacs" "dash" "f" "ht" "spinner" "markdown-mode" "lv" "eldoc") (:type git :flavor melpa :files (:defaults "clients/*.el" "lsp-mode-pkg.el") :host github :repo "emacs-lsp/lsp-mode" :package "lsp-mode" :local-repo "lsp-mode")) "f" ("2023-01-12 16:07:00" ("emacs" "s" "dash") (:type git :flavor melpa :host github :repo "rejeep/f.el" :package "f" :local-repo "f.el")) "s" ("2023-01-12 16:07:00" nil (:type git :flavor melpa :host github :repo "magnars/s.el" :package "s" :local-repo "s.el")) "ht" ("2023-01-12 16:07:00" ("dash") (:type git :flavor melpa :host github :repo "Wilfred/ht.el" :package "ht" :local-repo "ht.el")) "spinner" ("2023-01-12 16:07:00" ("emacs") (:type git :host github :repo "emacs-straight/spinner" :files ("*" (:exclude ".git")) :package "spinner" :local-repo "spinner")) "markdown-mode" ("2023-01-12 16:07:00" ("emacs") (:type git :flavor melpa :host github :repo "jrblevin/markdown-mode" :package "markdown-mode" :local-repo "markdown-mode")) "lv" ("2023-01-12 16:07:00" nil (:type git :flavor melpa :files ("lv.el" "lv-pkg.el") :host github :repo "abo-abo/hydra" :package "lv" :local-repo "hydra")) "eldoc" ("2023-01-12 16:07:00" ("emacs") (:type git :host github :repo "emacs-straight/eldoc" :files ("*" (:exclude ".git")) :package "eldoc" :local-repo "eldoc")) "lsp-ui" ("2023-01-12 16:07:00" ("emacs" "dash" "lsp-mode" "markdown-mode") (:type git :flavor melpa :files (:defaults "lsp-ui-doc.html" "resources" "lsp-ui-pkg.el") :host github :repo "emacs-lsp/lsp-ui" :package "lsp-ui" :local-repo "lsp-ui")) "smartparens" ("2023-01-12 16:07:00" ("dash" "cl-lib") (:type git :flavor melpa :host github :repo "Fuco1/smartparens" :package "smartparens" :local-repo "smartparens")) "flycheck" ("2023-01-12 16:07:00" ("dash" "pkg-info" "let-alist" "seq" "emacs") (:type git :flavor melpa :host github :repo "flycheck/flycheck" :package "flycheck" :local-repo "flycheck")) "pkg-info" ("2023-01-12 16:07:00" ("epl") (:type git :flavor melpa :host github :repo "emacsorphanage/pkg-info" :package "pkg-info" :local-repo "pkg-info")) "epl" ("2023-01-12 16:07:00" ("cl-lib") (:type git :flavor melpa :host github :repo "cask/epl" :package "epl" :local-repo "epl")) "let-alist" ("2023-01-12 16:07:00" ("emacs") (:type git :host github :repo "emacs-straight/let-alist" :files ("*" (:exclude ".git")) :package "let-alist" :local-repo "let-alist")) "company-mode" ("2023-01-12 16:07:00" nil (:type git :host github :repo "company-mode/company-mode" :files (:defaults) :package "company-mode" :local-repo "company-mode")) "which-key" ("2023-01-12 16:07:00" ("emacs") (:type git :flavor melpa :host github :repo "justbur/emacs-which-key" :package "which-key" :local-repo "emacs-which-key")) "yasnippet" ("2023-01-12 16:07:00" ("cl-lib") (:type git :flavor melpa :files ("yasnippet.el" "snippets" "yasnippet-pkg.el") :host github :repo "joaotavora/yasnippet" :package "yasnippet" :local-repo "yasnippet")) "yasnippet-snippets" ("2023-01-12 16:07:00" ("yasnippet") (:type git :flavor melpa :files ("*.el" "snippets" ".nosearch" "yasnippet-snippets-pkg.el") :host github :repo "AndreaCrotti/yasnippet-snippets" :package "yasnippet-snippets" :local-repo "yasnippet-snippets")) "treemacs" ("2023-01-12 16:07:00" ("emacs" "cl-lib" "dash" "s" "ace-window" "pfuture" "hydra" "ht" "cfrs") (:type git :flavor melpa :files (:defaults "Changelog.org" "icons" "src/elisp/treemacs*.el" "src/scripts/treemacs*.py" (:exclude "src/extra/*") "treemacs-pkg.el") :host github :repo "Alexander-Miller/treemacs" :package "treemacs" :local-repo "treemacs")) "ace-window" ("2023-01-12 16:07:00" ("avy") (:type git :flavor melpa :host github :repo "abo-abo/ace-window" :package "ace-window" :local-repo "ace-window")) "avy" ("2023-01-12 16:07:00" ("emacs" "cl-lib") (:type git :flavor melpa :host github :repo "abo-abo/avy" :package "avy" :local-repo "avy")) "pfuture" ("2023-01-12 16:07:00" ("emacs") (:type git :flavor melpa :host github :repo "Alexander-Miller/pfuture" :package "pfuture" :local-repo "pfuture")) "hydra" ("2023-01-12 16:07:00" ("cl-lib" "lv") (:flavor melpa :files (:defaults (:exclude "lv.el") "hydra-pkg.el") :package "hydra" :local-repo "hydra" :type git :repo "abo-abo/hydra" :host github)) "cfrs" ("2023-01-12 16:07:00" ("emacs" "dash" "s" "posframe") (:type git :flavor melpa :host github :repo "Alexander-Miller/cfrs" :package "cfrs" :local-repo "cfrs")) "posframe" ("2023-01-12 16:07:00" ("emacs") (:type git :flavor melpa :host github :repo "tumashu/posframe" :package "posframe" :local-repo "posframe")) "treemacs-evil" ("2023-01-12 16:07:00" ("emacs" "evil" "treemacs") (:flavor melpa :files ("src/extra/treemacs-evil.el" "treemacs-evil-pkg.el") :package "treemacs-evil" :local-repo "treemacs" :type git :repo "Alexander-Miller/treemacs" :host github)) "lsp-treemacs" ("2023-01-12 16:07:00" ("emacs" "dash" "f" "ht" "treemacs" "lsp-mode") (:type git :flavor melpa :files (:defaults "icons" "lsp-treemacs-pkg.el") :host github :repo "emacs-lsp/lsp-treemacs" :package "lsp-treemacs" :local-repo "lsp-treemacs")) "adoc-mode" ("2023-01-12 16:07:00" ("emacs" "markup-faces") (:type git :flavor melpa :host github :repo "bbatsov/adoc-mode" :package "adoc-mode" :local-repo "adoc-mode")) "markup-faces" ("2023-01-12 16:07:00" nil (:type git :flavor melpa :host github :repo "sensorflo/markup-faces" :package "markup-faces" :local-repo "markup-faces")) "smooth-scrolling" ("2023-01-12 16:07:01" nil (:type git :flavor melpa :host github :repo "aspiers/smooth-scrolling" :package "smooth-scrolling" :local-repo "smooth-scrolling")) "all-the-icons" ("2023-01-12 16:07:01" ("emacs") (:type git :flavor melpa :files (:defaults "data" "all-the-icons-pkg.el") :host github :repo "domtronn/all-the-icons.el" :package "all-the-icons" :local-repo "all-the-icons.el")) "doom-themes" ("2023-01-12 16:07:01" ("emacs" "cl-lib") (:type git :flavor melpa :files (:defaults "themes/*.el" "themes/*/*.el" "extensions/*.el" "doom-themes-pkg.el") :host github :repo "doomemacs/themes" :package "doom-themes" :local-repo "themes")) "helpful" ("2023-01-12 16:07:01" ("emacs" "dash" "s" "f" "elisp-refs") (:type git :flavor melpa :host github :repo "Wilfred/helpful" :package "helpful" :local-repo "helpful")) "elisp-refs" ("2023-01-12 16:07:01" ("dash" "s") (:type git :flavor melpa :files (:defaults (:exclude "elisp-refs-bench.el") "elisp-refs-pkg.el") :host github :repo "Wilfred/elisp-refs" :package "elisp-refs" :local-repo "elisp-refs")) "dashboard" ("2023-01-12 16:07:01" ("emacs") (:type git :flavor melpa :files (:defaults "banners" "dashboard-pkg.el") :host github :repo "emacs-dashboard/emacs-dashboard" :package "dashboard" :local-repo "emacs-dashboard")) "json-mode" ("2023-01-12 16:07:01" ("json-snatcher" "emacs") (:type git :flavor melpa :host github :repo "joshwnj/json-mode" :package "json-mode" :local-repo "json-mode")) "json-snatcher" ("2023-01-12 16:07:01" ("emacs") (:type git :flavor melpa :host github :repo "Sterlingg/json-snatcher" :package "json-snatcher" :local-repo "json-snatcher")) "stream" ("2023-01-12 16:07:01" ("emacs") (:type git :host github :repo "emacs-straight/stream" :files ("*" (:exclude ".git")) :package "stream" :local-repo "stream")) "rust-mode" ("2023-01-12 16:07:01" ("emacs") (:type git :flavor melpa :host github :repo "rust-lang/rust-mode" :package "rust-mode" :local-repo "rust-mode")) "cargo" ("2023-01-12 16:07:01" ("emacs" "markdown-mode") (:type git :flavor melpa :host github :repo "kwrooijen/cargo.el" :package "cargo" :local-repo "cargo.el")) "toml-mode" ("2023-01-12 16:07:01" ("emacs" "cl-lib") (:type git :flavor melpa :host github :repo "dryman/toml-mode.el" :package "toml-mode" :local-repo "toml-mode.el")) "ccls" ("2023-01-12 16:07:01" ("emacs" "lsp-mode" "dash") (:type git :flavor melpa :host github :repo "emacs-lsp/emacs-ccls" :package "ccls" :local-repo "emacs-ccls")) "go-mode" ("2023-01-12 16:07:01" ("emacs") (:type git :flavor melpa :files ("go-mode.el" "go-mode-pkg.el") :host github :repo "dominikh/go-mode.el" :package "go-mode" :local-repo "go-mode.el")) "racket-mode" ("2023-01-12 16:07:01" ("emacs") (:type git :flavor melpa :files (:defaults "*.rkt" ("racket" "racket/*") (:exclude "racket/example/*" "racket/test/*") "racket-mode-pkg.el") :host github :repo "greghendershott/racket-mode" :package "racket-mode" :local-repo "racket-mode")) "python-mode" ("2023-01-12 16:07:01" ("emacs") (:type git :flavor melpa :files ("python-mode.el" ("completion" "completion/pycomplete.*") "python-mode-pkg.el") :host gitlab :repo "python-mode-devs/python-mode" :package "python-mode" :local-repo "python-mode")) "pyvenv" ("2023-01-12 16:07:01" nil (:type git :flavor melpa :host github :repo "jorgenschaefer/pyvenv" :package "pyvenv" :local-repo "pyvenv")) "lsp-pyright" ("2023-01-12 16:07:01" ("emacs" "lsp-mode" "dash" "ht") (:type git :flavor melpa :host github :repo "emacs-lsp/lsp-pyright" :package "lsp-pyright" :local-repo "lsp-pyright")) "livedown" ("2023-01-12 16:07:01" nil (:type git :host github :repo "shime/emacs-livedown" :files (:defaults) :package "livedown" :local-repo "emacs-livedown")) "web-mode" ("2022-12-29 14:51:04" ("emacs") (:type git :flavor melpa :host github :repo "fxbois/web-mode" :package "web-mode" :local-repo "web-mode")) "org-roam" ("2023-01-12 16:07:01" ("emacs" "dash" "org" "emacsql" "emacsql-sqlite" "magit-section") (:type git :flavor melpa :files (:defaults "extensions/*" "org-roam-pkg.el") :host github :repo "org-roam/org-roam" :package "org-roam" :local-repo "org-roam")) "org" ("2023-01-12 16:07:01" ("emacs") (:type git :repo "https://git.savannah.gnu.org/git/emacs/org-mode.git" :local-repo "org" :depth full :pre-build (straight-recipes-org-elpa--build) :build (:not autoloads) :files (:defaults "lisp/*.el" ("etc/styles/" "etc/styles/*")) :package "org")) "emacsql" ("2023-01-12 16:07:01" ("emacs") (:type git :flavor melpa :files ("emacsql.el" "emacsql-compiler.el" "README.md" "emacsql-pkg.el") :host github :repo "magit/emacsql" :package "emacsql" :local-repo "emacsql")) "emacsql-sqlite" ("2023-01-12 16:07:01" ("emacs" "emacsql") (:flavor melpa :files ("emacsql-sqlite.el" "sqlite" "emacsql-sqlite-pkg.el") :package "emacsql-sqlite" :local-repo "emacsql" :type git :repo "magit/emacsql" :host github)) "org-bullets" ("2023-01-12 16:07:01" nil (:type git :flavor melpa :host github :repo "integral-dw/org-bullets" :package "org-bullets" :local-repo "org-bullets")) "calfw-org" ("2023-01-12 16:07:01" nil (:flavor melpa :files ("calfw-org.el" "calfw-org-pkg.el") :package "calfw-org" :local-repo "emacs-calfw" :type git :repo "kiwanami/emacs-calfw" :host github)) "calfw" ("2023-01-12 16:07:01" nil (:type git :flavor melpa :files ("calfw.el" "calfw-pkg.el") :host github :repo "kiwanami/emacs-calfw" :package "calfw" :local-repo "emacs-calfw"))))
+#s(hash-table size 97 test equal rehash-size 1.5 rehash-threshold 0.8125 data ("org-elpa" ("2023-01-12 17:31:32" nil (:local-repo nil :package "org-elpa" :type git)) "melpa" ("2023-01-12 16:07:00" nil (:type git :host github :repo "melpa/melpa" :build nil :package "melpa" :local-repo "melpa")) "gnu-elpa-mirror" ("2023-01-12 16:07:00" nil (:type git :host github :repo "emacs-straight/gnu-elpa-mirror" :build nil :package "gnu-elpa-mirror" :local-repo "gnu-elpa-mirror")) "nongnu-elpa" ("2023-01-12 16:07:00" nil (:type git :repo "https://git.savannah.gnu.org/git/emacs/nongnu.git" :local-repo "nongnu-elpa" :build nil :package "nongnu-elpa")) "el-get" ("2023-01-12 16:07:00" nil (:type git :host github :repo "dimitri/el-get" :build nil :files ("*.el" ("recipes" "recipes/el-get.rcp") "methods" "el-get-pkg.el") :flavor melpa :package "el-get" :local-repo "el-get")) "emacsmirror-mirror" ("2023-01-12 16:07:00" nil (:type git :host github :repo "emacs-straight/emacsmirror-mirror" :build nil :package "emacsmirror-mirror" :local-repo "emacsmirror-mirror")) "straight" ("2023-01-12 17:31:32" ("emacs") (:type git :host github :repo "radian-software/straight.el" :files ("straight*.el") :branch "master" :package "straight" :local-repo "straight.el")) "use-package" ("2023-01-12 17:31:32" ("emacs" "bind-key") (:type git :flavor melpa :files (:defaults (:exclude "bind-key.el" "bind-chord.el" "use-package-chords.el" "use-package-ensure-system-package.el") "use-package-pkg.el") :host github :repo "jwiegley/use-package" :package "use-package" :local-repo "use-package")) "bind-key" ("2023-01-12 17:31:32" ("emacs") (:flavor melpa :files ("bind-key.el" "bind-key-pkg.el") :package "bind-key" :local-repo "use-package" :type git :repo "jwiegley/use-package" :host github)) "el-patch" ("2023-01-12 17:31:32" ("emacs") (:type git :flavor melpa :host github :repo "radian-software/el-patch" :package "el-patch" :local-repo "el-patch")) "evil" ("2023-01-12 17:31:32" ("emacs" "goto-chg" "cl-lib") (:type git :flavor melpa :files (:defaults "doc/build/texinfo/evil.texi" (:exclude "evil-test-helpers.el") "evil-pkg.el") :host github :repo "emacs-evil/evil" :package "evil" :local-repo "evil")) "goto-chg" ("2023-01-12 17:31:32" ("emacs") (:type git :flavor melpa :host github :repo "emacs-evil/goto-chg" :package "goto-chg" :local-repo "goto-chg")) "dash" ("2023-01-12 17:31:32" ("emacs") (:type git :flavor melpa :files ("dash.el" "dash.texi" "dash-pkg.el") :host github :repo "magnars/dash.el" :package "dash" :local-repo "dash.el")) "evil-collection" ("2023-01-12 17:31:32" ("emacs" "evil" "annalist") (:type git :flavor melpa :files (:defaults "modes" "evil-collection-pkg.el") :host github :repo "emacs-evil/evil-collection" :package "evil-collection" :local-repo "evil-collection")) "annalist" ("2023-01-12 17:31:32" ("emacs" "cl-lib") (:type git :flavor melpa :host github :repo "noctuid/annalist.el" :package "annalist" :local-repo "annalist.el")) "undo-fu" ("2023-01-12 17:31:32" ("emacs") (:type git :flavor melpa :host codeberg :repo "ideasman42/emacs-undo-fu" :package "undo-fu" :local-repo "emacs-undo-fu")) "vertico" ("2023-01-12 17:31:32" ("emacs") (:type git :host github :repo "emacs-straight/vertico" :files ("*" (:exclude ".git")) :package "vertico" :local-repo "vertico")) "orderless" ("2023-01-12 17:31:32" ("emacs") (:type git :flavor melpa :host github :repo "oantolin/orderless" :package "orderless" :local-repo "orderless")) "consult" ("2023-01-12 17:31:32" ("emacs" "compat") (:type git :flavor melpa :host github :repo "minad/consult" :package "consult" :local-repo "consult")) "compat" ("2023-01-12 17:31:32" ("emacs") (:type git :host github :repo "emacs-straight/compat" :files ("*" (:exclude ".git")) :package "compat" :local-repo "compat")) "marginalia" ("2023-01-12 17:31:32" ("emacs") (:type git :flavor melpa :host github :repo "minad/marginalia" :package "marginalia" :local-repo "marginalia")) "embark" ("2023-01-12 17:31:32" ("emacs") (:type git :flavor melpa :files ("embark.el" "embark-org.el" "embark.texi" "embark-pkg.el") :host github :repo "oantolin/embark" :package "embark" :local-repo "embark")) "embark-consult" ("2023-01-12 17:31:32" ("emacs" "embark" "consult") (:flavor melpa :files ("embark-consult.el" "embark-consult-pkg.el") :package "embark-consult" :local-repo "embark" :type git :repo "oantolin/embark" :host github)) "vterm" ("2023-01-12 17:31:32" ("emacs") (:type git :flavor melpa :files ("CMakeLists.txt" "elisp.c" "elisp.h" "emacs-module.h" "etc" "utf8.c" "utf8.h" "vterm.el" "vterm-module.c" "vterm-module.h" "vterm-pkg.el") :host github :repo "akermu/emacs-libvterm" :package "vterm" :local-repo "emacs-libvterm")) "magit" ("2023-01-12 17:31:32" ("emacs" "compat" "dash" "git-commit" "magit-section" "transient" "with-editor") (:type git :flavor melpa :files ("lisp/magit" "lisp/magit*.el" "lisp/git-rebase.el" "docs/magit.texi" "docs/AUTHORS.md" "LICENSE" "Documentation/magit.texi" "Documentation/AUTHORS.md" (:exclude "lisp/magit-libgit.el" "lisp/magit-libgit-pkg.el" "lisp/magit-section.el" "lisp/magit-section-pkg.el") "magit-pkg.el") :host github :repo "magit/magit" :package "magit" :local-repo "magit")) "git-commit" ("2023-01-12 17:31:32" ("emacs" "compat" "transient" "with-editor") (:flavor melpa :files ("lisp/git-commit.el" "lisp/git-commit-pkg.el" "git-commit-pkg.el") :package "git-commit" :local-repo "magit" :type git :repo "magit/magit" :host github)) "transient" ("2023-01-12 17:31:32" ("emacs" "compat") (:type git :flavor melpa :host github :repo "magit/transient" :package "transient" :local-repo "transient")) "with-editor" ("2023-01-12 17:31:32" ("emacs" "compat") (:type git :flavor melpa :host github :repo "magit/with-editor" :package "with-editor" :local-repo "with-editor")) "magit-section" ("2023-01-12 17:31:32" ("emacs" "compat" "dash") (:flavor melpa :files ("lisp/magit-section.el" "lisp/magit-section-pkg.el" "docs/magit-section.texi" "Documentation/magit-section.texi" "magit-section-pkg.el") :package "magit-section" :local-repo "magit" :type git :repo "magit/magit" :host github)) "evil-magit" ("2023-01-12 17:31:32" ("evil" "magit") (:type git :host github :repo "emacs-evil/evil-magit" :files (:defaults) :package "evil-magit" :local-repo "evil-magit")) "paredit" ("2023-01-12 17:31:32" nil (:type git :flavor melpa :repo "https://mumble.net/~campbell/git/paredit.git" :package "paredit" :local-repo "paredit")) "rainbow-delimiters" ("2023-01-12 17:31:32" nil (:type git :flavor melpa :host github :repo "Fanael/rainbow-delimiters" :package "rainbow-delimiters" :local-repo "rainbow-delimiters")) "lsp-mode" ("2023-01-12 17:31:32" ("emacs" "dash" "f" "ht" "spinner" "markdown-mode" "lv" "eldoc") (:type git :flavor melpa :files (:defaults "clients/*.el" "lsp-mode-pkg.el") :host github :repo "emacs-lsp/lsp-mode" :package "lsp-mode" :local-repo "lsp-mode")) "f" ("2023-01-12 17:31:32" ("emacs" "s" "dash") (:type git :flavor melpa :host github :repo "rejeep/f.el" :package "f" :local-repo "f.el")) "s" ("2023-01-12 17:31:32" nil (:type git :flavor melpa :host github :repo "magnars/s.el" :package "s" :local-repo "s.el")) "ht" ("2023-01-12 17:31:32" ("dash") (:type git :flavor melpa :host github :repo "Wilfred/ht.el" :package "ht" :local-repo "ht.el")) "spinner" ("2023-01-12 17:31:32" ("emacs") (:type git :host github :repo "emacs-straight/spinner" :files ("*" (:exclude ".git")) :package "spinner" :local-repo "spinner")) "markdown-mode" ("2023-01-12 17:31:32" ("emacs") (:type git :flavor melpa :host github :repo "jrblevin/markdown-mode" :package "markdown-mode" :local-repo "markdown-mode")) "lv" ("2023-01-12 17:31:32" nil (:type git :flavor melpa :files ("lv.el" "lv-pkg.el") :host github :repo "abo-abo/hydra" :package "lv" :local-repo "hydra")) "eldoc" ("2023-01-12 17:31:32" ("emacs") (:type git :host github :repo "emacs-straight/eldoc" :files ("*" (:exclude ".git")) :package "eldoc" :local-repo "eldoc")) "lsp-ui" ("2023-01-12 17:31:32" ("emacs" "dash" "lsp-mode" "markdown-mode") (:type git :flavor melpa :files (:defaults "lsp-ui-doc.html" "resources" "lsp-ui-pkg.el") :host github :repo "emacs-lsp/lsp-ui" :package "lsp-ui" :local-repo "lsp-ui")) "smartparens" ("2023-01-12 17:31:32" ("dash" "cl-lib") (:type git :flavor melpa :host github :repo "Fuco1/smartparens" :package "smartparens" :local-repo "smartparens")) "flycheck" ("2023-01-12 17:31:32" ("dash" "pkg-info" "let-alist" "seq" "emacs") (:type git :flavor melpa :host github :repo "flycheck/flycheck" :package "flycheck" :local-repo "flycheck")) "pkg-info" ("2023-01-12 17:31:32" ("epl") (:type git :flavor melpa :host github :repo "emacsorphanage/pkg-info" :package "pkg-info" :local-repo "pkg-info")) "epl" ("2023-01-12 17:31:32" ("cl-lib") (:type git :flavor melpa :host github :repo "cask/epl" :package "epl" :local-repo "epl")) "let-alist" ("2023-01-12 17:31:32" ("emacs") (:type git :host github :repo "emacs-straight/let-alist" :files ("*" (:exclude ".git")) :package "let-alist" :local-repo "let-alist")) "company-mode" ("2023-01-12 17:31:32" nil (:type git :host github :repo "company-mode/company-mode" :files (:defaults) :package "company-mode" :local-repo "company-mode")) "which-key" ("2023-01-12 17:31:32" ("emacs") (:type git :flavor melpa :host github :repo "justbur/emacs-which-key" :package "which-key" :local-repo "emacs-which-key")) "yasnippet" ("2023-01-12 17:31:32" ("cl-lib") (:type git :flavor melpa :files ("yasnippet.el" "snippets" "yasnippet-pkg.el") :host github :repo "joaotavora/yasnippet" :package "yasnippet" :local-repo "yasnippet")) "yasnippet-snippets" ("2023-01-12 17:31:32" ("yasnippet") (:type git :flavor melpa :files ("*.el" "snippets" ".nosearch" "yasnippet-snippets-pkg.el") :host github :repo "AndreaCrotti/yasnippet-snippets" :package "yasnippet-snippets" :local-repo "yasnippet-snippets")) "treemacs" ("2023-01-12 17:31:32" ("emacs" "cl-lib" "dash" "s" "ace-window" "pfuture" "hydra" "ht" "cfrs") (:type git :flavor melpa :files (:defaults "Changelog.org" "icons" "src/elisp/treemacs*.el" "src/scripts/treemacs*.py" (:exclude "src/extra/*") "treemacs-pkg.el") :host github :repo "Alexander-Miller/treemacs" :package "treemacs" :local-repo "treemacs")) "ace-window" ("2023-01-12 17:31:32" ("avy") (:type git :flavor melpa :host github :repo "abo-abo/ace-window" :package "ace-window" :local-repo "ace-window")) "avy" ("2023-01-12 17:31:32" ("emacs" "cl-lib") (:type git :flavor melpa :host github :repo "abo-abo/avy" :package "avy" :local-repo "avy")) "pfuture" ("2023-01-12 17:31:32" ("emacs") (:type git :flavor melpa :host github :repo "Alexander-Miller/pfuture" :package "pfuture" :local-repo "pfuture")) "hydra" ("2023-01-12 17:31:32" ("cl-lib" "lv") (:flavor melpa :files (:defaults (:exclude "lv.el") "hydra-pkg.el") :package "hydra" :local-repo "hydra" :type git :repo "abo-abo/hydra" :host github)) "cfrs" ("2023-01-12 17:31:32" ("emacs" "dash" "s" "posframe") (:type git :flavor melpa :host github :repo "Alexander-Miller/cfrs" :package "cfrs" :local-repo "cfrs")) "posframe" ("2023-01-12 17:31:32" ("emacs") (:type git :flavor melpa :host github :repo "tumashu/posframe" :package "posframe" :local-repo "posframe")) "treemacs-evil" ("2023-01-12 17:31:32" ("emacs" "evil" "treemacs") (:flavor melpa :files ("src/extra/treemacs-evil.el" "treemacs-evil-pkg.el") :package "treemacs-evil" :local-repo "treemacs" :type git :repo "Alexander-Miller/treemacs" :host github)) "lsp-treemacs" ("2023-01-12 17:31:32" ("emacs" "dash" "f" "ht" "treemacs" "lsp-mode") (:type git :flavor melpa :files (:defaults "icons" "lsp-treemacs-pkg.el") :host github :repo "emacs-lsp/lsp-treemacs" :package "lsp-treemacs" :local-repo "lsp-treemacs")) "adoc-mode" ("2023-01-12 17:31:32" ("emacs" "markup-faces") (:type git :flavor melpa :host github :repo "bbatsov/adoc-mode" :package "adoc-mode" :local-repo "adoc-mode")) "markup-faces" ("2023-01-12 17:31:32" nil (:type git :flavor melpa :host github :repo "sensorflo/markup-faces" :package "markup-faces" :local-repo "markup-faces")) "smooth-scrolling" ("2023-01-12 17:31:32" nil (:type git :flavor melpa :host github :repo "aspiers/smooth-scrolling" :package "smooth-scrolling" :local-repo "smooth-scrolling")) "all-the-icons" ("2023-01-12 17:31:32" ("emacs") (:type git :flavor melpa :files (:defaults "data" "all-the-icons-pkg.el") :host github :repo "domtronn/all-the-icons.el" :package "all-the-icons" :local-repo "all-the-icons.el")) "doom-themes" ("2023-01-12 17:31:32" ("emacs" "cl-lib") (:type git :flavor melpa :files (:defaults "themes/*.el" "themes/*/*.el" "extensions/*.el" "doom-themes-pkg.el") :host github :repo "doomemacs/themes" :package "doom-themes" :local-repo "themes")) "helpful" ("2023-01-12 17:31:32" ("emacs" "dash" "s" "f" "elisp-refs") (:type git :flavor melpa :host github :repo "Wilfred/helpful" :package "helpful" :local-repo "helpful")) "elisp-refs" ("2023-01-12 17:31:32" ("dash" "s") (:type git :flavor melpa :files (:defaults (:exclude "elisp-refs-bench.el") "elisp-refs-pkg.el") :host github :repo "Wilfred/elisp-refs" :package "elisp-refs" :local-repo "elisp-refs")) "dashboard" ("2023-01-12 17:31:32" ("emacs") (:type git :flavor melpa :files (:defaults "banners" "dashboard-pkg.el") :host github :repo "emacs-dashboard/emacs-dashboard" :package "dashboard" :local-repo "emacs-dashboard")) "json-mode" ("2023-01-12 17:31:32" ("json-snatcher" "emacs") (:type git :flavor melpa :host github :repo "joshwnj/json-mode" :package "json-mode" :local-repo "json-mode")) "json-snatcher" ("2023-01-12 17:31:32" ("emacs") (:type git :flavor melpa :host github :repo "Sterlingg/json-snatcher" :package "json-snatcher" :local-repo "json-snatcher")) "stream" ("2023-01-12 17:31:32" ("emacs") (:type git :host github :repo "emacs-straight/stream" :files ("*" (:exclude ".git")) :package "stream" :local-repo "stream")) "rust-mode" ("2023-01-12 17:31:32" ("emacs") (:type git :flavor melpa :host github :repo "rust-lang/rust-mode" :package "rust-mode" :local-repo "rust-mode")) "cargo" ("2023-01-12 17:31:32" ("emacs" "markdown-mode") (:type git :flavor melpa :host github :repo "kwrooijen/cargo.el" :package "cargo" :local-repo "cargo.el")) "toml-mode" ("2023-01-12 17:31:32" ("emacs" "cl-lib") (:type git :flavor melpa :host github :repo "dryman/toml-mode.el" :package "toml-mode" :local-repo "toml-mode.el")) "ccls" ("2023-01-12 17:31:32" ("emacs" "lsp-mode" "dash") (:type git :flavor melpa :host github :repo "emacs-lsp/emacs-ccls" :package "ccls" :local-repo "emacs-ccls")) "go-mode" ("2023-01-12 17:31:32" ("emacs") (:type git :flavor melpa :files ("go-mode.el" "go-mode-pkg.el") :host github :repo "dominikh/go-mode.el" :package "go-mode" :local-repo "go-mode.el")) "racket-mode" ("2023-01-12 17:31:32" ("emacs") (:type git :flavor melpa :files (:defaults "*.rkt" ("racket" "racket/*") (:exclude "racket/example/*" "racket/test/*") "racket-mode-pkg.el") :host github :repo "greghendershott/racket-mode" :package "racket-mode" :local-repo "racket-mode")) "python-mode" ("2023-01-12 17:31:32" ("emacs") (:type git :flavor melpa :files ("python-mode.el" ("completion" "completion/pycomplete.*") "python-mode-pkg.el") :host gitlab :repo "python-mode-devs/python-mode" :package "python-mode" :local-repo "python-mode")) "pyvenv" ("2023-01-12 17:31:32" nil (:type git :flavor melpa :host github :repo "jorgenschaefer/pyvenv" :package "pyvenv" :local-repo "pyvenv")) "lsp-pyright" ("2023-01-12 17:31:32" ("emacs" "lsp-mode" "dash" "ht") (:type git :flavor melpa :host github :repo "emacs-lsp/lsp-pyright" :package "lsp-pyright" :local-repo "lsp-pyright")) "livedown" ("2023-01-12 17:31:32" nil (:type git :host github :repo "shime/emacs-livedown" :files (:defaults) :package "livedown" :local-repo "emacs-livedown")) "web-mode" ("2022-12-29 14:51:04" ("emacs") (:type git :flavor melpa :host github :repo "fxbois/web-mode" :package "web-mode" :local-repo "web-mode")) "org-roam" ("2023-01-12 17:31:32" ("emacs" "dash" "org" "emacsql" "emacsql-sqlite" "magit-section") (:type git :flavor melpa :files (:defaults "extensions/*" "org-roam-pkg.el") :host github :repo "org-roam/org-roam" :package "org-roam" :local-repo "org-roam")) "org" ("2023-01-12 17:31:32" ("emacs") (:type git :repo "https://git.savannah.gnu.org/git/emacs/org-mode.git" :local-repo "org" :depth full :pre-build (straight-recipes-org-elpa--build) :build (:not autoloads) :files (:defaults "lisp/*.el" ("etc/styles/" "etc/styles/*")) :package "org")) "emacsql" ("2023-01-12 17:31:32" ("emacs") (:type git :flavor melpa :files ("emacsql.el" "emacsql-compiler.el" "README.md" "emacsql-pkg.el") :host github :repo "magit/emacsql" :package "emacsql" :local-repo "emacsql")) "emacsql-sqlite" ("2023-01-12 17:31:32" ("emacs" "emacsql") (:flavor melpa :files ("emacsql-sqlite.el" "sqlite" "emacsql-sqlite-pkg.el") :package "emacsql-sqlite" :local-repo "emacsql" :type git :repo "magit/emacsql" :host github)) "org-bullets" ("2023-01-12 17:31:32" nil (:type git :flavor melpa :host github :repo "integral-dw/org-bullets" :package "org-bullets" :local-repo "org-bullets")) "calfw-org" ("2023-01-12 17:31:32" nil (:flavor melpa :files ("calfw-org.el" "calfw-org-pkg.el") :package "calfw-org" :local-repo "emacs-calfw" :type git :repo "kiwanami/emacs-calfw" :host github)) "calfw" ("2023-01-12 17:31:32" nil (:type git :flavor melpa :files ("calfw.el" "calfw-pkg.el") :host github :repo "kiwanami/emacs-calfw" :package "calfw" :local-repo "emacs-calfw"))))
 
-#s(hash-table size 97 test equal rehash-size 1.5 rehash-threshold 0.8125 data ("straight" ((straight-ert-print-hack straight-x straight-autoloads straight) (autoload 'straight-remove-unused-repos "straight" "Remove unused repositories from the repos and build directories.
-A repo is considered \"unused\" if it was not explicitly requested via
-`straight-use-package' during the current Emacs session.
-If FORCE is non-nil do not prompt before deleting repos.
-
-(fn &optional FORCE)" t nil) (autoload 'straight-get-recipe "straight" "Interactively select a recipe from one of the recipe repositories.
-All recipe repositories in `straight-recipe-repositories' will
-first be cloned. After the recipe is selected, it will be copied
-to the kill ring. With a prefix argument, first prompt for a
-recipe repository to search. Only that repository will be
-cloned.
-
-From Lisp code, SOURCES should be a subset of the symbols in
-`straight-recipe-repositories'. Only those recipe repositories
-are cloned and searched. If it is nil or omitted, then the value
-of `straight-recipe-repositories' is used. If SOURCES is the
-symbol `interactive', then the user is prompted to select a
-recipe repository, and a list containing that recipe repository
-is used for the value of SOURCES. ACTION may be `copy' (copy
-recipe to the kill ring), `insert' (insert at point), or nil (no
-action, just return it).
-
-(fn &optional SOURCES ACTION)" t nil) (autoload 'straight-visit-package-website "straight" "Visit the package RECIPE's website.
-
-(fn RECIPE)" t nil) (autoload 'straight-visit-package "straight" "Open PACKAGE's local repository directory.
-When BUILD is non-nil visit PACKAGE's build directory.
-
-(fn PACKAGE &optional BUILD)" t nil) (autoload 'straight-use-package "straight" "Register, clone, build, and activate a package and its dependencies.
-This is the main entry point to the functionality of straight.el.
-
-MELPA-STYLE-RECIPE is either a symbol naming a package, or a list
-whose car is a symbol naming a package and whose cdr is a
-property list containing e.g. `:type', `:local-repo', `:files',
-and VC backend specific keywords.
-
-First, the package recipe is registered with straight.el. If
-NO-CLONE is a function, then it is called with two arguments: the
-package name as a string, and a boolean value indicating whether
-the local repository for the package is available. In that case,
-the return value of the function is used as the value of NO-CLONE
-instead. In any case, if NO-CLONE is non-nil, then processing
-stops here.
-
-Otherwise, the repository is cloned, if it is missing. If
-NO-BUILD is a function, then it is called with one argument: the
-package name as a string. In that case, the return value of the
-function is used as the value of NO-BUILD instead. In any case,
-if NO-BUILD is non-nil, then processing halts here. Otherwise,
-the package is built and activated. Note that if the package
-recipe has a nil `:build' entry, then NO-BUILD is ignored
-and processing always stops before building and activation
-occurs.
-
-CAUSE is a string explaining the reason why
-`straight-use-package' has been called. It is for internal use
-only, and is used to construct progress messages. INTERACTIVE is
-non-nil if the function has been called interactively. It is for
-internal use only, and is used to determine whether to show a
-hint about how to install the package permanently.
-
-Return non-nil if package was actually installed, and nil
-otherwise (this can only happen if NO-CLONE is non-nil).
-
-(fn MELPA-STYLE-RECIPE &optional NO-CLONE NO-BUILD CAUSE INTERACTIVE)" t nil) (autoload 'straight-register-package "straight" "Register a package without cloning, building, or activating it.
-This function is equivalent to calling `straight-use-package'
-with a non-nil argument for NO-CLONE. It is provided for
-convenience. MELPA-STYLE-RECIPE is as for
-`straight-use-package'.
-
-(fn MELPA-STYLE-RECIPE)" nil nil) (autoload 'straight-use-package-no-build "straight" "Register and clone a package without building it.
-This function is equivalent to calling `straight-use-package'
-with nil for NO-CLONE but a non-nil argument for NO-BUILD. It is
-provided for convenience. MELPA-STYLE-RECIPE is as for
-`straight-use-package'.
-
-(fn MELPA-STYLE-RECIPE)" nil nil) (autoload 'straight-use-package-lazy "straight" "Register, build, and activate a package if it is already cloned.
-This function is equivalent to calling `straight-use-package'
-with symbol `lazy' for NO-CLONE. It is provided for convenience.
-MELPA-STYLE-RECIPE is as for `straight-use-package'.
-
-(fn MELPA-STYLE-RECIPE)" nil nil) (autoload 'straight-use-recipes "straight" "Register a recipe repository using MELPA-STYLE-RECIPE.
-This registers the recipe and builds it if it is already cloned.
-Note that you probably want the recipe for a recipe repository to
-include a nil `:build' property, to unconditionally
-inhibit the build phase.
-
-This function also adds the recipe repository to
-`straight-recipe-repositories', at the end of the list.
-
-(fn MELPA-STYLE-RECIPE)" nil nil) (autoload 'straight-override-recipe "straight" "Register MELPA-STYLE-RECIPE as a recipe override.
-This puts it in `straight-recipe-overrides', depending on the
-value of `straight-current-profile'.
-
-(fn MELPA-STYLE-RECIPE)" nil nil) (autoload 'straight-check-package "straight" "Rebuild a PACKAGE if it has been modified.
-PACKAGE is a string naming a package. Interactively, select
-PACKAGE from the known packages in the current Emacs session
-using `completing-read'. See also `straight-rebuild-package' and
-`straight-check-all'.
-
-(fn PACKAGE)" t nil) (autoload 'straight-check-all "straight" "Rebuild any packages that have been modified.
-See also `straight-rebuild-all' and `straight-check-package'.
-This function should not be called during init." t nil) (autoload 'straight-rebuild-package "straight" "Rebuild a PACKAGE.
-PACKAGE is a string naming a package. Interactively, select
-PACKAGE from the known packages in the current Emacs session
-using `completing-read'. With prefix argument RECURSIVE, rebuild
-all dependencies as well. See also `straight-check-package' and
-`straight-rebuild-all'.
-
-(fn PACKAGE &optional RECURSIVE)" t nil) (autoload 'straight-rebuild-all "straight" "Rebuild all packages.
-See also `straight-check-all' and `straight-rebuild-package'." t nil) (autoload 'straight-prune-build-cache "straight" "Prune the build cache.
-This means that only packages that were built in the last init
-run and subsequent interactive session will remain; other
-packages will have their build mtime information and any cached
-autoloads discarded." nil nil) (autoload 'straight-prune-build-directory "straight" "Prune the build directory.
-This means that only packages that were built in the last init
-run and subsequent interactive session will remain; other
-packages will have their build directories deleted." nil nil) (autoload 'straight-prune-build "straight" "Prune the build cache and build directory.
-This means that only packages that were built in the last init
-run and subsequent interactive session will remain; other
-packages will have their build mtime information discarded and
-their build directories deleted." t nil) (autoload 'straight-normalize-package "straight" "Normalize a PACKAGE's local repository to its recipe's configuration.
-PACKAGE is a string naming a package. Interactively, select
-PACKAGE from the known packages in the current Emacs session
-using `completing-read'.
-
-(fn PACKAGE)" t nil) (autoload 'straight-normalize-all "straight" "Normalize all packages. See `straight-normalize-package'.
-Return a list of recipes for packages that were not successfully
-normalized. If multiple packages come from the same local
-repository, only one is normalized.
-
-PREDICATE, if provided, filters the packages that are normalized.
-It is called with the package name as a string, and should return
-non-nil if the package should actually be normalized.
-
-(fn &optional PREDICATE)" t nil) (autoload 'straight-fetch-package "straight" "Try to fetch a PACKAGE from the primary remote.
-PACKAGE is a string naming a package. Interactively, select
-PACKAGE from the known packages in the current Emacs session
-using `completing-read'. With prefix argument FROM-UPSTREAM,
-fetch not just from primary remote but also from upstream (for
-forked packages).
-
-(fn PACKAGE &optional FROM-UPSTREAM)" t nil) (autoload 'straight-fetch-package-and-deps "straight" "Try to fetch a PACKAGE and its (transitive) dependencies.
-PACKAGE, its dependencies, their dependencies, etc. are fetched
-from their primary remotes.
-
-PACKAGE is a string naming a package. Interactively, select
-PACKAGE from the known packages in the current Emacs session
-using `completing-read'. With prefix argument FROM-UPSTREAM,
-fetch not just from primary remote but also from upstream (for
-forked packages).
-
-(fn PACKAGE &optional FROM-UPSTREAM)" t nil) (autoload 'straight-fetch-all "straight" "Try to fetch all packages from their primary remotes.
-With prefix argument FROM-UPSTREAM, fetch not just from primary
-remotes but also from upstreams (for forked packages).
-
-Return a list of recipes for packages that were not successfully
-fetched. If multiple packages come from the same local
-repository, only one is fetched.
-
-PREDICATE, if provided, filters the packages that are fetched. It
-is called with the package name as a string, and should return
-non-nil if the package should actually be fetched.
-
-(fn &optional FROM-UPSTREAM PREDICATE)" t nil) (autoload 'straight-merge-package "straight" "Try to merge a PACKAGE from the primary remote.
-PACKAGE is a string naming a package. Interactively, select
-PACKAGE from the known packages in the current Emacs session
-using `completing-read'. With prefix argument FROM-UPSTREAM,
-merge not just from primary remote but also from upstream (for
-forked packages).
-
-(fn PACKAGE &optional FROM-UPSTREAM)" t nil) (autoload 'straight-merge-package-and-deps "straight" "Try to merge a PACKAGE and its (transitive) dependencies.
-PACKAGE, its dependencies, their dependencies, etc. are merged
-from their primary remotes.
-
-PACKAGE is a string naming a package. Interactively, select
-PACKAGE from the known packages in the current Emacs session
-using `completing-read'. With prefix argument FROM-UPSTREAM,
-merge not just from primary remote but also from upstream (for
-forked packages).
-
-(fn PACKAGE &optional FROM-UPSTREAM)" t nil) (autoload 'straight-merge-all "straight" "Try to merge all packages from their primary remotes.
-With prefix argument FROM-UPSTREAM, merge not just from primary
-remotes but also from upstreams (for forked packages).
-
-Return a list of recipes for packages that were not successfully
-merged. If multiple packages come from the same local
-repository, only one is merged.
-
-PREDICATE, if provided, filters the packages that are merged. It
-is called with the package name as a string, and should return
-non-nil if the package should actually be merged.
-
-(fn &optional FROM-UPSTREAM PREDICATE)" t nil) (autoload 'straight-pull-package "straight" "Try to pull a PACKAGE from the primary remote.
-PACKAGE is a string naming a package. Interactively, select
-PACKAGE from the known packages in the current Emacs session
-using `completing-read'. With prefix argument FROM-UPSTREAM, pull
-not just from primary remote but also from upstream (for forked
-packages).
-
-(fn PACKAGE &optional FROM-UPSTREAM)" t nil) (autoload 'straight-pull-package-and-deps "straight" "Try to pull a PACKAGE and its (transitive) dependencies.
-PACKAGE, its dependencies, their dependencies, etc. are pulled
-from their primary remotes.
-
-PACKAGE is a string naming a package. Interactively, select
-PACKAGE from the known packages in the current Emacs session
-using `completing-read'. With prefix argument FROM-UPSTREAM,
-pull not just from primary remote but also from upstream (for
-forked packages).
-
-(fn PACKAGE &optional FROM-UPSTREAM)" t nil) (autoload 'straight-pull-all "straight" "Try to pull all packages from their primary remotes.
-With prefix argument FROM-UPSTREAM, pull not just from primary
-remotes but also from upstreams (for forked packages).
-
-Return a list of recipes for packages that were not successfully
-pulled. If multiple packages come from the same local repository,
-only one is pulled.
-
-PREDICATE, if provided, filters the packages that are pulled. It
-is called with the package name as a string, and should return
-non-nil if the package should actually be pulled.
-
-(fn &optional FROM-UPSTREAM PREDICATE)" t nil) (autoload 'straight-push-package "straight" "Push a PACKAGE to its primary remote, if necessary.
-PACKAGE is a string naming a package. Interactively, select
-PACKAGE from the known packages in the current Emacs session
-using `completing-read'.
-
-(fn PACKAGE)" t nil) (autoload 'straight-push-all "straight" "Try to push all packages to their primary remotes.
-
-Return a list of recipes for packages that were not successfully
-pushed. If multiple packages come from the same local repository,
-only one is pushed.
-
-PREDICATE, if provided, filters the packages that are normalized.
-It is called with the package name as a string, and should return
-non-nil if the package should actually be normalized.
-
-(fn &optional PREDICATE)" t nil) (autoload 'straight-freeze-versions "straight" "Write version lockfiles for currently activated packages.
-This implies first pushing all packages that have unpushed local
-changes. If the package management system has been used since the
-last time the init-file was reloaded, offer to fix the situation
-by reloading the init-file again. If FORCE is
-non-nil (interactively, if a prefix argument is provided), skip
-all checks and write the lockfile anyway.
-
-Currently, writing version lockfiles requires cloning all lazily
-installed packages. Hopefully, this inconvenient requirement will
-be removed in the future.
-
-Multiple lockfiles may be written (one for each profile),
-according to the value of `straight-profiles'.
-
-(fn &optional FORCE)" t nil) (autoload 'straight-thaw-versions "straight" "Read version lockfiles and restore package versions to those listed." t nil) (autoload 'straight-bug-report "straight" "Test straight.el in a clean environment.
-ARGS may be any of the following keywords and their respective values:
-  - :pre-bootstrap (Form)...
-      Forms evaluated before bootstrapping straight.el
-      e.g. (setq straight-repository-branch \"develop\")
-      Note this example is already in the default bootstrapping code.
-
-  - :post-bootstrap (Form)...
-      Forms evaluated in the testing environment after boostrapping.
-      e.g. (straight-use-package \\='(example :type git :host github))
-
-  - :interactive Boolean
-      If nil, the subprocess will immediately exit after the test.
-      Output will be printed to `straight-bug-report--process-buffer'
-      Otherwise, the subprocess will be interactive.
-
-  - :preserve Boolean
-      If non-nil, the test directory is left in the directory stored in the
-      variable `temporary-file-directory'. Otherwise, it is
-      immediately removed after the test is run.
-
-  - :executable String
-      Indicate the Emacs executable to launch.
-      Defaults to the path of the current Emacs executable.
-
-  - :raw Boolean
-      If non-nil, the raw process output is sent to
-      `straight-bug-report--process-buffer'. Otherwise, it is
-      formatted as markdown for submitting as an issue.
-
-  - :user-dir String
-      If non-nil, the test is run with `user-emacs-directory' set to STRING.
-      Otherwise, a temporary directory is created and used.
-      Unless absolute, paths are expanded relative to the variable
-      `temporary-file-directory'.
-
-ARGS are accessible within the :pre/:post-bootsrap phases via the
-locally bound plist, straight-bug-report-args.
-
-(fn &rest ARGS)" nil t) (function-put 'straight-bug-report 'lisp-indent-function '0) (autoload 'straight-dependencies "straight" "Return a list of PACKAGE's dependencies.
-
-(fn &optional PACKAGE)" t nil) (autoload 'straight-dependents "straight" "Return a list PACKAGE's dependents.
-
-(fn &optional PACKAGE)" t nil) (register-definition-prefixes "straight" '("straight-")) (register-definition-prefixes "straight-ert-print-hack" '("+without-print-limits")) (defvar straight-x-pinned-packages nil "List of pinned packages.") (register-definition-prefixes "straight-x" '("straight-x-")) (provide 'straight-autoloads)) "bind-key" ((bind-key bind-key-autoloads) (autoload 'bind-key "bind-key" "Bind KEY-NAME to COMMAND in KEYMAP (`global-map' if not passed).
+#s(hash-table size 97 test equal rehash-size 1.5 rehash-threshold 0.8125 data ("bind-key" ((bind-key bind-key-autoloads) (autoload 'bind-key "bind-key" "Bind KEY-NAME to COMMAND in KEYMAP (`global-map' if not passed).
 
 KEY-NAME may be a vector, in which case it is passed straight to
 `define-key'.  Or it may be a string to be interpreted as
@@ -869,7 +575,7 @@ This function is part of the `orderless' completion style.
 This function is for integration of orderless with ivy, use it as
 a value in `ivy-re-builders-alist'.
 
-(fn STR)" nil nil) (register-definition-prefixes "orderless" '("orderless-")) (provide 'orderless-autoloads)) "compat" ((compat-help \.dir-locals compat compat-24 compat-27 compat-font-lock compat-25 compat-autoloads compat-macs compat-28 compat-tests compat-26) (register-definition-prefixes "compat-help" '("compat---describe")) (register-definition-prefixes "compat-macs" '("compat-")) (register-definition-prefixes "compat-tests" '("compat-")) (provide 'compat-autoloads)) "consult" ((consult-flymake consult-register consult-autoloads consult consult-vertico consult-icomplete consult-org consult-compile consult-xref consult-imenu) (autoload 'consult-completion-in-region "consult" "Use minibuffer completion as the UI for `completion-at-point'.
+(fn STR)" nil nil) (register-definition-prefixes "orderless" '("orderless-")) (provide 'orderless-autoloads)) "compat" ((compat compat-27 compat-29 compat-25 compat-autoloads compat-macs compat-28 compat-tests compat-26) (register-definition-prefixes "compat" '("compat-")) (register-definition-prefixes "compat-macs" '("compat-")) (register-definition-prefixes "compat-tests" '("compat-tests--" "should-equal")) (provide 'compat-autoloads)) "consult" ((consult-flymake consult-register consult-autoloads consult consult-vertico consult-icomplete consult-org consult-compile consult-xref consult-imenu) (autoload 'consult-completion-in-region "consult" "Use minibuffer completion as the UI for `completion-at-point'.
 
 The function is called with 4 arguments: START END COLLECTION PREDICATE.
 The arguments and expected return value are as specified for
@@ -5904,10 +5610,304 @@ evaluate `org-bullets-mode'.
 The mode's hook is called both when the mode is enabled and when
 it is disabled.
 
-(fn &optional ARG)" t nil) (register-definition-prefixes "org-bullets" '("org-bullets-")) (provide 'org-bullets-autoloads)) "calfw-org" ((calfw-org calfw-org-autoloads) (register-definition-prefixes "calfw-org" '("cfw:o")) (provide 'calfw-org-autoloads)) "calfw" ((calfw calfw-autoloads) (register-definition-prefixes "calfw" '("cfw:")) (provide 'calfw-autoloads))))
+(fn &optional ARG)" t nil) (register-definition-prefixes "org-bullets" '("org-bullets-")) (provide 'org-bullets-autoloads)) "calfw-org" ((calfw-org calfw-org-autoloads) (register-definition-prefixes "calfw-org" '("cfw:o")) (provide 'calfw-org-autoloads)) "calfw" ((calfw calfw-autoloads) (register-definition-prefixes "calfw" '("cfw:")) (provide 'calfw-autoloads)) "straight" ((straight-ert-print-hack straight-x straight-autoloads straight) (autoload 'straight-remove-unused-repos "straight" "Remove unused repositories from the repos and build directories.
+A repo is considered \"unused\" if it was not explicitly requested via
+`straight-use-package' during the current Emacs session.
+If FORCE is non-nil do not prompt before deleting repos.
+
+(fn &optional FORCE)" t nil) (autoload 'straight-get-recipe "straight" "Interactively select a recipe from one of the recipe repositories.
+All recipe repositories in `straight-recipe-repositories' will
+first be cloned. After the recipe is selected, it will be copied
+to the kill ring. With a prefix argument, first prompt for a
+recipe repository to search. Only that repository will be
+cloned.
+
+From Lisp code, SOURCES should be a subset of the symbols in
+`straight-recipe-repositories'. Only those recipe repositories
+are cloned and searched. If it is nil or omitted, then the value
+of `straight-recipe-repositories' is used. If SOURCES is the
+symbol `interactive', then the user is prompted to select a
+recipe repository, and a list containing that recipe repository
+is used for the value of SOURCES. ACTION may be `copy' (copy
+recipe to the kill ring), `insert' (insert at point), or nil (no
+action, just return it).
+
+(fn &optional SOURCES ACTION)" t nil) (autoload 'straight-visit-package-website "straight" "Visit the package RECIPE's website.
+
+(fn RECIPE)" t nil) (autoload 'straight-visit-package "straight" "Open PACKAGE's local repository directory.
+When BUILD is non-nil visit PACKAGE's build directory.
+
+(fn PACKAGE &optional BUILD)" t nil) (autoload 'straight-use-package "straight" "Register, clone, build, and activate a package and its dependencies.
+This is the main entry point to the functionality of straight.el.
+
+MELPA-STYLE-RECIPE is either a symbol naming a package, or a list
+whose car is a symbol naming a package and whose cdr is a
+property list containing e.g. `:type', `:local-repo', `:files',
+and VC backend specific keywords.
+
+First, the package recipe is registered with straight.el. If
+NO-CLONE is a function, then it is called with two arguments: the
+package name as a string, and a boolean value indicating whether
+the local repository for the package is available. In that case,
+the return value of the function is used as the value of NO-CLONE
+instead. In any case, if NO-CLONE is non-nil, then processing
+stops here.
+
+Otherwise, the repository is cloned, if it is missing. If
+NO-BUILD is a function, then it is called with one argument: the
+package name as a string. In that case, the return value of the
+function is used as the value of NO-BUILD instead. In any case,
+if NO-BUILD is non-nil, then processing halts here. Otherwise,
+the package is built and activated. Note that if the package
+recipe has a nil `:build' entry, then NO-BUILD is ignored
+and processing always stops before building and activation
+occurs.
+
+CAUSE is a string explaining the reason why
+`straight-use-package' has been called. It is for internal use
+only, and is used to construct progress messages. INTERACTIVE is
+non-nil if the function has been called interactively. It is for
+internal use only, and is used to determine whether to show a
+hint about how to install the package permanently.
+
+Return non-nil if package was actually installed, and nil
+otherwise (this can only happen if NO-CLONE is non-nil).
+
+(fn MELPA-STYLE-RECIPE &optional NO-CLONE NO-BUILD CAUSE INTERACTIVE)" t nil) (autoload 'straight-register-package "straight" "Register a package without cloning, building, or activating it.
+This function is equivalent to calling `straight-use-package'
+with a non-nil argument for NO-CLONE. It is provided for
+convenience. MELPA-STYLE-RECIPE is as for
+`straight-use-package'.
+
+(fn MELPA-STYLE-RECIPE)" nil nil) (autoload 'straight-use-package-no-build "straight" "Register and clone a package without building it.
+This function is equivalent to calling `straight-use-package'
+with nil for NO-CLONE but a non-nil argument for NO-BUILD. It is
+provided for convenience. MELPA-STYLE-RECIPE is as for
+`straight-use-package'.
+
+(fn MELPA-STYLE-RECIPE)" nil nil) (autoload 'straight-use-package-lazy "straight" "Register, build, and activate a package if it is already cloned.
+This function is equivalent to calling `straight-use-package'
+with symbol `lazy' for NO-CLONE. It is provided for convenience.
+MELPA-STYLE-RECIPE is as for `straight-use-package'.
+
+(fn MELPA-STYLE-RECIPE)" nil nil) (autoload 'straight-use-recipes "straight" "Register a recipe repository using MELPA-STYLE-RECIPE.
+This registers the recipe and builds it if it is already cloned.
+Note that you probably want the recipe for a recipe repository to
+include a nil `:build' property, to unconditionally
+inhibit the build phase.
+
+This function also adds the recipe repository to
+`straight-recipe-repositories', at the end of the list.
+
+(fn MELPA-STYLE-RECIPE)" nil nil) (autoload 'straight-override-recipe "straight" "Register MELPA-STYLE-RECIPE as a recipe override.
+This puts it in `straight-recipe-overrides', depending on the
+value of `straight-current-profile'.
+
+(fn MELPA-STYLE-RECIPE)" nil nil) (autoload 'straight-check-package "straight" "Rebuild a PACKAGE if it has been modified.
+PACKAGE is a string naming a package. Interactively, select
+PACKAGE from the known packages in the current Emacs session
+using `completing-read'. See also `straight-rebuild-package' and
+`straight-check-all'.
+
+(fn PACKAGE)" t nil) (autoload 'straight-check-all "straight" "Rebuild any packages that have been modified.
+See also `straight-rebuild-all' and `straight-check-package'.
+This function should not be called during init." t nil) (autoload 'straight-rebuild-package "straight" "Rebuild a PACKAGE.
+PACKAGE is a string naming a package. Interactively, select
+PACKAGE from the known packages in the current Emacs session
+using `completing-read'. With prefix argument RECURSIVE, rebuild
+all dependencies as well. See also `straight-check-package' and
+`straight-rebuild-all'.
+
+(fn PACKAGE &optional RECURSIVE)" t nil) (autoload 'straight-rebuild-all "straight" "Rebuild all packages.
+See also `straight-check-all' and `straight-rebuild-package'." t nil) (autoload 'straight-prune-build-cache "straight" "Prune the build cache.
+This means that only packages that were built in the last init
+run and subsequent interactive session will remain; other
+packages will have their build mtime information and any cached
+autoloads discarded." nil nil) (autoload 'straight-prune-build-directory "straight" "Prune the build directory.
+This means that only packages that were built in the last init
+run and subsequent interactive session will remain; other
+packages will have their build directories deleted." nil nil) (autoload 'straight-prune-build "straight" "Prune the build cache and build directory.
+This means that only packages that were built in the last init
+run and subsequent interactive session will remain; other
+packages will have their build mtime information discarded and
+their build directories deleted." t nil) (autoload 'straight-normalize-package "straight" "Normalize a PACKAGE's local repository to its recipe's configuration.
+PACKAGE is a string naming a package. Interactively, select
+PACKAGE from the known packages in the current Emacs session
+using `completing-read'.
+
+(fn PACKAGE)" t nil) (autoload 'straight-normalize-all "straight" "Normalize all packages. See `straight-normalize-package'.
+Return a list of recipes for packages that were not successfully
+normalized. If multiple packages come from the same local
+repository, only one is normalized.
+
+PREDICATE, if provided, filters the packages that are normalized.
+It is called with the package name as a string, and should return
+non-nil if the package should actually be normalized.
+
+(fn &optional PREDICATE)" t nil) (autoload 'straight-fetch-package "straight" "Try to fetch a PACKAGE from the primary remote.
+PACKAGE is a string naming a package. Interactively, select
+PACKAGE from the known packages in the current Emacs session
+using `completing-read'. With prefix argument FROM-UPSTREAM,
+fetch not just from primary remote but also from upstream (for
+forked packages).
+
+(fn PACKAGE &optional FROM-UPSTREAM)" t nil) (autoload 'straight-fetch-package-and-deps "straight" "Try to fetch a PACKAGE and its (transitive) dependencies.
+PACKAGE, its dependencies, their dependencies, etc. are fetched
+from their primary remotes.
+
+PACKAGE is a string naming a package. Interactively, select
+PACKAGE from the known packages in the current Emacs session
+using `completing-read'. With prefix argument FROM-UPSTREAM,
+fetch not just from primary remote but also from upstream (for
+forked packages).
+
+(fn PACKAGE &optional FROM-UPSTREAM)" t nil) (autoload 'straight-fetch-all "straight" "Try to fetch all packages from their primary remotes.
+With prefix argument FROM-UPSTREAM, fetch not just from primary
+remotes but also from upstreams (for forked packages).
+
+Return a list of recipes for packages that were not successfully
+fetched. If multiple packages come from the same local
+repository, only one is fetched.
+
+PREDICATE, if provided, filters the packages that are fetched. It
+is called with the package name as a string, and should return
+non-nil if the package should actually be fetched.
+
+(fn &optional FROM-UPSTREAM PREDICATE)" t nil) (autoload 'straight-merge-package "straight" "Try to merge a PACKAGE from the primary remote.
+PACKAGE is a string naming a package. Interactively, select
+PACKAGE from the known packages in the current Emacs session
+using `completing-read'. With prefix argument FROM-UPSTREAM,
+merge not just from primary remote but also from upstream (for
+forked packages).
+
+(fn PACKAGE &optional FROM-UPSTREAM)" t nil) (autoload 'straight-merge-package-and-deps "straight" "Try to merge a PACKAGE and its (transitive) dependencies.
+PACKAGE, its dependencies, their dependencies, etc. are merged
+from their primary remotes.
+
+PACKAGE is a string naming a package. Interactively, select
+PACKAGE from the known packages in the current Emacs session
+using `completing-read'. With prefix argument FROM-UPSTREAM,
+merge not just from primary remote but also from upstream (for
+forked packages).
+
+(fn PACKAGE &optional FROM-UPSTREAM)" t nil) (autoload 'straight-merge-all "straight" "Try to merge all packages from their primary remotes.
+With prefix argument FROM-UPSTREAM, merge not just from primary
+remotes but also from upstreams (for forked packages).
+
+Return a list of recipes for packages that were not successfully
+merged. If multiple packages come from the same local
+repository, only one is merged.
+
+PREDICATE, if provided, filters the packages that are merged. It
+is called with the package name as a string, and should return
+non-nil if the package should actually be merged.
+
+(fn &optional FROM-UPSTREAM PREDICATE)" t nil) (autoload 'straight-pull-package "straight" "Try to pull a PACKAGE from the primary remote.
+PACKAGE is a string naming a package. Interactively, select
+PACKAGE from the known packages in the current Emacs session
+using `completing-read'. With prefix argument FROM-UPSTREAM, pull
+not just from primary remote but also from upstream (for forked
+packages).
+
+(fn PACKAGE &optional FROM-UPSTREAM)" t nil) (autoload 'straight-pull-package-and-deps "straight" "Try to pull a PACKAGE and its (transitive) dependencies.
+PACKAGE, its dependencies, their dependencies, etc. are pulled
+from their primary remotes.
+
+PACKAGE is a string naming a package. Interactively, select
+PACKAGE from the known packages in the current Emacs session
+using `completing-read'. With prefix argument FROM-UPSTREAM,
+pull not just from primary remote but also from upstream (for
+forked packages).
+
+(fn PACKAGE &optional FROM-UPSTREAM)" t nil) (autoload 'straight-pull-all "straight" "Try to pull all packages from their primary remotes.
+With prefix argument FROM-UPSTREAM, pull not just from primary
+remotes but also from upstreams (for forked packages).
+
+Return a list of recipes for packages that were not successfully
+pulled. If multiple packages come from the same local repository,
+only one is pulled.
+
+PREDICATE, if provided, filters the packages that are pulled. It
+is called with the package name as a string, and should return
+non-nil if the package should actually be pulled.
+
+(fn &optional FROM-UPSTREAM PREDICATE)" t nil) (autoload 'straight-push-package "straight" "Push a PACKAGE to its primary remote, if necessary.
+PACKAGE is a string naming a package. Interactively, select
+PACKAGE from the known packages in the current Emacs session
+using `completing-read'.
+
+(fn PACKAGE)" t nil) (autoload 'straight-push-all "straight" "Try to push all packages to their primary remotes.
+
+Return a list of recipes for packages that were not successfully
+pushed. If multiple packages come from the same local repository,
+only one is pushed.
+
+PREDICATE, if provided, filters the packages that are normalized.
+It is called with the package name as a string, and should return
+non-nil if the package should actually be normalized.
+
+(fn &optional PREDICATE)" t nil) (autoload 'straight-freeze-versions "straight" "Write version lockfiles for currently activated packages.
+This implies first pushing all packages that have unpushed local
+changes. If the package management system has been used since the
+last time the init-file was reloaded, offer to fix the situation
+by reloading the init-file again. If FORCE is
+non-nil (interactively, if a prefix argument is provided), skip
+all checks and write the lockfile anyway.
+
+Currently, writing version lockfiles requires cloning all lazily
+installed packages. Hopefully, this inconvenient requirement will
+be removed in the future.
+
+Multiple lockfiles may be written (one for each profile),
+according to the value of `straight-profiles'.
+
+(fn &optional FORCE)" t nil) (autoload 'straight-thaw-versions "straight" "Read version lockfiles and restore package versions to those listed." t nil) (autoload 'straight-bug-report "straight" "Test straight.el in a clean environment.
+ARGS may be any of the following keywords and their respective values:
+  - :pre-bootstrap (Form)...
+      Forms evaluated before bootstrapping straight.el
+      e.g. (setq straight-repository-branch \"develop\")
+      Note this example is already in the default bootstrapping code.
+
+  - :post-bootstrap (Form)...
+      Forms evaluated in the testing environment after boostrapping.
+      e.g. (straight-use-package \\='(example :type git :host github))
+
+  - :interactive Boolean
+      If nil, the subprocess will immediately exit after the test.
+      Output will be printed to `straight-bug-report--process-buffer'
+      Otherwise, the subprocess will be interactive.
+
+  - :preserve Boolean
+      If non-nil, the test directory is left in the directory stored in the
+      variable `temporary-file-directory'. Otherwise, it is
+      immediately removed after the test is run.
+
+  - :executable String
+      Indicate the Emacs executable to launch.
+      Defaults to the path of the current Emacs executable.
+
+  - :raw Boolean
+      If non-nil, the raw process output is sent to
+      `straight-bug-report--process-buffer'. Otherwise, it is
+      formatted as markdown for submitting as an issue.
+
+  - :user-dir String
+      If non-nil, the test is run with `user-emacs-directory' set to STRING.
+      Otherwise, a temporary directory is created and used.
+      Unless absolute, paths are expanded relative to the variable
+      `temporary-file-directory'.
+
+ARGS are accessible within the :pre/:post-bootsrap phases via the
+locally bound plist, straight-bug-report-args.
+
+(fn &rest ARGS)" nil t) (function-put 'straight-bug-report 'lisp-indent-function '0) (autoload 'straight-dependencies "straight" "Return a list of PACKAGE's dependencies.
+
+(fn &optional PACKAGE)" t nil) (autoload 'straight-dependents "straight" "Return a list PACKAGE's dependents.
+
+(fn &optional PACKAGE)" t nil) (register-definition-prefixes "straight" '("straight-")) (register-definition-prefixes "straight-ert-print-hack" '("+without-print-limits")) (defvar straight-x-pinned-packages nil "List of pinned packages.") (register-definition-prefixes "straight-x" '("straight-x-")) (provide 'straight-autoloads))))
 
 #s(hash-table size 65 test eq rehash-size 1.5 rehash-threshold 0.8125 data (org-elpa #s(hash-table size 97 test equal rehash-size 1.5 rehash-threshold 0.8125 data (version 14 "melpa" nil "gnu-elpa-mirror" nil "nongnu-elpa" nil "el-get" nil "emacsmirror-mirror" nil "straight" nil "use-package" nil "bind-key" nil "el-patch" nil "evil" nil "goto-chg" nil "cl-lib" nil "dash" nil "evil-collection" nil "annalist" nil "undo-fu" nil "vertico" nil "savehist" nil "orderless" nil "consult" nil "compat" nil "marginalia" nil "embark" nil "embark-consult" nil "vterm" nil "magit" nil "git-commit" nil "transient" nil "with-editor" nil "magit-section" nil "evil-magit" nil "paredit" nil "rainbow-delimiters" nil "lsp-mode" nil "f" nil "s" nil "ht" nil "spinner" nil "markdown-mode" nil "lv" nil "eldoc" nil "lsp-ui" nil "smartparens" nil "flycheck" nil "pkg-info" nil "epl" nil "let-alist" nil "seq" nil "company-mode" nil "which-key" nil "yasnippet" nil "yasnippet-snippets" nil "treemacs" nil "ace-window" nil "avy" nil "pfuture" nil "hydra" nil "cfrs" nil "posframe" nil "treemacs-evil" nil "lsp-treemacs" nil "adoc-mode" nil "markup-faces" nil "smooth-scrolling" nil "all-the-icons" nil "doom-themes" nil "helpful" nil "elisp-refs" nil "dashboard" nil "json-mode" nil "json-snatcher" nil "stream" nil "rust-mode" nil "cargo" nil "toml-mode" nil "ccls" nil "go-mode" nil "racket-mode" nil "python-mode" nil "pyvenv" nil "lsp-pyright" nil "cmake-mode" nil "livedown" nil "web-mode" nil "org-roam" nil "org" (org :type git :repo "https://git.savannah.gnu.org/git/emacs/org-mode.git" :local-repo "org" :depth full :pre-build (straight-recipes-org-elpa--build) :build (:not autoloads) :files (:defaults "lisp/*.el" ("etc/styles/" "etc/styles/*"))) "emacsql" nil "emacsql-sqlite" nil "org-agenda" nil "org-bullets" nil "calfw-org" nil "calfw" nil)) melpa #s(hash-table size 97 test equal rehash-size 1.5 rehash-threshold 0.8125 data (version 2 "gnu-elpa-mirror" nil "nongnu-elpa" nil "el-get" (el-get :type git :flavor melpa :files ("*.el" ("recipes" "recipes/el-get.rcp") "methods" "el-get-pkg.el") :host github :repo "dimitri/el-get") "emacsmirror-mirror" nil "straight" nil "use-package" (use-package :type git :flavor melpa :files (:defaults (:exclude "bind-key.el" "bind-chord.el" "use-package-chords.el" "use-package-ensure-system-package.el") "use-package-pkg.el") :host github :repo "jwiegley/use-package") "bind-key" (bind-key :type git :flavor melpa :files ("bind-key.el" "bind-key-pkg.el") :host github :repo "jwiegley/use-package") "el-patch" (el-patch :type git :flavor melpa :host github :repo "radian-software/el-patch") "evil" (evil :type git :flavor melpa :files (:defaults "doc/build/texinfo/evil.texi" (:exclude "evil-test-helpers.el") "evil-pkg.el") :host github :repo "emacs-evil/evil") "goto-chg" (goto-chg :type git :flavor melpa :host github :repo "emacs-evil/goto-chg") "cl-lib" nil "dash" (dash :type git :flavor melpa :files ("dash.el" "dash.texi" "dash-pkg.el") :host github :repo "magnars/dash.el") "evil-collection" (evil-collection :type git :flavor melpa :files (:defaults "modes" "evil-collection-pkg.el") :host github :repo "emacs-evil/evil-collection") "annalist" (annalist :type git :flavor melpa :host github :repo "noctuid/annalist.el") "undo-fu" (undo-fu :type git :flavor melpa :host codeberg :repo "ideasman42/emacs-undo-fu") "vertico" nil "savehist" nil "orderless" (orderless :type git :flavor melpa :host github :repo "oantolin/orderless") "consult" (consult :type git :flavor melpa :host github :repo "minad/consult") "compat" nil "marginalia" (marginalia :type git :flavor melpa :host github :repo "minad/marginalia") "embark" (embark :type git :flavor melpa :files ("embark.el" "embark-org.el" "embark.texi" "embark-pkg.el") :host github :repo "oantolin/embark") "embark-consult" (embark-consult :type git :flavor melpa :files ("embark-consult.el" "embark-consult-pkg.el") :host github :repo "oantolin/embark") "vterm" (vterm :type git :flavor melpa :files ("CMakeLists.txt" "elisp.c" "elisp.h" "emacs-module.h" "etc" "utf8.c" "utf8.h" "vterm.el" "vterm-module.c" "vterm-module.h" "vterm-pkg.el") :host github :repo "akermu/emacs-libvterm") "magit" (magit :type git :flavor melpa :files ("lisp/magit" "lisp/magit*.el" "lisp/git-rebase.el" "docs/magit.texi" "docs/AUTHORS.md" "LICENSE" "Documentation/magit.texi" "Documentation/AUTHORS.md" (:exclude "lisp/magit-libgit.el" "lisp/magit-libgit-pkg.el" "lisp/magit-section.el" "lisp/magit-section-pkg.el") "magit-pkg.el") :host github :repo "magit/magit") "git-commit" (git-commit :type git :flavor melpa :files ("lisp/git-commit.el" "lisp/git-commit-pkg.el" "git-commit-pkg.el") :host github :repo "magit/magit") "transient" (transient :type git :flavor melpa :host github :repo "magit/transient") "with-editor" (with-editor :type git :flavor melpa :host github :repo "magit/with-editor") "magit-section" (magit-section :type git :flavor melpa :files ("lisp/magit-section.el" "lisp/magit-section-pkg.el" "docs/magit-section.texi" "Documentation/magit-section.texi" "magit-section-pkg.el") :host github :repo "magit/magit") "evil-magit" nil "paredit" (paredit :type git :flavor melpa :repo "https://mumble.net/~campbell/git/paredit.git") "rainbow-delimiters" (rainbow-delimiters :type git :flavor melpa :host github :repo "Fanael/rainbow-delimiters") "lsp-mode" (lsp-mode :type git :flavor melpa :files (:defaults "clients/*.el" "lsp-mode-pkg.el") :host github :repo "emacs-lsp/lsp-mode") "f" (f :type git :flavor melpa :host github :repo "rejeep/f.el") "s" (s :type git :flavor melpa :host github :repo "magnars/s.el") "ht" (ht :type git :flavor melpa :host github :repo "Wilfred/ht.el") "spinner" nil "markdown-mode" (markdown-mode :type git :flavor melpa :host github :repo "jrblevin/markdown-mode") "lv" (lv :type git :flavor melpa :files ("lv.el" "lv-pkg.el") :host github :repo "abo-abo/hydra") "eldoc" nil "lsp-ui" (lsp-ui :type git :flavor melpa :files (:defaults "lsp-ui-doc.html" "resources" "lsp-ui-pkg.el") :host github :repo "emacs-lsp/lsp-ui") "smartparens" (smartparens :type git :flavor melpa :host github :repo "Fuco1/smartparens") "flycheck" (flycheck :type git :flavor melpa :host github :repo "flycheck/flycheck") "pkg-info" (pkg-info :type git :flavor melpa :host github :repo "emacsorphanage/pkg-info") "epl" (epl :type git :flavor melpa :host github :repo "cask/epl") "let-alist" nil "seq" nil "company-mode" nil "which-key" (which-key :type git :flavor melpa :host github :repo "justbur/emacs-which-key") "yasnippet" (yasnippet :type git :flavor melpa :files ("yasnippet.el" "snippets" "yasnippet-pkg.el") :host github :repo "joaotavora/yasnippet") "yasnippet-snippets" (yasnippet-snippets :type git :flavor melpa :files ("*.el" "snippets" ".nosearch" "yasnippet-snippets-pkg.el") :host github :repo "AndreaCrotti/yasnippet-snippets") "treemacs" (treemacs :type git :flavor melpa :files (:defaults "Changelog.org" "icons" "src/elisp/treemacs*.el" "src/scripts/treemacs*.py" (:exclude "src/extra/*") "treemacs-pkg.el") :host github :repo "Alexander-Miller/treemacs") "ace-window" (ace-window :type git :flavor melpa :host github :repo "abo-abo/ace-window") "avy" (avy :type git :flavor melpa :host github :repo "abo-abo/avy") "pfuture" (pfuture :type git :flavor melpa :host github :repo "Alexander-Miller/pfuture") "hydra" (hydra :type git :flavor melpa :files (:defaults (:exclude "lv.el") "hydra-pkg.el") :host github :repo "abo-abo/hydra") "cfrs" (cfrs :type git :flavor melpa :host github :repo "Alexander-Miller/cfrs") "posframe" (posframe :type git :flavor melpa :host github :repo "tumashu/posframe") "treemacs-evil" (treemacs-evil :type git :flavor melpa :files ("src/extra/treemacs-evil.el" "treemacs-evil-pkg.el") :host github :repo "Alexander-Miller/treemacs") "lsp-treemacs" (lsp-treemacs :type git :flavor melpa :files (:defaults "icons" "lsp-treemacs-pkg.el") :host github :repo "emacs-lsp/lsp-treemacs") "adoc-mode" (adoc-mode :type git :flavor melpa :host github :repo "bbatsov/adoc-mode") "markup-faces" (markup-faces :type git :flavor melpa :host github :repo "sensorflo/markup-faces") "smooth-scrolling" (smooth-scrolling :type git :flavor melpa :host github :repo "aspiers/smooth-scrolling") "all-the-icons" (all-the-icons :type git :flavor melpa :files (:defaults "data" "all-the-icons-pkg.el") :host github :repo "domtronn/all-the-icons.el") "doom-themes" (doom-themes :type git :flavor melpa :files (:defaults "themes/*.el" "themes/*/*.el" "extensions/*.el" "doom-themes-pkg.el") :host github :repo "doomemacs/themes") "helpful" (helpful :type git :flavor melpa :host github :repo "Wilfred/helpful") "elisp-refs" (elisp-refs :type git :flavor melpa :files (:defaults (:exclude "elisp-refs-bench.el") "elisp-refs-pkg.el") :host github :repo "Wilfred/elisp-refs") "dashboard" (dashboard :type git :flavor melpa :files (:defaults "banners" "dashboard-pkg.el") :host github :repo "emacs-dashboard/emacs-dashboard") "json-mode" (json-mode :type git :flavor melpa :host github :repo "joshwnj/json-mode") "json-snatcher" (json-snatcher :type git :flavor melpa :host github :repo "Sterlingg/json-snatcher") "stream" nil "rust-mode" (rust-mode :type git :flavor melpa :host github :repo "rust-lang/rust-mode") "cargo" (cargo :type git :flavor melpa :host github :repo "kwrooijen/cargo.el") "toml-mode" (toml-mode :type git :flavor melpa :host github :repo "dryman/toml-mode.el") "ccls" (ccls :type git :flavor melpa :host github :repo "emacs-lsp/emacs-ccls") "go-mode" (go-mode :type git :flavor melpa :files ("go-mode.el" "go-mode-pkg.el") :host github :repo "dominikh/go-mode.el") "racket-mode" (racket-mode :type git :flavor melpa :files (:defaults "*.rkt" ("racket" "racket/*") (:exclude "racket/example/*" "racket/test/*") "racket-mode-pkg.el") :host github :repo "greghendershott/racket-mode") "livedown" nil "python-mode" (python-mode :type git :flavor melpa :files ("python-mode.el" ("completion" "completion/pycomplete.*") "python-mode-pkg.el") :host gitlab :repo "python-mode-devs/python-mode") "pyvenv" (pyvenv :type git :flavor melpa :host github :repo "jorgenschaefer/pyvenv") "lsp-pyright" (lsp-pyright :type git :flavor melpa :host github :repo "emacs-lsp/lsp-pyright") "org-roam" (org-roam :type git :flavor melpa :files (:defaults "extensions/*" "org-roam-pkg.el") :host github :repo "org-roam/org-roam") "emacsql" (emacsql :type git :flavor melpa :files ("emacsql.el" "emacsql-compiler.el" "README.md" "emacsql-pkg.el") :host github :repo "magit/emacsql") "emacsql-sqlite" (emacsql-sqlite :type git :flavor melpa :files ("emacsql-sqlite.el" "sqlite" "emacsql-sqlite-pkg.el") :host github :repo "magit/emacsql") "org-agenda" nil "org-bullets" (org-bullets :type git :flavor melpa :host github :repo "integral-dw/org-bullets") "calfw-org" (calfw-org :type git :flavor melpa :files ("calfw-org.el" "calfw-org-pkg.el") :host github :repo "kiwanami/emacs-calfw") "calfw" (calfw :type git :flavor melpa :files ("calfw.el" "calfw-pkg.el") :host github :repo "kiwanami/emacs-calfw"))) gnu-elpa-mirror #s(hash-table size 65 test equal rehash-size 1.5 rehash-threshold 0.8125 data (version 3 "nongnu-elpa" nil "emacsmirror-mirror" nil "straight" nil "cl-lib" nil "vertico" (vertico :type git :host github :repo "emacs-straight/vertico" :files ("*" (:exclude ".git"))) "savehist" nil "compat" (compat :type git :host github :repo "emacs-straight/compat" :files ("*" (:exclude ".git"))) "evil-magit" nil "spinner" (spinner :type git :host github :repo "emacs-straight/spinner" :files ("*" (:exclude ".git"))) "eldoc" (eldoc :type git :host github :repo "emacs-straight/eldoc" :files ("*" (:exclude ".git"))) "let-alist" (let-alist :type git :host github :repo "emacs-straight/let-alist" :files ("*" (:exclude ".git"))) "seq" nil "company-mode" nil "stream" (stream :type git :host github :repo "emacs-straight/stream" :files ("*" (:exclude ".git"))) "livedown" nil "org-agenda" nil)) el-get #s(hash-table size 65 test equal rehash-size 1.5 rehash-threshold 0.8125 data (version 2 "emacsmirror-mirror" nil "straight" nil "cl-lib" nil "savehist" nil "evil-magit" `(evil-magit :type git :host github :repo "emacs-evil/evil-magit" :files (:defaults)) "seq" nil "company-mode" `(company-mode :type git :host github :repo "company-mode/company-mode" :files (:defaults)) "livedown" `(livedown :type git :host github :repo "shime/emacs-livedown" :files (:defaults)) "org-agenda" nil)) nongnu-elpa #s(hash-table size 65 test equal rehash-size 1.5 rehash-threshold 0.8125 data (version 3 "emacsmirror-mirror" nil "straight" nil "cl-lib" nil "savehist" nil "evil-magit" nil "seq" nil "company-mode" nil "livedown" nil "org-agenda" nil)) emacsmirror-mirror #s(hash-table size 65 test equal rehash-size 1.5 rehash-threshold 0.8125 data (version 2 "straight" (straight :type git :host github :repo "emacsmirror/straight") "cl-lib" nil "savehist" nil "seq" nil "org-agenda" nil))))
 
-("org-elpa" "melpa" "gnu-elpa-mirror" "nongnu-elpa" "el-get" "emacsmirror-mirror" "straight" "emacs" "use-package" "bind-key" "el-patch" "evil" "goto-chg" "cl-lib" "dash" "evil-collection" "annalist" "undo-fu" "vertico" "savehist" "orderless" "consult" "compat" "nadvice" "marginalia" "embark" "embark-consult" "vterm" "magit" "git-commit" "transient" "with-editor" "magit-section" "evil-magit" "paredit" "rainbow-delimiters" "lsp-mode" "f" "s" "ht" "spinner" "markdown-mode" "lv" "eldoc" "lsp-ui" "smartparens" "flycheck" "pkg-info" "epl" "let-alist" "seq" "company-mode" "which-key" "yasnippet" "yasnippet-snippets" "treemacs" "ace-window" "avy" "pfuture" "hydra" "cfrs" "posframe" "treemacs-evil" "lsp-treemacs" "adoc-mode" "markup-faces" "smooth-scrolling" "all-the-icons" "doom-themes" "helpful" "elisp-refs" "dashboard" "json-mode" "json-snatcher" "stream" "rust-mode" "cargo" "toml-mode" "ccls" "go-mode" "racket-mode" "livedown" "org" "org-roam" "emacsql" "emacsql-sqlite" "org-bullets" "calfw" "calfw-org" "python-mode" "pyvenv" "lsp-pyright")
+("org-elpa" "melpa" "gnu-elpa-mirror" "nongnu-elpa" "el-get" "emacsmirror-mirror" "straight" "emacs" "use-package" "bind-key" "el-patch" "evil" "goto-chg" "cl-lib" "dash" "evil-collection" "annalist" "undo-fu" "vertico" "savehist" "orderless" "consult" "compat" "marginalia" "embark" "embark-consult" "vterm" "magit" "git-commit" "transient" "with-editor" "magit-section" "evil-magit" "paredit" "rainbow-delimiters" "lsp-mode" "f" "s" "ht" "spinner" "markdown-mode" "lv" "eldoc" "lsp-ui" "smartparens" "flycheck" "pkg-info" "epl" "let-alist" "seq" "company-mode" "which-key" "yasnippet" "yasnippet-snippets" "treemacs" "ace-window" "avy" "pfuture" "hydra" "cfrs" "posframe" "treemacs-evil" "lsp-treemacs" "adoc-mode" "markup-faces" "smooth-scrolling" "all-the-icons" "doom-themes" "helpful" "elisp-refs" "dashboard" "json-mode" "json-snatcher" "stream" "rust-mode" "cargo" "toml-mode" "ccls" "go-mode" "racket-mode" "livedown" "org" "org-roam" "emacsql" "emacsql-sqlite" "org-bullets" "calfw" "calfw-org" "python-mode" "pyvenv" "lsp-pyright")
 
 t

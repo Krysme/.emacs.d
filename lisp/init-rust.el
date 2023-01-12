@@ -33,8 +33,7 @@
 	    (evil-define-key 'visual toml-mode-map (kbd "\"") (lambda () (interactive) (sp-wrap-with-pair "\"")))))
 
 
-(after-load 'smartparens (sp-local-pair 'rust-mode "'" nil 
-					:actions nil) 
+(after-load 'smartparens (sp-local-pair 'rust-mode "'" nil :actions nil) 
 	    (sp-local-pair 'rust-mode "<" ">") 
 	    (sp-local-pair 'toml-mode "\"" "\"") 
 	    (sp-local-pair 'rust-mode "\"" "\""))
@@ -43,10 +42,8 @@
   ;; (evil-define-key 'insert emacs-lisp-mode-map (kbd "C-w") 'backward-kill-sexp)
 (add-hook 'rust-mode-hook 
 	  (lambda () 
-
 	    (define-key rust-mode-map (kbd "C-c C-b") 'cargo-process-build) 
 	    (define-key rust-mode-map (kbd "C-c C-r") 'cargo-process-run)
-
 	    (evil-define-key 'visual rust-mode-map (kbd "(") 'sp-wrap-round)
 	    (evil-define-key 'visual rust-mode-map (kbd "[") 'sp-wrap-square)
 	    (evil-define-key 'visual rust-mode-map (kbd "{") 'sp-wrap-curly)

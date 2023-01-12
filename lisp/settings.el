@@ -26,7 +26,7 @@
 
 (display-time-mode t)
 
-(after-load 'doom-themes (load-theme 'doom-solarized-light t))
+(after-load 'doom-themes (load-theme 'doom-one t))
 
 ;; theme
 (straight-use-package 'all-the-icons)
