@@ -42,7 +42,7 @@
    (define-key lsp-mode-map (kbd "C-c C-f") 'lsp-format-buffer)
    (define-key lsp-mode-map (kbd "C-C C-c") 'lsp-ui-sideline-apply-code-actions)
    (after-load 'evil 
-     (evil-define-key 'normal lsp-mode-map (kbd "C-c r") 'xref-find-references)
+     (evil-define-key 'normal lsp-mode-map (kbd "SPC g r") 'xref-find-references)
      (evil-define-key 'normal lsp-mode-map (kbd "SPC o") 'lsp-rename)
      (evil-define-key 'visual lsp-mode-map (kbd "v") 'lsp-extend-selection)
      (evil-define-key 'normal lsp-mode-map (kbd "C-c i") 'toggle-lsp-ui-doc)))
@@ -51,8 +51,11 @@
 (add-hook 'lsp-mode-hook 'init-lsp-set-keys)
 
 
+;; (defun lsp-workspace-file-search ()
+;;     (interactive)
+;;     (completing-read (concat "Files in " "workspace root") (acr-lines-from-process "foo.sh")))
 
-
+;; (completing-read "Foo:" (acr-lines-from-process "foo.sh"))
 
 
 
