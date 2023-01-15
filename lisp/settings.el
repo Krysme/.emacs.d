@@ -26,7 +26,8 @@
 
 (display-time-mode t)
 
-(after-load 'doom-themes (load-theme 'doom-one t))
+(if (display-graphic-p)
+    (after-load 'doom-themes (load-theme 'doom-one t)))
 
 ;; theme
 (straight-use-package 'all-the-icons)
