@@ -1,8 +1,6 @@
-(setq org-roam-directory (file-truename "~/code/roam"))
 (straight-use-package 'org)
 (straight-use-package 'org-roam)
 (straight-use-package 'org-bullets) 
-(setq org-agenda-files '("~/agenda.org"))
 
 
 
