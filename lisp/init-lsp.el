@@ -41,6 +41,7 @@
    (add-hook 'before-save-hook 'lsp-format-buffer nil t)
    (define-key lsp-mode-map (kbd "C-c C-f") 'lsp-format-buffer)
    (define-key lsp-mode-map (kbd "C-C C-c") 'lsp-ui-sideline-apply-code-actions)
+   (define-key lsp-mode-map (kbd "C-C C-l") 'lsp-ui-imenu)
    (after-load 'evil 
      (evil-define-key 'normal lsp-mode-map (kbd "SPC g r") 'xref-find-references)
      (evil-define-key 'normal lsp-mode-map (kbd "SPC o") 'lsp-rename)

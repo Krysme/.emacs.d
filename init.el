@@ -23,7 +23,6 @@
 (require 'init-go)
 (require 'init-racket)
 (require 'init-markdown)
-(require 'init-org-roam)
 (require 'init-python)
 
 
