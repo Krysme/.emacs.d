@@ -10,6 +10,7 @@
 (global-display-line-numbers-mode)
 
 (global-prettify-symbols-mode 1)
+(global-auto-revert-mode 1)
 
 (menu-bar-mode -1)
 (tool-bar-mode -1)
