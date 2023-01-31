@@ -92,11 +92,25 @@
   (evil-global-set-key 'visual (kbd "{") 'sp-wrap-curly) 
   (evil-global-set-key 'visual (kbd "\"") (lambda () (interactive) (sp-wrap-with-pair "\""))))
 
+
+(setq evil-centre-hook-commands
+      '(evil-scroll-up
+	evil-search-next
+	evil-search-previous
+	evil-move-5-lines-down
+	evil-move-5-lines-up
+	evil-previous-line
+	evil-next-line))
+
+(-each evil-centre-hook-commands
+  (lambda (cmd) (advice-add cmd :filter-return
+		(lambda (&rest ignored) (call-interactively 'evil-scroll-line-to-center)))))
+
 (defun setup-normal-motion-visual-keys (mode)
   (evil-global-set-key mode (kbd "K") nil)
   (evil-global-set-key mode (kbd "SPC") nil)
   (evil-global-set-key mode (kbd "SPC hf") #'helpful-callable)
-  (evil-global-set-key mode (kbd "SPC d") #'dired-jump)
+  (evil-global-set-key mode (kbd "SPC ;d") #'dired-jump)
   (evil-global-set-key mode (kbd "SPC hv") #'helpful-variable)
   (evil-global-set-key mode (kbd "SPC hk") #'helpful-key)
   (evil-global-set-key mode (kbd "SPC ho") #'helpful-symbol)
@@ -120,11 +134,10 @@
   (evil-global-set-key mode (kbd "SPC wh") 'evil-window-left)
   (evil-global-set-key mode (kbd "SPC wl") 'evil-window-right)
   (evil-global-set-key mode (kbd "SPC ,r") 'ripgrep-search)
-  (evil-global-set-key mode (kbd "SPC f") 'find-file)
+  (evil-global-set-key mode (kbd "SPC ;f") 'find-file)
   (evil-global-set-key mode (kbd "SPC /") (lambda () (interactive) (consult-line)))
   (evil-global-set-key mode (kbd "SPC #") (lambda () (interactive) (consult-line (word-at-point))))
-  (evil-global-set-key mode (kbd "SPC *") (lambda () (interactive) (consult-line-reverse (word-at-point))))
-  (evil-global-set-key mode (kbd "SPC r") 'consult-recent-file-no-action)
+  (evil-global-set-key mode (kbd "SPC ;r") 'consult-recent-file-no-action)
   (evil-global-set-key mode (kbd "SPC mg") 'magit))
 
 ;; insert mode
