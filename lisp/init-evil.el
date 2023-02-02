@@ -100,14 +100,14 @@
 	evil-move-5-lines-down
 	evil-move-5-lines-up
 	evil-previous-line
-	evil-next-line))
+	evil-next-line
+	evil-jump-item))
 
 (-each evil-centre-hook-commands
   (lambda (cmd) (advice-add cmd :filter-return
 		(lambda (&rest ignored) (call-interactively 'evil-scroll-line-to-center)))))
 
 (defun setup-normal-motion-visual-keys (mode)
-  (evil-global-set-key mode (kbd "K") nil)
   (evil-global-set-key mode (kbd "SPC") nil)
   (evil-global-set-key mode (kbd "SPC hf") #'helpful-callable)
   (evil-global-set-key mode (kbd "SPC ;d") #'dired-jump)

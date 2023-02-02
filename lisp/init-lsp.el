@@ -15,6 +15,9 @@
 (after-load 'lsp-mode
   (add-hook 'lsp-mode-hook (lambda () (flycheck-mode t))))
 
+(after-load 'lsp-mode
+  (add-hook 'lsp-ui-mode-hook (lambda () (lsp-ui-doc-mode -1))))
+
 (after-load 'yasnippet
   (setq lsp-enable-snippet t)
   (add-hook 'lsp-mode-hook 'yas-minor-mode))
@@ -23,16 +26,16 @@
 (setq lsp-ui-doc-position 'at-point)
 (setq lsp-ui-sideline-show-code-actions t)
 
-(setq krys-ui-doc-show t)
+(setq krys-ui-doc-show nil)
 (defun toggle-lsp-ui-doc ()
   (interactive)
   (if krys-ui-doc-show
       (progn
-	(lsp-ui-doc-enable nil)
+	(lsp-ui-doc-mode -1)
 	(lsp-ui-doc-hide)
 	(setq krys-ui-doc-show nil))
     (progn
-      (lsp-ui-doc-enable t)
+      (lsp-ui-doc-mode 1)
       (lsp-ui-doc-show)
       (setq krys-ui-doc-show t))))
 
@@ -47,7 +50,7 @@
      (evil-define-key 'normal lsp-mode-map (kbd "SPC g t") 'lsp-find-type-definition)
      (evil-define-key 'normal lsp-mode-map (kbd "SPC o") 'lsp-rename)
      (evil-define-key 'visual lsp-mode-map (kbd "v") 'lsp-extend-selection)
-     (evil-define-key 'normal lsp-mode-map (kbd "C-c i") 'toggle-lsp-ui-doc)))
+     (evil-define-key 'normal lsp-mode-map (kbd "K") 'toggle-lsp-ui-doc)))
 
 ;; keys
 (add-hook 'lsp-mode-hook 'init-lsp-set-keys)
