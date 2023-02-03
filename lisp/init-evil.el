@@ -134,10 +134,10 @@
   (evil-global-set-key mode (kbd "SPC wh") 'evil-window-left)
   (evil-global-set-key mode (kbd "SPC wl") 'evil-window-right)
   (evil-global-set-key mode (kbd "SPC ,r") 'ripgrep-search)
-  (evil-global-set-key mode (kbd "SPC ;f") 'find-file)
+  (evil-global-set-key mode (kbd "SPC f") 'find-file)
   (evil-global-set-key mode (kbd "SPC /") (lambda () (interactive) (consult-line)))
   (evil-global-set-key mode (kbd "SPC #") (lambda () (interactive) (consult-line (word-at-point))))
-  (evil-global-set-key mode (kbd "SPC ;r") 'consult-recent-file-no-action)
+  (evil-global-set-key mode (kbd "SPC r") 'consult-recent-file-no-action)
   (evil-global-set-key mode (kbd "SPC mg") 'magit))
 
 ;; insert mode
