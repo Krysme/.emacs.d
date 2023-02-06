@@ -29,15 +29,15 @@
 (setq krys-ui-doc-show nil)
 (defun toggle-lsp-ui-doc ()
   (interactive)
+
   (if krys-ui-doc-show
       (progn
 	(lsp-ui-doc-mode -1)
-	(lsp-ui-doc-hide)
-	(setq krys-ui-doc-show nil))
+	(lsp-ui-doc-hide))
     (progn
       (lsp-ui-doc-mode 1)
-      (lsp-ui-doc-show)
-      (setq krys-ui-doc-show t))))
+      (lsp-ui-doc-show)))
+  (setq krys-ui-doc-show (not krys-ui-doc-show)))
 
 (setq xref-prompt-for-identifier nil)
 (defun init-lsp-set-keys () 

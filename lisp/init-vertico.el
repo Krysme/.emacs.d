@@ -64,7 +64,6 @@
   (interactive)
   (let ((directory (minibuffer-contents-no-properties)))
     (delete-minibuffer-contents)
-
     (insert (string-trim-right (if (string= directory "~/") (expand-file-name "~/") directory) "[^/]+/?"))))
 
 
@@ -176,9 +175,4 @@ If the metadata has no async property, just call
     (apply acr-completing-read-function prompt collection predicate args)))
 
 (setq acr-completing-read-function 'my-async-completing-read)
-
-
-
-
-
 

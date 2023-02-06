@@ -49,12 +49,7 @@
 					 evil-goto-definition-semantic
 					 evil-goto-definition-search)))
 
-;; keys
-
-
-(define-key key-translation-map (kbd "<ESC>") 
-  (kbd "C-g"))
-
+(define-key key-translation-map (kbd "<ESC>") (kbd "C-g"))
 
 ;; Normal mode
 (evil-global-set-key 'normal (kbd "C-s") 'save-buffer)
@@ -106,6 +101,20 @@
 (-each evil-centre-hook-commands
   (lambda (cmd) (advice-add cmd :filter-return
 		(lambda (&rest ignored) (call-interactively 'evil-scroll-line-to-center)))))
+
+
+
+
+(defun listify (obj)
+  (let ((obj (cond ((listp obj) obj)
+		    (t (list obj)))))))
+
+(defun my-evil-global-keys (mode key function)
+  (let ((mode (listify mode))
+	(key (cond ((stringp key) (kbd key)
+		    t key))))
+    (-each mode (lambda (mode)
+		  (evil-global-set-key mode key function)))))
 
 (defun setup-normal-motion-visual-keys (mode)
   (evil-global-set-key mode (kbd "SPC") nil)
