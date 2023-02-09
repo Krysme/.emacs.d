@@ -89,14 +89,15 @@
 
 
 (setq evil-centre-hook-commands
-      '(evil-scroll-up
-	evil-search-next
-	evil-search-previous
-	evil-move-5-lines-down
-	evil-move-5-lines-up
-	evil-previous-line
-	evil-next-line
-	evil-jump-item))
+     (list
+      'evil-scroll-up
+      'evil-search-next
+      'evil-search-previous
+      'evil-move-5-lines-down
+      'evil-move-5-lines-up
+      'evil-previous-line
+      'evil-next-line
+      'evil-jump-item))
 
 (-each evil-centre-hook-commands
   (lambda (cmd) (advice-add cmd :filter-return
@@ -149,7 +150,13 @@
   (evil-global-set-key mode (kbd "SPC r") 'consult-recent-file-no-action)
   (evil-global-set-key mode (kbd "SPC mg") 'magit))
 
+(global-set-key (kbd "C-e") nil)
 ;; insert mode
+
+
+(defun message-region ()
+  (interactive)
+  (message "%s-%s" (region-beginning) (region-end)))
 
 (evil-global-set-key 'insert (kbd "C-l") 'forward-char)
 (evil-global-set-key 'insert (kbd "C-j") 'next-line)
@@ -159,15 +166,6 @@
 (evil-global-set-key 'insert (kbd "C-n") nil)
 (evil-global-set-key 'insert (kbd "C-p") nil)
 
-(evil-global-set-key 'insert (kbd "C-e") 
-  (lambda () 
-    (interactive) 
-    (evil-scroll-line-down 5)))
-
-(evil-global-set-key 'insert (kbd "C-y") 
-  (lambda () 
-    (interactive) 
-    (evil-scroll-line-up 5)))
 
 
 (provide 'init-evil)
