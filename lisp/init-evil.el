@@ -55,20 +55,11 @@
 (evil-global-set-key 'normal (kbd "C-s") 'save-buffer)
 
 ;; Normal and Motion
-(evil-define-motion 
-  evil-move-5-lines-down
-  () 
-  (evil-next-visual-line 5))
-(evil-define-motion 
-  evil-move-5-lines-up
-  () 
-  (evil-previous-visual-line 5))
-
+(evil-define-motion evil-move-5-lines-down () (evil-next-visual-line 5))
+(evil-define-motion evil-move-5-lines-up () (evil-previous-visual-line 5))
 (defun ripgrep-search
-  (&optional 
-   d
-   p) 
-  (interactive "DSearch Directory:\nP") 
+  (&optional d p) 
+  (interactive "DSearch Directory:\nP")
   (consult-ripgrep d p))
 
 
@@ -87,28 +78,9 @@
   (evil-global-set-key 'visual (kbd "{") 'sp-wrap-curly) 
   (evil-global-set-key 'visual (kbd "\"") (lambda () (interactive) (sp-wrap-with-pair "\""))))
 
-
-(setq evil-centre-hook-commands
-     (list
-      'evil-scroll-up
-      'evil-search-next
-      'evil-search-previous
-      'evil-move-5-lines-down
-      'evil-move-5-lines-up
-      'evil-previous-line
-      'evil-next-line
-      'evil-jump-item))
-
-(-each evil-centre-hook-commands
-  (lambda (cmd) (advice-add cmd :filter-return
-		(lambda (&rest ignored) (call-interactively 'evil-scroll-line-to-center)))))
-
-
-
-
 (defun listify (obj)
-  (let ((obj (cond ((listp obj) obj)
-		    (t (list obj)))))))
+  (cond ((listp obj) obj)
+	(t (list obj))))
 
 (defun my-evil-global-keys (mode key function)
   (let ((mode (listify mode))
@@ -153,16 +125,28 @@
 (global-set-key (kbd "C-e") nil)
 ;; insert mode
 
-
-(defun message-region ()
+(defun insert-forward-search ()
   (interactive)
-  (message "%s-%s" (region-beginning) (region-end)))
+  (call-interactively 'evil-execute-in-normal-state)
+  (call-interactively 'evil-find-char)
+  (call-interactively 'evil-append))
 
+(defun insert-repeat-find-char ()
+  (interactive)
+  (call-interactively 'evil-execute-in-normal-state)
+  (let ((success-action nil))
+    (unwind-protect  
+	(progn 
+	  (call-interactively 'evil-repeat-find-char)
+	  (setq success-action 'evil-append))
+      (call-interactively (or success-action 'evil-insert)))))
+
+(evil-global-set-key 'insert (kbd "C-f") 'insert-forward-search)
+(evil-global-set-key 'insert (kbd "C-;") 'insert-repeat-find-char)
 (evil-global-set-key 'insert (kbd "C-l") 'forward-char)
 (evil-global-set-key 'insert (kbd "C-j") 'next-line)
 (evil-global-set-key 'insert (kbd "C-k") 'previous-line)
 (evil-global-set-key 'insert (kbd "C-h") 'backward-char)
-(evil-global-set-key 'insert (kbd "C-s") 'save-buffer)
 (evil-global-set-key 'insert (kbd "C-n") nil)
 (evil-global-set-key 'insert (kbd "C-p") nil)
 

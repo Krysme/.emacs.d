@@ -24,6 +24,7 @@
 (require 'init-racket)
 (require 'init-markdown)
 (require 'init-python)
+(require 'init-org-mode)
 
 
 
