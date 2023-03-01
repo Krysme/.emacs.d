@@ -143,6 +143,7 @@
 
 (evil-global-set-key 'insert (kbd "C-f") 'insert-forward-search)
 (evil-global-set-key 'insert (kbd "C-;") 'insert-repeat-find-char)
+(evil-global-set-key 'insert (kbd "C-s") 'save-buffer)
 (evil-global-set-key 'insert (kbd "C-l") 'forward-char)
 (evil-global-set-key 'insert (kbd "C-j") 'next-line)
 (evil-global-set-key 'insert (kbd "C-k") 'previous-line)

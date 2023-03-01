@@ -56,11 +56,6 @@
 (add-hook 'lsp-mode-hook 'init-lsp-set-keys)
 
 
-;; (defun lsp-workspace-file-search ()
-;;     (interactive)
-;;     (completing-read (concat "Files in " "workspace root") (acr-lines-from-process "foo.sh")))
-
-;; (completing-read "Foo:" (acr-lines-from-process "foo.sh"))
 
 
 
