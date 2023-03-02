@@ -25,6 +25,7 @@
 (require 'init-markdown)
 (require 'init-python)
 (require 'init-org-mode)
+(require 'init-clojure)
 
 
 
