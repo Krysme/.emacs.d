@@ -24,6 +24,7 @@
 ;; languages
 (require 'init-lsp)
 (require 'init-python)
+(require 'init-clojure)
 (require 'init-typescript)
 (require 'init-c-cpp)
 (require 'init-rust)

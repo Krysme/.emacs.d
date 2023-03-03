@@ -6,7 +6,7 @@
 
 (add-hook 'paredit-mode-hook 'paredit-custom-leader-keys)
 
-(after-load 'smartparens (sp-local-pair 'elisp-mode "'" nil 
+(after-load 'smartparens (sp-local-pair (list 'elisp-mode 'clojure-mode) "'" nil 
 					:actions nil))
 
 
@@ -31,6 +31,10 @@
   (call-interactively 'er/expand-region))
 
 (defun emacs-lisp-sexp-key ()
+  (evil-define-key 'visual clojure-mode-map (kbd "v") 'my-expand-region)
+  (evil-define-key 'visual clojure-mode-map (kbd "C-l") (lambda () (interactive) (backward-sexp -1)))
+  (evil-define-key 'visual clojure-mode-map (kbd "C-h") 'backward-sexp)
+  (evil-define-key 'insert clojure-mode-map (kbd "C-9") 'paredit-wrap-round-from-behind)
   (evil-define-key 'visual emacs-lisp-mode-map (kbd "v") 'my-expand-region)
   (evil-define-key 'visual emacs-lisp-mode-map (kbd "C-l") (lambda () (interactive) (backward-sexp -1)))
   (evil-define-key 'visual emacs-lisp-mode-map (kbd "C-h") 'backward-sexp)
