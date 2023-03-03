@@ -10,7 +10,6 @@
 (require 'init-vterm)
 (require 'init-magit)
 (require 'init-paredit)
-(require 'init-lsp)
 (require 'init-company)
 (require 'init-utils)
 (require 'init-which-key)
@@ -18,14 +17,18 @@
 (require 'init-treemacs)
 (require 'init-adoc)
 (require 'settings)
-(require 'init-rust)
-(require 'init-c-cpp)
-(require 'init-go)
-(require 'init-racket)
 (require 'init-markdown)
-(require 'init-python)
 (require 'init-org-mode)
 
+
+;; languages
+(require 'init-lsp)
+(require 'init-python)
+(require 'init-typescript)
+(require 'init-c-cpp)
+(require 'init-rust)
+(require 'init-go)
+(require 'init-racket)
 
 
 
