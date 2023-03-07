@@ -12,8 +12,11 @@
 (require 'dash)
 
 
+
+
+
 (after-load 'lsp-mode
-  (add-hook 'lsp-mode-hook (lambda () (flycheck-mode t))))
+    (add-hook 'lsp-mode-hook (lambda () (flycheck-mode t))))
 
 (after-load 'lsp-mode
   (add-hook 'lsp-ui-mode-hook (lambda () (lsp-ui-doc-mode -1))))

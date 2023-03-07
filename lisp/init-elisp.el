@@ -34,6 +34,7 @@
 
 
 (setq lisp-indent-offset 4)
+
 (defun check-selected-text ()
     "Obtains the selected text region in the editor as a string and checks if there is any space or line-break in it."
     (interactive)

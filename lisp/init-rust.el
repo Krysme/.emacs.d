@@ -16,11 +16,15 @@
 
 (add-hook 'rust-mode-hook 'lsp-deferred)
 
+(add-hook 'rust-mode-hook #'tree-sitter-mode)
+
+(add-hook 'rust-mode-hook 'smartparens-mode)
+
 (add-hook 'rust-mode-hook 'smartparens-mode)
 (add-hook 'rust-mode-hook 'show-paren-mode)
 (add-hook 'rust-mode-hook 
-	  (lambda () 
-	    (setq tab-width 4)))
+    (lambda () 
+	(setq tab-width 4)))
 
 
 (add-hook 'toml-mode-hook 'smartparens-mode)
