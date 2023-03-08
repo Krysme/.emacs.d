@@ -20,15 +20,21 @@
 (setq tab-always-indent 'complete)
 (straight-use-package 'smooth-scrolling)
 
+(straight-use-package 'atom-one-dark-theme)
+
+
 (straight-use-package 'all-the-icons
-		      :if (display-graphic-p))
+    :if (display-graphic-p))
 
 (after-load 'smooth-scrolling (smooth-scrolling-mode 1))
 
+;; (use-package doom-themes
+;;     :ensure t
+;;     :straight t)
+
 (display-time-mode t)
 
-(if (display-graphic-p)
-    (after-load 'doom-themes (load-theme 'doom-one t)))
+(load-theme 'atom-one-dark t)
 
 ;; theme
 (straight-use-package 'all-the-icons)
@@ -45,13 +51,10 @@
 
 (fset 'yes-or-no-p 'y-or-n-p)
 
-(use-package doom-themes
-  :ensure t
-  :straight t)
 
 (use-package helpful
-  :ensure t
-  :straight t)
+    :ensure t
+    :straight t)
 
 (use-package dashboard
   :ensure t
