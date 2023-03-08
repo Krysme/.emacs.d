@@ -55,7 +55,7 @@
 	(evil-define-key 'normal lsp-mode-map (kbd "K") 'toggle-lsp-ui-doc)
 	(after-load 'lsp-treemacs
 	    (evil-define-key 'normal lsp-mode-map (kbd "C-c g") 'treemacs)
-	    (evil-define-key 'normal lsp-mode-map (kbd "C-c l") 'lsp-treemacs--build-error-list)
+	    (evil-define-key 'normal lsp-mode-map (kbd "C-c l") 'lsp-treemacs-errors-list)
 	    (evil-define-key 'normal lsp-mode-map (kbd "C-c k") 'lsp-treemacs-symbols))))
 (after-load 'evil
     (add-hook 'evil-visual-state-exit-hook (lambda () (setq lsp--document-selection-range-cache nil))))
