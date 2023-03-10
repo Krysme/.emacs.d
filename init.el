@@ -28,7 +28,6 @@
 
 ;; languages
 (require 'init-lsp)
-(require 'init-tree-sitter)
 (require 'init-python)
 (require 'init-clojure)
 (require 'init-typescript)

@@ -16,8 +16,6 @@
 
 (add-hook 'rust-mode-hook 'lsp-deferred)
 
-(add-hook 'rust-mode-hook #'tree-sitter-mode)
-
 (add-hook 'rust-mode-hook 'smartparens-mode)
 
 (add-hook 'rust-mode-hook 'smartparens-mode)

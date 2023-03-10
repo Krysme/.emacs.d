@@ -93,7 +93,7 @@
 (defun setup-normal-motion-visual-keys (mode)
     (evil-global-set-key mode (kbd "SPC") nil)
     (evil-global-set-key mode (kbd "SPC hf") #'helpful-callable)
-    (evil-global-set-key mode (kbd "SPC ;d") #'dired-jump)
+    (evil-global-set-key mode (kbd "SPC d") #'dired-jump)
     (evil-global-set-key mode (kbd "SPC hv") #'helpful-variable)
     (evil-global-set-key mode (kbd "SPC hk") #'helpful-key)
     (evil-global-set-key mode (kbd "SPC ho") #'helpful-symbol)

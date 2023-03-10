@@ -40,7 +40,7 @@
 (straight-use-package 'all-the-icons)
 
 ;; font
-(add-to-list 'default-frame-alist '(font . "JetBrainsMono Medium-14"))
+(add-to-list 'default-frame-alist '(font . "JetBrainsMono Medium-15"))
 
 (recentf-mode t)
 
