@@ -13,7 +13,6 @@
 
 
 
-
 (after-load 'lsp-mode
     (add-hook 'lsp-mode-hook (lambda () (flycheck-mode t))))
 
@@ -37,6 +36,8 @@
 	(evil-define-key 'normal lsp-mode-map (kbd "g t") 'lsp-find-type-definition)
 	(evil-define-key 'normal lsp-mode-map (kbd "SPC o") 'lsp-rename)
 	(evil-define-key 'visual lsp-mode-map (kbd "v") 'lsp-extend-selection)
+	(evil-define-key 'normal lsp-mode-map (kbd "K") 'lsp-ui-doc-focus-frame)
+	(evil-define-key 'normal lsp-ui-doc-frame-mode-map (kbd "K") 'lsp-ui-doc-unfocus-frame)
 	(after-load 'lsp-treemacs
 	    (evil-define-key 'normal lsp-mode-map (kbd "C-c g") 'treemacs)
 	    (evil-define-key 'normal lsp-mode-map (kbd "C-c l") 'lsp-treemacs-errors-list)
@@ -45,6 +46,7 @@
     (add-hook 'evil-visual-state-exit-hook (lambda () (setq lsp--document-selection-range-cache nil))))
 ;; keys
 (add-hook 'lsp-mode-hook 'init-lsp-set-keys)
+
 
 
 
