@@ -37,6 +37,7 @@
 	(evil-define-key 'normal lsp-mode-map (kbd "SPC o") 'lsp-rename)
 	(evil-define-key 'visual lsp-mode-map (kbd "v") 'lsp-extend-selection)
 	(evil-define-key 'normal lsp-mode-map (kbd "K") 'lsp-ui-doc-focus-frame)
+	(evil-define-key 'normal lsp-ui-doc-frame-mode-map (kbd "q") 'lsp-ui-doc-unfocus-frame)
 	(evil-define-key 'normal lsp-ui-doc-frame-mode-map (kbd "K") 'lsp-ui-doc-unfocus-frame)
 	(after-load 'lsp-treemacs
 	    (evil-define-key 'normal lsp-mode-map (kbd "C-c g") 'treemacs)

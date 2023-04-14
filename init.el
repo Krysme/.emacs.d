@@ -1,13 +1,9 @@
 ;; -*- lexical-binding: t -*-
-
-(setenv "https_proxy" "http://127.0.0.1:8123")
-(setenv "http_proxy" "http://127.0.0.1:8123")
-
-
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 
 ;; load straight
 (require 'preload)
+(require 'init-env-settings)
 
 (require 'init-evil)
 (require 'init-vertico)
