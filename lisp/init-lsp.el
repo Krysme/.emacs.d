@@ -45,6 +45,29 @@
 	    (evil-define-key 'normal lsp-mode-map (kbd "C-c k") 'lsp-treemacs-symbols))))
 (after-load 'evil
     (add-hook 'evil-visual-state-exit-hook (lambda () (setq lsp--document-selection-range-cache nil))))
+
+(defun lsp-ui-doc-turn-off-advice (orig-fun &rest args)
+    (if (fboundp 'lsp-ui-doc-mode)
+	(lsp-ui-doc-mode -1))
+    (condition-case err
+	(progn 
+	    (apply orig-fun args)
+	    (if (fboundp 'lsp-ui-doc-mode)
+		(progn  (lsp-ui-doc-mode 1))))
+	(error
+	    (if (fboundp 'lsp-ui-doc-mode)
+		(progn  (lsp-ui-doc-mode 1)))
+	    (signal (car err) (cdr err)))))
+
+(defun lsp-ui-doc-turn-on-advice (orig-fun &rest args)
+    (apply orig-fun args)
+    (lsp-ui-doc-mode 1))
+
+
+(after-load 'evil
+    (advice-add 'evil-search-forward :around #'lsp-ui-doc-turn-off-advice)
+    (advice-add 'evil-search-backward :around #'lsp-ui-doc-turn-off-advice))
+
 ;; keys
 (add-hook 'lsp-mode-hook 'init-lsp-set-keys)
 
