@@ -32,13 +32,12 @@
     (define-key lsp-mode-map (kbd "C-C C-c") 'lsp-ui-sideline-apply-code-actions)
     (define-key lsp-mode-map (kbd "C-C C-l") 'lsp-ui-imenu)
     (after-load 'evil 
-	(evil-define-key 'normal lsp-mode-map (kbd "g r") 'xref-find-references)
-	(evil-define-key 'normal lsp-mode-map (kbd "g t") 'lsp-find-type-definition)
-	(evil-define-key 'normal lsp-mode-map (kbd "SPC o") 'lsp-rename)
-	(evil-define-key 'visual lsp-mode-map (kbd "v") 'lsp-extend-selection)
-	(evil-define-key 'normal lsp-mode-map (kbd "K") 'lsp-ui-doc-focus-frame)
+	(define-key evil-normal-state-map (kbd "g r") 'xref-find-references)
+	(define-key evil-normal-state-map (kbd "g t") 'lsp-find-type-definition)
+	(define-key evil-normal-state-map (kbd "SPC o") 'lsp-rename)
+	(define-key evil-visual-state-map (kbd "v") 'lsp-extend-selection)
+	(define-key evil-normal-state-map (kbd "K") 'lsp-ui-doc-focus-frame)
 	(evil-define-key 'normal lsp-ui-doc-frame-mode-map (kbd "q") 'lsp-ui-doc-unfocus-frame)
-	(evil-define-key 'normal lsp-ui-doc-frame-mode-map (kbd "K") 'lsp-ui-doc-unfocus-frame)
 	(after-load 'lsp-treemacs
 	    (evil-define-key 'normal lsp-mode-map (kbd "C-c g") 'treemacs)
 	    (evil-define-key 'normal lsp-mode-map (kbd "C-c l") 'lsp-treemacs-errors-list)
@@ -66,7 +65,9 @@
 
 (after-load 'evil
     (advice-add 'evil-search-forward :around #'lsp-ui-doc-turn-off-advice)
-    (advice-add 'evil-search-backward :around #'lsp-ui-doc-turn-off-advice))
+    (advice-add 'evil-search-backward :around #'lsp-ui-doc-turn-off-advice)
+    (evil-set-initial-state 'lsp-mode 'normal)
+    )
 
 ;; keys
 (add-hook 'lsp-mode-hook 'init-lsp-set-keys)
