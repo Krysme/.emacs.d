@@ -39,9 +39,10 @@
 	(define-key evil-normal-state-map (kbd "K") 'lsp-ui-doc-focus-frame)
 	(evil-define-key 'normal lsp-ui-doc-frame-mode-map (kbd "q") 'lsp-ui-doc-unfocus-frame)
 	(after-load 'lsp-treemacs
-	    (evil-define-key 'normal lsp-mode-map (kbd "C-c g") 'treemacs)
-	    (evil-define-key 'normal lsp-mode-map (kbd "C-c l") 'lsp-treemacs-errors-list)
-	    (evil-define-key 'normal lsp-mode-map (kbd "C-c k") 'lsp-treemacs-symbols))))
+	    (define-key evil-normal-state-map (kbd "K") 'lsp-ui-doc-focus-frame)
+	    (define-key evil-normal-state-map (kbd "C-c g") 'treemacs)
+	    (define-key evil-normal-state-map (kbd "C-c l") 'lsp-treemacs-errors-list)
+	    (define-key evil-normal-state-map (kbd "C-c k") 'lsp-treemacs-symbols))))
 (after-load 'evil
     (add-hook 'evil-visual-state-exit-hook (lambda () (setq lsp--document-selection-range-cache nil))))
 
