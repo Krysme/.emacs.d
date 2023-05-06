@@ -9,7 +9,7 @@
 (require 'init-vertico)
 (require 'init-elisp)
 (require 'init-vterm)
-(require 'init-magit)
+(require 'init-git)
 (require 'init-paredit)
 (require 'init-company)
 (require 'init-utils)
