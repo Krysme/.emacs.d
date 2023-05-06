@@ -48,12 +48,15 @@
 	'(evil-goto-definition-xref
 	     evil-goto-definition-imenu
 	     evil-goto-definition-semantic
-	     evil-goto-definition-search)))
+	     evil-goto-definition-search))
+    (evil-select-search-module 'evil-search-module 'evil-search)
+    )
 
 (define-key key-translation-map (kbd "<ESC>") (kbd "C-g"))
 
 ;; Normal mode
 (evil-global-set-key 'normal (kbd "C-s") 'save-buffer)
+(evil-global-set-key 'normal (kbd "SPC SPC") 'evil-ex-nohighlight)
 
 ;; Normal and Motion
 (evil-define-motion evil-move-5-lines-down () (evil-next-visual-line 5))
