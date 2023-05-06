@@ -1,4 +1,9 @@
 ;; -*- lexical-binding: t -*-
+
+(setq gc-original-threashold gc-cons-threshold)
+(setq gc-cons-threshold (* 1024 1024 1024))
+(add-hook 'after-init-hook (lambda () (setq gc-cons-threshold gc-original-threashold)))
+
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 
 ;; load straight
