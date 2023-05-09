@@ -55,8 +55,6 @@
 (define-key key-translation-map (kbd "<ESC>") (kbd "C-g"))
 
 ;; Normal mode
-(evil-global-set-key 'normal (kbd "C-s") 'save-buffer)
-(evil-global-set-key 'normal (kbd "SPC SPC") 'evil-ex-nohighlight)
 
 ;; Normal and Motion
 (evil-define-motion evil-move-5-lines-down () (evil-next-visual-line 5))
@@ -95,6 +93,8 @@
 
 (defun setup-normal-motion-visual-keys (mode)
     (evil-global-set-key mode (kbd "SPC") nil)
+    (evil-global-set-key mode (kbd "SPC SPC") 'evil-ex-nohighlight)
+    (evil-global-set-key mode (kbd "C-s") 'save-buffer)
     (evil-global-set-key mode (kbd "SPC hf") #'helpful-callable)
     (evil-global-set-key mode (kbd "SPC d") #'dired-jump)
     (evil-global-set-key mode (kbd "SPC hv") #'helpful-variable)
