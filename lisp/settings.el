@@ -9,7 +9,7 @@
 
 (global-display-line-numbers-mode)
 
-(global-prettify-symbols-mode 1)
+(global-prettify-symbols-mode 0)
 (global-auto-revert-mode 1)
 
 (menu-bar-mode -1)
@@ -27,10 +27,6 @@
     :if (display-graphic-p))
 
 (after-load 'smooth-scrolling (smooth-scrolling-mode 1))
-
-;; (use-package doom-themes
-;;     :ensure t
-;;     :straight t)
 
 (display-time-mode t)
 
@@ -70,18 +66,6 @@
 (global-set-key (kbd "C-w") 'backward-kill-word)
 ;; enable erase-buffer
 (put 'erase-buffer 'disabled nil)
-
-
-
-(use-package stream
-  :ensure t
-  :straight t)
-
-(defun seq-collect-list (sequence)
-  (seq-reduce (lambda (x y) (nconc x (list y))) sequence '()))
-
-
-
 
 
 
