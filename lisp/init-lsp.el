@@ -1,8 +1,6 @@
 ;; -*- lexical-binding: t -*-
 
-(defface lsp-ui-sideline-code-action
-    '((t :foreground "red"))
-    "Face used to highlight code action text."
+(defface lsp-ui-sideline-code-action '((t :foreground "red")) "Face used to highlight code action text."
     :group 'lsp-ui-sideline)
 
 (straight-use-package 'lsp-mode)
@@ -25,6 +23,8 @@
 (setq lsp-ui-doc-position 'at-point)
 (setq lsp-ui-sideline-show-code-actions t)
 (setq xref-prompt-for-identifier nil)
+(setq lsp-auto-guess-root t)
+
 
 (defun init-lsp-set-keys () 
     (add-hook 'before-save-hook 'lsp-format-buffer nil t)
@@ -72,7 +72,6 @@
 
 ;; keys
 (add-hook 'lsp-mode-hook 'init-lsp-set-keys)
-
 
 
 
