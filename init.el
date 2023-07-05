@@ -40,6 +40,7 @@
 (require 'init-rust)
 (require 'init-go)
 (require 'init-racket)
+(require 'init-web)
 
 
 
