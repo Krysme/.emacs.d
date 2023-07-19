@@ -1,7 +1,8 @@
-(let* ((sys-path (getenv "PATH"))
+
+(let* ((sys-path exec-path)
 	  (rust-path (concat (getenv "HOME") "/.cargo/bin")))
-    (when (not  (member rust-path (split-string sys-path ":" t)))
-	(progn (setenv "PATH" (concat sys-path ":" rust-path)))))
+    (when (not (member rust-path sys-path))
+	(add-to-list 'exec-path rust-path)))
 
 ;; -*- lexical-binding: t -*-
 (straight-use-package 'rust-mode)
