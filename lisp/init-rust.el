@@ -1,10 +1,9 @@
+;; -*- lexical-binding: t -*-
 
 (let* ((sys-path exec-path)
 	  (rust-path (concat (getenv "HOME") "/.cargo/bin")))
     (when (not (member rust-path sys-path))
 	(add-to-list 'exec-path rust-path)))
-
-;; -*- lexical-binding: t -*-
 (straight-use-package 'rust-mode)
 (straight-use-package 'cargo)
 (straight-use-package 'toml-mode)
