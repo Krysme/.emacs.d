@@ -1,8 +1,8 @@
 ;; -*- lexical-binding: t -*-
 (add-hook 'emacs-lisp-mode-hook 'paredit-mode)
 (add-hook 'emacs-lisp-mode-hook 'company-mode)
-(add-hook 'emacs-lisp-mode-hook 'aggressive-indent-mode)
-(straight-use-package 'aggressive-indent-mode)
+(straight-use-package 'aggressive-indent)
+;; (add-hook 'emacs-lisp-mode-hook 'aggressive-indent-mode)
 
 (straight-use-package 'expand-region)
 

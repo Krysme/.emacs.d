@@ -1,5 +1,5 @@
 
-(straight-use-package 'company-mode)
+(straight-use-package 'company)
 
 
 
