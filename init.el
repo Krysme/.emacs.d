@@ -18,7 +18,6 @@
 (require 'init-evil)
 (require 'init-vertico)
 (require 'init-elisp)
-(require 'init-vterm)
 (require 'init-git)
 (require 'init-utils)
 (require 'init-which-key)

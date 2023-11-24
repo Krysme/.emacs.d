@@ -1,10 +1,13 @@
+(defun eshell-clear-buffer ()
+    "Clear terminal"
+    (interactive)
+    (let ((inhibit-read-only t))
+	(erase-buffer)
+	(eshell-send-input)))
 
-(defun my-eshell-exit-or-delete-char (arg)
-    "Exit Eshell if the command line is empty, otherwise delete the char."
-    (interactive "p")
-    (if (and (eolp) (eq (point) (es-window-end eshell-last-output-end t)))
-	(eshell-life-is-too-much)
-	(delete-char arg)))
-(add-hook 'eshell-mode-hook (lambda () (local-set-key (kbd "C-d") 'my-eshell-exit-or-delete-char)))
-
+(add-hook 'eshell-mode-hook
+    (lambda ()
+	(define-key evil-insert-state-map (kbd "C-d") 'eshell-life-is-too-much)
+	(define-key evil-insert-state-map (kbd "C-l") 'eshell-clear-buffer)))
+;; (eshell-previous-matching-input-from-input ARG)
 (provide 'init-eshell)
