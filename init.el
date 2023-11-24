@@ -13,6 +13,7 @@
 (require 'preload)
 (require 'init-env-settings)
 
+(require 'init-eshell)
 (require 'init-company)
 (require 'init-paredit)
 (require 'init-evil)
