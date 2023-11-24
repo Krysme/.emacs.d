@@ -11,7 +11,6 @@
 
 ;; load straight
 (require 'preload)
-(require 'init-env-settings)
 
 (require 'init-eshell)
 (require 'init-company)
