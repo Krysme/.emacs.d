@@ -36,7 +36,7 @@
 (straight-use-package 'all-the-icons)
 
 ;; font
-(add-to-list 'default-frame-alist '(font . "JetBrainsMono Medium-15"))
+(set-frame-font "JetBrains Mono 15" nil t)
 
 (recentf-mode t)
 
