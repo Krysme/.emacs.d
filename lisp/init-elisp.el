@@ -6,7 +6,6 @@
 
 (straight-use-package 'expand-region)
 
-(add-hook 'paredit-mode-hook 'paredit-custom-leader-keys)
 
 (after-load 'smartparens (sp-local-pair (list 'elisp-mode 'clojure-mode) "'" nil 
 			     :actions nil))

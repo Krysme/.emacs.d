@@ -36,8 +36,8 @@
 	[tab] 'dired-find-file
 	(kbd "TAB")
 	'dired-find-file " k"
-	'kill-this-buffer (kbd "C-l")
-	'dired-up-directory))
+	'kill-this-buffer
+	(kbd "C-l") 'dired-up-directory))
 
 (evil-mode t)
 
