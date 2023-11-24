@@ -23,7 +23,7 @@
 (setq lsp-ui-doc-position 'at-point)
 (setq lsp-ui-sideline-show-code-actions t)
 (setq xref-prompt-for-identifier nil)
-(setq lsp-auto-guess-root t)
+;; (setq lsp-auto-guess-root t)
 
 
 (defun init-lsp-set-keys () 
