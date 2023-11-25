@@ -75,9 +75,9 @@
 
 (setq cpp-project-actions
     '(
-	 ("build" . compile-cmake-project)
-	 ("re-build" . re-compile-cmake-project)
-	 ("clean" . clean-cmake-project)))
+	("build" . compile-cmake-project)
+	("re-build" . re-compile-cmake-project)
+	("clean" . clean-cmake-project)))
 
 (defun cmake-project-action-menu ()
     (interactive)
