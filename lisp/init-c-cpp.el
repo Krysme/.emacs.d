@@ -52,16 +52,40 @@
 	      (cmake-dir (locate-dominating-file default-directory "CMakeLists.txt"))
 	      (cmake-build-dir (expand-file-name "build" cmake-dir))
 	      (command (format "cmake -G Ninja -H%s -B %s && cmake --build %s" cmake-dir cmake-build-dir cmake-build-dir)))
-	
-	(unless (file-directory-p cmake-build-dir)
-	    (make-directory cmake-build-dir))
-	(setenv "CMAKE_EXPORT_COMPILER_COMMANDS" "1")
+	(setenv "CMAKE_EXPORT_COMPILE_COMMANDS" "1")
 	(compile command))) 
 
 (add-hook 'compilation-filter-hook 'ansi-color-compilation-filter)
 
 (setq c-default-style "linux" c-basic-offset 4)
 
+
+
+(defun re-compile-cmake-project ()
+    (interactive)
+    (clean-cmake-project)
+    (compile-cmake-project))
+
+(defun clean-cmake-project ()
+    (interactive)
+    (let*  (
+	       (cmake-dir (locate-dominating-file default-directory "CMakeLists.txt"))
+	       (cmake-build-dir (expand-file-name "build" cmake-dir)))
+	(delete-directory cmake-build-dir t)))
+
+(setq cpp-project-actions
+    '(
+	 ("build" . compile-cmake-project)
+	 ("re-build" . re-compile-cmake-project)
+	 ("clean" . clean-cmake-project)))
+
+(defun cmake-project-action-menu ()
+    (interactive)
+    (let* (
+	      (action-name (completing-read "Action:" cpp-project-actions))
+	      (action (cdr (assoc action-name cpp-project-actions))))
+	(prin1 
+	    (funcall action))))
 
 
 
@@ -72,6 +96,12 @@
 	(evil-define-key 'visual c++-mode-map (kbd ")") 'sp-wrap-square)
 	(evil-define-key 'visual c++-mode-map (kbd "{") 'sp-wrap-curly)))
 
-(region-beginning)
 (define-key c++-mode-map (kbd "C-c C-b") 'compile-cmake-project)
+(define-key c-mode-map (kbd "C-c C-b") 'compile-cmake-project)
+(define-key c++-mode-map (kbd "C-c b") 'cmake-project-action-menu)
+(define-key c-mode-map (kbd "C-c b") 'cmake-project-action-menu)
+
+
+
+
 (provide 'init-c-cpp)
