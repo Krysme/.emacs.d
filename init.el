@@ -3,9 +3,8 @@
 (setenv "https_proxy" "http://127.0.0.1:8123")
 (setenv "http_proxy" "http://127.0.0.1:8123")
 
-(setq gc-original-threashold gc-cons-threshold)
 (setq gc-cons-threshold (* 1024 1024 1024))
-(add-hook 'after-init-hook (lambda () (setq gc-cons-threshold gc-original-threashold)))
+(add-hook 'after-init-hook (lambda () (setq gc-cons-threshold (* 256 1024 1024))))
 
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 
@@ -23,7 +22,7 @@
 (require 'init-which-key)
 (require 'init-yasnippet)
 (require 'init-treemacs)
-(require 'init-adoc)
+;; (require 'init-adoc)
 (require 'settings)
 (require 'init-markdown)
 (require 'init-org-mode)

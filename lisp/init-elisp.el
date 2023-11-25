@@ -2,7 +2,6 @@
 (add-hook 'emacs-lisp-mode-hook 'paredit-mode)
 (add-hook 'emacs-lisp-mode-hook 'company-mode)
 (straight-use-package 'aggressive-indent)
-;; (add-hook 'emacs-lisp-mode-hook 'aggressive-indent-mode)
 
 (straight-use-package 'expand-region)
 
@@ -31,6 +30,19 @@
 	(call-interactively 'evil-exit-visual-state))
     (call-interactively 'er/expand-region))
 
+(defun my-forward-sexp ()
+    (interactive)
+    (if (= (point) (region-beginning))
+	(let* ((origin-point (point)))
+	    (goto-char (region-end))
+	    (backward-sexp -1)
+	    (let ((end-point (point)))
+		(set-mark origin-point)
+		(goto-char end-point)))
+	(backward-sexp -1)))
+
+
+
 
 (setq lisp-indent-offset 4)
 
@@ -48,9 +60,12 @@
 
 (defun enter-after-sexp ()
     (interactive)
-    (goto-char (region-end))
-    (call-interactively 'evil-insert)
-    (call-interactively 'paredit-RET))
+    (let (
+	     (region-end-evil (region-end)))
+
+	(call-interactively 'evil-insert)
+	(goto-char (region-end))
+	(call-interactively 'paredit-RET)))
 
 
 (defun lisp-expand-til-multiple-sexp ()
@@ -62,13 +77,13 @@
     (evil-define-key 'visual clojure-mode-map (kbd "v") 'my-expand-region)
     (evil-define-key 'visual clojure-mode-map (kbd "V") 'lisp-expand-til-multiple-sexp)
     (evil-define-key 'visual clojure-mode-map (kbd "C-<return>") 'enter-after-sexp)
-    (evil-define-key 'visual clojure-mode-map (kbd "C-l") (lambda () (interactive) (backward-sexp -1)))
+    (evil-define-key 'visual clojure-mode-map (kbd "C-l") 'my-forward-sexp)
     (evil-define-key 'visual clojure-mode-map (kbd "C-h") 'backward-sexp)
     (evil-define-key 'insert clojure-mode-map (kbd "C-9") 'paredit-wrap-round-from-behind)
     (evil-define-key 'visual emacs-lisp-mode-map (kbd "v") 'my-expand-region)
     (evil-define-key 'visual emacs-lisp-mode-map (kbd "V") 'lisp-expand-til-multiple-sexp)
     (evil-define-key 'visual emacs-lisp-mode-map (kbd "C-<return>") 'enter-after-sexp)
-    (evil-define-key 'visual emacs-lisp-mode-map (kbd "C-l") (lambda () (interactive) (backward-sexp -1)))
+    (evil-define-key 'visual emacs-lisp-mode-map (kbd "C-l") 'my-forward-sexp)
     (evil-define-key 'visual emacs-lisp-mode-map (kbd "C-h") 'backward-sexp)
     (evil-define-key 'insert emacs-lisp-mode-map (kbd "C-9") 'paredit-wrap-round-from-behind))
 
