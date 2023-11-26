@@ -1,3 +1,4 @@
+(straight-use-package 'cmake-mode)
 (add-hook 'c-mode-hook 'lsp-deferred)
 (add-hook 'c++-mode-hook 'lsp-deferred)
 
@@ -97,9 +98,16 @@
 	(evil-define-key 'visual c++-mode-map (kbd "{") 'sp-wrap-curly)))
 
 (define-key c++-mode-map (kbd "C-c C-b") 'compile-cmake-project)
+(define-key cmake-mode-map (kbd "C-c C-b") 'compile-cmake-project)
 (define-key c-mode-map (kbd "C-c C-b") 'compile-cmake-project)
+
 (define-key c++-mode-map (kbd "C-c b") 'cmake-project-action-menu)
+(define-key cmake-mode-map (kbd "C-c b") 'cmake-project-action-menu)
 (define-key c-mode-map (kbd "C-c b") 'cmake-project-action-menu)
+
+(define-key c-mode-map (kbd "C-3") 'lsp-clangd-find-other-file)
+(define-key c++-mode-map (kbd "C-3") 'lsp-clangd-find-other-file)
+
 
 
 
