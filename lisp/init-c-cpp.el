@@ -26,8 +26,9 @@
 
 (setq private-c-cpp-project-search-text nil)
 
-(defun set-last-cpp-project-search-text ()
-    (setq private-c-cpp-project-search-text (trim-prefix  (minibuffer-contents-no-properties) ?#)))
+(defun set-last-cpp-project-search-text (&rest args)
+    (unless private-c-cpp-project-search-text
+	(setq private-c-cpp-project-search-text (trim-prefix  (minibuffer-contents-no-properties) ?#))))
 
 (defun primius-cpp-project-search-impl (dir)
     (let* ((project-dir (expand-file-name
@@ -36,9 +37,16 @@
 				(user-error "cannot find CMakeLists.txt")))))
 	(progn 
 	    (add-hook 'minibuffer-exit-hook 'set-last-cpp-project-search-text)
-	    (unwind-protect
-		(consult-ripgrep project-dir (or private-c-cpp-project-search-text ""))
-		(remove-hook 'minibuffer-exit-hook 'set-last-cpp-project-search-text)))))
+	    (advice-add 'vertico-exit :before 'set-last-cpp-project-search-text)
+	    (advice-add 'vertico-super-tab :before 'set-last-cpp-project-search-text)
+	    (let* ((initial-text private-c-cpp-project-search-text))
+		(setq private-c-cpp-project-search-text nil)
+		(unwind-protect
+		    (consult-ripgrep project-dir (or initial-text ""))
+		    (progn
+			(remove-hook 'minibuffer-exit-hook 'set-last-cpp-project-search-text)
+			(advice-remove 'vertico-exit 'set-last-cpp-project-search-text)
+			(advice-remove 'vertico-super-tab 'set-last-cpp-project-search-text)))))))
 
 (defun primius-cpp-project-search ()
     (interactive)
