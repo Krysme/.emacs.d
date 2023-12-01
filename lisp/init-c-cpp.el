@@ -18,10 +18,10 @@
 
 
 (defun trim-prefix (str ch)
-  "in a string STR, if there is a prefix that maches CH, trim it"
-  (if (and (stringp str) (> (length str) 0) (char-equal (aref str 0) ch))
-      (substring str 1)
-    str))
+    "in a string STR, if there is a prefix that maches CH, trim it"
+    (if (and (stringp str) (> (length str) 0) (char-equal (aref str 0) ch))
+	(substring str 1)
+	str))
 
 
 (setq private-c-cpp-project-search-text nil)

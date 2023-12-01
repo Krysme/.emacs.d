@@ -39,7 +39,7 @@
     (evil-define-key 'normal lsp-mode-map (kbd "g r") 'xref-find-references)
     (evil-define-key 'normal lsp-mode-map (kbd "g t") 'lsp-find-type-definition)
     (evil-define-key 'normal lsp-mode-map (kbd "SPC o") 'lsp-rename)
-    (evil-define-key 'normal lsp-mode-map (kbd "v") 'lsp-extend-selection)
+    (evil-define-key 'visual lsp-mode-map (kbd "v") 'lsp-extend-selection)
     (evil-define-key 'normal lsp-mode-map (kbd "K") 'lsp-ui-doc-focus-frame)
     (evil-define-key 'normal lsp-ui-doc-frame-mode-map (kbd "q") 'lsp-ui-doc-unfocus-frame)
     (after-load 'lsp-treemacs
