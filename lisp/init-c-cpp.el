@@ -30,11 +30,9 @@
     (unless private-c-cpp-project-search-text
 	(setq private-c-cpp-project-search-text (trim-prefix  (minibuffer-contents-no-properties) ?#))))
 
-(defun primius-cpp-project-search-impl (dir)
-    (let* ((project-dir (expand-file-name
-			    "src"
-			    (or (locate-dominating-file dir "CMakeLists.txt")
-				(user-error "cannot find CMakeLists.txt")))))
+(defun cpp-project-search-impl (dir)
+    (let* ((project-dir (or (locate-dominating-file dir "CMakeLists.txt")
+			    (user-error "cannot find CMakeLists.txt"))))
 	(progn 
 	    (add-hook 'minibuffer-exit-hook 'set-last-cpp-project-search-text)
 	    (advice-add 'vertico-exit :before 'set-last-cpp-project-search-text)
@@ -48,10 +46,10 @@
 			(advice-remove 'vertico-exit 'set-last-cpp-project-search-text)
 			(advice-remove 'vertico-super-tab 'set-last-cpp-project-search-text)))))))
 
-(defun primius-cpp-project-search ()
+(defun cpp-project-search ()
     (interactive)
     "find CMakeLists.txt and search the corresponding `src` folder"
-    (primius-cpp-project-search-impl default-directory))
+    (cpp-project-search-impl default-directory))
 
 
 
@@ -99,7 +97,7 @@
 
 
 (after-load 'evil
-    (evil-define-key 'normal c++-mode-map (kbd "SPC ,r") 'primius-cpp-project-search)
+    (evil-define-key 'normal c++-mode-map (kbd "SPC ,r") 'cpp-project-search)
     (after-load 'smartparens 
 	(evil-define-key 'visual c++-mode-map (kbd "(") 'sp-wrap-round)
 	(evil-define-key 'visual c++-mode-map (kbd ")") 'sp-wrap-square)
