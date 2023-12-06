@@ -58,7 +58,7 @@
     (let* (
 	      (cmake-dir (locate-dominating-file default-directory "CMakeLists.txt"))
 	      (cmake-build-dir (expand-file-name "build" cmake-dir))
-	      (command (format "cmake -G Ninja -H%s -B %s && cmake --build %s" cmake-dir cmake-build-dir cmake-build-dir)))
+	      (command (format "cmake -G Ninja -H\"%s\" -B \"%s\" && cmake --build \"%s\""  cmake-dir cmake-build-dir cmake-build-dir)))
 	(setenv "CMAKE_EXPORT_COMPILE_COMMANDS" "1")
 	(compile command))) 
 
