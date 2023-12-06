@@ -24,6 +24,18 @@
 	str))
 
 
+
+(defun locate-last-dominating-file (directory file-name)
+    "find the topmost directory where the file: FILE-NAME exists starting at DIRECTORY"
+    (let* ((dir directory)
+	      result)
+	(while (not (string= dir (directory-file-name dir)))
+	    (let ((file-path (expand-file-name file-name dir)))
+		(when (file-exists-p file-path)
+		    (setq result file-path))
+		(setq dir (file-name-directory (directory-file-name dir)))))
+	result))
+
 (setq private-c-cpp-project-search-text nil)
 
 (defun set-last-cpp-project-search-text (&rest args)
@@ -56,7 +68,7 @@
 (defun compile-cmake-project ()
     (interactive)
     (let* (
-	      (cmake-dir (locate-dominating-file default-directory "CMakeLists.txt"))
+	      (cmake-dir (locate-last-dominating-file default-directory "CMakeLists.txt"))
 	      (cmake-build-dir (expand-file-name "build" cmake-dir))
 	      (command (format "cmake -G Ninja -H\"%s\" -B \"%s\" && cmake --build \"%s\""  cmake-dir cmake-build-dir cmake-build-dir)))
 	(setenv "CMAKE_EXPORT_COMPILE_COMMANDS" "1")
@@ -76,7 +88,7 @@
 (defun clean-cmake-project ()
     (interactive)
     (let*  (
-	       (cmake-dir (locate-dominating-file default-directory "CMakeLists.txt"))
+	       (cmake-dir (locate-last-dominating-file default-directory "CMakeLists.txt"))
 	       (cmake-build-dir (expand-file-name "build" cmake-dir)))
 	(delete-directory cmake-build-dir t)))
 
