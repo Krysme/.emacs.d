@@ -31,7 +31,7 @@
     (while (not (string= dir (directory-file-name dir)))
       (let* ((file-path (expand-file-name file-name dir)))
         (when (file-exists-p file-path)
-          (setq result file-path))
+          (setq result dir))
         (setq dir (file-name-directory (directory-file-name dir)))))
     result))
 
