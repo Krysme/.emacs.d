@@ -92,7 +92,19 @@
 (setq cpp-project-actions
       '(("build" . compile-cmake-project)
 	("re-build" . re-compile-cmake-project)
-	("clean" . clean-cmake-project)))
+	("clean" . clean-cmake-project)
+        ("designer" . qt-open-designer)))
+
+(defun qt-open-designer ()
+  (interactive)
+  "open qt designer for current class"
+  (let* ((ui-file (replace-regexp-in-string "\\.[^.]*$" ".ui" (buffer-file-name)))
+         (qt-designer-path (or  (getenv "DESIGNER_PATH") (user-error "DESIGNER_PATH doesn't exists"))))
+    (unless (file-exists-p ui-file)
+      (user-error (format "file: %s doesn't exist" ui-file)))
+    (unless (file-exists-p ui-file)
+      (user-error (format "qt designer %s doesn't exist" qt-designer-path)))
+    (shell-command (concat qt-designer-path " " ui-file))))
 
 (defun cmake-project-action-menu ()
   (interactive)
