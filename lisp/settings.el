@@ -12,6 +12,11 @@
 (global-prettify-symbols-mode 0)
 (global-auto-revert-mode 1)
 
+
+(prefer-coding-system 'utf-8)
+(setq coding-system-for-read 'utf-8)
+(setq coding-system-for-write 'utf-8)
+
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
