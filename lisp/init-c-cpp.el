@@ -138,6 +138,27 @@
 
 
 
+(require 'dash)
+
+(defun obtain-cpu-count-on-windows-nt ()
+  (--> 
+   (process-lines "wmic" "cpu" "get" "NumberOfLogicalProcessors" "/format:List")
+   (-filter (lambda (s) (not (string-blank-p s))) it)
+   (-map 'string-trim it)
+   (car it)
+   (string-split it "=")
+   (nth 1 it)
+   (string-to-number it)))
+
+(add-hook 'lsp-mode-hook
+          (lambda ()
+            (setq lsp-clients-clangd-args
+                  (list "--clang-tidy"
+                        "--clang-tidy-checks=performance-*,bugprone-*"
+                        "--all-scopes-completion"
+                        "--header-insertion=iwyu"
+                        (format "-j=%d" (obtain-cpu-count-on-windows-nt))))))
+
 
 
 (provide 'init-c-cpp)
