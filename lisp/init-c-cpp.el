@@ -1,6 +1,6 @@
 (straight-use-package 'cmake-mode)
 
-(setq-default cmake-tab-width 4)
+(setq-default cmake-tab-width 8)
 (add-hook 'c-mode-hook 'lsp-deferred)
 (add-hook 'c++-mode-hook 'lsp-deferred)
 
