@@ -141,15 +141,19 @@
 (require 'dash)
 
 (defun obtain-cpu-count-on-windows-nt ()
-  (--> 
-   (process-lines "wmic" "cpu" "get" "NumberOfLogicalProcessors" "/format:List")
-   (-filter (lambda (s) (not (string-blank-p s))) it)
-   (-map 'string-trim it)
-   (car it)
-   (string-split it "=")
-   (nth 1 it)
-   (string-to-number it)))
+  "returns 8 for linux right now"
+  (condition-case err
+      (--> 
+       (process-lines "wmic" "cpu" "get" "NumberOfLogicalProcessors" "/format:List")
+       (-filter (lambda (s) (not (string-blank-p s))) it)
+       (-map 'string-trim it)
+       (car it)
+       (string-split it "=")
+       (nth 1 it)
+       (string-to-number it))
+    (error 8)))
 
+(obtain-cpu-count-on-windows-nt)
 (add-hook 'lsp-mode-hook
           (lambda ()
             (setq lsp-clients-clangd-args
