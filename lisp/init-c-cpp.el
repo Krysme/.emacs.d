@@ -153,7 +153,21 @@
        (string-to-number it))
     (error 8)))
 
-(obtain-cpu-count-on-windows-nt)
+(defun obtain-cpu-count-on-linux ()
+  "returns 8 for linux right now"
+  (condition-case err
+      (-->
+       (process-lines "nproc")
+       (-filter (lambda (s) (not (string-blank-p s))) it)
+       (-map 'string-trim it)
+       (car it)
+       (string-to-number it))
+    (error 8)))
+
+(setq core-count (cond
+                   ((string= system-type "gnu/linux") (obtain-cpu-count-on-linux))
+                   ((string= system-type "windows-nt") (obtain-cpu-count-on-windows-nt))))
+
 (add-hook 'lsp-mode-hook
           (lambda ()
             (setq lsp-clients-clangd-args
@@ -161,7 +175,7 @@
                         "--clang-tidy-checks=performance-*,bugprone-*"
                         "--all-scopes-completion"
                         "--header-insertion=iwyu"
-                        (format "-j=%d" (obtain-cpu-count-on-windows-nt))))))
+                        (format "-j=%d" core-count)))))
 
 
 
