@@ -25,7 +25,7 @@
 (setq tab-always-indent 'complete)
 (straight-use-package 'smooth-scrolling)
 
-(straight-use-package 'solarized-theme)
+(straight-use-package 'atom-one-dark-theme)
 
 
 (straight-use-package 'all-the-icons
@@ -35,7 +35,7 @@
 
 (display-time-mode t)
 
-(load-theme 'solarized-light t)
+(load-theme 'atom-one-dark t)
 
 ;; theme
 (straight-use-package 'all-the-icons)
