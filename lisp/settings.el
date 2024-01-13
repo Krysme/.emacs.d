@@ -27,7 +27,6 @@
 
 (straight-use-package 'atom-one-dark-theme)
 
-
 (straight-use-package 'all-the-icons
     :if (display-graphic-p))
 
@@ -36,7 +35,6 @@
 (display-time-mode t)
 
 (load-theme 'atom-one-dark t)
-
 ;; theme
 (straight-use-package 'all-the-icons)
 
@@ -72,6 +70,7 @@
 ;; enable erase-buffer
 (put 'erase-buffer 'disabled nil)
 
+(add-hook 'compilation-filter-hook 'ansi-color-compilation-filter)
 
 
 (provide 'settings)

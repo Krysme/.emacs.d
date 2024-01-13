@@ -74,7 +74,6 @@
     (setenv "CMAKE_EXPORT_COMPILE_COMMANDS" "1")
     (compile command))) 
 
-(add-hook 'compilation-filter-hook 'ansi-color-compilation-filter)
 
 (setq c-default-style "linux" c-basic-offset 4)
 
