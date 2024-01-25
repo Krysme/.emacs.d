@@ -7,6 +7,7 @@
 (straight-use-package 'helpful)
 (straight-use-package 'dashboard)
 (straight-use-package 'json-mode)
+(straight-use-package 'dirvish)
 
 
 (dashboard-setup-startup-hook)
@@ -34,6 +35,8 @@
 (setq make-backup-files nil)
 (setq auto-save-default nil)
 (setq tab-always-indent 'complete)
+
+(dirvish-override-dired-mode)
 
 
 
