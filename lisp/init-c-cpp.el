@@ -139,7 +139,7 @@
 (require 'dash)
 
 (defun obtain-cpu-count-on-windows-nt ()
-  "returns 8 for linux right now"
+  "obtain the core count on windows"
   (condition-case err
       (--> 
        (process-lines "wmic" "cpu" "get" "NumberOfLogicalProcessors" "/format:List")
@@ -152,7 +152,7 @@
     (error 8)))
 
 (defun obtain-cpu-count-on-linux ()
-  "returns 8 for linux right now"
+  "obtain the core count on linux"
   (condition-case err
       (-->
        (process-lines "nproc")
@@ -163,8 +163,8 @@
     (error 8)))
 
 (setq core-count (cond
-                   ((string= system-type "gnu/linux") (obtain-cpu-count-on-linux))
-                   ((string= system-type "windows-nt") (obtain-cpu-count-on-windows-nt))))
+                  ((string= system-type "gnu/linux") (obtain-cpu-count-on-linux))
+                  ((string= system-type "windows-nt") (obtain-cpu-count-on-windows-nt))))
 
 (add-hook 'lsp-mode-hook
           (lambda ()
