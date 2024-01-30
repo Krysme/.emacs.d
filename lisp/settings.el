@@ -1,4 +1,15 @@
 ;; -*- lexical-binding: t -*-
+
+(straight-use-package 'smooth-scrolling)
+(straight-use-package 'smooth-scrolling)
+(straight-use-package 'atom-one-dark-theme)
+(straight-use-package 'all-the-icons)
+(straight-use-package 'helpful)
+(straight-use-package 'dashboard)
+(straight-use-package 'json-mode)
+
+
+(dashboard-setup-startup-hook)
 (setq inhibit-startup-message t)
 
 (setq ring-bell-function 'ignore)
@@ -23,12 +34,9 @@
 (setq make-backup-files nil)
 (setq auto-save-default nil)
 (setq tab-always-indent 'complete)
-(straight-use-package 'smooth-scrolling)
 
-(straight-use-package 'atom-one-dark-theme)
 
-(straight-use-package 'all-the-icons
-    :if (display-graphic-p))
+
 
 (after-load 'smooth-scrolling (smooth-scrolling-mode 1))
 
@@ -36,7 +44,6 @@
 
 (load-theme 'atom-one-dark t)
 ;; theme
-(straight-use-package 'all-the-icons)
 
 ;; font
 (set-frame-font "JetBrains Mono 15" nil t)
@@ -51,18 +58,8 @@
 (fset 'yes-or-no-p 'y-or-n-p)
 
 
-(use-package helpful
-    :ensure t
-    :straight t)
 
-(use-package dashboard
-  :ensure t
-  :straight t
-  :config (dashboard-setup-startup-hook))
 
-(use-package json-mode
-  :ensure t
-  :straight t)
 
 (add-hook 'json-mode-hook 'smartparens-mode)
 

@@ -1,4 +1,5 @@
 (straight-use-package 'cmake-mode)
+(require 'cc-mode)
 
 (setq-default cmake-tab-width 8)
 (add-hook 'c-mode-hook 'lsp-deferred)
@@ -123,6 +124,7 @@
     (evil-define-key 'visual c++-mode-map (kbd "{") 'sp-wrap-curly)))
 
 (define-key c++-mode-map (kbd "C-c C-b") 'compile-cmake-project)
+
 (after-load 'cmake-mode 
   (define-key cmake-mode-map (kbd "C-c C-b") 'compile-cmake-project)
   (define-key cmake-mode-map (kbd "C-c b") 'cmake-project-action-menu))
