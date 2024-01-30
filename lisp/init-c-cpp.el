@@ -66,12 +66,12 @@
   (cpp-project-search-impl default-directory))
 
 
-
+(setq cmake-compiler-setting "-D CMAKE_C_COMPILER=clang -D CMAKE_CXX_COMPILER=clang++")
 (defun compile-cmake-project ()
   (interactive)
   (let* ((cmake-dir (locate-last-dominating-file default-directory "CMakeLists.txt"))
          (cmake-build-dir (expand-file-name "build" cmake-dir))
-         (command (format "cmake -G Ninja -H\"%s\" -B \"%s\" && cmake --build \"%s\" --parallel"  cmake-dir cmake-build-dir cmake-build-dir)))
+         (command (format "cmake -G Ninja -S \"%s\" -B \"%s\" %s && cmake --build \"%s\" --parallel"  cmake-dir cmake-build-dir cmake-compiler-setting cmake-build-dir)))
     (setenv "CMAKE_EXPORT_COMPILE_COMMANDS" "1")
     (compile command))) 
 
@@ -100,13 +100,10 @@
 (defun qt-open-designer ()
   (interactive)
   "open qt designer for current class"
-  (let* ((ui-file (replace-regexp-in-string "\\.[^.]*$" ".ui" (buffer-file-name)))
-         (qt-designer-path (or  (getenv "DESIGNER_PATH") (user-error "DESIGNER_PATH doesn't exists"))))
+  (let* ((ui-file (replace-regexp-in-string "\\.[^.]*$" ".ui" (buffer-file-name))))
     (unless (file-exists-p ui-file)
       (user-error (format "file: %s doesn't exist" ui-file)))
-    (unless (file-exists-p ui-file)
-      (user-error (format "qt designer %s doesn't exist" qt-designer-path)))
-    (shell-command (concat qt-designer-path " " ui-file))))
+    (async-shell-command (concat "designer " ui-file))))
 
 (defun cmake-project-action-menu ()
   (interactive)
