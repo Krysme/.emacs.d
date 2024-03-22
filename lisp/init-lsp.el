@@ -7,6 +7,7 @@
 (straight-use-package 'lsp-ui)
 (straight-use-package 'smartparens)
 (straight-use-package 'flycheck)
+(setq lsp-file-watch-threshold 10000)
 (require 'dash)
 
 
