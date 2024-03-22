@@ -66,15 +66,16 @@
   (cpp-project-search-impl default-directory))
 
 
-(setq cmake-compiler-setting "-D CMAKE_C_COMPILER=clang -D CMAKE_CXX_COMPILER=clang++")
 (defun compile-cmake-project ()
-  (interactive)
-  (let* ((cmake-dir (locate-last-dominating-file default-directory "CMakeLists.txt"))
-         (cmake-build-dir (expand-file-name "build" cmake-dir))
-         (command (format "cmake -G Ninja -S \"%s\" -B \"%s\" %s && cmake --build \"%s\" --parallel"  cmake-dir cmake-build-dir cmake-compiler-setting cmake-build-dir)))
-    (setenv "CMAKE_EXPORT_COMPILE_COMMANDS" "1")
-    (compile command))) 
+    (interactive)
+    (let* (
+	      (cmake-dir (locate-dominating-file default-directory "CMakeLists.txt"))
+	      (cmake-build-dir (expand-file-name "build" cmake-dir))
+	      (command (format "cmake -S %s -B %s && cmake --build %s && bash -c 'find . -name \"*_test.exe\" -exec {} \\;' " cmake-dir cmake-build-dir cmake-build-dir)))
+	(setenv "CMAKE_EXPORT_COMPILE_COMMANDS" "1")
+	(compile command))) 
 
+(add-hook 'compilation-filter-hook 'ansi-color-compilation-filter)
 
 (setq c-default-style "linux" c-basic-offset 4)
 
@@ -91,19 +92,20 @@
 	  (cmake-build-dir (expand-file-name "build" cmake-dir)))
     (delete-directory cmake-build-dir t)))
 
-(setq cpp-project-actions
-      '(("build" . compile-cmake-project)
-	("re-build" . re-compile-cmake-project)
-	("clean" . clean-cmake-project)
-        ("designer" . qt-open-designer)))
 
 (defun qt-open-designer ()
-  (interactive)
-  "open qt designer for current class"
-  (let* ((ui-file (replace-regexp-in-string "\\.[^.]*$" ".ui" (buffer-file-name))))
+    (interactive)
+    "open qt designer for current UI class"
+    (let* ((ui-file (replace-regexp-in-string "\\.[^.]*$" ".ui" (buffer-file-name)))))
     (unless (file-exists-p ui-file)
-      (user-error (format "file: %s doesn't exist" ui-file)))
-    (async-shell-command (concat "designer " ui-file))))
+	(shell-command "designer-qt6")))
+
+(setq cpp-project-actions
+    '(
+	 ("designer" . qt-open-designer)
+	 ("build" . compile-cmake-project)
+	 ("re-build" . re-compile-cmake-project)
+	 ("clean" . clean-cmake-project)))
 
 (defun cmake-project-action-menu ()
   (interactive)
