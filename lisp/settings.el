@@ -39,6 +39,9 @@
 (dirvish-override-dired-mode)
 
 
+(prefer-coding-system 'utf-8-unix)
+(setq coding-system-for-write 'utf-8-unix)
+
 
 
 (after-load 'smooth-scrolling (smooth-scrolling-mode 1))
