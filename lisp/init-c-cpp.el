@@ -28,7 +28,8 @@
 
 
 (defun locate-last-dominating-file (directory file-name)
-  "find the topmost directory where the file: FILE-NAME exists starting at DIRECTORY"
+  "find the topmost directory where the file: 
+FILE-NAME exists starting at DIRECTORY"
   (let* ((dir directory)
          result)
     (while (not (string= dir (directory-file-name dir)))
@@ -61,17 +62,22 @@
 	    (advice-remove 'vertico-super-tab 'set-last-cpp-project-search-text)))))))
 
 (defun cpp-project-search ()
-  (interactive)
   "find CMakeLists.txt and search the corresponding `src` folder"
+  (interactive)
   (cpp-project-search-impl default-directory))
 
 
 (defun compile-cmake-project ()
     (interactive)
     (let* (
-	      (cmake-dir (locate-dominating-file default-directory "CMakeLists.txt"))
+	      (cmake-dir (locate-last-dominating-file default-directory "CMakeLists.txt"))
 	      (cmake-build-dir (expand-file-name "build" cmake-dir))
-	      (command (format "cmake -S %s -B %s && cmake --build %s && bash -c 'find . -name \"*_test.exe\" -exec {} \\;' " cmake-dir cmake-build-dir cmake-build-dir)))
+	      (command (format
+                        "cmake -S %s -B %s && cmake --build %s && bash -c 'find %s -name \"*_test.exe\" -exec {} \\;' "
+                        cmake-dir
+                        cmake-build-dir
+                        cmake-build-dir
+                        cmake-build-dir)))
 	(setenv "CMAKE_EXPORT_COMPILE_COMMANDS" "1")
 	(compile command))) 
 
@@ -94,11 +100,11 @@
 
 
 (defun qt-open-designer ()
-    (interactive)
     "open qt designer for current UI class"
-    (let* ((ui-file (replace-regexp-in-string "\\.[^.]*$" ".ui" (buffer-file-name)))))
-    (unless (file-exists-p ui-file)
-	(shell-command "designer-qt6")))
+    (interactive)
+    (let* ((ui-file (replace-regexp-in-string "\\.[^.]*$" ".ui" (buffer-file-name))))
+      (when (file-exists-p ui-file)
+	(shell-command (format  "designer-qt6 %s" ui-file)))))
 
 (setq cpp-project-actions
     '(
