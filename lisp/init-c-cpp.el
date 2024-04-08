@@ -107,11 +107,10 @@ FILE-NAME exists starting at DIRECTORY"
 	(shell-command (format  "designer-qt6 %s" ui-file)))))
 
 (setq cpp-project-actions
-    '(
-	 ("designer" . qt-open-designer)
-	 ("build" . compile-cmake-project)
-	 ("re-build" . re-compile-cmake-project)
-	 ("clean" . clean-cmake-project)))
+      '(("designer" . qt-open-designer)
+        ("build" . compile-cmake-project)
+        ("re-build" . re-compile-cmake-project)
+        ("clean" . clean-cmake-project)))
 
 (defun cmake-project-action-menu ()
   (interactive)
