@@ -1,6 +1,7 @@
 (straight-use-package 'cmake-mode)
 (require 'cc-mode)
 
+(add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
 (setq-default cmake-tab-width 8)
 (add-hook 'c-mode-hook 'lsp-deferred)
 (add-hook 'c++-mode-hook 'lsp-deferred)
