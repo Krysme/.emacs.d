@@ -17,10 +17,13 @@
   :hook (python-mode . (lambda ()
                           (require 'lsp-pyright)
                           (lsp))))
-
+(use-package python-black
+  :straight t
+  :demand t
+  :after python
+  :hook (python-mode . python-black-on-save-mode-enable-dwim))
 
 (add-hook 'python-mode-hook 'smartparens-mode)
 
-(setq lsp-pylsp-plugins-flake8-ignore '("E303"))
 
 (provide 'init-python)

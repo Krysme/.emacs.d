@@ -30,7 +30,7 @@
 
 ;; languages
 (require 'init-lsp)
-;; (require 'init-python)
+(require 'init-python)
 ;; (require 'init-clojure)
 (require 'init-c-cpp)
 (require 'init-rust)
