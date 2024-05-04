@@ -103,7 +103,7 @@
     (evil-global-set-key mode (kbd "SPC hp") #'helpful-at-point)
     (evil-global-set-key mode (kbd "SPC k") 'kill-this-buffer)
     (evil-global-set-key mode (kbd "SPC x") #'execute-extended-command)
-    (evil-global-set-key mode (kbd "SPC b") #'switch-to-buffer)
+    (after-load 'consult (evil-global-set-key mode (kbd "SPC b") 'consult-buffer))
     (evil-global-set-key mode (kbd "C-h") 'evil-first-non-blank)
     (evil-global-set-key mode (kbd "C-l") 'evil-end-of-line)
     (evil-global-set-key mode (kbd "C-j") 'evil-move-5-lines-down)

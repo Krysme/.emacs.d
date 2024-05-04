@@ -34,6 +34,7 @@
 ;; (require 'init-clojure)
 (require 'init-c-cpp)
 (require 'init-rust)
+(require 'init-java)
 ;; (require 'init-go)
 ;; (require 'init-racket)
 ;; (require 'init-web)

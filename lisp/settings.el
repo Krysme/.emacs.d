@@ -2,7 +2,7 @@
 
 (straight-use-package 'smooth-scrolling)
 (straight-use-package 'smooth-scrolling)
-(straight-use-package 'atom-one-dark-theme)
+(straight-use-package 'spacemacs-theme)
 (straight-use-package 'all-the-icons)
 (straight-use-package 'helpful)
 (straight-use-package 'dashboard)
@@ -48,7 +48,7 @@
 
 (display-time-mode t)
 
-(load-theme 'atom-one-dark t)
+(load-theme 'spacemacs-dark t)
 ;; theme
 
 ;; font

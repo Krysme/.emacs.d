@@ -10,6 +10,8 @@
 (straight-use-package 'savehist
     :init
     (savehist-mode))
+(straight-use-package 'vertico-posframe)
+(vertico-posframe-mode 1)
 
 (use-package orderless
     :ensure t
@@ -137,7 +139,7 @@
 
 (defun my-async-completing-read
     (prompt collection &optional predicate &rest args)
-    "Completing read function that recognizes asyc completion tables.
+  "Completing read function that recognizes asyc completion tables.
 If the metadata fror COLLECTION specifies an `async' property, the
 corresponding value is treated as a list of an executable program
 and arguments for it. This function starts a process to run the
@@ -149,30 +151,30 @@ calling the predicate on the symbol `output-buffer'.
 
 If the metadata has no async property, just call
 `acr-completing-read-function' directly on COLLECTION."
-    (if-let ((metadata (completion-metadata "" collection predicate))
-		(async (completion-metadata-get metadata 'async))
-		(output-buffer (generate-new-buffer "*async-completing-read*"))
-		(update-timer (when acr-refresh-completion-ui
-				  (run-with-timer
-				      acr-refresh-completion-delay
-				      acr-refresh-completion-delay
-				      acr-refresh-completion-ui))))
-	(unwind-protect
-	    (progn
-		(let* ((process (apply #'make-process
-				    (append (list :name "*async-completing-read*" :buffer output-buffer :command async :sentinel 'ignore)))))
-		    (set-process-query-on-exit-flag process t))
-		(apply
-		    acr-completing-read-function prompt collection
-		    (lambda (candidate)
-			(cond
-			    ((eq candidate 'output-buffer) output-buffer)
-			    ((functionp predicate) (funcall predicate candidate))
-			    (t t)))
-		    args))
-	    (when update-timer (cancel-timer update-timer))
-	    (kill-buffer output-buffer))
-	(apply acr-completing-read-function prompt collection predicate args)))
+  (if-let ((metadata (completion-metadata "" collection predicate))
+	   (async (completion-metadata-get metadata 'async))
+	   (output-buffer (generate-new-buffer "*async-completing-read*"))
+	   (update-timer (when acr-refresh-completion-ui
+			   (run-with-timer
+			    acr-refresh-completion-delay
+			    acr-refresh-completion-delay
+			    acr-refresh-completion-ui))))
+      (unwind-protect
+	  (progn
+	    (let* ((process (apply #'make-process
+				   (append (list :name "*async-completing-read*" :buffer output-buffer :command async :sentinel 'ignore)))))
+	      (set-process-query-on-exit-flag process t))
+	    (apply
+	     acr-completing-read-function prompt collection
+	     (lambda (candidate)
+	       (cond
+		((eq candidate 'output-buffer) output-buffer)
+		((functionp predicate) (funcall predicate candidate))
+		(t t)))
+	     args))
+	(when update-timer (cancel-timer update-timer))
+	(kill-buffer output-buffer))
+    (apply acr-completing-read-function prompt collection predicate args)))
 
 (setq acr-completing-read-function 'my-async-completing-read)
 
