@@ -16,6 +16,9 @@
     (evil-define-key 'insert eshell-mode-map (kbd "C-p") 'eshell-previous-matching-input-from-input)
     (evil-define-key 'insert eshell-mode-map (kbd "C-n") 'eshell-next-matching-input-from-input))
 
-(global-set-key (kbd "C-4") 'eshell)
+(cond
+ ((string= system-type "gnu/linux") (global-set-key (kbd "C-4") 'eshell))
+ ((string= system-type "windows-nt") (global-set-key (kbd "C-4") 'eshell)))
+
 
 (provide 'init-eshell)
