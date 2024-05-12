@@ -27,18 +27,20 @@
     str))
 
 
-
-(defun locate-last-dominating-file (directory file-name)
-  "find the topmost directory where the file: 
-FILE-NAME exists starting at DIRECTORY"
-  (let* ((dir directory)
-         result)
+(defun locate-all-dominating-files (directory file-name)
+(let* ((dir directory)
+       (result '()))
     (while (not (string= dir (directory-file-name dir)))
       (let* ((file-path (expand-file-name file-name dir)))
         (when (file-exists-p file-path)
-          (setq result dir))
+          (push dir result))
         (setq dir (file-name-directory (directory-file-name dir)))))
     result))
+
+(car  (locate-all-dominating-files "/home/krys/.emacs.d/foo/xxx/yyy/zzz/" "bar"))
+
+(file-name-directory (directory-file-name "/home/krys/src/match/src/match/"))
+
 
 (setq private-c-cpp-project-search-text nil)
 
@@ -71,7 +73,7 @@ FILE-NAME exists starting at DIRECTORY"
 (defun compile-cmake-project ()
     (interactive)
     (let* (
-	      (cmake-dir (locate-last-dominating-file default-directory "CMakeLists.txt"))
+	   (cmake-dir (car (locate-all-dominating-files default-directory "CMakeLists.txt")))
 	      (cmake-build-dir (expand-file-name "build" cmake-dir))
 	      (command (format
                         "cmake -S %s -B %s && cmake --build %s && bash -c 'find %s -name \"*_test.exe\" -exec {} \\;' "
@@ -95,7 +97,7 @@ FILE-NAME exists starting at DIRECTORY"
 
 (defun clean-cmake-project ()
   (interactive)
-  (let*  ((cmake-dir (locate-last-dominating-file default-directory "CMakeLists.txt"))
+  (let*  ((cmake-dir (car (locate-all-dominating-files default-directory "CMakeLists.txt")))
 	  (cmake-build-dir (expand-file-name "build" cmake-dir)))
     (delete-directory cmake-build-dir t)))
 
