@@ -48,9 +48,19 @@
   (unless private-c-cpp-project-search-text
     (setq private-c-cpp-project-search-text (trim-prefix  (minibuffer-contents-no-properties) ?#))))
 
+
+(defun choose-strings (lst title error-string)
+  (cond
+   ((null lst) (user-error error-string))
+   ((null (cdr lst)) (car lst))
+   (t (completing-read title lst))))
+
 (defun cpp-project-search-impl (dir)
-  (let* ((project-dir (or (locate-dominating-file dir "CMakeLists.txt")
-			  (user-error "cannot find CMakeLists.txt"))))
+  (let* ((project-dir (or
+                       (choose-strings 
+                        (locate-all-dominating-files dir "CMakeLists.txt")
+                        "Choose cmake dir"
+                        "cannot find CMakeLists.txt"))))
     (progn 
       (add-hook 'minibuffer-exit-hook 'set-last-cpp-project-search-text)
       (advice-add 'vertico-exit :before 'set-last-cpp-project-search-text)
