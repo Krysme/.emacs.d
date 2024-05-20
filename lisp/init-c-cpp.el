@@ -37,11 +37,6 @@
         (setq dir (file-name-directory (directory-file-name dir)))))
     result))
 
-(car  (locate-all-dominating-files "/home/krys/.emacs.d/foo/xxx/yyy/zzz/" "bar"))
-
-(file-name-directory (directory-file-name "/home/krys/src/match/src/match/"))
-
-
 (setq private-c-cpp-project-search-text nil)
 
 (defun set-last-cpp-project-search-text (&rest args)
