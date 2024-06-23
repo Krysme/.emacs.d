@@ -33,6 +33,7 @@
 (require 'init-python)
 ;; (require 'init-clojure)
 (require 'init-c-cpp)
+(require 'init-haskell)
 (require 'init-rust)
 (require 'init-java)
 ;; (require 'init-go)
