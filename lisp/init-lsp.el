@@ -36,20 +36,24 @@
 
 
 
-(after-load 'evil 
-    (evil-define-key 'normal lsp-mode-map (kbd "g r") 'xref-find-references)
-    (evil-define-key 'normal lsp-mode-map (kbd "g t") 'lsp-find-type-definition)
-    (evil-define-key 'normal lsp-mode-map (kbd "SPC o") 'lsp-rename)
-    (evil-define-key 'visual lsp-mode-map (kbd "v") 'lsp-extend-selection)
-    (evil-define-key 'normal lsp-mode-map (kbd "K") 'lsp-ui-doc-focus-frame)
-    (evil-define-key 'normal lsp-ui-doc-frame-mode-map (kbd "q") 'lsp-ui-doc-unfocus-frame)
-    (after-load 'lsp-treemacs
-	(evil-define-key 'normal lsp-mode-map (kbd "K") 'lsp-ui-doc-focus-frame)
-	(evil-define-key 'normal lsp-mode-map (kbd "C-c g") 'treemacs)
-	(evil-define-key 'normal lsp-mode-map (kbd "C-c l") 'lsp-treemacs-errors-list)
-	(evil-define-key 'normal lsp-mode-map (kbd "C-c k") 'lsp-treemacs-symbols)))
 
 
+
+(defun lsp-mode-evil-key-binding ()
+  (define-key evil-normal-state-map (kbd "g r") 'xref-find-references)
+  (define-key evil-normal-state-map (kbd "g t") 'lsp-find-type-definition)
+  (define-key evil-normal-state-map (kbd "SPC o") 'lsp-rename)
+  (define-key evil-visual-state-map (kbd "v") 'lsp-extend-selection)
+  (define-key evil-normal-state-map (kbd "K") 'lsp-ui-doc-focus-frame)
+  (define-key evil-normal-state-map lsp-ui-doc-frame-mode-map (kbd "q") 'lsp-ui-doc-unfocus-frame)
+  (after-load 'lsp-treemacs
+    (define-key evil-normal-state-map (kbd "K") 'lsp-ui-doc-focus-frame)
+    (define-key evil-normal-state-map (kbd "C-c g") 'treemacs)
+    (define-key evil-normal-state-map (kbd "C-c l") 'lsp-treemacs-errors-list)
+    (define-key evil-normal-state-map (kbd "C-c k") 'lsp-treemacs-symbols)))
+
+
+(add-hook 'lsp-mode-hook 'lsp-mode-evil-key-binding)
 
 
 (after-load 'evil
