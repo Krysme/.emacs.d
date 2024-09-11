@@ -10,8 +10,8 @@
 (straight-use-package 'savehist
     :init
     (savehist-mode))
-(straight-use-package 'vertico-posframe)
-(vertico-posframe-mode 1)
+;; (straight-use-package 'vertico-posframe)
+;; (vertico-posframe-mode 1)
 
 (use-package orderless
     :ensure t
