@@ -9,7 +9,6 @@
 (straight-use-package 'json-mode)
 (straight-use-package 'dirvish)
 
-
 (dashboard-setup-startup-hook)
 (setq inhibit-startup-message t)
 
