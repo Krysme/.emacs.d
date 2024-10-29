@@ -8,6 +8,8 @@
 (straight-use-package 'dashboard)
 (straight-use-package 'json-mode)
 (straight-use-package 'dirvish)
+(straight-use-package 'solarized-theme)
+(straight-use-package 'doom-themes)
 
 (dashboard-setup-startup-hook)
 (setq inhibit-startup-message t)
@@ -47,7 +49,15 @@
 
 (display-time-mode t)
 
-(load-theme 'spacemacs-dark t)
+(setq doom-themes-enable-bold t doom-themes-enable-italic t)
+(let* ((msystem (getenv "MSYSTEM"))
+      (theme 
+       (if 
+         (string= "CLANG64" msystem)
+         'spacemacs-dark 'doom-one))
+      (recentf-file (expand-file-name (format "recentf-%s" msystem) user-emacs-directory)))
+  (load-theme theme t)
+  (setq recentf-save-file recentf-file))
 ;; theme
 
 ;; font
