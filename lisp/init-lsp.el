@@ -15,6 +15,9 @@
 (after-load 'lsp-mode
     (add-hook 'lsp-mode-hook (lambda () (flycheck-mode t))))
 
+(after-load 'lsp-mode
+  (setq lsp-session-file
+        (expand-file-name (format ".lsp-session-%s" (or (getenv "MSYSTEM") "")) user-emacs-directory)))
 
 (after-load 'yasnippet
     (setq lsp-enable-snippet t)
@@ -31,7 +34,11 @@
     (add-hook 'before-save-hook 'lsp-format-buffer nil t)
     (define-key lsp-mode-map (kbd "C-c C-f") 'lsp-format-buffer)
     (define-key lsp-mode-map (kbd "C-C C-c") 'lsp-ui-sideline-apply-code-actions)
-    (define-key lsp-mode-map (kbd "C-C C-l") 'lsp-ui-imenu))
+    (define-key lsp-mode-map (kbd "C-C C-l") 'lsp-ui-imenu)
+    (define-key lsp-mode-map (kbd "C-c g") 'treemacs)
+    (define-key evil-normal-state-map (kbd "C-c k") 'lsp-treemacs-symbols)
+    (define-key evil-normal-state-map (kbd "K") 'lsp-ui-doc-focus-frame)
+    (define-key lsp-mode-map (kbd "C-C l") 'lsp-treemacs-errors-list))
 
 
 
@@ -44,13 +51,7 @@
   (define-key evil-normal-state-map (kbd "g t") 'lsp-find-type-definition)
   (define-key evil-normal-state-map (kbd "SPC o") 'lsp-rename)
   (define-key evil-visual-state-map (kbd "v") 'lsp-extend-selection)
-  (define-key evil-normal-state-map (kbd "K") 'lsp-ui-doc-focus-frame)
-  (define-key evil-normal-state-map lsp-ui-doc-frame-mode-map (kbd "q") 'lsp-ui-doc-unfocus-frame)
-  (after-load 'lsp-treemacs
-    (define-key evil-normal-state-map (kbd "K") 'lsp-ui-doc-focus-frame)
-    (define-key evil-normal-state-map (kbd "C-c g") 'treemacs)
-    (define-key evil-normal-state-map (kbd "C-c l") 'lsp-treemacs-errors-list)
-    (define-key evil-normal-state-map (kbd "C-c k") 'lsp-treemacs-symbols)))
+  (define-key evil-normal-state-map lsp-ui-doc-frame-mode-map (kbd "q") 'lsp-ui-doc-unfocus-frame))
 
 
 (add-hook 'lsp-mode-hook 'lsp-mode-evil-key-binding)
