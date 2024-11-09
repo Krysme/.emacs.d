@@ -10,16 +10,17 @@
 (straight-use-package 'savehist
     :init
     (savehist-mode))
-;; (straight-use-package 'vertico-posframe)
-;; (vertico-posframe-mode 1)
+
+(let ((msystem-postfix (or (getenv "MSYSTEM") "")))
+  (setq savehist-file (expand-file-name (format "history-%s" msystem-postfix) user-emacs-directory)))
 
 (use-package orderless
-    :ensure t
-    :straight t
-    :init
-    (progn 
-	(setq completion-styles '(basic orderless))
-	(setq completion-category-overrides '((file (styles partial-completion))))))
+  :ensure t
+  :straight t
+  :init
+  (progn 
+    (setq completion-styles '(basic orderless))
+    (setq completion-category-overrides '((file (styles partial-completion))))))
 
 (use-package consult
     :straight t

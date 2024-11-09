@@ -10,8 +10,6 @@
 (setq lsp-file-watch-threshold 10000)
 (require 'dash)
 
-
-
 (after-load 'lsp-mode
     (add-hook 'lsp-mode-hook (lambda () (flycheck-mode t))))
 
@@ -27,8 +25,6 @@
 (setq lsp-ui-doc-position 'at-point)
 (setq lsp-ui-sideline-show-code-actions t)
 (setq xref-prompt-for-identifier nil)
-;; (setq lsp-auto-guess-root t)
-
 
 (defun init-lsp-set-keys () 
     (add-hook 'before-save-hook 'lsp-format-buffer nil t)
@@ -39,12 +35,6 @@
     (define-key evil-normal-state-map (kbd "C-c k") 'lsp-treemacs-symbols)
     (define-key evil-normal-state-map (kbd "K") 'lsp-ui-doc-focus-frame)
     (define-key lsp-mode-map (kbd "C-C l") 'lsp-treemacs-errors-list))
-
-
-
-
-
-
 
 (defun lsp-mode-evil-key-binding ()
   (define-key evil-normal-state-map (kbd "g r") 'xref-find-references)
