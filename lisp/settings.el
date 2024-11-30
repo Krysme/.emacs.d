@@ -2,7 +2,8 @@
 
 (straight-use-package 'smooth-scrolling)
 (straight-use-package 'smooth-scrolling)
-(straight-use-package 'spacemacs-theme)
+(straight-use-package 'doom-themes)
+
 (straight-use-package 'all-the-icons)
 (straight-use-package 'helpful)
 (straight-use-package 'dashboard)
@@ -47,7 +48,7 @@
 
 (display-time-mode t)
 
-(load-theme 'spacemacs-dark t)
+(load-theme 'doom-one t)
 ;; theme
 
 ;; font
