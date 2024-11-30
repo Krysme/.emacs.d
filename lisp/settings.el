@@ -2,7 +2,8 @@
 
 (straight-use-package 'smooth-scrolling)
 (straight-use-package 'smooth-scrolling)
-(straight-use-package 'spacemacs-theme)
+(straight-use-package 'doom-themes)
+
 (straight-use-package 'all-the-icons)
 (straight-use-package 'helpful)
 (straight-use-package 'dashboard)
@@ -58,6 +59,8 @@
       (recentf-file (expand-file-name (format "recentf-%s" msystem) user-emacs-directory)))
   (load-theme theme t)
   (setq recentf-save-file recentf-file))
+
+(load-theme 'doom-one t)
 ;; theme
 
 ;; font
