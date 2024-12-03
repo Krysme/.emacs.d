@@ -3,10 +3,10 @@
 (defface lsp-ui-sideline-code-action '((t :foreground "red")) "Face used to highlight code action text."
     :group 'lsp-ui-sideline)
 
-(straight-use-package 'lsp-mode)
-(straight-use-package 'lsp-ui)
-(straight-use-package 'smartparens)
-(straight-use-package 'flycheck)
+(use-package lsp-mode :ensure t)
+(use-package lsp-ui :ensure t)
+(use-package smartparens :ensure t)
+(use-package flycheck :ensure t)
 (setq lsp-file-watch-threshold 10000)
 (require 'dash)
 

@@ -1,5 +1,5 @@
 
-(straight-use-package 'company)
+(use-package company :ensure t)
 
 
 

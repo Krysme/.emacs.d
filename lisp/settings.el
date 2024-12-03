@@ -1,14 +1,14 @@
 ;; -*- lexical-binding: t -*-
+(setq 
+ native-comp-async-report-warnings-errors nil)
+(use-package smooth-scrolling :ensure t)
+(use-package doom-themes :ensure t)
 
-(straight-use-package 'smooth-scrolling)
-(straight-use-package 'smooth-scrolling)
-(straight-use-package 'doom-themes)
-
-(straight-use-package 'all-the-icons)
-(straight-use-package 'helpful)
-(straight-use-package 'dashboard)
-(straight-use-package 'json-mode)
-(straight-use-package 'dirvish)
+(use-package all-the-icons :ensure t)
+(use-package helpful :ensure t)
+(use-package dashboard :ensure t)
+(use-package json-mode :ensure t)
+(use-package dirvish :ensure t)
 
 (dashboard-setup-startup-hook)
 (setq inhibit-startup-message t)

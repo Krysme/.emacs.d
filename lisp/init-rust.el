@@ -4,9 +4,9 @@
 	  (rust-path (concat (getenv "HOME") "/.cargo/bin")))
     (when (not (member rust-path sys-path))
 	(add-to-list 'exec-path rust-path)))
-(straight-use-package 'rust-mode)
-(straight-use-package 'cargo)
-(straight-use-package 'toml-mode)
+(use-package rust-mode :ensure t)
+(use-package cargo :ensure t)
+(use-package toml-mode :ensure t)
 
 (setq lsp-rust-server 'rust-analyzer)
 (setq lsp-rust-analyzer-server-display-inlay-hints nil)

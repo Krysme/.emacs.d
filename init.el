@@ -1,5 +1,12 @@
 ;; -*- lexical-binding: t -*-
 
+
+
+(require 'package)
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+(package-initialize)
+
+(defalias 'after-load 'with-eval-after-load)
 (setenv "https_proxy" "http://127.0.0.1:8123")
 (setenv "http_proxy" "http://127.0.0.1:8123")
 
@@ -9,7 +16,6 @@
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 
 ;; load straight
-(require 'preload)
 
 (require 'init-eshell)
 (require 'init-company)
@@ -23,22 +29,14 @@
 (require 'init-yasnippet)
 (require 'init-treemacs)
 (require 'settings)
-(require 'init-markdown)
-(require 'init-org-mode)
+;(require 'init-org-mode)
 (require 'init-projectile)
 
 
 ;; languages
 (require 'init-lsp)
-(require 'init-python)
-;; (require 'init-clojure)
 (require 'init-c-cpp)
-(require 'init-haskell)
 (require 'init-rust)
-(require 'init-java)
-;; (require 'init-go)
-;; (require 'init-racket)
-;; (require 'init-web)
 
 
 

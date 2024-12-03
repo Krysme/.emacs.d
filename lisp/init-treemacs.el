@@ -1,6 +1,6 @@
-(straight-use-package 'treemacs)
-(straight-use-package 'treemacs-evil)
-(straight-use-package 'lsp-treemacs)
+(use-package treemacs :ensure t)
+(use-package treemacs-evil :ensure t)
+(use-package lsp-treemacs :ensure t)
 
 
 

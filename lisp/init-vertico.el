@@ -1,5 +1,4 @@
 (use-package vertico
-    :straight t
     :ensure t
     :init
     (vertico-mode) 
@@ -7,22 +6,19 @@
     (setq vertico-resize nil)
     (setq vertico-cycle t))
 
-(straight-use-package 'savehist
+(use-package savehist
+  :ensure t
     :init
     (savehist-mode))
-;; (straight-use-package 'vertico-posframe)
-;; (vertico-posframe-mode 1)
 
 (use-package orderless
     :ensure t
-    :straight t
     :init
     (progn 
 	(setq completion-styles '(basic orderless))
 	(setq completion-category-overrides '((file (styles partial-completion))))))
 
 (use-package consult
-    :straight t
     :ensure t)
 
 
@@ -55,7 +51,6 @@
 	    :history 'file-name-history)))
 
 (use-package marginalia
-    :straight t
     :ensure t
     :config
     (marginalia-mode))
@@ -101,7 +96,6 @@
 
 (use-package embark
     :ensure t
-    :straight t
     :bind
     (("C-." . embark-act)         ;; pick some comfortable binding
 	("C-," . embark-dwim)        ;; good alternative: M-.
@@ -121,7 +115,6 @@
 	     (window-parameters (mode-line-format . none)))))
 (use-package embark-consult
     :ensure t
-    :straight t
     :after (embark consult)
     :demand t ; only necessary if you have the hook below
     ;; if you want to have consult previews as you move around an
@@ -132,8 +125,8 @@
 (provide 'init-vertico)
 
 
-(straight-use-package 'async-completing-read)
-(require 'async-completing-read)
+;;(use-package async-completing-read :ensure t)
+;;(require 'async-completing-read)
 
 (setq acr-refresh-completion-ui 'consult-vertico--refresh)
 

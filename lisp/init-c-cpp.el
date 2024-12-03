@@ -1,4 +1,4 @@
-(straight-use-package 'cmake-mode)
+(use-package cmake-mode :ensure t)
 (require 'cc-mode)
 
 (add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))

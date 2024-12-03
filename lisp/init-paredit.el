@@ -1,8 +1,8 @@
 ;; -*- lexical-binding: t -*-
 
-(straight-use-package 'paredit)
+(use-package paredit :ensure t)
 
-(straight-use-package 'rainbow-delimiters)
+(use-package rainbow-delimiters :ensure t)
 
 (add-hook 'paredit-mode-hook 'rainbow-delimiters-mode)
 

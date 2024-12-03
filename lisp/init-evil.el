@@ -4,10 +4,10 @@
 (setq evil-want-keybinding nil)
 ;; init before evil
 
-(straight-use-package 'evil)
-(straight-use-package 'dash)
-(straight-use-package 'evil-collection)
-(straight-use-package 'undo-fu)
+(use-package evil :ensure t)
+(use-package dash :ensure t)
+(use-package evil-collection :ensure t)
+(use-package undo-fu :ensure t)
 (evil-collection-init)
 (require 'dash)
 

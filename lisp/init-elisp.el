@@ -1,9 +1,9 @@
 ;; -*- lexical-binding: t -*-
 (add-hook 'emacs-lisp-mode-hook 'paredit-mode)
 (add-hook 'emacs-lisp-mode-hook 'company-mode)
-(straight-use-package 'aggressive-indent)
+(use-package aggressive-indent :ensure t)
 
-(straight-use-package 'expand-region)
+(use-package expand-region :ensure t)
 
 
 (after-load 'smartparens (sp-local-pair (list 'elisp-mode 'clojure-mode) "'" nil 
