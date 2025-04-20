@@ -1,8 +1,5 @@
 ;; -*- lexical-binding: t -*-
 
-(setenv "https_proxy" "http://127.0.0.1:8123")
-(setenv "http_proxy" "http://127.0.0.1:8123")
-
 (setq gc-cons-threshold (* 1024 1024 1024))
 (add-hook 'after-init-hook (lambda () (setq gc-cons-threshold (* 256 1024 1024))))
 
@@ -26,6 +23,7 @@
 (require 'init-markdown)
 (require 'init-org-mode)
 (require 'init-projectile)
+(require 'init-nix)
 
 
 ;; languages
@@ -35,10 +33,6 @@
 (require 'init-c-cpp)
 (require 'init-haskell)
 (require 'init-rust)
-(require 'init-java)
-;; (require 'init-go)
-;; (require 'init-racket)
-;; (require 'init-web)
 
 
 
