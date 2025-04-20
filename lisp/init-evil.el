@@ -34,7 +34,7 @@
     [tab] 'dired-find-file
     (kbd "TAB")
     'dired-find-file " k"
-    'kill-this-buffer
+    'kill-current-buffer
     (kbd "C-l") 'dired-up-directory))
 
 (evil-mode t)
@@ -108,7 +108,7 @@
   (evil-global-set-key mode (kbd "SPC hk") #'helpful-key)
   (evil-global-set-key mode (kbd "SPC ho") #'helpful-symbol)
   (evil-global-set-key mode (kbd "SPC hp") #'helpful-at-point)
-  (evil-global-set-key mode (kbd "SPC k") 'kill-this-buffer)
+  (evil-global-set-key mode (kbd "SPC k") 'kill-current-buffer)
   (evil-global-set-key mode (kbd "SPC x") #'execute-extended-command)
   (after-load 'consult (evil-global-set-key mode (kbd "SPC b") 'consult-buffer))
   (evil-global-set-key mode (kbd "C-h") 'evil-first-non-blank)
@@ -117,7 +117,7 @@
   (evil-global-set-key mode (kbd "C-k") 'evil-move-5-lines-up)
   (evil-global-set-key mode (kbd "C-e") (lambda () (interactive) (evil-scroll-line-down 5)))
   (evil-global-set-key mode (kbd "C-y") (lambda () (interactive) (evil-scroll-line-up 5)))
-  (evil-global-set-key mode (kbd "SPC k") 'kill-this-buffer)
+  (evil-global-set-key mode (kbd "SPC k") 'kill-current-buffer)
   (evil-global-set-key mode (kbd "SPC wo") 'delete-other-windows)
   (evil-global-set-key mode (kbd "SPC wq") 'delete-window)
   (evil-global-set-key mode (kbd "SPC wv") 'evil-window-vsplit)
