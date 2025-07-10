@@ -81,7 +81,7 @@
 	   (cmake-dir (car (locate-all-dominating-files default-directory "CMakeLists.txt")))
 	      (cmake-build-dir (expand-file-name "build" cmake-dir))
 	      (command (format
-                        "cmake -S %s -B %s && cmake --build %s && bash -c 'find %s -name \"*_test.exe\" -exec {} \\;' "
+                        "cmake -S %s -B %s -G Ninja && cmake --build %s && bash -c 'find %s -name \"*_test.exe\" -exec {} \\;' "
                         cmake-dir
                         cmake-build-dir
                         cmake-build-dir

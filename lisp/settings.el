@@ -65,6 +65,10 @@
 ;; font
 (set-frame-font "JetBrains Mono 15" nil t)
 
+(font-family-list)
+(when (member "NanumSquareRound" (font-family-list))
+  (set-fontset-font t 'hangul (font-spec :family "NanumSquareRound")))
+
 (recentf-mode t)
 
 (add-hook 'after-change-major-mode-hook (lambda () 
