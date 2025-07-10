@@ -2,7 +2,7 @@
 (defalias 'after-load 'with-eval-after-load)
 
 (setq native-comp-async-report-warnings-errors nil)
-
+(setq straight-vc-git-default-clone-depth 1)
 ;; bootstrap straight.el
 (defvar bootstrap-version)
 (let ((bootstrap-file
