@@ -10,6 +10,7 @@
 (straight-use-package 'json-mode)
 (straight-use-package 'dirvish)
 (straight-use-package 'solarized-theme)
+(straight-use-package 'spacemacs-theme)
 (straight-use-package 'doom-themes)
 
 (dashboard-setup-startup-hook)
