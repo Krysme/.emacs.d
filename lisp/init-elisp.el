@@ -8,7 +8,7 @@
 
 (after-load 'smartparens (sp-local-pair (list 'elisp-mode 'clojure-mode) "'" nil 
 				        :actions nil))
-
+(setq lisp-body-indent 8)
 (setq-default indent-tabs-mode nil)
 (put 'if 'lisp-indent-function 'defun)
 (setq lisp-indent-offset nil)
