@@ -8,7 +8,7 @@
 ;; load straight
 (require 'preload)
 
-(require 'init-eshell)
+; (require 'init-eshell)
 (require 'init-company)
 (require 'init-paredit)
 (require 'init-evil)
@@ -24,6 +24,9 @@
 (require 'init-org-mode)
 (require 'init-projectile)
 (require 'init-nix)
+
+(require 'init-vscode)
+(require 'init-eat)
 
 
 ;; languages
