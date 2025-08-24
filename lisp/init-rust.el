@@ -9,7 +9,7 @@
 (straight-use-package 'toml-mode)
 
 (setq lsp-rust-server 'rust-analyzer)
-(setq lsp-rust-analyzer-server-display-inlay-hints nil)
+(setq lsp-inlay-hint-enable nil)
 (setq lsp-rust-analyzer-display-chaining-hints t)
 (setq lsp-rust-analyzer-cargo-watch-command "clippy")
 (setq lsp-rust-analyzer-cargo-load-out-dirs-from-check t)
