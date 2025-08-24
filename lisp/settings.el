@@ -1,14 +1,14 @@
 ;; -*- lexical-binding: t -*-
 
 (straight-use-package 'smooth-scrolling)
-(straight-use-package 'smooth-scrolling)
-(straight-use-package 'doom-themes)
 
 (straight-use-package 'all-the-icons)
 (straight-use-package 'helpful)
 (straight-use-package 'dashboard)
 (straight-use-package 'json-mode)
-(straight-use-package 'dirvish)
+(use-package dirvish :straight t :init (dirvish-override-dired-mode))
+
+
 (straight-use-package 'solarized-theme)
 (straight-use-package 'spacemacs-theme)
 (straight-use-package 'doom-themes)
