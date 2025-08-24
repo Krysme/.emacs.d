@@ -108,7 +108,6 @@
   (evil-global-set-key mode (kbd "SPC hk") #'helpful-key)
   (evil-global-set-key mode (kbd "SPC ho") #'helpful-symbol)
   (evil-global-set-key mode (kbd "SPC hp") #'helpful-at-point)
-  (evil-global-set-key mode (kbd "SPC k") 'kill-current-buffer)
   (evil-global-set-key mode (kbd "SPC x") #'execute-extended-command)
   (after-load 'consult (evil-global-set-key mode (kbd "SPC b") 'consult-buffer))
   (evil-global-set-key mode (kbd "C-h") 'evil-first-non-blank)
