@@ -1,9 +1,10 @@
 ;; -*- lexical-binding: t -*-
 
 (let* ((sys-path exec-path)
-	  (rust-path (concat (getenv "HOME") "/.cargo/bin")))
-    (when (not (member rust-path sys-path))
-	(add-to-list 'exec-path rust-path)))
+       (rust-path (concat (getenv "HOME") "/.cargo/bin")))
+      (when (not (member rust-path sys-path))
+            (add-to-list 'exec-path rust-path)))
+
 (straight-use-package 'rust-mode)
 (straight-use-package 'cargo)
 (straight-use-package 'toml-mode)
@@ -26,18 +27,18 @@
 (add-hook 'rust-mode-hook 'smartparens-mode)
 (add-hook 'rust-mode-hook 'show-paren-mode)
 (add-hook 'rust-mode-hook 
-    (lambda () 
-	(setq tab-width 4)))
+          (lambda () 
+	          (setq tab-width 4)))
 
 
 (add-hook 'toml-mode-hook 'smartparens-mode)
 
 (add-hook 'toml-mode-hook 
 	  (lambda () 
-	    (evil-define-key 'visual toml-mode-map (kbd "(") 'sp-wrap-round)
-	    (evil-define-key 'visual toml-mode-map (kbd "[") 'sp-wrap-square)
-	    (evil-define-key 'visual toml-mode-map (kbd "{") 'sp-wrap-curly)
-	    (evil-define-key 'visual toml-mode-map (kbd "\"") (lambda () (interactive) (sp-wrap-with-pair "\"")))))
+	          (evil-define-key 'visual toml-mode-map (kbd "(") 'sp-wrap-round)
+	          (evil-define-key 'visual toml-mode-map (kbd "[") 'sp-wrap-square)
+	          (evil-define-key 'visual toml-mode-map (kbd "{") 'sp-wrap-curly)
+	          (evil-define-key 'visual toml-mode-map (kbd "\"") (lambda () (interactive) (sp-wrap-with-pair "\"")))))
 
 
 (after-load 'smartparens (sp-local-pair 'rust-mode "'" nil :actions nil) 
@@ -46,15 +47,15 @@
 	    (sp-local-pair 'rust-mode "\"" "\""))
 
 
-  ;; (evil-define-key 'insert emacs-lisp-mode-map (kbd "C-w") 'backward-kill-sexp)
+;; (evil-define-key 'insert emacs-lisp-mode-map (kbd "C-w") 'backward-kill-sexp)
 (add-hook 'rust-mode-hook 
 	  (lambda () 
-	    (define-key rust-mode-map (kbd "C-c C-b") 'cargo-process-build) 
-	    (define-key rust-mode-map (kbd "C-c C-r") 'cargo-process-run)
-	    (evil-define-key 'visual rust-mode-map (kbd "(") 'sp-wrap-round)
-	    (evil-define-key 'visual rust-mode-map (kbd "[") 'sp-wrap-square)
-	    (evil-define-key 'visual rust-mode-map (kbd "{") 'sp-wrap-curly)
-	    (evil-define-key 'visual rust-mode-map (kbd "<") (lambda () (interactive) (sp-wrap-with-pair "<")))))
+	          (define-key rust-mode-map (kbd "C-c C-b") 'cargo-process-build) 
+	          (define-key rust-mode-map (kbd "C-c C-r") 'cargo-process-run)
+	          (evil-define-key 'visual rust-mode-map (kbd "(") 'sp-wrap-round)
+	          (evil-define-key 'visual rust-mode-map (kbd "[") 'sp-wrap-square)
+	          (evil-define-key 'visual rust-mode-map (kbd "{") 'sp-wrap-curly)
+	          (evil-define-key 'visual rust-mode-map (kbd "<") (lambda () (interactive) (sp-wrap-with-pair "<")))))
 
 
 (setq cargo-process--command-run "run --release")
