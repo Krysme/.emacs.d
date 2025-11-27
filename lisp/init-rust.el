@@ -9,6 +9,8 @@
 (straight-use-package 'cargo)
 (straight-use-package 'toml-mode)
 
+
+(setenv "RUST_TEST_NOCAPTURE" "1")
 (setq lsp-rust-server 'rust-analyzer)
 (setq lsp-inlay-hint-enable nil)
 (setq lsp-rust-analyzer-display-chaining-hints t)
