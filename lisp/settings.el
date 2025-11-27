@@ -54,11 +54,11 @@
 (setq doom-themes-enable-bold t doom-themes-enable-italic t)
 (let* ((msystem (getenv "MSYSTEM"))
        (theme (if (string= "CLANG64" msystem)
-                'spacemacs-dark
-                'doom-one))
-      (recentf-file (expand-file-name (format "recentf-%s" msystem) user-emacs-directory)))
-  (load-theme theme t)
-  (setq recentf-save-file recentf-file))
+                      'spacemacs-dark
+                      'doom-one))
+       (recentf-file (expand-file-name (format "recentf-%s" msystem) user-emacs-directory)))
+      (load-theme theme t)
+      (setq recentf-save-file recentf-file))
 
 (load-theme 'doom-one t)
 ;; theme
@@ -68,12 +68,12 @@
 
 (font-family-list)
 (when (member "NanumSquareRound" (font-family-list))
-  (set-fontset-font t 'hangul (font-spec :family "NanumSquareRound")))
+      (set-fontset-font t 'hangul (font-spec :family "NanumSquareRound")))
 
 (recentf-mode t)
 
 (add-hook 'after-change-major-mode-hook (lambda () 
-					  (modify-syntax-entry ?_ "w")))
+					        (modify-syntax-entry ?_ "w")))
 
 (setq recentf-max-menu-items 1000)
 
