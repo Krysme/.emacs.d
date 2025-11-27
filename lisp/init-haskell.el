@@ -15,13 +15,13 @@
 	    (sp-local-pair 'haskell-mode "\"" "\""))
 
 
-  ;; (evil-define-key 'insert emacs-lisp-mode-map (kbd "C-w") 'backward-kill-sexp)
+;; (evil-define-key 'insert emacs-lisp-mode-map (kbd "C-w") 'backward-kill-sexp)
 (add-hook 'haskell-mode-hook 
 	  (lambda () 
-	    (evil-define-key 'visual haskell-mode-map (kbd "(") 'sp-wrap-round)
-	    (evil-define-key 'visual haskell-mode-map (kbd "[") 'sp-wrap-square)
-	    (evil-define-key 'visual haskell-mode-map (kbd "{") 'sp-wrap-curly)
-	    ;; (evil-define-key 'visual rust-mode-map (kbd "<") (lambda () (interactive) (sp-wrap-with-pair "<")))
-            ))
+	          (evil-define-key 'visual haskell-mode-map (kbd "(") 'sp-wrap-round)
+	          (evil-define-key 'visual haskell-mode-map (kbd "[") 'sp-wrap-square)
+	          (evil-define-key 'visual haskell-mode-map (kbd "{") 'sp-wrap-curly)
+	          ;; (evil-define-key 'visual rust-mode-map (kbd "<") (lambda () (interactive) (sp-wrap-with-pair "<")))
+                  ))
 
 (provide 'init-haskell)

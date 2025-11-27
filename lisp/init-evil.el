@@ -26,28 +26,28 @@
 (fset 'evil-visual-update-x-selection 'ignore)
 
 (after-load 'evil-collection
-  (evil-collection-define-key
-    'normal 'dired-mode-map
-    " " nil
-    "k" nil
-    (kbd "<return>") 'dired-find-file
-    [tab] 'dired-find-file
-    (kbd "TAB")
-    'dired-find-file " k"
-    'kill-current-buffer
-    (kbd "C-l") 'dired-up-directory))
+        (evil-collection-define-key
+                'normal 'dired-mode-map
+                " " nil
+                "k" nil
+                (kbd "<return>") 'dired-find-file
+                [tab] 'dired-find-file
+                (kbd "TAB")
+                'dired-find-file " k"
+                'kill-current-buffer
+                (kbd "C-l") 'dired-up-directory))
 
 (evil-mode t)
 
 (evil-set-undo-system 'undo-fu)
 
 (after-load 'evil 
-  (setq evil-goto-definition-functions
-        '(evil-goto-definition-xref
-          evil-goto-definition-imenu
-          evil-goto-definition-semantic
-          evil-goto-definition-search))
-  (evil-select-search-module 'evil-search-module 'evil-search))
+        (setq evil-goto-definition-functions
+              '(evil-goto-definition-xref
+                evil-goto-definition-imenu
+                evil-goto-definition-semantic
+                evil-goto-definition-search))
+        (evil-select-search-module 'evil-search-module 'evil-search))
 
 (define-key key-translation-map (kbd "<ESC>") (kbd "C-g"))
 
@@ -57,98 +57,98 @@
 (evil-define-motion evil-move-5-lines-down () (evil-next-visual-line 5))
 (evil-define-motion evil-move-5-lines-up () (evil-previous-visual-line 5))
 (defun ripgrep-search
-    (&optional d p) 
-  (interactive "DSearch Directory:\nP")
-  (consult-ripgrep d p))
+                (&optional d p) 
+        (interactive "DSearch Directory:\nP")
+        (consult-ripgrep d p))
 
 
 (defun after-init-set-evil-keymap()
-  "set evil keymap"
-  (-each (list 'normal 'motion 'visual) 'setup-normal-motion-visual-keys)
-  (setup-visual-keys))
+       "set evil keymap"
+       (-each (list 'normal 'motion 'visual) 'setup-normal-motion-visual-keys)
+       (setup-visual-keys))
 
 (add-hook 'emacs-startup-hook 'after-init-set-evil-keymap)
 
 
 (defun evil-copy-to-register-97 ()
-  (interactive)
-  (evil-use-register 97)
-  (call-interactively 'evil-yank))
+       (interactive)
+       (evil-use-register 97)
+       (call-interactively 'evil-yank))
 (defun evil-paste-from-register-97 ()
-  (interactive)
-  (evil-use-register 97)
-  (call-interactively 'evil-paste-after))
+       (interactive)
+       (evil-use-register 97)
+       (call-interactively 'evil-paste-after))
 
 (defun setup-visual-keys ()
-  (evil-global-set-key 'visual (kbd "SPC y") 'evil-copy-to-register-97)
-  (evil-global-set-key 'visual (kbd "SPC p") 'evil-paste-from-register-97)
-  (evil-global-set-key 'visual (kbd "(") 'sp-wrap-round)
-  (evil-global-set-key 'visual (kbd ")") 'sp-wrap-square)
-  (evil-global-set-key 'visual (kbd "{") 'sp-wrap-curly) 
-  (evil-global-set-key 'visual (kbd "\"") (lambda () (interactive) (sp-wrap-with-pair "\""))))
+       (evil-global-set-key 'visual (kbd "SPC y") 'evil-copy-to-register-97)
+       (evil-global-set-key 'visual (kbd "SPC p") 'evil-paste-from-register-97)
+       (evil-global-set-key 'visual (kbd "(") 'sp-wrap-round)
+       (evil-global-set-key 'visual (kbd ")") 'sp-wrap-square)
+       (evil-global-set-key 'visual (kbd "{") 'sp-wrap-curly) 
+       (evil-global-set-key 'visual (kbd "\"") (lambda () (interactive) (sp-wrap-with-pair "\""))))
 
 (defun listify (obj)
-  (cond ((listp obj) obj)
-        (t (list obj))))
+       (cond ((listp obj) obj)
+             (t (list obj))))
 
 (defun my-evil-global-keys (mode key function)
-  (let ((mode (listify mode))
-        (key (cond ((stringp key) (kbd key)
-		    t key))))
-    (-each mode (lambda (mode)
-		  (evil-global-set-key mode key function)))))
+       (let ((mode (listify mode))
+             (key (cond ((stringp key) (kbd key)
+		         t key))))
+            (-each mode (lambda (mode)
+		                (evil-global-set-key mode key function)))))
 
 (defun setup-normal-motion-visual-keys (mode)
-  (evil-global-set-key mode (kbd "SPC") nil)
-  (evil-global-set-key mode (kbd "SPC SPC") 'evil-ex-nohighlight)
-  (evil-global-set-key mode (kbd "C-s") 'save-buffer)
-  (evil-global-set-key mode (kbd "SPC hf") #'helpful-callable)
-  (evil-global-set-key mode (kbd "SPC d") #'dired-jump)
-  (evil-global-set-key mode (kbd "SPC hv") #'helpful-variable)
-  (evil-global-set-key mode (kbd "SPC hk") #'helpful-key)
-  (evil-global-set-key mode (kbd "SPC ho") #'helpful-symbol)
-  (evil-global-set-key mode (kbd "SPC hp") #'helpful-at-point)
-  (evil-global-set-key mode (kbd "SPC x") #'execute-extended-command)
-  (after-load 'consult (evil-global-set-key mode (kbd "SPC b") 'consult-buffer))
-  (evil-global-set-key mode (kbd "C-h") 'evil-first-non-blank)
-  (evil-global-set-key mode (kbd "C-l") 'evil-end-of-line)
-  (evil-global-set-key mode (kbd "C-j") 'evil-move-5-lines-down)
-  (evil-global-set-key mode (kbd "C-k") 'evil-move-5-lines-up)
-  (evil-global-set-key mode (kbd "C-e") (lambda () (interactive) (evil-scroll-line-down 5)))
-  (evil-global-set-key mode (kbd "C-y") (lambda () (interactive) (evil-scroll-line-up 5)))
-  (evil-global-set-key mode (kbd "SPC k") 'kill-current-buffer)
-  (evil-global-set-key mode (kbd "SPC wo") 'delete-other-windows)
-  (evil-global-set-key mode (kbd "SPC wq") 'delete-window)
-  (evil-global-set-key mode (kbd "SPC wv") 'evil-window-vsplit)
-  (evil-global-set-key mode (kbd "SPC ws") 'evil-window-split)
-  (evil-global-set-key mode (kbd "SPC wj") 'evil-window-down)
-  (evil-global-set-key mode (kbd "SPC wk") 'evil-window-up)
-  (evil-global-set-key mode (kbd "SPC wh") 'evil-window-left)
-  (evil-global-set-key mode (kbd "SPC wl") 'evil-window-right)
-  (evil-global-set-key mode (kbd "SPC ,r") 'ripgrep-search)
-  (evil-global-set-key mode (kbd "SPC f") 'find-file)
-  (evil-global-set-key mode (kbd "SPC /") (lambda () (interactive) (consult-line)))
-  (evil-global-set-key mode (kbd "SPC #") (lambda () (interactive) (consult-line (word-at-point))))
-  (evil-global-set-key mode (kbd "SPC r") 'consult-recent-file-no-action)
-  (evil-global-set-key mode (kbd "SPC mg") 'magit))
+       (evil-global-set-key mode (kbd "SPC") nil)
+       (evil-global-set-key mode (kbd "SPC SPC") 'evil-ex-nohighlight)
+       (evil-global-set-key mode (kbd "C-s") 'save-buffer)
+       (evil-global-set-key mode (kbd "SPC hf") #'helpful-callable)
+       (evil-global-set-key mode (kbd "SPC d") #'dired-jump)
+       (evil-global-set-key mode (kbd "SPC hv") #'helpful-variable)
+       (evil-global-set-key mode (kbd "SPC hk") #'helpful-key)
+       (evil-global-set-key mode (kbd "SPC ho") #'helpful-symbol)
+       (evil-global-set-key mode (kbd "SPC hp") #'helpful-at-point)
+       (evil-global-set-key mode (kbd "SPC x") #'execute-extended-command)
+       (after-load 'consult (evil-global-set-key mode (kbd "SPC b") 'consult-buffer))
+       (evil-global-set-key mode (kbd "C-h") 'evil-first-non-blank)
+       (evil-global-set-key mode (kbd "C-l") 'evil-end-of-line)
+       (evil-global-set-key mode (kbd "C-j") 'evil-move-5-lines-down)
+       (evil-global-set-key mode (kbd "C-k") 'evil-move-5-lines-up)
+       (evil-global-set-key mode (kbd "C-e") (lambda () (interactive) (evil-scroll-line-down 5)))
+       (evil-global-set-key mode (kbd "C-y") (lambda () (interactive) (evil-scroll-line-up 5)))
+       (evil-global-set-key mode (kbd "SPC k") 'kill-current-buffer)
+       (evil-global-set-key mode (kbd "SPC wo") 'delete-other-windows)
+       (evil-global-set-key mode (kbd "SPC wq") 'delete-window)
+       (evil-global-set-key mode (kbd "SPC wv") 'evil-window-vsplit)
+       (evil-global-set-key mode (kbd "SPC ws") 'evil-window-split)
+       (evil-global-set-key mode (kbd "SPC wj") 'evil-window-down)
+       (evil-global-set-key mode (kbd "SPC wk") 'evil-window-up)
+       (evil-global-set-key mode (kbd "SPC wh") 'evil-window-left)
+       (evil-global-set-key mode (kbd "SPC wl") 'evil-window-right)
+       (evil-global-set-key mode (kbd "SPC ,r") 'ripgrep-search)
+       (evil-global-set-key mode (kbd "SPC f") 'find-file)
+       (evil-global-set-key mode (kbd "SPC /") (lambda () (interactive) (consult-line)))
+       (evil-global-set-key mode (kbd "SPC #") (lambda () (interactive) (consult-line (word-at-point))))
+       (evil-global-set-key mode (kbd "SPC r") 'consult-recent-file-no-action)
+       (evil-global-set-key mode (kbd "SPC mg") 'magit))
 
 (global-set-key (kbd "C-e") nil)
 ;; insert mode
 
 (defun insert-forward-search ()
-  (interactive)
-  (call-interactively 'evil-execute-in-normal-state)
-  (call-interactively 'evil-find-char)
-  (call-interactively 'evil-append))
+       (interactive)
+       (call-interactively 'evil-execute-in-normal-state)
+       (call-interactively 'evil-find-char)
+       (call-interactively 'evil-append))
 (defun insert-repeat-find-char ()
-  (interactive)
-  (call-interactively 'evil-execute-in-normal-state)
-  (let ((success-action nil))
-    (unwind-protect  
-        (progn 
-	  (call-interactively 'evil-repeat-find-char)
-	  (setq success-action 'evil-append))
-      (call-interactively (or success-action 'evil-insert)))))
+       (interactive)
+       (call-interactively 'evil-execute-in-normal-state)
+       (let ((success-action nil))
+            (unwind-protect  
+                            (progn 
+	                            (call-interactively 'evil-repeat-find-char)
+	                            (setq success-action 'evil-append))
+                    (call-interactively (or success-action 'evil-insert)))))
 
 (evil-global-set-key 'insert (kbd "C-f") 'insert-forward-search)
 (evil-global-set-key 'insert (kbd "C-;") 'insert-repeat-find-char)
