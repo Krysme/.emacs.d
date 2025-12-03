@@ -14,6 +14,6 @@
         (setq eat-kill-buffer-on-exit t)
         (define-key eat-mode-map (kbd "C-g") 'eat-self-input))
 
-(global-set-key (kbd "C-4") 'eat)
+(global-set-key (kbd (if (display-graphic-p) "C-4" "C-\\")) 'eat)
 
 (provide 'init-eat)
