@@ -54,8 +54,18 @@
 ;; Normal mode
 
 ;; Normal and Motion
-(evil-define-motion evil-move-5-lines-down () (evil-next-visual-line 5))
-(evil-define-motion evil-move-5-lines-up () (evil-previous-visual-line 5))
+;;(evil-define-motion evil-move-5-lines-down () (evil-next-visual-line 5))
+(defun evil-move-5-lines-down ()
+       (interactive)
+       (when (fboundp 'lsp-ui-doc-hide)
+               (lsp-ui-doc-hide))
+       (evil-next-visual-line 5))
+(defun evil-move-5-lines-up ()
+       (interactive)
+       (when (fboundp 'lsp-ui-doc-hide)
+               (lsp-ui-doc-hide))
+       (evil-previous-visual-line 5))
+
 (defun ripgrep-search
                 (&optional d p) 
         (interactive "DSearch Directory:\nP")
