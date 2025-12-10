@@ -1,5 +1,7 @@
 ;; -*- lexical-binding: t -*-
 
+
+
 (defface lsp-ui-sideline-code-action '((t :foreground "red")) "Face used to highlight code action text."
         :group 'lsp-ui-sideline)
 
@@ -9,6 +11,8 @@
 (straight-use-package 'flycheck)
 (setq lsp-file-watch-threshold 10000)
 (require 'dash)
+(require 'cl-lib)
+(require 'seq)
 
 (after-load 'lsp-mode
         (add-hook 'lsp-mode-hook (lambda () (flycheck-mode t))))
@@ -35,7 +39,7 @@
        (define-key lsp-mode-map (kbd "C-C C-c") 'lsp-ui-sideline-apply-code-actions)
        (define-key lsp-mode-map (kbd "C-C C-l") 'lsp-ui-imenu)
        (define-key lsp-mode-map (kbd "C-c g") 'treemacs)
-       (define-key evil-normal-state-map (kbd "C-c k") 'lsp-treemacs-symbols)
+       (define-key evil-normal-state-map (kbd "C-c k") 'my/lsp-goto-first-error)
        (define-key evil-normal-state-map (kbd "K") 'lsp-ui-doc-focus-frame)
        (define-key lsp-mode-map (kbd "C-C l") 'lsp-treemacs-errors-list))
 
@@ -80,7 +84,45 @@
 (add-hook 'lsp-mode-hook 'init-lsp-set-keys)
 
 
+(defun my/hash-table->alist (table)
+       "Return TABLE as an alist (KEY . VALUE)."
+       (cl-loop for key being the hash-keys of table
+                using (hash-values value)
+                collect (cons key value)))
 
+(defun my/lsp-diagnostic-start-pos (diag)
+       "Return (LINE . CHARACTER) for DIAG's start position (LSP coords)."
+       (-let [(&Diagnostic
+               :range (&Range
+                       :start (&Position :line line :character character)))
+              diag]
+             (cons line character)))
+
+
+
+(defun my/lsp-table-first-diagnostic-location (table)
+       "Given LSP diagnostics TABLE, return (FILE LINE CHARACTER DIAG)
+for the first diagnostic we see, or nil if there is none."
+       (and-let* ((alist (my/hash-table->alist table))
+                  (pair  (car alist))
+                  (file  (car pair))
+                  (diags (cdr pair))
+                  (diag  (car diags))
+                  (pos   (my/lsp-diagnostic-start-pos diag))
+                  (point (lsp--position-to-point (lsp-make-position :line (car pos) :character (cdr pos)))))
+               (list file
+                     (car pos)
+                     (cdr pos))))
+
+(defun my/lsp-goto-first-error ()
+        (interactive)
+        (let ((loc (my/lsp-table-first-diagnostic-location (lsp-diagnostics t))))
+             (if (null loc)
+                     (user-error "No LSP diagnostics in current workspace")
+                     (cl-destructuring-bind (file line character) loc
+                            (find-file file)
+                            (goto-char
+                             (lsp--position-to-point (lsp-make-position :line line :character character)))))))
 
 
 (provide 'init-lsp)
