@@ -1,7 +1,5 @@
 ;; -*- lexical-binding: t -*-
 
-
-
 (defface lsp-ui-sideline-code-action '((t :foreground "red")) "Face used to highlight code action text."
         :group 'lsp-ui-sideline)
 
@@ -91,32 +89,17 @@
        "Return non-nil if DIAG is an error."
        (eq (my/lsp-diagnostic-severity diag) 1))
 
-(defun my/lsp-diagnostic-warning-p (diag)
-       "Return non-nil if DIAG is a warning."
-
-       (eq (my/lsp-diagnostic-severity diag) 2))
 
 (defun my/lsp-alist->file+diag-list (alist)
-        "Given an ALIST of (FILE . DIAGS), return a flat list of (FILE . DIAG)."
-        (seq-mapcat
-         (lambda (pair)
-                 (let ((file  (car pair))
-                       (diags (cdr pair)))
-                         (seq-map (lambda (diag) (cons file diag))
-                                  diags)))
-         alist))
+       "Given an ALIST of (FILE . DIAGS), return a flat list of (FILE . DIAG)."
+       (seq-mapcat
+        (lambda (pair)
+                (let ((file  (car pair))
+                      (diags (cdr pair)))
+                     (seq-map (lambda (diag) (cons file diag))
+                              diags)))
+        alist))
 
-
-(defun my/lsp-alist-first-file+pair (alist)
-       "Given an ALIST of (FILE . DIAGS), return the first (FILE . DIAGS) pair
-whose DIAGS contain an error; if there are no errors, return the first pair.
-Return nil if ALIST is empty."
-       (prin1 alist)
-       (and alist
-            (or (seq-find (lambda (p)
-                                  (my/lsp-diagnostic-error-p (cdr p)))
-                          alist)
-                (car alist))))
 
 (defun my/hash-table->alist (table)
        "Return TABLE as an alist (KEY . VALUE)."
@@ -135,29 +118,25 @@ Return nil if ALIST is empty."
 
 
 (defun my/lsp-table->file+diag-list (table)
-        "Flatten diagnostics TABLE into a list of (FILE . DIAG)."
-        (my/lsp-alist->file+diag-list (my/hash-table->alist table)))
+       "Flatten diagnostics TABLE into a list of (FILE . DIAG)."
+       (my/lsp-alist->file+diag-list (my/hash-table->alist table)))
 
 (defun my/lsp-table-first-diagnostic-location (table)
-        "Given LSP diagnostics TABLE, return (FILE LINE CHARACTER DIAG),
-preferring errors over warnings. Return nil if there are no diagnostics."
-        (and-let* ((file+diags (my/lsp-table->file+diag-list table))
-                   ;; First try to find an error anywhere,
-                   ;; otherwise fall back to the first warning.
-                   (file+diag
-                        (or (seq-find (lambda (fd)
-                                              (my/lsp-diagnostic-error-p (cdr fd)))
-                                      file+diags)
-                            (seq-find (lambda (fd)
-                                              (my/lsp-diagnostic-warning-p (cdr fd)))
-                                      file+diags)))
-                   (file (car file+diag))
-                   (diag (cdr file+diag))
-                   (pos  (my/lsp-diagnostic-start-pos diag)))
-                (list file
-                      (car pos)      ;; line (LSP)
-                      (cdr pos)      ;; character (LSP)
-                      diag)))
+       "Given LSP diagnostics TABLE, return (FILE LINE CHARACTER DIAG),
+preferring errors over all other diagnostics. Return nil if there are none."
+       (and-let* ((file-diag-list (my/lsp-table->file+diag-list table))
+                  (file+diag
+                   (or (seq-find (lambda (fd)
+                                         (my/lsp-diagnostic-error-p (cdr fd)))
+                                 file-diag-list)
+                       (car file-diag-list)))
+                  (file (car file+diag))
+                  (diag (cdr file+diag))
+                  (pos  (my/lsp-diagnostic-start-pos diag)))
+               (list file
+                     (car pos)      ;; line (LSP)
+                     (cdr pos)      ;; character (LSP)
+                     diag)))
 
 
 
