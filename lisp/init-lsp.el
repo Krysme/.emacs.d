@@ -83,6 +83,40 @@
 ;; keys
 (add-hook 'lsp-mode-hook 'init-lsp-set-keys)
 
+(defun my/lsp-diagnostic-severity (diag)
+       "Return numeric severity for DIAG, or nil if missing."
+       (gethash "severity" diag))
+
+(defun my/lsp-diagnostic-error-p (diag)
+       "Return non-nil if DIAG is an error."
+       (eq (my/lsp-diagnostic-severity diag) 1))
+
+(defun my/lsp-diagnostic-warning-p (diag)
+       "Return non-nil if DIAG is a warning."
+
+       (eq (my/lsp-diagnostic-severity diag) 2))
+
+(defun my/lsp-alist->file+diag-list (alist)
+        "Given an ALIST of (FILE . DIAGS), return a flat list of (FILE . DIAG)."
+        (seq-mapcat
+         (lambda (pair)
+                 (let ((file  (car pair))
+                       (diags (cdr pair)))
+                         (seq-map (lambda (diag) (cons file diag))
+                                  diags)))
+         alist))
+
+
+(defun my/lsp-alist-first-file+pair (alist)
+       "Given an ALIST of (FILE . DIAGS), return the first (FILE . DIAGS) pair
+whose DIAGS contain an error; if there are no errors, return the first pair.
+Return nil if ALIST is empty."
+       (prin1 alist)
+       (and alist
+            (or (seq-find (lambda (p)
+                                  (my/lsp-diagnostic-error-p (cdr p)))
+                          alist)
+                (car alist))))
 
 (defun my/hash-table->alist (table)
        "Return TABLE as an alist (KEY . VALUE)."
@@ -100,25 +134,39 @@
             (error "Unexpected LSP diagnostic shape: %S" diag)))
 
 
+(defun my/lsp-table->file+diag-list (table)
+        "Flatten diagnostics TABLE into a list of (FILE . DIAG)."
+        (my/lsp-alist->file+diag-list (my/hash-table->alist table)))
+
 (defun my/lsp-table-first-diagnostic-location (table)
-       "Given LSP diagnostics TABLE, return (FILE LINE CHARACTER DIAG)
-for the first diagnostic we see, or nil if there is none."
-       (or (and-let* ((alist (my/hash-table->alist table))
-                       (pair  (car alist))
-                       (file  (car pair))
-                       (diags (cdr pair))
-                       (diag  (car diags))
-                       (pos   (my/lsp-diagnostic-start-pos diag)))
-                    (list file
-                          (car pos)
-                          (cdr pos)))))
+        "Given LSP diagnostics TABLE, return (FILE LINE CHARACTER DIAG),
+preferring errors over warnings. Return nil if there are no diagnostics."
+        (and-let* ((file+diags (my/lsp-table->file+diag-list table))
+                   ;; First try to find an error anywhere,
+                   ;; otherwise fall back to the first warning.
+                   (file+diag
+                        (or (seq-find (lambda (fd)
+                                              (my/lsp-diagnostic-error-p (cdr fd)))
+                                      file+diags)
+                            (seq-find (lambda (fd)
+                                              (my/lsp-diagnostic-warning-p (cdr fd)))
+                                      file+diags)))
+                   (file (car file+diag))
+                   (diag (cdr file+diag))
+                   (pos  (my/lsp-diagnostic-start-pos diag)))
+                (list file
+                      (car pos)      ;; line (LSP)
+                      (cdr pos)      ;; character (LSP)
+                      diag)))
+
+
 
 (defun my/lsp-goto-first-error ()
-        (interactive)
-        (let ((loc (my/lsp-table-first-diagnostic-location (lsp-diagnostics t))))
-             (if (null loc)
-                     (user-error "No LSP diagnostics in current workspace")
-                     (cl-destructuring-bind (file line character) loc
+       (interactive)
+       (let ((loc (my/lsp-table-first-diagnostic-location (lsp-diagnostics t))))
+            (if (null loc)
+                    (user-error "No LSP diagnostics in current workspace")
+                    (cl-destructuring-bind (file line character _diag) loc
                             (find-file file)
                             (goto-char
                              (lsp--position-to-point (lsp-make-position :line line :character character))))))) 
