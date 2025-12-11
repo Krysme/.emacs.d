@@ -92,27 +92,27 @@
 
 (defun my/lsp-diagnostic-start-pos (diag)
        "Return (LINE . CHARACTER) for DIAG's start position (LSP coords)."
-       (-let [(&Diagnostic
-               :range (&Range
-                       :start (&Position :line line :character character)))
-              diag]
-             (cons line character)))
-
+       (or  (and-let* ((range (gethash "range" diag))
+                       (start (gethash "start" range))
+                       (line (gethash "line" start))
+                       (character (gethash "character" start)))
+                    (cons line character))
+            (error "Unexpected LSP diagnostic shape: %S" diag)))
 
 
 (defun my/lsp-table-first-diagnostic-location (table)
        "Given LSP diagnostics TABLE, return (FILE LINE CHARACTER DIAG)
 for the first diagnostic we see, or nil if there is none."
-       (and-let* ((alist (my/hash-table->alist table))
-                  (pair  (car alist))
-                  (file  (car pair))
-                  (diags (cdr pair))
-                  (diag  (car diags))
-                  (pos   (my/lsp-diagnostic-start-pos diag))
-                  (point (lsp--position-to-point (lsp-make-position :line (car pos) :character (cdr pos)))))
-               (list file
-                     (car pos)
-                     (cdr pos))))
+       (or (and-let* ((alist (my/hash-table->alist table))
+                       (pair  (car alist))
+                       (file  (car pair))
+                       (diags (cdr pair))
+                       (diag  (car diags))
+                       (pos   (my/lsp-diagnostic-start-pos diag))
+                       (point (lsp--position-to-point (lsp-make-position :line (car pos) :character (cdr pos)))))
+                    (list file
+                          (car pos)
+                          (cdr pos)))))
 
 (defun my/lsp-goto-first-error ()
         (interactive)
@@ -122,7 +122,7 @@ for the first diagnostic we see, or nil if there is none."
                      (cl-destructuring-bind (file line character) loc
                             (find-file file)
                             (goto-char
-                             (lsp--position-to-point (lsp-make-position :line line :character character)))))))
+                             (lsp--position-to-point (lsp-make-position :line line :character character))))))) 
 
 
 (provide 'init-lsp)
