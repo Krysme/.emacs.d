@@ -108,8 +108,7 @@ for the first diagnostic we see, or nil if there is none."
                        (file  (car pair))
                        (diags (cdr pair))
                        (diag  (car diags))
-                       (pos   (my/lsp-diagnostic-start-pos diag))
-                       (point (lsp--position-to-point (lsp-make-position :line (car pos) :character (cdr pos)))))
+                       (pos   (my/lsp-diagnostic-start-pos diag)))
                     (list file
                           (car pos)
                           (cdr pos)))))
