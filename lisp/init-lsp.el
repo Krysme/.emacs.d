@@ -92,7 +92,7 @@
 
 (defun my/lsp-alist->file+diag-list (alist)
        "Given an ALIST of (FILE . DIAGS), return a flat list of (FILE . DIAG)."
-       (seq-mapcat
+       (-mapcat
         (lambda (pair)
                 (let ((file  (car pair))
                       (diags (cdr pair)))
@@ -107,12 +107,10 @@
                 using (hash-values value)
                 collect (cons key value)))
 
+
 (defun my/lsp-diagnostic-start-pos (diag)
        "Return (LINE . CHARACTER) for DIAG's start position (LSP coords)."
-       (or  (and-let* ((range (gethash "range" diag))
-                       (start (gethash "start" range))
-                       (line (gethash "line" start))
-                       (character (gethash "character" start)))
+       (or (-when-let* (((&hash "range" (&hash "start" (&hash "line" line "character" character))) diag))
                     (cons line character))
             (error "Unexpected LSP diagnostic shape: %S" diag)))
 
@@ -124,31 +122,26 @@
 (defun my/lsp-table-first-diagnostic-location (table)
        "Given LSP diagnostics TABLE, return (FILE LINE CHARACTER DIAG),
 preferring errors over all other diagnostics. Return nil if there are none."
-       (and-let* ((file-diag-list (my/lsp-table->file+diag-list table))
-                  (file+diag
-                   (or (seq-find (lambda (fd)
-                                         (my/lsp-diagnostic-error-p (cdr fd)))
-                                 file-diag-list)
-                       (car file-diag-list)))
-                  (file (car file+diag))
-                  (diag (cdr file+diag))
-                  (pos  (my/lsp-diagnostic-start-pos diag)))
+       (-when-let* ((file-diag-list (my/lsp-table->file+diag-list table))
+                    ((file . diag)
+                     (or (seq-find (lambda (fd)
+                                           (my/lsp-diagnostic-error-p (cdr fd)))
+                                   file-diag-list)
+                         (car file-diag-list)))
+                    ((line . character)  (my/lsp-diagnostic-start-pos diag)))
                (list file
-                     (car pos)      ;; line (LSP)
-                     (cdr pos)      ;; character (LSP)
+                     line
+                     character
                      diag)))
 
 
 
 (defun my/lsp-goto-first-error ()
        (interactive)
-       (let ((loc (my/lsp-table-first-diagnostic-location (lsp-diagnostics t))))
-            (if (null loc)
-                    (user-error "No LSP diagnostics in current workspace")
-                    (cl-destructuring-bind (file line character _diag) loc
-                            (find-file file)
-                            (goto-char
-                             (lsp--position-to-point (lsp-make-position :line line :character character))))))) 
-
+       (or (-when-let* (((file line character) (my/lsp-table-first-diagnostic-location (lsp-diagnostics t))))
+                   (find-file file)
+                   (goto-char
+                    (lsp--position-to-point (lsp-make-position :line line :character character))))
+           (user-error "No LSP diagnostics in current workspace")))
 
 (provide 'init-lsp)
