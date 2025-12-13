@@ -5,6 +5,12 @@
 
 (straight-use-package 'expand-region)
 
+(use-package eros
+  :ensure t
+  :straight t
+  :hook (emacs-lisp-mode . eros-mode)
+  :hook (lisp-interaction-mode . eros-mode))
+
 
 (after-load 'smartparens (sp-local-pair (list 'elisp-mode 'clojure-mode) "'" nil 
 				        :actions nil))
