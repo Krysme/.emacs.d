@@ -37,7 +37,7 @@
        (define-key lsp-mode-map (kbd "C-C C-c") 'lsp-ui-sideline-apply-code-actions)
        (define-key lsp-mode-map (kbd "C-C C-l") 'lsp-ui-imenu)
        (define-key lsp-mode-map (kbd "C-c g") 'treemacs)
-       (define-key evil-normal-state-map (kbd "C-c k") 'my/lsp-goto-first-error)
+       (define-key evil-normal-state-map (kbd "C-;") 'my/lsp-goto-first-error)
        (define-key evil-normal-state-map (kbd "K") 'lsp-ui-doc-focus-frame)
        (define-key lsp-mode-map (kbd "C-C l") 'lsp-treemacs-errors-list))
 
