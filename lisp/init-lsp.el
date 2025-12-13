@@ -93,11 +93,9 @@
 (defun my/lsp-alist->file+diag-list (alist)
        "Given an ALIST of (FILE . DIAGS), return a flat list of (FILE . DIAG)."
        (-mapcat
-        (lambda (pair)
-                (let ((file  (car pair))
-                      (diags (cdr pair)))
-                     (seq-map (lambda (diag) (cons file diag))
-                              diags)))
+        (-lambda ((file . diags))
+                (seq-map (lambda (diag) (cons file diag))
+                         diags))
         alist))
 
 
