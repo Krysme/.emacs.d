@@ -162,4 +162,12 @@
 (evil-global-set-key 'insert (kbd "C-p") nil)
 
 
+
+(defun my/evil-goto-char (pos)
+       "Go to POS and make it an Evil jump (so C-o comes back)."
+       (interactive "nGoto char: ")
+       (evil-set-jump)
+       (goto-char pos))
+
+
 (provide 'init-evil)

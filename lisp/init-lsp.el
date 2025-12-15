@@ -138,7 +138,7 @@ preferring errors over all other diagnostics. Return nil if there are none."
        (interactive)
        (or (-when-let* (((file line character) (my/lsp-table-first-diagnostic-location (lsp-diagnostics t))))
                    (find-file file)
-                   (goto-char
+                   (my/evil-goto-char
                     (lsp--position-to-point (lsp-make-position :line line :character character))))
            (user-error "No LSP diagnostics in current workspace")))
 
