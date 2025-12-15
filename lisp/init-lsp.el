@@ -48,7 +48,7 @@
        (evil-define-key 'normal lsp-ui-doc-frame-mode-map (kbd "q") #'lsp-ui-doc-unfocus-frame))
 
 
-(add-hook 'lsp-mode-hook 'lsp-mode--key-binding)
+(add-hook 'lsp-mode-hook 'lsp-mode-key-binding)
 
 ;; keys
 (add-hook 'lsp-mode-hook (lambda () 
