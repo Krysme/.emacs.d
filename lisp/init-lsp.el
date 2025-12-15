@@ -31,24 +31,28 @@
 (setq lsp-ui-sideline-show-code-actions t)
 (setq xref-prompt-for-identifier nil)
 
-(defun init-lsp-set-keys () 
-       (add-hook 'before-save-hook 'lsp-format-buffer nil t)
+
+(defun lsp-mode-key-binding ()
        (define-key lsp-mode-map (kbd "C-c C-f") 'lsp-format-buffer)
        (define-key lsp-mode-map (kbd "C-C C-c") 'lsp-ui-sideline-apply-code-actions)
        (define-key lsp-mode-map (kbd "C-C C-l") 'lsp-ui-imenu)
        (define-key lsp-mode-map (kbd "C-c g") 'treemacs)
-       (define-key evil-normal-state-map (kbd "C-;") 'my/lsp-goto-first-error)
-       (define-key evil-normal-state-map (kbd "K") 'lsp-ui-doc-focus-frame)
-       (define-key lsp-mode-map (kbd "C-C l") 'lsp-treemacs-errors-list))
+       (define-key lsp-mode-map (kbd "C-C l") 'lsp-treemacs-errors-list)
+       (evil-define-key 'normal lsp-mode-map
+               (kbd "g r") 'xref-find-references
+               (kbd "g t") 'lsp-find-type-definition
+               (kbd "SPC o") 'lsp-rename
+               (kbd "C-;") 'my/lsp-goto-first-error
+               (kbd "K") 'lsp-ui-doc-focus-frame)
+       (evil-define-key 'visual lsp-mode-map (kbd "v") 'lsp-extend-selection)
+       (evil-define-key 'normal lsp-ui-doc-frame-mode-map (kbd "q") #'lsp-ui-doc-unfocus-frame))
 
-(defun lsp-mode-evil-key-binding ()
-       (define-key evil-normal-state-map (kbd "g r") 'xref-find-references)
-       (define-key evil-normal-state-map (kbd "g t") 'lsp-find-type-definition)
-       (define-key evil-normal-state-map (kbd "SPC o") 'lsp-rename)
-       (define-key evil-visual-state-map (kbd "v") 'lsp-extend-selection)
-       (define-key evil-normal-state-map lsp-ui-doc-frame-mode-map (kbd "q") #'lsp-ui-doc-unfocus-frame))
 
-(add-hook 'lsp-mode-hook 'lsp-mode-evil-key-binding)
+(add-hook 'lsp-mode-hook 'lsp-mode--key-binding)
+
+;; keys
+(add-hook 'lsp-mode-hook (lambda () 
+       (add-hook 'before-save-hook 'lsp-format-buffer nil t)))
 
 
 (after-load 'evil
@@ -75,11 +79,8 @@
 (after-load 'evil
         (advice-add 'evil-search-forward :around #'lsp-ui-doc-turn-off-advice)
         (advice-add 'evil-search-backward :around #'lsp-ui-doc-turn-off-advice)
-        (evil-set-initial-state 'lsp-mode 'normal)
-        )
+        (evil-set-initial-state 'lsp-mode 'normal))
 
-;; keys
-(add-hook 'lsp-mode-hook 'init-lsp-set-keys)
 
 (defun my/lsp-diagnostic-severity (diag)
        "Return numeric severity for DIAG, or nil if missing."
