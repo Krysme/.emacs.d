@@ -20,7 +20,10 @@
 
 (after-load 'lsp-mode
         (setq lsp-session-file
-              (expand-file-name (format ".lsp-session-%s" (or (getenv "MSYSTEM") "")) user-emacs-directory)))
+              (--> (getenv "MSYSTEM")
+                   (or it "")
+                   (format ".lsp-session-%s" it)
+                   (expand-file-name it user-emacs-directory))))
 
 (after-load 'yasnippet
         (setq lsp-enable-snippet t)
