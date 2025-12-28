@@ -62,17 +62,12 @@
         (add-hook 'evil-visual-state-exit-hook (lambda () (setq lsp--document-selection-range-cache nil))))
 
 (defun lsp-ui-doc-turn-off-advice (orig-fun &rest args)
-       (if (fboundp 'lsp-ui-doc-mode)
+       (when (fboundp 'lsp-ui-doc-mode)
 	       (lsp-ui-doc-mode -1))
-       (condition-case err
-	               (progn 
-	                       (apply orig-fun args)
-	                       (if (fboundp 'lsp-ui-doc-mode)
-		                       (progn  (lsp-ui-doc-mode 1))))
-	       (error
-	        (if (fboundp 'lsp-ui-doc-mode)
-		        (progn  (lsp-ui-doc-mode 1)))
-	        (signal (car err) (cdr err)))))
+       (unwind-protect
+                       (apply orig-fun args)
+              (when (fboundp 'lsp-ui-doc-mode)
+                        (lsp-ui-doc-mode 1))))
 
 (defun lsp-ui-doc-turn-on-advice (orig-fun &rest args)
        (apply orig-fun args)
@@ -80,8 +75,8 @@
 
 
 (after-load 'evil
-        (advice-add 'evil-search-forward :around #'lsp-ui-doc-turn-off-advice)
-        (advice-add 'evil-search-backward :around #'lsp-ui-doc-turn-off-advice)
+        (advice-add 'evil-ex-search-forward :around #'lsp-ui-doc-turn-off-advice)
+        (advice-add 'evil-ex-search-backward :around #'lsp-ui-doc-turn-off-advice)
         (evil-set-initial-state 'lsp-mode 'normal))
 
 
