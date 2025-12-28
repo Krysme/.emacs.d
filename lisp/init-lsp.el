@@ -51,6 +51,9 @@
        (evil-define-key 'normal lsp-ui-doc-frame-mode-map (kbd "q") #'lsp-ui-doc-unfocus-frame))
 
 
+(add-hook 'lsp-mode-hook (lambda () (when (bound-and-true-p evil-local-mode)
+                                           (evil-normalize-keymaps))))
+
 (add-hook 'lsp-mode-hook 'lsp-mode-key-binding)
 
 ;; keys
