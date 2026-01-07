@@ -94,8 +94,8 @@
 
 (defun my-evil-global-keys (mode key function)
        (let ((mode (listify mode))
-             (key (cond ((stringp key) (kbd key)
-		         t key))))
+             (key (cond ((stringp key) (kbd key))
+		        (t key))))
             (-each mode (lambda (mode)
 		                (evil-global-set-key mode key function)))))
 
