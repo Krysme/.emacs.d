@@ -1,4 +1,3 @@
-(provide 'init-racket)
 
 (straight-use-package 'racket-mode)
 
@@ -21,3 +20,5 @@
 (add-hook 'racket-mode-hook 'paredit-mode)
 
 (add-hook 'racket-mode-hook 'company-mode)
+
+(provide 'init-racket)
