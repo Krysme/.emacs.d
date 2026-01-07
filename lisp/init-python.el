@@ -1,3 +1,7 @@
+(use-package dap-mode
+  :straight t
+  :after lsp-mode)
+
 (use-package 
         python-mode 
         :straight t 
@@ -5,6 +9,9 @@
         :hook (python-mode . lsp-deferred) 
         :custom (dap-python-debugger 'debugpy) 
         :config (require 'dap-python))
+
+
+
 
 (use-package 
         pyvenv 
