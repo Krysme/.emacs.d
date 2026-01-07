@@ -37,10 +37,10 @@
 
 (defun lsp-mode-key-binding ()
        (define-key lsp-mode-map (kbd "C-c C-f") 'lsp-format-buffer)
-       (define-key lsp-mode-map (kbd "C-C C-c") 'lsp-ui-sideline-apply-code-actions)
-       (define-key lsp-mode-map (kbd "C-C C-l") 'lsp-ui-imenu)
+       (define-key lsp-mode-map (kbd "C-c C-c") 'lsp-ui-sideline-apply-code-actions)
+       (define-key lsp-mode-map (kbd "C-c C-l") 'lsp-ui-imenu)
        (define-key lsp-mode-map (kbd "C-c g") 'treemacs)
-       (define-key lsp-mode-map (kbd "C-C l") 'lsp-treemacs-errors-list)
+       (define-key lsp-mode-map (kbd "C-c l") 'lsp-treemacs-errors-list)
        (evil-define-key 'normal lsp-mode-map
                (kbd "g r") 'xref-find-references
                (kbd "g t") 'lsp-find-type-definition
