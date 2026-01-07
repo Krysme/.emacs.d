@@ -49,7 +49,6 @@
                 evil-goto-definition-search))
         (evil-select-search-module 'evil-search-module 'evil-search))
 
-(define-key key-translation-map (kbd "<ESC>") (kbd "C-g"))
 
 ;; Normal mode
 
