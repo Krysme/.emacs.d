@@ -52,7 +52,7 @@
 (display-time-mode t)
 
 (setq doom-themes-enable-bold t doom-themes-enable-italic t)
-(let* ((msystem (getenv "MSYSTEM"))
+(let* ((msystem (or (getenv "MSYSTEM") ""))
        (theme (if (string= "CLANG64" msystem)
                       'spacemacs-dark
                       'doom-one))
@@ -60,7 +60,6 @@
       (load-theme theme t)
       (setq recentf-save-file recentf-file))
 
-(load-theme 'doom-one t)
 ;; theme
 
 ;; font
