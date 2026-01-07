@@ -80,13 +80,14 @@
        (let* (
 	      (cmake-dir (car (locate-all-dominating-files default-directory "CMakeLists.txt")))
 	      (cmake-build-dir (expand-file-name "build" cmake-dir))
-	      (command (format
-                        "cmake -S %s -B %s -G Ninja && cmake --build %s && bash -c 'find %s -name \"*_test.exe\" -exec {} \\;' "
+              (command (format
+                        "cmake -S %s -B %s -G Ninja %s && cmake --build %s && bash -c 'find %s -name \"*_test.exe\" -exec {} \\;' "
+
                         cmake-dir
                         cmake-build-dir
+                        "-DCMAKE_EXPORT_COMPILE_COMMANDS=ON" 
                         cmake-build-dir
                         cmake-build-dir)))
-	     (setenv "CMAKE_EXPORT_COMPILE_COMMANDS" "1")
 	     (compile command))) 
 
 (add-hook 'compilation-filter-hook 'ansi-color-compilation-filter)
