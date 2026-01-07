@@ -66,6 +66,16 @@
 ;; font
 (set-frame-font "JetBrains Mono 15" nil t)
 
+(dolist (script '(han kana cjk-misc bopomofo))
+  (set-fontset-font t script
+                    (font-spec :family "Sarasa Mono J")
+                    nil
+                    'prepend))
+
+(set-fontset-font t 'emoji (font-spec :family "Noto Color Emoji") nil 'append)
+
+
+
 (font-family-list)
 (when (member "NanumSquareRound" (font-family-list))
       (set-fontset-font t 'hangul (font-spec :family "NanumSquareRound")))
