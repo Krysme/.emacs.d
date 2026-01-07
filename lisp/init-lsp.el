@@ -51,8 +51,12 @@
        (evil-define-key 'normal lsp-ui-doc-frame-mode-map (kbd "q") #'lsp-ui-doc-unfocus-frame))
 
 
-(add-hook 'lsp-mode-hook (lambda () (when (bound-and-true-p evil-local-mode)
-                                           (evil-normalize-keymaps))))
+(add-hook 'lsp-mode-hook
+          (lambda ()
+            (when (bound-and-true-p evil-local-mode)
+              (run-at-time 0 nil #'evil-normalize-keymaps))))
+
+
 
 (add-hook 'lsp-mode-hook 'lsp-mode-key-binding)
 
@@ -79,8 +83,7 @@
 
 (after-load 'evil
         (advice-add 'evil-ex-search-forward :around #'lsp-ui-doc-turn-off-advice)
-        (advice-add 'evil-ex-search-backward :around #'lsp-ui-doc-turn-off-advice)
-        (evil-set-initial-state 'lsp-mode 'normal))
+        (advice-add 'evil-ex-search-backward :around #'lsp-ui-doc-turn-off-advice))
 
 
 (defun my/lsp-diagnostic-severity (diag)
