@@ -131,7 +131,6 @@
         :hook
         (embark-collect-mode . consult-preview-at-point-mode))
 
-(provide 'init-vertico)
 
 
 (straight-use-package 'async-completing-read)
@@ -180,3 +179,5 @@ If the metadata has no async property, just call
 
 (setq acr-completing-read-function 'my-async-completing-read)
 
+
+(provide 'init-vertico)
