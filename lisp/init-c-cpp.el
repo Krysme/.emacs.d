@@ -178,8 +178,8 @@
                (error 8)))
 
 (setq core-count (cond
-                  ((string= system-type "gnu/linux") (obtain-cpu-count-on-linux))
-                  ((string= system-type "windows-nt") (obtain-cpu-count-on-windows-nt))))
+                  ((eq system-type 'gnu/linux) (obtain-cpu-count-on-linux))
+                  ((eq system-type 'windows-nt) (obtain-cpu-count-on-windows-nt))))
 
 (add-hook 'lsp-mode-hook
           (lambda ()
