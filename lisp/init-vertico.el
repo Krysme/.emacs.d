@@ -7,9 +7,10 @@
         (setq vertico-resize nil)
         (setq vertico-cycle t))
 
-(straight-use-package 'savehist
-                      :init
-                      (savehist-mode))
+(use-package savehist
+        :straight (:type built-in)
+        :init
+        (savehist-mode))
 
 (let ((msystem-postfix (or (getenv "MSYSTEM") "")))
      (setq savehist-file (expand-file-name (format "history-%s" msystem-postfix) user-emacs-directory)))
