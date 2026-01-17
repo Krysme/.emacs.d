@@ -56,10 +56,34 @@
 (evil-define-motion evil-move-5-lines-down () (evil-next-visual-line 5))
 (evil-define-motion evil-move-5-lines-up () (evil-previous-visual-line 5))
 
+
+(defun trim-prefix (str ch)
+       "in a string STR, if there is a prefix that maches CH, trim it"
+       (if (and (stringp str) (> (length str) 0) (char-equal (aref str 0) ch))
+               (substring str 1)
+               str))
+
+(setq private-rg-search-text nil)
+(defun set-rg-search-text (&rest args)
+       (let* ((new-text (trim-prefix (minibuffer-contents-no-properties) ?#)))
+             (unless private-rg-search-text (setq private-rg-search-text new-text))))
+
+
 (defun ripgrep-search
                 (&optional d p) 
         (interactive "DSearch Directory:\nP")
-        (consult-ripgrep d p))
+
+        (add-hook 'minibuffer-exit-hook 'set-rg-search-text)
+        (advice-add 'vertico-exit :before 'set-rg-search-text)
+        (advice-add 'vertico-super-tab :before 'set-rg-search-text)
+        (let* ((initial-text private-rg-search-text))
+              (setq private-rg-search-text nil)
+              (unwind-protect 
+                              (consult-ripgrep d (or initial-text ""))
+                      (progn
+                              (remove-hook 'minibuffer-exit-hook 'set-rg-search-text)
+                              (advice-remove 'vertico-exit 'set-rg-search-text)
+                              (advice-remove 'vertico-super-tab 'set-rg-search-text)))))
 
 
 (defun after-init-set-evil-keymap()

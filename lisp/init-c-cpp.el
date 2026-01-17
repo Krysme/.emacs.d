@@ -20,11 +20,6 @@
 	    (add-hook 'c-mode-hook 'yas-minor-mode-on))
 
 
-(defun trim-prefix (str ch)
-       "in a string STR, if there is a prefix that maches CH, trim it"
-       (if (and (stringp str) (> (length str) 0) (char-equal (aref str 0) ch))
-               (substring str 1)
-               str))
 
 
 (defun locate-all-dominating-files (directory file-name)
@@ -37,42 +32,10 @@
                           (setq dir (file-name-directory (directory-file-name dir)))))
              result))
 
-(setq private-c-cpp-project-search-text nil)
-
-(defun set-last-cpp-project-search-text (&rest args)
-       (unless private-c-cpp-project-search-text
-               (setq private-c-cpp-project-search-text (trim-prefix  (minibuffer-contents-no-properties) ?#))))
 
 
-(defun choose-strings (lst title error-string)
-       (cond
-        ((null lst) (user-error error-string))
-        ((null (cdr lst)) (car lst))
-        (t (completing-read title lst))))
 
-(defun cpp-project-search-impl (dir)
-       (let* ((project-dir (or
-                            (choose-strings 
-                             (locate-all-dominating-files dir "CMakeLists.txt")
-                             "Choose cmake dir"
-                             "cannot find CMakeLists.txt"))))
-             (progn 
-                     (add-hook 'minibuffer-exit-hook 'set-last-cpp-project-search-text)
-                     (advice-add 'vertico-exit :before 'set-last-cpp-project-search-text)
-                     (advice-add 'vertico-super-tab :before 'set-last-cpp-project-search-text)
-                     (let* ((initial-text private-c-cpp-project-search-text))
-	                   (setq private-c-cpp-project-search-text nil)
-	                   (unwind-protect
-	                                   (consult-ripgrep project-dir (or initial-text ""))
-	                           (progn
-	                                   (remove-hook 'minibuffer-exit-hook 'set-last-cpp-project-search-text)
-	                                   (advice-remove 'vertico-exit 'set-last-cpp-project-search-text)
-	                                   (advice-remove 'vertico-super-tab 'set-last-cpp-project-search-text)))))))
 
-(defun cpp-project-search ()
-       "find CMakeLists.txt and search the corresponding `src` folder"
-       (interactive)
-       (cpp-project-search-impl default-directory))
 
 
 (defun compile-cmake-project ()
@@ -130,7 +93,6 @@
 
 
 (after-load 'evil
-        (evil-define-key 'normal c++-mode-map (kbd "SPC ,r") 'cpp-project-search)
         (after-load 'smartparens 
                 (evil-define-key 'visual c++-mode-map (kbd "(") 'sp-wrap-round)
                 (evil-define-key 'visual c++-mode-map (kbd ")") 'sp-wrap-square)
