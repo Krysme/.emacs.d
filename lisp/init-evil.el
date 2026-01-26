@@ -7,7 +7,6 @@
 (straight-use-package 'evil)
 (straight-use-package 'dash)
 (straight-use-package 'evil-collection)
-(straight-use-package 'undo-fu)
 (evil-collection-init)
 (require 'dash)
 
@@ -39,7 +38,7 @@
 
 (evil-mode t)
 
-(evil-set-undo-system 'undo-fu)
+(evil-set-undo-system 'undo-redo)
 
 (after-load 'evil 
         (setq evil-goto-definition-functions
