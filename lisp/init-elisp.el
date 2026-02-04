@@ -11,7 +11,12 @@
   :hook (emacs-lisp-mode . eros-mode)
   :hook (lisp-interaction-mode . eros-mode))
 
+(use-package erefactor
+        :ensure t
+        :straight t)
 
+(add-hook 'emacs-lisp-mode-hook 'erefactor-lazy-highlight-turn-on)
+(add-hook 'lisp-interaction-mode-hook 'erefactor-lazy-highlight-turn-on)
 (after-load 'smartparens (sp-local-pair (list 'elisp-mode 'clojure-mode) "'" nil 
 				        :actions nil))
 (setq lisp-body-indent 8)

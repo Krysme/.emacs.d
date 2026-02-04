@@ -37,13 +37,10 @@
 (require 'init-haskell)
 (require 'init-clojure)
 (require 'init-rust)
-;(require 'init-agda)
+(require 'init-agda)
 
 
 
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 
 
-(if (executable-find "agda") 
-        (load-file (let ((coding-system-for-read 'utf-8))
-                        (shell-command-to-string "agda --emacs-mode locate"))))
