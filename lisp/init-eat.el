@@ -1,12 +1,9 @@
 ;; -*- lexical-binding: t -*-
 
-
-
-
 (straight-use-package
  '(eat :type git
-       :host github
-       :repo "kephale/emacs-eat"
+       :host codeberg
+       :repo "akib/emacs-eat"
        :files ("*.el" ("term" "term/*.el") "*.texi"
                "*.ti" ("terminfo/e" "terminfo/e/*")
                ("terminfo/65" "terminfo/65/*")
