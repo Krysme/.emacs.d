@@ -38,6 +38,7 @@
 
 (evil-mode t)
 
+(define-key key-translation-map (kbd "<ESC>") (kbd "C-g"))
 (evil-set-undo-system 'undo-redo)
 
 (after-load 'evil 
