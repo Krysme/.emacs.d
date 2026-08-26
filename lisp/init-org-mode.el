@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 (straight-use-package 'ob-rust)
 (after-load 'org
         (require 'ob-js)

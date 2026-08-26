@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 (use-package dap-mode
   :straight t
   :after lsp-mode)

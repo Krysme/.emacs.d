@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 
 
 (defun my/agda-locate-from-command (cmd)

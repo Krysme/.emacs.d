@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 (use-package which-key
         :ensure t
         :straight t

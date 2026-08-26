@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 (straight-use-package 'cider)
 (straight-use-package 'clojure-mode)
 
