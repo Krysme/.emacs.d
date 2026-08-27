@@ -28,7 +28,6 @@
 (global-auto-revert-mode 1)
 
 
-(prefer-coding-system 'utf-8-unix)
 
 (menu-bar-mode -1)
 (tool-bar-mode -1)
@@ -41,7 +40,6 @@
 
 
 (prefer-coding-system 'utf-8-unix)
-(setq coding-system-for-write 'utf-8-unix)
 
 
 
