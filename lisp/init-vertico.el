@@ -52,14 +52,6 @@
         (marginalia-mode))
 
 
-(defun vertico-up-directory ()
-       "go up one directory"
-       (interactive)
-       (let ((directory (minibuffer-contents-no-properties)))
-	    (delete-minibuffer-contents)
-	    (insert (string-trim-right (if (string= directory "~/") (expand-file-name "~/") directory) "[^/]+/?"))))
-
-
 
 (setq sudo-prefix "/sudo::")
 
@@ -76,7 +68,7 @@
 
 
 
-(define-key vertico-map (kbd "C-l") 'vertico-up-directory)
+(define-key vertico-map (kbd "C-l") 'vertico-directory-up)
 (define-key vertico-map (kbd "C-s") 'vertico-sudo)
 (define-key vertico-map (kbd "TAB") 'vertico-super-tab)
 
