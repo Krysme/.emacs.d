@@ -31,7 +31,6 @@
 
 ;; languages
 (require 'init-lsp)
-(require 'init-python)
 (require 'init-racket)
 (require 'init-c-cpp)
 (require 'init-haskell)
