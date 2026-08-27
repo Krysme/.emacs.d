@@ -1,7 +1,7 @@
 ;; -*- lexical-binding: t -*-
 (defalias 'after-load 'with-eval-after-load)
 
-(setq native-comp-async-report-warnings-errors nil)
+(setq native-comp-async-report-warnings-errors 'silent)
 (setq straight-vc-git-default-clone-depth 1)
 ;; bootstrap straight.el
 (defvar bootstrap-version)
