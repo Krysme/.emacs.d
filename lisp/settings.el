@@ -82,7 +82,7 @@
 
 (setq recentf-max-menu-items 1000)
 
-(fset 'yes-or-no-p 'y-or-n-p)
+(setopt use-short-answers t)
 
 
 
