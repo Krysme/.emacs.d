@@ -30,19 +30,6 @@
         :ensure t)
 
 
-(defun consult-line-reverse (&optional initial start)
-       "This is a reversed version of `consult-line'"
-       (interactive (list nil (not (not current-prefix-arg))))
-       (let ((curr-line (line-number-at-pos (point) consult-line-numbers-widen))
-	     (top (not (eq start consult-line-start-from-top))))
-	    (consult--line
-	     (or (consult--with-increased-gc
-		         (utils-reverse-cdr (consult--line-candidates top curr-line)))
-		 (user-error "No lines"))
-	     :curr-line (and (not top) curr-line)
-	     :prompt (if top "Go to line from top: " "Go to line: ")
-	     :initial initial)))
-
 (defun consult-recent-file-no-action ()
        "Find recent file using `completing-read'."
        (interactive)
