@@ -118,14 +118,12 @@
 (require 'dash)
 
 
-(add-hook 'lsp-mode-hook
-          (lambda ()
-                  (setq lsp-clients-clangd-args
+(setq lsp-clients-clangd-args
                         (list "--clang-tidy"
                               "--clang-tidy-checks=performance-*,bugprone-*"
                               "--all-scopes-completion"
                               "--header-insertion=iwyu"
-                              (format "-j=%d" (num-processors))))))
+                              (format "-j=%d" (num-processors))))
 
 
 
