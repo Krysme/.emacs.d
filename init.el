@@ -1,7 +1,5 @@
 ;; -*- lexical-binding: t -*-
 
-(setq gc-cons-threshold (* 1024 1024 1024))
-(add-hook 'after-init-hook (lambda () (setq gc-cons-threshold (* 256 1024 1024))))
 
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 
