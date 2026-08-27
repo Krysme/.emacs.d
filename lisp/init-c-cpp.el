@@ -117,33 +117,6 @@
 
 (require 'dash)
 
-(defun obtain-cpu-count-on-windows-nt ()
-       "obtain the core count on windows"
-       (condition-case err
-                       (--> 
-                        (process-lines "wmic" "cpu" "get" "NumberOfLogicalProcessors" "/format:List")
-                        (-filter (lambda (s) (not (string-blank-p s))) it)
-                        (-map 'string-trim it)
-                        (car it)
-                        (string-split it "=")
-                        (nth 1 it)
-                        (string-to-number it))
-               (error 8)))
-
-(defun obtain-cpu-count-on-linux ()
-       "obtain the core count on linux"
-       (condition-case err
-                       (-->
-                        (process-lines "nproc")
-                        (-filter (lambda (s) (not (string-blank-p s))) it)
-                        (-map 'string-trim it)
-                        (car it)
-                        (string-to-number it))
-               (error 8)))
-
-(setq core-count (cond
-                  ((eq system-type 'gnu/linux) (obtain-cpu-count-on-linux))
-                  ((eq system-type 'windows-nt) (obtain-cpu-count-on-windows-nt))))
 
 (add-hook 'lsp-mode-hook
           (lambda ()
@@ -152,7 +125,7 @@
                               "--clang-tidy-checks=performance-*,bugprone-*"
                               "--all-scopes-completion"
                               "--header-insertion=iwyu"
-                              (format "-j=%d" core-count)))))
+                              (format "-j=%d" (num-processors))))))
 
 
 
