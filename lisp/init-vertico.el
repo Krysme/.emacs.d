@@ -117,7 +117,5 @@
 (straight-use-package 'async-completing-read)
 (require 'async-completing-read)
 
-(setq acr-refresh-completion-ui 'consult-vertico--refresh)
-
 
 (provide 'init-vertico)
