@@ -4,4 +4,7 @@
 !init.el
 !/lisp
 !/lisp/**
+!/straight/
+!/straight/versions/
 !/straight/versions/default.el
+
