@@ -29,11 +29,16 @@
         (setq lsp-enable-snippet t)
         (add-hook 'lsp-mode-hook 'yas-minor-mode))
 
-(setq lsp-ui-doc-show-with-cursor t)
-(setq lsp-ui-doc-position 'at-point)
+(setq lsp-ui-doc-enable nil)
 (setq lsp-ui-sideline-show-code-actions t)
 (setq xref-prompt-for-identifier nil)
 
+
+(defun my/lsp-describe-thing-at-point ()
+       (interactive)
+       (lsp-describe-thing-at-point)
+       (when-let ((win (get-buffer-window "*lsp-help*")))
+              (select-window win)))
 
 (defun lsp-mode-key-binding ()
        (define-key lsp-mode-map (kbd "C-c C-f") 'lsp-format-buffer)
@@ -46,7 +51,7 @@
                (kbd "g t") 'lsp-find-type-definition
                (kbd "SPC o") 'lsp-rename
                (kbd "C-;") 'my/lsp-goto-first-error
-               (kbd "K") 'lsp-ui-doc-focus-frame)
+               (kbd "K") 'my/lsp-describe-thing-at-point)
        (evil-define-key 'visual lsp-mode-map (kbd "v") 'lsp-extend-selection)
        (evil-define-key 'normal lsp-ui-doc-frame-mode-map (kbd "q") #'lsp-ui-doc-unfocus-frame))
 
@@ -68,22 +73,7 @@
 (after-load 'evil
         (add-hook 'evil-visual-state-exit-hook (lambda () (setq lsp--document-selection-range-cache nil))))
 
-(defun lsp-ui-doc-turn-off-advice (orig-fun &rest args)
-       (when (fboundp 'lsp-ui-doc-mode)
-	       (lsp-ui-doc-mode -1))
-       (unwind-protect
-                       (apply orig-fun args)
-              (when (fboundp 'lsp-ui-doc-mode)
-                        (lsp-ui-doc-mode 1))))
 
-(defun lsp-ui-doc-turn-on-advice (orig-fun &rest args)
-       (apply orig-fun args)
-       (lsp-ui-doc-mode 1))
-
-
-(after-load 'evil
-        (advice-add 'evil-ex-search-forward :around #'lsp-ui-doc-turn-off-advice)
-        (advice-add 'evil-ex-search-backward :around #'lsp-ui-doc-turn-off-advice))
 
 
 (defun my/lsp-diagnostic-severity (diag)
