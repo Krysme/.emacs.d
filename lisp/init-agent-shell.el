@@ -40,6 +40,14 @@ the project root."
            (my/agent-shell-cwd (and buf
                                     (buffer-local-value 'default-directory buf))))
       (apply orig-fun args)))
-  (advice-add 'agent-shell-restart :around #'my/agent-shell--restart-cwd))
+  (advice-add 'agent-shell-restart :around #'my/agent-shell--restart-cwd)
+  (with-eval-after-load 'evil-collection-agent-shell
+    (dolist (key (list (kbd "RET") (kbd "<return>") (kbd "C-m")))
+      (evil-define-key 'insert agent-shell-mode-map key #'agent-shell-submit)))
+  (with-eval-after-load 'agent-shell-ui
+    (define-key agent-shell-ui-fragment-map (kbd "RET") nil)
+    (define-key agent-shell-ui-fragment-map (kbd "<return>") nil)
+    (dolist (key (list (kbd "TAB") (kbd "<tab>")))
+      (define-key agent-shell-ui-fragment-map key #'agent-shell-ui-toggle-fragment))))
 
 (provide 'init-agent-shell)
