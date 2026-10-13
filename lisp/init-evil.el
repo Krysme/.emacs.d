@@ -154,7 +154,8 @@
        (evil-global-set-key mode (kbd "SPC /") (lambda () (interactive) (consult-line)))
        (evil-global-set-key mode (kbd "SPC #") (lambda () (interactive) (consult-line (word-at-point))))
        (evil-global-set-key mode (kbd "SPC r") 'consult-recent-file-no-action)
-       (evil-global-set-key mode (kbd "SPC mg") 'magit))
+       (evil-global-set-key mode (kbd "SPC mg") 'magit)
+       (evil-global-set-key mode (kbd "SPC aa") #'my/agent-shell))
 
 (global-set-key (kbd "C-e") nil)
 ;; insert mode

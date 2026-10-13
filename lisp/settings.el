@@ -96,5 +96,7 @@
 
 (add-hook 'compilation-filter-hook 'ansi-color-compilation-filter)
 
+(add-hook 'terminal-init-xterm-hook #'xterm--init-modify-other-keys)
+
 
 (provide 'settings)
