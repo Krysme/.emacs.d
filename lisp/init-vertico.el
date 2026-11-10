@@ -12,10 +12,17 @@
 (let ((msystem-postfix (or (getenv "MSYSTEM") "")))
      (setq savehist-file (expand-file-name (format "history-%s" msystem-postfix) user-emacs-directory)))
 
+(defun my/savehist-save-with-local-labels (save &rest args)
+  "Call SAVE with ARGS using fresh reader labels for each printed form."
+  (let ((print-continuous-numbering nil)
+        (print-number-table nil))
+    (apply save args)))
+
 (use-package savehist
         :straight (:type built-in)
         :init
-        (savehist-mode))
+        (advice-add 'savehist-save :around #'my/savehist-save-with-local-labels)
+        (savehist-mode 1))
 
 (use-package orderless
         :ensure t
