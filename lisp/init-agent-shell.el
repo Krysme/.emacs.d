@@ -6,7 +6,9 @@
   :bind (:map agent-shell-mode-map
               ("C-c RET" . agent-shell-submit))
   :init
-  (setq agent-shell-preferred-agent-config 'opencode)
+  (setq agent-shell-preferred-agent-config 'opencode
+        agent-shell-header-style 'text
+        agent-shell-show-config-icons nil)
   :config
   (defvar my/agent-shell-cwd nil
     "Directory selected by `my/agent-shell', while its shell starts.")
